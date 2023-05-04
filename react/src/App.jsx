@@ -1,7 +1,10 @@
 import { useState } from 'react'
-import './App.css'
 import {BrowserRouter,Routes,Route,} from "react-router-dom";
 import Home from './pages/Home/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './App.css'
 
 function App() {
 
