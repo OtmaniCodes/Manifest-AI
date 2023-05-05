@@ -52,7 +52,7 @@ const Footer = () => {
       <div className="container d-md-flex py-4">
         <div className="me-md-auto text-center text-md-start">
           <div className="copyright">
-            © Copyright <strong><span>Company</span></strong>. All Rights Reserved
+            © Copyright <strong><span>Manifest AI</span></strong>. All Rights Reserved
           </div>
           <div className="credits">
             Designed by <a href="https://manifest-ai.com/">Manifest AI</a>
