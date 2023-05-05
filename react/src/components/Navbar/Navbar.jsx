@@ -27,7 +27,7 @@ const Navbar = () => {
     
           <nav id="navbar" className="navbar test order-last order-lg-0 ">
             <ul>
-              <li><a href="index.html" className="active">Home</a></li>
+              <li><a href="/" className="active">Home</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="portfolio.html">About</a></li>
               <li><a href="pricing.html">Team</a></li>
