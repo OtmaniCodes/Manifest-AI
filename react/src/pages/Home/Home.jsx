@@ -6,6 +6,8 @@ import Navbar from "../../components/Navbar/Navbar";
 import whiteBgLogo from "../../assets/images/white-logo.png";
 import dotsWeb from "../../assets/images/dots-web.jpg";
 import videoIntro from "../../assets/video-intro.mp4"
+import Services from '../Services/Services';
+import Contact from '../Contact/Contact';
 
 
 const Home = () => {
@@ -26,7 +28,10 @@ const Home = () => {
                     </div>
                     </div>
                 </div>
-                </section>
+            </section>
+
+            <Services/>
+            <Contact/>
 
 
 
@@ -37,7 +42,7 @@ const Home = () => {
 
 
             {/* ====================================== */}
-            <Footer/>
+            {/* <Footer/> */}
         </div>
      );
 }

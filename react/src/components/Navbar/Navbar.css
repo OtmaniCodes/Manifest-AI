@@ -191,6 +191,19 @@
         visibility: hidden;
     }
   }
+  .navbar-mobile{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 5555;
+    background: blue;
+    width: 100vw;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   /* #navbar{
     background-color: rgba(0, 0, 255, 0.336);
     height: 100vh;
@@ -301,9 +314,9 @@
     color: #1bbd36;
   }
    */
-  /* .navbar-mobile .dropdown>.dropdown-active {
-    display: block;
-  } */
+  .navbar-mobile .dropdown>.dropdown-active {
+    display: block !important;
+  }
 /* 
   @media (min-width: 1024px) {
     #hero .carousel-content {

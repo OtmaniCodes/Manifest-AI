@@ -1,0 +1,36 @@
+.header-section {
+	margin-bottom: 34px;
+}
+.header-section .section-header-title {
+	position: relative;
+    padding-bottom: 14px;
+    margin-bottom: 25px;
+	font-weight: 700;
+    font-size: 32px;
+}
+.header-section .section-header-title:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50px;
+	height: 3px;
+	background-color: #22B4D7;
+    border-radius: 3px;
+}
+.header-section .section-header-title:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+    transform: translateX(30px);
+	width: 10px;
+	height: 3px;
+	background-color: #28db64;
+    border-radius: 3px;
+}
+.header-section .section-header-description {
+	font-size: 14px;
+    color: #282828;
+}

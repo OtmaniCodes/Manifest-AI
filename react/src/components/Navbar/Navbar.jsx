@@ -7,11 +7,12 @@ import logo from '../../assets/manifest_logo.png'
 const Navbar = () => {
 
     function test(){
-        document.getElementById('navbar').classNameList.toggle('navbar-mobile')
+        // document.getElementById('navbar').classList.toggle('navbar-mobile')
         // e.classNameList.toggle('bi-list')
         // e.classNameList.toggle('bi-x')
-        document.getElementById('mobile-nav-toggle').classNameList.toggle('bi-list')
-        document.getElementById('mobile-nav-toggle').classNameList.toggle('bi-x')
+        document.getElementById('mobile-nav-toggle').classList.toggle('bi-list')
+        document.getElementById('mobile-nav-toggle').classList.toggle('bi-x')
+        // document.querySelector('ul').style.display='block'
     }
     function dude(){
         // e.nextElementSibling.classNameList.toggle('dropdown-active')
@@ -24,7 +25,7 @@ const Navbar = () => {
             <img src={logo} alt="" className="img-fluid"/>
           </a>
     
-          <nav id="navbar" className="navbar test order-last order-lg-0 navbar-mobile">
+          <nav id="navbar" className="navbar test order-last order-lg-0 ">
             <ul>
               <li><a href="index.html" className="active">Home</a></li>
               <li><a href="services.html">Services</a></li>
