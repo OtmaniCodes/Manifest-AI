@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Footer from '../../../components/Footer/Footer';
-import Navbar from '../../../components/Navbar/Navbar';
 import './ArticlePage.css'
+import FuncHelpers from '../../../utils/func-helpers';
 
 
 const articlesData = [
@@ -52,6 +51,10 @@ const ArticlePage = () => {
       </div>
     );
   }
+
+  useEffect(() => {
+    FuncHelpers.scrollToTopOfThePage({top: 0});
+  });
 
   return (
     <div id='article-page'>

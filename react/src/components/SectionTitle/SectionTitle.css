@@ -6,7 +6,7 @@
     padding-bottom: 14px;
     margin-bottom: 25px;
 	font-weight: 700;
-    font-size: 32px;
+    font-size: 36px;
 }
 .header-section .section-header-title:before {
 	content: "";
@@ -31,6 +31,6 @@
     border-radius: 3px;
 }
 .header-section .section-header-description {
-	font-size: 14px;
+	font-size: 18px;
     color: #282828;
 }

@@ -9,6 +9,7 @@ import './Home.css'
 import videoIntro from "../../assets/video-intro.mp4"
 import Articles from '../Articles/Articles';
 
+
 const Home = () => {
     return ( 
         <div id="home">
@@ -28,7 +29,7 @@ const Home = () => {
             <Services/>
             <AboutSection/>
             <TeamSection/>
-            <Articles limit={4}/>
+            <Articles limit={5}/>
             <Contact/>
         </div>
      );

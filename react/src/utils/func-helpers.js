@@ -12,4 +12,8 @@ export default class FuncHelpers {
         const formattedDate = date.toLocaleDateString("en-US", options);
         return formattedDate;
     }
+
+    static scrollToTopOfThePage(params) {
+        window.scrollTo(params || { top: 0, behavior: "smooth" });
+    }
 }

@@ -1,7 +1,5 @@
 import './Service.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min.js'
+
 const Service = (props) => {
     return ( 
         <div className="col-md-6 col-lg-4 text-center">

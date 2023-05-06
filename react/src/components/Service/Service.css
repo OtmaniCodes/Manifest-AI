@@ -1,5 +1,6 @@
 .services-description{
-    color: rgba(255, 255, 255, 0.87);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px black;
 }
 .section-services .single-service .services-description {
     margin-bottom: 20px;
@@ -22,6 +23,7 @@
 .section-services .single-service:hover .services-title {
 	color: #ffffff;
 }
+
 .service-shadow{
     background-color: rgba(0, 0, 0, 0.329);
     position: absolute;
