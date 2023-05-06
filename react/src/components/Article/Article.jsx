@@ -20,24 +20,24 @@ import FuncHelpers from '../../utils/func-helpers';
 
 
 
-const Article = ({article, horizontal}) => {
+const Article = ({article, horizontal, givenStyle}) => {
   return (
     <Link to={`/articles/${article.slug}`}>
-      <div className={`container ${horizontal ? 'article-compo-horizontal' : 'article-compo card p-0 pb-3'}`}>
+      <div style={givenStyle} className={`container ${horizontal ? 'article-compo-horizontal' : 'article-compo card p-0 pb-3'}`}>
         <div className={`row justify-content-center${horizontal ? '' : ' flex-column'}`}>
           <div className={`col-md-${horizontal ? '7' : '12'}`}>
             <img src={article.thumbnail} className="article-card-img" alt="Article Thumbnail" />
           </div>
           <div className={`col-md-${horizontal ? '5' : '12'} px-${horizontal ? '' : '4'} text-start`}>
-            <p className={`publish-time mb-3 pt-${horizontal ? '2' : '3'}`}>{FuncHelpers.formatDate(article.publishDate)}</p>
+            <p className={`publish-date text-muted mb-3 pt-${horizontal ? '2' : '3'}`}>{FuncHelpers.formatDate(article.publishDate)}</p>
             <h3 className='title'>{article.title}</h3>
-            <p className="excerpt">{`${article.content.substring(0, 150)}...`}</p>
-            {horizontal && (
+            {/* <p className="excerpt">{`${article.content.substring(0, 150)}...`}</p> */}
+            { (
               <>
-                <div className="d-flex">
+                <div className="d-flex" style={{ flexWrap: "wrap" }}>
                   {
-                    article.tags.map(
-                      (tag, i) => (<div key={i} className="chip">{tag}</div>)
+                    article.categories.map(
+                      (c, i) => (<div key={i} className="chip">{c}</div>)
                     )
                   }
                 </div>

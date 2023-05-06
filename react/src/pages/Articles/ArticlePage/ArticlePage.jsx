@@ -1,48 +1,19 @@
+import './ArticlePage.css'
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import './ArticlePage.css'
-import FuncHelpers from '../../../utils/func-helpers';
-
-
-const articlesData = [
-  {
-    id: 1,
-    title: 'How to Learn ReactJS',
-    slug: 'how-to-learn-reactjs',
-    publishDate: '2022-01-01',
-    thumbnail: 'https://picsum.photos/id/1015/300/200',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    suggestedArticlesIds: [2, 3],
-  },
-  {
-    id: 2,
-    title: 'Why ReactJS is Awesome',
-    slug: 'why-reactjs-is-awesome',
-    publishDate: '2022-01-02',
-    thumbnail: 'https://picsum.photos/id/1025/300/200',
-    content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    suggestedArticlesIds: [1, 3],
-  },
-  {
-    id: 3,
-    title: 'ReactJS vs AngularJS',
-    slug: 'reactjs-vs-angularjs',
-    publishDate: '2022-01-03',
-    thumbnail: 'https://picsum.photos/id/1035/300/200',
-    content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    suggestedArticlesIds: [1, 2],
-  },
-];
-
+import { useArticles } from '../../../state/aricles-provider';
+import Article from '../../../components/Article/Article';
+import { FacebookShareButton, TwitterShareButton } from 'react-share';
 
 
 const ArticlePage = () => {
+  const {articles} = useArticles();
   const { slug } = useParams();
-  const article = articlesData.find(article => article.slug === slug);
+  const article = articles.find(article => article.slug === slug);
 
   const renderBreadCrumbs = () => {
     return (
-      <div className="d-flex article-breadcrums ms-4 mt-2">
+      <div className="article-breadcrumbs d-flex ms-4">
         <Link className='breadcrumb-btn' to={'/'}>Home</Link>
         <p className="breadcrumb-divider">/</p>
         <Link className='breadcrumb-btn' to={'/articles'}>ARTICLES</Link>
@@ -53,50 +24,83 @@ const ArticlePage = () => {
   }
 
   useEffect(() => {
-    FuncHelpers.scrollToTopOfThePage({top: 0});
+    // FuncHelpers.scrollToTopOfThePage({top: 0});
+      window.scrollTo(0, 0);
   });
 
   return (
     <div id='article-page'>
-        <img className='article-thumbnail shadow-lg' src={article.thumbnail} alt="Article Thumbnail" />
+        {/* <img className='article-thumbnail shadow-lg' src={article.thumbnail} alt="Article Thumbnail" /> */}
         {renderBreadCrumbs()}
-        <div className="container-fluid mt-2" style={{marginTop: '55px'}}>
+        <ArticleProgressBar/>
+        <div className="container-fluid" style={{marginTop: '55px'}}>
             <div className="row justify-content-center mt-5">
                 <div className="col-md-10 text-start">
                     <article>
-                      {/* <h1>{article.title}</h1> */}
-                      <h1 className='mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, veniam!</h1>
-                      {/* <p  className='article-content'>{article.content}</p> */}
-                      <p className='article-content mb-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore placeat nostrum ea adipisci eius cum fuga, minima natus sint doloribus repudiandae est assumenda rem quaerat tempore quasi illum. Animi itaque, asperiores adipisci, nulla deserunt doloremque vitae omnis pariatur fuga aliquam dicta earum sapiente iure odit debitis. Facilis nisi quod, explicabo odit magni quis sed dolorem placeat modi, nesciunt fugiat quam labore similique dignissimos necessitatibus laboriosam quae suscipit assumenda? Dicta et corrupti ducimus. Debitis aspernatur perferendis, vero recusandae dolorum a nemo rerum dicta sequi neque ratione nulla. Nesciunt voluptatibus adipisci odit sit vel est asperiores nam deserunt, rem repellat velit aliquam nisi repellendus qui harum accusamus similique aut porro alias sequi. Explicabo quam, expedita debitis blanditiis reiciendis incidunt iure dolores, pariatur rem quis animi repellat numquam nostrum magnam maxime! Eum voluptatum, reprehenderit quos quisquam doloremque laboriosam voluptate nemo temporibus atque accusantium labore debitis sapiente eveniet hic mollitia dolore obcaecati accusamus officiis optio illo ipsa rem! Nam saepe, dignissimos rem reiciendis dolor asperiores labore maxime autem adipisci repellendus libero hic expedita, id ut similique quod odio ex magni soluta repellat! Accusantium vitae mollitia deleniti quaerat nostrum quos sit quisquam adipisci sed a ipsa, maxime veniam molestias nobis libero laudantium! Ducimus, quae ea.</p>
+                      <h1 className='mb-4'>{article.title}</h1>
+                      {/* {article.content} */}
+                      <div className='article-content'  dangerouslySetInnerHTML={{ __html: article.content }}></div>
+
                       <div className="article-social-links text-end my-3 ">
-                        <a href="#" className="facebook"><i className="bu bi-facebook"></i></a>
-                        <a href="#" className="instagram"><i className="bu bi-instagram"></i></a>
-                        <a href="#" className="twitter"><i className="bu bi-twitter"></i></a>
+                           <FacebookShareButton url={window.location.href} title={article.title}>
+                            <a className="facebook"><i className="bu bi-facebook"></i></a>
+                          </FacebookShareButton >
+                          {/* <InstagramShareButton url={window.location.href} title={article.title}>
+                            <a className="instagram"><i className="bu bi-instagram"></i></a>
+                          </InstagramShareButton> */}
+                          <TwitterShareButton  url={window.location.href} title={article.title}>
+                            <a className="twitter"><i className="bu bi-twitter"></i></a>
+                          </TwitterShareButton>
                       </div>
                     </article>
                 </div>
             </div>
         </div>
-        <div className="suggested-articles d-flex justify-content-around pb-5 pt-4">
-          {
-            article.suggestedArticlesIds.map((id) => {
-              const suggestedArticle = articlesData.find(article => article.id === parseInt(id));
-              return (
-                // <SuggestedArticleCard suggestedArticle={suggestedArticle}/>
-                <div className="card suggested-card">
-                  <img src={suggestedArticle.thumbnail} className="card-img-top h-50" alt="Article Thumbnail" />
-                  <div className="card-body">
-                    <h5 className="h5">{suggestedArticle.title}</h5>
+        {
+          // write if checks for suggested articles ids
+        }
+        <div className="suggested-articles pb-5 pt-4">
+          <h3 className='section-title h1 mb-5'>Articles you might like</h3>
+          <div className='row justify-content-evenly'>
+            {
+              article.suggestedArticlesIds.map((id) => {
+                const suggestedArticle = articles.find(article => article.id === parseInt(id));
+                return (
+                  <div className="col-md-4 mb-3 mb-md-0">
+                    <Article article={suggestedArticle} givenStyle={{maxWidth: '355px'}} />
                   </div>
-                </div>
-              );
-            })
-          }
+                );
+              })
+            }
+          </div>
         </div>
     </div>
   )
 }
 
+
+function ArticleProgressBar() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const updateProgress = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset;
+      const newProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
+      setProgress(newProgress);
+    };
+
+    window.addEventListener('scroll', updateProgress);
+    return () => window.removeEventListener('scroll', updateProgress);
+  }, []);
+
+  return (
+    <div className="ProgressBar">
+      <div className="ProgressBar__progress" style={{ width: `${progress}%` }}></div>
+    </div>
+  );
+}
 
 // const SuggestedArticleCard = ({ suggestedArticle }) => {
 //   const [isHovered, setIsHovered] = useState(false);

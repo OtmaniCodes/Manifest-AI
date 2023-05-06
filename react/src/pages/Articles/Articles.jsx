@@ -1,97 +1,109 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Article from '../../components/Article/Article';
 import './Articles.css'
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import { useArticles } from '../../state/aricles-provider';
+import { Link } from 'react-router-dom';
 
-const articlesData = [
-  {
-    id: 1,
-    title: 'How to Learn ReactJS',
-    slug: 'how-to-learn-reactjs',
-    publishDate: '2022-01-01',
-    thumbnail: 'https://picsum.photos/id/1015/300/200',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    suggestedArticlesIds: [2, 3],
-    tags: ['AI', 'Tech', 'Consulting', 'Dev']
-  },
-  {
-    id: 2,
-    title: 'Why ReactJS is Awesome',
-    slug: 'why-reactjs-is-awesome',
-    publishDate: '2022-01-02',
-    thumbnail: 'https://picsum.photos/id/1025/300/200',
-    content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    suggestedArticlesIds: [1, 3],
-  },
-  {
-    id: 3,
-    title: 'ReactJS vs AngularJS',
-    slug: 'reactjs-vs-angularjs',
-    publishDate: '2022-01-03',
-    thumbnail: 'https://picsum.photos/id/1035/300/200',
-    content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    suggestedArticlesIds: [1, 2],
-  },
-  {
-    id: 4,
-    title: 'How to Learn ReactJS',
-    slug: 'how-to-learn-reactjs',
-    publishDate: '2022-01-01',
-    thumbnail: 'https://picsum.photos/id/1015/300/200',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    suggestedArticlesIds: [2, 3],
-  },
-  {
-    id: 5,
-    title: 'Why ReactJS is Awesome',
-    slug: 'why-reactjs-is-awesome',
-    publishDate: '2022-01-02',
-    thumbnail: 'https://picsum.photos/id/1025/300/200',
-    content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    suggestedArticlesIds: [1, 3],
-  },
-  {
-    id: 6,
-    title: 'ReactJS vs AngularJS',
-    slug: 'reactjs-vs-angularjs',
-    publishDate: '2022-01-03',
-    thumbnail: 'https://picsum.photos/id/1035/300/200',
-    content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    suggestedArticlesIds: [1, 2],
-  },
-];
 
-export default function Articles({limit}) {
+export default function Articles({limit, showSearch}) {
   return (
     <div id="Articles-page">
-        <ArticlesGrid articlesLimit={limit} />
+        <ArticlesGrid articlesLimit={limit} showSearch={showSearch} />
     </div>
   )
 }
 
-const ArticlesGrid = ({articlesLimit}) => {
-  const theArticles = articlesLimit ? articlesData.slice(0, articlesLimit) : articlesData;
+const ArticlesGrid = ({articlesLimit, showSearch}) => {
+  const {articles, loading} = useArticles();
+  const theArticles = articlesLimit ? articles.slice(0, articlesLimit) : articles;
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredArticles = theArticles.filter(article => {
+    const { title, categories, content } = article;
+    const query = searchQuery.toLowerCase();
+
+    return query ? (title.toLowerCase().includes(query)
+      || categories.some(c => c.toLowerCase().includes(query))
+      || content.toLowerCase().includes(query)) : true;
+  });
+
   return (
     <section id='articles-grid'>
         <div className="container-fluid py-5">
-            <SectionTitle title={"Articles"} subTitle={"Yes we write as well, check out our latest written pieces now."}/>
-            <Article article={theArticles[0]} horizontal={true}/>
-            <div className="row justify-content-center">
-                {theArticles.slice(1, theArticles.length).map((article, index) => (
-                    <div key={article.id} className={`col-md-5 mb-5`} >
-                        <Article article={article} />
+            <SectionTitle title={"Articles"} subTitle={"Check out our last Articles posted on our blog."}/>
+            { showSearch && (
+              <div className="row search-portion justify-content-between align-items-center mb-5 py-3 px-md-5">
+                <div className='col-md-6 text-start mb-2 mb-md-0'>
+                  <div className="search-chips d-flex justify-content-start" style={{flexWrap: "wrap"}}>
+                    {
+                      ["AI", "Tech", "Consulting"].map((sc) => (
+                        <div onClick={() => setSearchQuery(sc)} className="search-chip">{sc}</div>
+                      ))
+                    }
+                  </div>
+                </div>
+                <div className="col-md-4 col-12">
+                  <div className="input-group">
+                    <input type="text" className="form-control" placeholder="Search articles" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+                  </div>
+                </div>
+              </div>
+            )}
+            {
+              loading
+                ? <div className="row justify-content-center">
+                  <div className="col-md-10 text-center">
+                    <p>Loading...</p>
+                  </div>
+                </div>
+                : !searchQuery.trim() ? (
+                  <>
+                    <Article article={filteredArticles[0]} horizontal={true}/>
+                    <div className="row justify-content-center">             
+                        {filteredArticles.slice(1, filteredArticles.length).map((article) => (
+                            <div key={article.id} className={`col-md-5 mb-5`} >
+                                <Article article={article} />
+                            </div>
+                        ))}
+                        {
+                          ((filteredArticles.length - 1) % 2 !== 0) && (
+                            <div key={filteredArticles.length} className={`col-md-5 mb-5`} ></div>
+                          )
+                        }
                     </div>
-                ))}
-                {
-                  ((theArticles.length - 1) % 2 !== 0) && (
-                    <div key={theArticles.length} className={`col-md-5 mb-5`} ></div>
-                  )
-                }
-            </div>
+                    {
+                      (theArticles.length < articles.length) && (
+                        <div className="d-flex justify-content-center m-0">
+                          <Link to={'/articles'} className="btn btn-text">See more</Link>
+                        </div>
+                      )
+                    }
+                  </>
+                ) : (filteredArticles.length > 0) ?
+                (
+                  <div className="row justify-content-center">             
+                      {filteredArticles.map((article) => (
+                          <div key={article.id} className={`col-md-5 mb-5`} >
+                              <Article article={article} />
+                          </div>
+                      ))}
+                      {
+                        ((filteredArticles.length - 1) % 2 !== 0) && (
+                          <div key={filteredArticles.length} className={`col-md-5 mb-5`} ></div>
+                        )
+                      }
+                  </div>
+                )
+                : (
+                  <div className="row justify-content-center">
+                    <div className="col-md-10 text-center">
+                      <p className='article-not-found h1'>No article found</p>
+                    </div>
+                  </div>
+                )
+            }
         </div>
     </section>
   )
 }
-
