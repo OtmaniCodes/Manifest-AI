@@ -9,20 +9,23 @@ import './App.css'
 import Team from './pages/Team/Team';
 import Articles from './pages/Articles/Articles';
 import ArticlePage from './pages/Articles/ArticlePage/ArticlePage';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/about" element={<About/>}/>
           <Route exact path="/team" element={<Team/>}/>
           <Route exact path="/articles" element={<Articles/>}/>
-          <Route path="/articles/:id" element={<ArticlePage/>} />
-
+          <Route path="/articles/:slug" element={<ArticlePage/>} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   )

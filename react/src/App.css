@@ -3,11 +3,12 @@ a{
     text-decoration: none !important;
 }
 
+
 body{
     margin: 0;
     padding: 0;
     background: #F9F9F9;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 

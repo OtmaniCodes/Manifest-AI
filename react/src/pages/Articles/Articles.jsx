@@ -5,70 +5,90 @@ import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
-const articles = [
+const articlesData = [
   {
     id: 1,
     title: 'How to Learn ReactJS',
+    slug: 'how-to-learn-reactjs',
+    publishDate: '2022-01-01',
     thumbnail: 'https://picsum.photos/id/1015/300/200',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quos eveniet accusantium voluptas similique amet eaque modi, minima voluptate itaque repellendus unde tempore consequatur ipsa libero debitis porro harum? Quo assumenda esse ea rem suscipit quaerat accusamus eos modi, eligendi id hic sed doloremque error delectus cum sapiente adipisci nihil voluptatum beatae facere. Nisi, doloribus? Atque accusantium tempore, asperiores cupiditate doloremque perferendis necessitatibus ipsa, porro vel quas laborum odit deleniti vero iure nostrum harum quisquam voluptatum soluta commodi, incidunt beatae! Architecto nobis possimus cumque deleniti optio expedita earum sit quidem officiis vel corporis sapiente animi maxime placeat, voluptatum laboriosam. Nihil qui illo nisi, possimus suscipit dolore? Alias sapiente dolore distinctio, perspiciatis quisquam facere explicabo doloremque voluptates debitis? Est ab quibusdam, facilis quasi architecto sit amet nostrum perspiciatis molestiae eius temporibus consequuntur laboriosam voluptatibus earum, eveniet eaque necessitatibus? Voluptatem, sint ad quo nostrum excepturi provident eveniet temporibus nisi ut qui quidem dolorem ullam ducimus nam vero fuga repellat libero iusto sit. Laudantium consequatur aspernatur numquam ea vitae fuga aliquid consectetur veritatis, sit corrupti at esse officiis distinctio eaque, tempore similique illum itaque, sequi exercitationem praesentium. Dignissimos facilis ratione aliquam inventore neque aut recusandae blanditiis. Consequatur, sapiente accusantium. Omnis laboriosam quia qui!',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    suggestedArticlesIds: [2, 3],
+    tags: ['AI', 'Tech', 'Consulting', 'Dev']
   },
   {
     id: 2,
     title: 'Why ReactJS is Awesome',
+    slug: 'why-reactjs-is-awesome',
+    publishDate: '2022-01-02',
     thumbnail: 'https://picsum.photos/id/1025/300/200',
     content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    suggestedArticlesIds: [1, 3],
   },
   {
     id: 3,
-    title: 'How to Learn ReactJS',
-    thumbnail: 'https://picsum.photos/id/1015/300/200',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'ReactJS vs AngularJS',
+    slug: 'reactjs-vs-angularjs',
+    publishDate: '2022-01-03',
+    thumbnail: 'https://picsum.photos/id/1035/300/200',
+    content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    suggestedArticlesIds: [1, 2],
   },
   {
     id: 4,
-    title: 'Why ReactJS is Awesome',
-    thumbnail: 'https://picsum.photos/id/1025/300/200',
-    content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    title: 'How to Learn ReactJS',
+    slug: 'how-to-learn-reactjs',
+    publishDate: '2022-01-01',
+    thumbnail: 'https://picsum.photos/id/1015/300/200',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    suggestedArticlesIds: [2, 3],
   },
   {
     id: 5,
-    title: 'How to Learn ReactJS',
-    thumbnail: 'https://picsum.photos/id/1015/300/200',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'Why ReactJS is Awesome',
+    slug: 'why-reactjs-is-awesome',
+    publishDate: '2022-01-02',
+    thumbnail: 'https://picsum.photos/id/1025/300/200',
+    content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    suggestedArticlesIds: [1, 3],
   },
   {
     id: 6,
-    title: 'Why ReactJS is Awesome',
-    thumbnail: 'https://picsum.photos/id/1025/300/200',
-    content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    title: 'ReactJS vs AngularJS',
+    slug: 'reactjs-vs-angularjs',
+    publishDate: '2022-01-03',
+    thumbnail: 'https://picsum.photos/id/1035/300/200',
+    content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    suggestedArticlesIds: [1, 2],
   },
 ];
 
-export default function Articles() {
+export default function Articles({limit}) {
   return (
     <div id="Articles-page">
-        <Navbar/>
-        <ArticlesGrid/>
-        <Footer/>
+        <ArticlesGrid articlesLimit={limit} />
     </div>
   )
 }
 
-const ArticlesGrid = () => {
+const ArticlesGrid = ({articlesLimit}) => {
+  const theArticles = articlesLimit ? articlesData.slice(0, articlesLimit) : articlesData;
   return (
     <section id='articles-grid'>
-        <div className="container py-5">
-            <SectionTitle title={"Articles"}/>
-            <div className="row justify-content-center align-items-start">
-                {articles.map((article) => (
-                    <div key={article.id} className="col-md-6 m-auto p-2 text-center" >
-                        <Article
-                            title={article.title}
-                            thumbnail={article.thumbnail}
-                            excerpt={article.content.substring(0, 200)+' ...'}
-                        />
+        <div className="container-fluid py-5">
+            <SectionTitle title={"Articles"} subTitle={"Yes we write as well, check out our latest written pieces now."}/>
+            <Article article={theArticles[0]} horizontal={true}/>
+            <div className="row justify-content-center">
+                {theArticles.slice(1, theArticles.length).map((article, index) => (
+                    <div key={article.id} className={`col-md-5 mb-5`} >
+                        <Article article={article} />
                     </div>
                 ))}
+                {
+                  ((theArticles.length - 1) % 2 !== 0) && (
+                    <div key={theArticles.length} className={`col-md-5 mb-5`} ></div>
+                  )
+                }
             </div>
         </div>
     </section>

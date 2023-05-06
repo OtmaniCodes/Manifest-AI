@@ -9,7 +9,7 @@ export default function AboutSection({givenStyle}) {
   return (
     <section id='about' style={givenStyle}>
         <div className="container py-5 h-100">
-            <ResponsiveCompo mobileChild={<SectionTitle title={"About"} />} />
+            <ResponsiveCompo mobileChild={ <SectionTitle title={"About"} />} />
             <div className="row align-items-center justify-content-center h-100">
                 <div className="col-md-7 pe-md-4 order-2 order-md-1">
                     <ResponsiveCompo desktopChild={<SectionTitle title={"About"} />} />

@@ -23,7 +23,7 @@ export default function TeamSection({givenStyle}) {
   return (
     <section id='team' style={givenStyle}>
         <div className="container py-5 h-100">
-            <SectionTitle title={"Team"}/>
+            <SectionTitle title={"Team"}  subTitle={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."}/>
             <div className="row align-items-center justify-content-center">
               {
                 teamMembers.map((member, index) => {
@@ -49,7 +49,8 @@ const TeamMemberCard = ({ name, title, description, image }) => {
   return (
     <Flippy
       ref={cardRef}
-     flipOnHover={false}
+      flipOnHover={true}
+      flipOnClick={false}
     //  style={{width: '295px'}}
      >
       <FrontSide style={{ padding: 0, }}>

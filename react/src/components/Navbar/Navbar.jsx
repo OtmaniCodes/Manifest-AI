@@ -3,15 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import logo from '../../assets/manifest_logo.png'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+    
 
     function test(){
-        document.getElementById('navbar').classNameList.toggle('navbar-mobile')
+        // document.getElementById('navbar').classList.toggle('navbar-mobile')
         // e.classNameList.toggle('bi-list')
         // e.classNameList.toggle('bi-x')
-        document.getElementById('mobile-nav-toggle').classNameList.toggle('bi-list')
-        document.getElementById('mobile-nav-toggle').classNameList.toggle('bi-x')
+        document.getElementById('mobile-nav-toggle').classList.toggle('bi-list')
+        document.getElementById('mobile-nav-toggle').classList.toggle('bi-x')
+        // document.querySelector('ul').style.display='block'
     }
     function dude(){
         // e.nextElementSibling.classNameList.toggle('dropdown-active')
@@ -20,20 +23,20 @@ const Navbar = () => {
         <header id="header" className="fixed-top">
         <div className="navbar-container d-flex align-items-center">
 
-          <a href="index.html" className="logo me-auto me-lg-0">
+          <Link to={"/"} className="logo me-auto me-lg-0">
             <img src={logo} alt="" className="img-fluid"/>
-          </a>
+          </Link>
     
-          <nav id="navbar" className="navbar test order-last order-lg-0 navbar-mobile">
+          <nav id="navbar" className="navbar test order-last order-lg-0 ">
             <ul>
-              <li><a href="/" className="active">Home</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="portfolio.html">About</a></li>
-              <li><a href="pricing.html">Team</a></li>
-              <li><a href="blog.html">Articles</a></li>
-              <li><a href="contact.html">Job Offers</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li className="dropdown"><a href="#"><span>Community</span> <i className="bi bi-chevron-down"></i></a>
+              <li><Link to={'/'} className="active">Home</Link></li>
+              <li><Link to={'/services'} >Services</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/team">Team</Link></li>
+              <li><Link to="/articles">Articles</Link></li>
+              <li><Link to="/">Job Offers</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+              <li className="dropdown"><Link to="#"><span>Community</span> <i className="bi bi-chevron-down"></i></Link>
                 <ul>
                   <li><a href="team.html">Discord</a></li>
                   <li className="dropdown"><a href="#"><span>More</span> <i className="bi bi-chevron-right"></i></a>
