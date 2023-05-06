@@ -2,3 +2,30 @@
     /* margin: 100px 0; */
     margin-top: 55px;
 }
+
+
+#articles-grid .search-portion{
+    border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+    border-top: 1px rgba(0, 0, 0, 0.1) solid;
+    background-color: white;
+}
+
+#articles-grid .search-portion .search-chips .search-chip{
+    transition: all 0.3s ease-in;
+    padding: 10px 8px;
+    background-color: #22b3d791;
+    margin-right: 10px;
+    height: 40px;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    /* background-color: white; */
+}
+#articles-grid .search-portion .search-chips .search-chip:hover{
+    background-color: #22b3d7;
+}

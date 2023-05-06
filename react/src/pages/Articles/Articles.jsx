@@ -1,77 +1,109 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Article from '../../components/Article/Article';
 import './Articles.css'
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import { useArticles } from '../../state/aricles-provider';
+import { Link } from 'react-router-dom';
 
-const articles = [
-  {
-    id: 1,
-    title: 'How to Learn ReactJS',
-    thumbnail: 'https://picsum.photos/id/1015/300/200',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quos eveniet accusantium voluptas similique amet eaque modi, minima voluptate itaque repellendus unde tempore consequatur ipsa libero debitis porro harum? Quo assumenda esse ea rem suscipit quaerat accusamus eos modi, eligendi id hic sed doloremque error delectus cum sapiente adipisci nihil voluptatum beatae facere. Nisi, doloribus? Atque accusantium tempore, asperiores cupiditate doloremque perferendis necessitatibus ipsa, porro vel quas laborum odit deleniti vero iure nostrum harum quisquam voluptatum soluta commodi, incidunt beatae! Architecto nobis possimus cumque deleniti optio expedita earum sit quidem officiis vel corporis sapiente animi maxime placeat, voluptatum laboriosam. Nihil qui illo nisi, possimus suscipit dolore? Alias sapiente dolore distinctio, perspiciatis quisquam facere explicabo doloremque voluptates debitis? Est ab quibusdam, facilis quasi architecto sit amet nostrum perspiciatis molestiae eius temporibus consequuntur laboriosam voluptatibus earum, eveniet eaque necessitatibus? Voluptatem, sint ad quo nostrum excepturi provident eveniet temporibus nisi ut qui quidem dolorem ullam ducimus nam vero fuga repellat libero iusto sit. Laudantium consequatur aspernatur numquam ea vitae fuga aliquid consectetur veritatis, sit corrupti at esse officiis distinctio eaque, tempore similique illum itaque, sequi exercitationem praesentium. Dignissimos facilis ratione aliquam inventore neque aut recusandae blanditiis. Consequatur, sapiente accusantium. Omnis laboriosam quia qui!',
-  },
-  {
-    id: 2,
-    title: 'Why ReactJS is Awesome',
-    thumbnail: 'https://picsum.photos/id/1025/300/200',
-    content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-  {
-    id: 3,
-    title: 'How to Learn ReactJS',
-    thumbnail: 'https://picsum.photos/id/1015/300/200',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  },
-  {
-    id: 4,
-    title: 'Why ReactJS is Awesome',
-    thumbnail: 'https://picsum.photos/id/1025/300/200',
-    content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-  {
-    id: 5,
-    title: 'How to Learn ReactJS',
-    thumbnail: 'https://picsum.photos/id/1015/300/200',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  },
-  {
-    id: 6,
-    title: 'Why ReactJS is Awesome',
-    thumbnail: 'https://picsum.photos/id/1025/300/200',
-    content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-];
 
-export default function Articles() {
+export default function Articles({limit, showSearch}) {
   return (
     <div id="Articles-page">
-        <Navbar/>
-        <ArticlesGrid/>
-        <Footer/>
+        <ArticlesGrid articlesLimit={limit} showSearch={showSearch} />
     </div>
   )
 }
 
-const ArticlesGrid = () => {
+const ArticlesGrid = ({articlesLimit, showSearch}) => {
+  const {articles, loading} = useArticles();
+  const theArticles = articlesLimit ? articles.slice(0, articlesLimit) : articles;
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredArticles = theArticles.filter(article => {
+    const { title, categories, content } = article;
+    const query = searchQuery.toLowerCase();
+
+    return query ? (title.toLowerCase().includes(query)
+      || categories.some(c => c.toLowerCase().includes(query))
+      || content.toLowerCase().includes(query)) : true;
+  });
+
   return (
     <section id='articles-grid'>
-        <div className="container py-5">
-            <SectionTitle title={"Articles"}/>
-            <div className="row justify-content-center align-items-start">
-                {articles.map((article) => (
-                    <div key={article.id} className="col-md-6 m-auto p-2 text-center" >
-                        <Article
-                            title={article.title}
-                            thumbnail={article.thumbnail}
-                            excerpt={article.content.substring(0, 200)+' ...'}
-                        />
+        <div className="container-fluid py-5">
+            <SectionTitle title={"Articles"} subTitle={"Check out our last Articles posted on our blog."}/>
+            { showSearch && (
+              <div className="row search-portion justify-content-between align-items-center mb-5 py-3 px-md-5">
+                <div className='col-md-6 text-start mb-2 mb-md-0'>
+                  <div className="search-chips d-flex justify-content-start" style={{flexWrap: "wrap"}}>
+                    {
+                      ["AI", "Tech", "Consulting"].map((sc) => (
+                        <div onClick={() => setSearchQuery(sc)} className="search-chip">{sc}</div>
+                      ))
+                    }
+                  </div>
+                </div>
+                <div className="col-md-4 col-12">
+                  <div className="input-group">
+                    <input type="text" className="form-control" placeholder="Search articles" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+                  </div>
+                </div>
+              </div>
+            )}
+            {
+              loading
+                ? <div className="row justify-content-center">
+                  <div className="col-md-10 text-center">
+                    <p>Loading...</p>
+                  </div>
+                </div>
+                : !searchQuery.trim() ? (
+                  <>
+                    <Article article={filteredArticles[0]} horizontal={true}/>
+                    <div className="row justify-content-center">             
+                        {filteredArticles.slice(1, filteredArticles.length).map((article) => (
+                            <div key={article.id} className={`col-md-5 mb-5`} >
+                                <Article article={article} />
+                            </div>
+                        ))}
+                        {
+                          ((filteredArticles.length - 1) % 2 !== 0) && (
+                            <div key={filteredArticles.length} className={`col-md-5 mb-5`} ></div>
+                          )
+                        }
                     </div>
-                ))}
-            </div>
+                    {
+                      (theArticles.length < articles.length) && (
+                        <div className="d-flex justify-content-center m-0">
+                          <Link to={'/articles'} className="btn btn-text">See more</Link>
+                        </div>
+                      )
+                    }
+                  </>
+                ) : (filteredArticles.length > 0) ?
+                (
+                  <div className="row justify-content-center">             
+                      {filteredArticles.map((article) => (
+                          <div key={article.id} className={`col-md-5 mb-5`} >
+                              <Article article={article} />
+                          </div>
+                      ))}
+                      {
+                        ((filteredArticles.length - 1) % 2 !== 0) && (
+                          <div key={filteredArticles.length} className={`col-md-5 mb-5`} ></div>
+                        )
+                      }
+                  </div>
+                )
+                : (
+                  <div className="row justify-content-center">
+                    <div className="col-md-10 text-center">
+                      <p className='article-not-found h1'>No article found</p>
+                    </div>
+                  </div>
+                )
+            }
         </div>
     </section>
   )
 }
-

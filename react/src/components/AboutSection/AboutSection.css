@@ -1,5 +1,6 @@
 #about{
-    background: #EBEDF0;
+    background: #F9F9F9;
+    height: 100vh;
 }
 #about .about-text{
     font-size: 20px;
@@ -9,4 +10,9 @@
 #about .about-img{
     width: 100%;
     height: auto;
+}
+@media only screen and (max-width: 768px) {
+    #about{
+        height: unset;
+    }
 }

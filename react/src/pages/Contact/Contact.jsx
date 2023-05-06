@@ -62,9 +62,9 @@ const Contact = (full) => {
         
         const isValid = validateForm();
         if (isValid) {
-            const serviceId = 'service_8tuz47p';
-            const templateId = 'template_wb6z54p';
-            const userId = 'Bc0n8L5OcdItSdiPl';
+            const serviceId = '';
+            const templateId = '';
+            const userId = '';
         
             const emailParams = {
             from_name: formData.name,
@@ -110,8 +110,6 @@ const Contact = (full) => {
         
             setErrors({});
             setIsSubmitting(false)
-            // setFormSubmitted(true);
-            // setformFailed(true)
         }
     };
     const handleInputClick = (event) => {

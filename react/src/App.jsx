@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {BrowserRouter,Routes,Route,} from "react-router-dom";
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
@@ -17,25 +16,28 @@ import Navbar from './components/Navbar/Navbar';
 import JobOffers from './pages/JobOffers/JobOffers';
 
 function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
-      <Navbar/>
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/about" element={<About/>}/>
           <Route exact path="/team" element={<Team/>}/>
-          <Route exact path="/articles" element={<Articles/>}/>
-          <Route path="/articles/:id" element={<ArticlePage/>} />
+          {/* <Route exact path="/articles" element={<Articles/>}/>
+          <Route path="/articles/:id" element={<ArticlePage/>} /> */}
 
           <Route exact path="/contact" element={<Contact full={true}/>}/>
           <Route exact path="/services" element={<Services full={true}/>}/>
           <Route exact path="/service/:id" element={<ServicePage full={true}/>} />
           <Route exact path="/job-offers" element={<JobOffers/>} />
 
+        {/* </Routes>
+        <Footer/> */}
+          <Route exact path="/articles" element={<Articles showSearch={true}/>}/>
+          <Route path="/articles/:slug" element={<ArticlePage/>} />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </div>
   )

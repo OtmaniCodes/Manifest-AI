@@ -1,22 +1,19 @@
-import './Home.css'
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Navbar";
-
-// assets ----------------------
-import videoIntro from "../../assets/video-intro.mp4"
 import TeamSection from '../../components/TeamSection/TeamSection';
 import HeroSection from '../../components/HeroSection/HeroSectoin';
 import AboutSection from '../../components/AboutSection/AboutSection';
 import Services from '../../pages/Services/Services'
 import Contact from '../../pages/Contact/Contact'
 
+// assets ----------------------
+import './Home.css'
+import videoIntro from "../../assets/video-intro.mp4"
+import Articles from '../Articles/Articles';
+
+
 const Home = () => {
     return ( 
         <div id="home">
-            {/* <Navbar/> */}
-            {/* ====================================== */}
             <HeroSection/>
-
             <section className="video-section">
                 <div className="container py-5">
                     <div className="row">
@@ -29,18 +26,11 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
             <Services/>
             <AboutSection/>
             <TeamSection/>
+            <Articles limit={5}/>
             <Contact/>
-
-            
-            
-
-
-            {/* ====================================== */}
-            {/* <Footer/> */}
         </div>
      );
 }
