@@ -1,0 +1,122 @@
+/* JobSection.css */
+.job-section {
+  height: 600px;
+  height: 100vh !important;
+  margin-top: 80px;
+  /* border: 1px solid #e3e6f0; */
+  border-radius: 5px;
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); */
+  border-radius: 10px !important;
+}
+.job-section .row{
+  height: 600px;
+}
+
+.left-section,
+.right-section {
+  height: 100%;
+  padding: 0px;
+}
+.right-section {
+  padding: 10px 20px;
+}
+/* Add this to JobSection.css */
+.jobs-header {
+  margin-bottom: 20px;
+  /* font-weight: bold; */
+  font-size: 22px;
+  background-color: rgba(43, 194, 214, 0.582);
+  padding: 20px;
+  /* border-top-right-radius: 10px !important; */
+  /* border-top-left-radius: 10px !important; */
+
+
+}
+
+
+.left-section {
+  overflow-y: auto; /* Add this line */
+}
+
+.job-list {
+  max-height: 100%; /* Update the height calculation */
+  overflow-y: auto;
+}
+
+@media (max-width: 767px) {
+  .left-section {
+    cursor: pointer;
+  }
+
+  .d-none {
+    display: none;
+  }
+  .job-section .row{
+    height: 95vh;
+  }
+  
+}
+
+.job-info{
+  line-height: 18px;
+}
+.job-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.job-item:hover {
+  background-color: #f8f9fa;
+}
+
+.job-item.active,
+.job-item.active:hover {
+  background-color: #e3e6f0;
+}
+
+.job-icon {
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.right-section {
+  border-left: 1px solid #e3e6f0;
+}
+
+.right-section h2 {
+  margin-top: 0;
+}
+
+.right-section h4 {
+  margin-bottom: 10px;
+}
+
+.right-section ul {
+  padding-left: 20px;
+}
+
+.right-section li {
+  margin-bottom: 5px;
+}
+
+.right-section li i {
+  color: #0d6efd;
+  margin-right: 5px;
+}
+
+button.btn.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+button.btn.btn-primary:hover {
+  background-color: #0a58ca;
+  border-color: #0a58ca;
+}

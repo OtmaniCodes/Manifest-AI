@@ -1,35 +1,131 @@
 import { useState } from 'react';
 import './Contact.css'
+import emailjs from 'emailjs-com';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone:"",
-    email: "",
-    message: "",
-  });
+const Contact = (full) => {
+    const [errors, setErrors] = useState({});
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [formFailed, setformFailed] = useState(false);
 
-const handleInputChange = (event) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const [formData, setFormData] = useState({
+        name: "",
+        phone:"",
+        email: "",
+        message: "",
+    });
+    const handleInputChange = (event) => {
     const { name, value } = event.target;
         setFormData((prevState) => ({
         ...prevState,
         [name]: value,
         }));
     };
-
+    const validateForm = () => {
+        let errors = {};
+      
+        // Name validation
+        if (!formData.name) {
+          errors.name = 'Name is required';
+        }
+      
+        // Email validation
+        if (!formData.email) {
+          errors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+          errors.email = 'Email is invalid';
+        }
+      
+        // Phone validation
+        if (!formData.phone) {
+          errors.phone = 'Phone is required';
+        } else if (!/^\+?\d{10,14}$/.test(formData.phone)) {
+          errors.phone = 'Phone is invalid';
+        }
+      
+        // Message validation
+        if (!formData.message) {
+          errors.message = 'Message is required';
+        }
+      
+        setErrors(errors);
+      
+        return Object.keys(errors).length === 0;
+    }; 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(formData);
-        setFormData({
-        name: "",
-        phone:"",
-        email: "",
-        message: "",
-        });
+        
+        const isValid = validateForm();
+        if (isValid) {
+            const serviceId = 'service_8tuz47p';
+            const templateId = 'template_wb6z54p';
+            const userId = 'Bc0n8L5OcdItSdiPl';
+        
+            const emailParams = {
+            from_name: formData.name,
+            from_email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            };
+            setIsSubmitting(true)
+            emailjs.send(serviceId, templateId, emailParams, userId)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                toast.success('Your Email submitted successfuly!!', {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+
+            }, (error) => {
+                console.log('FAILED...', error);
+                toast.error('Something went wrong!!', {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            });
+        
+            setFormData({
+            name: '',
+            phone:'',
+            email: '',
+            message: '',
+            });
+        
+            setErrors({});
+            setIsSubmitting(false)
+            // setFormSubmitted(true);
+            // setformFailed(true)
+        }
+    };
+    const handleInputClick = (event) => {
+        const { name } = event.target;
+        if (errors[name]) {
+          setErrors((prevState) => ({
+            ...prevState,
+            [name]: '',
+          }));
+        }
     };
 
     return (
-        <section id="contact" className="py-5">
+        <section id="contact" className="py-5" style={{marginTop:full.full?'80px':'',height:full.full?'100vh':''}}>
         <div className="container">
             <div className="row">
             <div className="col-md-6">
@@ -40,66 +136,80 @@ const handleInputChange = (event) => {
             </div>
             <div className="col-md-6">
                 <form onSubmit={handleSubmit}>
-                <div className="mb-1">
-                    <div className="input-box">
-                    <label className="input-label">Name</label>
-                    <input
-                        className="input"
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        placeholder="Name"
-                        onChange={handleInputChange}
-                    />
-                    <span className="input-helper">Enter your name</span>
+                    <div className="mb-3">
+                        <div className="input-box">
+                            <label className="input-label">Name</label>
+                            <input
+                            className="input"
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            placeholder="Name"
+                            onChange={handleInputChange}
+                            onClick={handleInputClick}
+                            />
+                            <span className="input-helper">Enter your name</span>
+                            {errors.name && <div className="invalid-feedback">{errors.name}</div>}
+                        </div>
                     </div>
-                </div>
-                <div className="mb-1">
+                    <div className="mb-3">
                     <div className="input-box">
-                    <label className="input-label">Email</label>
-                    <input
+                        <label className="input-label">Email</label>
+                    
+                        <input
                         className="input"
                         type="email"
                         name="email"
                         value={formData.email}
                         placeholder="Email@mail.com"
                         onChange={handleInputChange}
-                    />
-                    <span className="input-helper">Enter a valid email</span>
+                        onClick={handleInputClick}
+                        />
+                        <span className="input-helper">Enter a valid email</span>
+                        {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                     </div>
-                </div>
-                <div className="mb-1">
-                    <div className="input-box">
-                    <label className="input-label">Phone</label>
-                    <input
-                        className="input"
-                        type="text"
-                        name="phone"
-                        value={formData.phone}
-                        placeholder="+212 000 000 000"
-                        onChange={handleInputChange}
-                    />
-                    <span className="input-helper">Enter a valid phone number</span>
                     </div>
-                </div>
-                <div className="mb-1">
+                    <div className="mb-3">
+                        <div className="input-box">
+                            <label className="input-label ">Phone</label>
+                            <input
+                            className="input"
+                            type="text"
+                            name="phone"
+                            value={formData.phone}
+                            placeholder="+212 000 000 000"
+                            onChange={handleInputChange}
+                            onClick={handleInputClick}
+                            />
+                            <span className="input-helper">Enter a valid phone number</span>
+                            {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
+                        </div>
+                    </div>
+                    <div className="mb-3">
                     <label htmlFor="message" className="input-label">Message</label>
                     <textarea
-                    className="message-contact"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required
+                        className="message-contact"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        onClick={handleInputClick}
+                        id="message"
+                        name="message"
+                        rows="5"
                     ></textarea>
+                    {errors.message && <div className="invalid-feedback">{errors.message}</div>}
                     </div>
-                    <button type="submit" className="w-50 global-btn ">Submit</button>
-                    </form>
+                    <button type="submit" className={`w-50 global-btn ${isSubmitting ? 'loading' : ''}`} disabled={isSubmitting}>
+                        {isSubmitting ? 'Submitting...' : 'Submit'}
+                    </button>
+                    <ToastContainer />
+                </form>
                 </div>
                 </div>
             </div>
         </section>
+
+
+
 
      );
 }

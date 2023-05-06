@@ -1,14 +1,13 @@
-p,a,h1,h2,h3,h4,h5,h6,ul,li {
+/* p,a,h1,h2,h3,h4,h5,h6,ul,li {
 	margin: 0;
 	padding: 0;
-}
+} */
 
 .section-services {
 	font-family: "Poppins", sans-serif;
 	background-color: #e6edf7;
 	color: #202020;
-	padding-top: 115px;
-    padding-bottom: 120px;
+    padding: 60px;
 }
 
 /* .section-services .header-section {

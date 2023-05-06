@@ -3,14 +3,13 @@ import Service from '../../components/Service/Service';
 import './Services.css'
 import consulting from '../../assets/services/consulting.webp'
 import SectionTitle from '../../components/SectionTitle2/SectionTitle';
-const Services = () => {
+const Services = (full) => {
   return (
-	<section className="section-services">
+	<section className="section-services" style={{marginTop:full.full?'60px':'',height:full.full?'100vh':''}}>
 		<div className="container">
 			<div className="row justify-content-center text-center">
-                <SectionTitle/>
+          <SectionTitle/>
 			</div>
-
 			<div className="row">
 				<Service 
                 title={'Consulting'} 

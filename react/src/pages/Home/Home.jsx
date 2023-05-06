@@ -13,7 +13,7 @@ import Contact from '../../pages/Contact/Contact'
 const Home = () => {
     return ( 
         <div id="home">
-            <Navbar/>
+            {/* <Navbar/> */}
             {/* ====================================== */}
             <HeroSection/>
 
@@ -40,7 +40,7 @@ const Home = () => {
 
 
             {/* ====================================== */}
-            <Footer/>
+            {/* <Footer/> */}
         </div>
      );
 }

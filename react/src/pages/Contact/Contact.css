@@ -9,17 +9,25 @@
     opacity: .8;
   }
   .contact-icon{
-    font-size: 20px;
+    font-size: 22px;
     margin-right: 10px;
   
 }
+.invalid-feedback {
+  color: red;
+  display: block;
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-top: -20px;
+}
+
 .contact-info a{
     color: #45d0e2;
 }
   .contact-info{
     padding: 5px 0px;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -31,6 +39,7 @@
         max-height: 150px;
         width: 100%;
         resize: none;
+        margin-bottom: 14px;
   }
   .message-contact {
     font-family: sans-serif;
@@ -47,14 +56,20 @@
     outline: none; 
     border-color: #53ebe3; 
   }
-  
+  button[type='submit'].loading {
+    background-color: #10cfaf;
+    color: black;
+    font-weight: 500;
+    opacity: 0.5;
+    pointer-events: none;
+  }
   .input-box {
     display: flex;
     flex-direction: column;
   }
   
   .input-label {
-    font-size: .625rem;
+    font-size: 14px;
     font-weight: bold;
     color: #858585;
     margin-bottom: 4px;
