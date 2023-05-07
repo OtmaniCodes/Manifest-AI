@@ -80,13 +80,27 @@ const Navbar = () => {
         </div>
         <nav className='nav-mobile' style={{display:!Isopen?'none':''}}>
         <ul>
-              <li><Link to={'/'} className="active" onClick={navToggle}>Home</Link></li>
-              <li><Link to={'/services'}  onClick={navToggle}>Services</Link></li>
-              <li><Link to="/about" onClick={navToggle}>About</Link></li>
-              <li><Link to="/team" onClick={navToggle}>Team</Link></li>
-              <li><Link to="/articles" onClick={navToggle}>Articles</Link></li>
-              <li><Link to="/job-offers" onClick={navToggle}>Job Offers</Link></li>
-              <li><Link to="/contact" onClick={navToggle}>Contact</Link></li>
+              <li><Link to={'/'}  
+              className={activeItem === 'home'?'active':''}
+              onClick={() => {setactiveItem('home');navToggle()}}>Home</Link></li>
+              <li><Link to={'/services'}  
+              className={activeItem === 'services'?'active':''}
+              onClick={() => {setactiveItem('services');navToggle()}}>Services</Link></li>
+              <li><Link to="/about" 
+              className={activeItem === 'about'?'active':''}
+              onClick={() => {setactiveItem('about');navToggle()}}>About</Link></li>
+              <li><Link to="/team" 
+              className={activeItem === 'team'?'active':''}
+              onClick={() => {setactiveItem('team');navToggle()}}>Team</Link></li>
+              <li><Link to="/articles" 
+              className={activeItem === 'articles'?'active':''}
+              onClick={() => {setactiveItem('articles');navToggle()}}>Articles</Link></li>
+              <li><Link to="/job-offers" 
+              className={activeItem === 'job-offers'?'active':''}
+              onClick={() => {setactiveItem('job-offers');navToggle()}}>Job Offers</Link></li>
+              <li><Link to="/contact" 
+              className={activeItem === 'contact'?'active':''}
+              onClick={() => {setactiveItem('contact');navToggle()}}>Contact</Link></li>
               <li className="dropdown"><Link to="#"><span>Community</span> <i className="bi bi-chevron-down"></i></Link>
                 <ul>
                   <li><a href="team.html" onClick={navToggle}>Discord</a></li>

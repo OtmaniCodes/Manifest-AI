@@ -10,7 +10,7 @@ export default function SplashLoading() {
       {/* <PuffLoader color={"#36d7b7"} /> */}
     <div className="splash-main">
 
-    <PuffLoader
+    {/* <PuffLoader
       color="#28db64"
       cssOverride={{
         	backgroundImage: 'linear-gradient(to right, #22B4D7, #28db64)',
@@ -19,8 +19,12 @@ export default function SplashLoading() {
           position: 'relative',
       }}
       size={154}
-    />
-    <img className='brain' src={maBrain} alt={""} />
+    /> */}
+
+    <div className='loader-container'>
+      <div className="loader"></div>
+    </div>
+    {/* <img className='brain' src={maBrain} alt={""} /> */}
     </div>
     </div>
   )

@@ -174,7 +174,8 @@
  
   .mobile-nav-toggle {
     color: #111;
-    font-size: 30px;
+    /* font-size: 30px; */
+    font-size: 45px;
     margin-right: 10px;
     z-index: 55;
     cursor: pointer;
@@ -239,6 +240,7 @@
     transition: 0.3s;
     width: 100%;
     top: 0px;
+    font-size: 28px;
     left: 0px;
     right: 0px;
     height: 100vh;
@@ -320,3 +322,14 @@
 }
 
 
+.nav-mobile a:hover,
+.nav-mobile .active,
+.nav-mobile .active:focus,
+.nav-mobile li:hover>a {
+  color: #1b9dbd;
+}
+.nav-mobile .dropdown ul a:hover,
+.nav-mobile .dropdown ul .active:hover,
+.nav-mobile .dropdown ul li:hover>a {
+  color: #1b8abd;
+}

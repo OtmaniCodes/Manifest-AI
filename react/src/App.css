@@ -67,7 +67,9 @@ body{
 .global-btn:active {
     filter: brightness(.8);
 }
-
+.App{
+    overflow: hidden;
+}
 
 @keyframes glowing {
     0% {
