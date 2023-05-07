@@ -13,7 +13,10 @@ export default class FuncHelpers {
         return formattedDate;
     }
 
-    static scrollToTopOfThePage(params) {
-        window.scrollTo(params || { top: 0, behavior: "smooth" });
+    static scrollToTopOfThePage(smoothly = false) {
+        window.scrollTo({
+            top: 0,
+            behavior: smoothly ? "smooth" : "instant",
+        });
     }
 }

@@ -77,7 +77,7 @@ const Contact = (full) => {
             emailjs.send(serviceId, templateId, emailParams, userId)
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
-                toast.success('Your Email submitted successfuly!!', {
+                toast.success('Your message was submitted successfuly! we will get back to you as soon as we can.', {
                     position: "bottom-left",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -90,7 +90,7 @@ const Contact = (full) => {
 
             }, (error) => {
                 console.log('FAILED...', error);
-                toast.error('Something went wrong!!', {
+                toast.error('Something went wrong! please try again later', {
                     position: "bottom-left",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -124,9 +124,9 @@ const Contact = (full) => {
     };
 
     return (
-        <section id="contact" className="pb-4" style={{marginTop:full.full?'80px':''}}>
+        <section id="contact" className="pb-4 py-5" style={{marginTop:full.full?'55px':''}}>
         <SectionTitle title={"contact"} alignStart={true}/>
-        <div className="container">
+        <div className="container mt-5">
             <div className="row">
             <div className="col-md-6">
                 <h3>Contact Info</h3>
@@ -136,25 +136,44 @@ const Contact = (full) => {
             </div>
             <div className="col-md-6">
                 <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <div className="input-box">
-                            <label className="input-label">Name</label>
-                            <input
-                            className="input"
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            placeholder="Name"
-                            onChange={handleInputChange}
-                            onClick={handleInputClick}
-                            />
-                            <span className="input-helper">Enter your name</span>
-                            {errors.name && <div className="invalid-feedback">{errors.name}</div>}
+                    <div className="row mb-3">
+                        <div className="col-md-4">
+                            <div className="input-box">
+                                <label className="input-label">Name</label>
+                                <input
+                                className="input"
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                placeholder="Name"
+                                onChange={handleInputChange}
+                                onClick={handleInputClick}
+                                />
+                                <span className="input-helper">Enter your name</span>
+                                {errors.name && <div className="invalid-feedback">{errors.name}</div>}
+                            </div>
+                        </div>
+                        <div className="col-md-8">
+
+                            <div className="input-box">
+                                <label className="input-label ">Phone</label>
+                                <input
+                                className="input"
+                                type="text"
+                                name="phone"
+                                value={formData.phone}
+                                placeholder="+212 000 000 000"
+                                onChange={handleInputChange}
+                                onClick={handleInputClick}
+                                />
+                                <span className="input-helper">Enter a valid phone number</span>
+                                {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
+                            </div>
                         </div>
                     </div>
                     <div className="mb-3">
                     <div className="input-box">
-                        <label className="input-label">Email</label>
+                        <label className="input-label">Email address</label>
                     
                         <input
                         className="input"
@@ -170,20 +189,6 @@ const Contact = (full) => {
                     </div>
                     </div>
                     <div className="mb-3">
-                        <div className="input-box">
-                            <label className="input-label ">Phone</label>
-                            <input
-                            className="input"
-                            type="text"
-                            name="phone"
-                            value={formData.phone}
-                            placeholder="+212 000 000 000"
-                            onChange={handleInputChange}
-                            onClick={handleInputClick}
-                            />
-                            <span className="input-helper">Enter a valid phone number</span>
-                            {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
-                        </div>
                     </div>
                     <div className="mb-3">
                     <label htmlFor="message" className="input-label">Message</label>
