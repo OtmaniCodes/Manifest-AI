@@ -13,13 +13,11 @@ class ArticlesSingleton {
     async initialize() {
         try {
             const data = await axiosHttpClient.get();
-            console.log("SUCCESS: ", data["status"], data);
             if (data.status === 200 && data.data.status === "ok") {
                 const res = data.data.items;
                 const articles = res.filter(
                     (item) => item.categories.length > 0
                 );
-                console.log(articles);
                 this.articles = articles.map((rawArticle, i) => {
                     return {
                         id: i + 1,

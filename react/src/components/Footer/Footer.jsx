@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-top">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3 col-md-6 footer-contact">
+            <div className="col-lg-3 col-md-6  text-md-start text-center footer-contact">
               <h3>MANIFEST AI</h3>
               <p>
                 A108 Adam Street <br />
@@ -17,28 +17,15 @@ const Footer = () => {
                 <strong>Email:</strong> info@example.com<br />
               </p>
             </div>
-
-            {/* <div className="col-lg-2 col-md-6 footer-links">
-              <h4>Useful Links</h4>
-              <ul>
-                <li><i className="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                <li><i className="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                <li><i className="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                <li><i className="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                <li><i className="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-              </ul>
-            </div> */}
-
-            <div className="col-lg-5 col-md-6 footer-links">
+            <div className="col-lg-5 col-md-6 footer-links text-center text-md-start">
               <h4>Our Services</h4>
-              <ul>
+              <ul className='d-flex flex-md-column align-items-md-start align-items-center justify-content-center'>
                 <li><i className="bx bx-chevron-right"></i> <a href="#">Consulting</a></li>
-                <li><i className="bx bx-chevron-right"></i> <a href="#">Sustainability</a></li>
+                <li className='mx-md-0 mx-2'><i className="bx bx-chevron-right"></i> <a href="#">Sustainability</a></li>
                 <li><i className="bx bx-chevron-right"></i> <a href="#">AI Technology</a></li>
               </ul>
             </div>
-
-            <div className="col-lg-4 col-md-6 footer-newsletter">
+            <div className="col-lg-4 col-md-6 text-md-start text-center footer-newsletter">
               <h4>Join Our Newsletter</h4>
               <p>Stay Up-to-Date with Our Latest News, Offers, and Insights - Subscribe to Our Newsletter Today!</p>
               <form action="" method="post">
