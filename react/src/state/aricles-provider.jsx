@@ -21,7 +21,8 @@ export function ArticlesProvider({ children }) {
 
   if (loading) {
   // if (true) {
-    return <SplashLoading/>
+    // return <SplashLoading/>
+    return 
   }
 
   return (
