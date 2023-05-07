@@ -4,10 +4,12 @@ import AboutSection from '../../components/AboutSection/AboutSection';
 import Services from '../../pages/Services/Services'
 import Contact from '../../pages/Contact/Contact'
 
+
 // assets ----------------------
 import './Home.css'
 import videoIntro from "../../assets/video-intro.mp4"
 import Articles from '../Articles/Articles';
+import manifestBrain from '../../assets/manifest_logo.png'
 
 
 const Home = () => {
@@ -30,6 +32,16 @@ const Home = () => {
             <AboutSection/>
             <TeamSection/>
             <Articles limit={5}/>
+            <div className='take-action'>
+                <div className="content container-fluid h-100">
+                <div className="row justify-content-center align-items-center h-100">
+                        <div className="col-md-10 text-center">
+                            <img src={manifestBrain} alt={"Manifest AI Logo"}/>
+                            <p className="h2">ALWAYS INNOVATING WITH ETHICS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <Contact/>
         </div>
      );

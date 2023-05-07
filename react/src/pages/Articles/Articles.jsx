@@ -45,7 +45,7 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
                 </div>
                 <div className="col-md-4 col-12">
                   <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Search articles" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+                    <input type="search" className="form-control" placeholder="Search articles" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
                   </div>
                 </div>
               </div>

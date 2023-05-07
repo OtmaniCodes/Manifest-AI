@@ -61,6 +61,8 @@ const ArticlePage = () => {
         }
         <div className="suggested-articles pb-5 pt-4">
           <h3 className='section-title h1 mb-5'>Articles you might like</h3>
+          <div className="container">
+
           <div className='row justify-content-evenly'>
             {
               article.suggestedArticlesIds.map((id) => {
@@ -72,6 +74,7 @@ const ArticlePage = () => {
                 );
               })
             }
+          </div>
           </div>
         </div>
     </div>
