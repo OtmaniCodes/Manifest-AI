@@ -10,8 +10,26 @@
   border-radius: 10px !important;
 }
 .job-section-wrapper{
-  height: 500px;
+  /* height: 500px; */
 }
+.back-button {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff00;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.back-icon {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
 
 .left-section,
 .right-section {
@@ -36,12 +54,12 @@
 
 
 .left-section,.right-section {
-  overflow-y: auto; /* Add this line */
+  /* overflow-y: auto; Add this line */
 }
 
 .job-list {
   max-height: 100%; /* Update the height calculation */
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 @media (max-width: 767px) {
@@ -52,9 +70,9 @@
   .d-none {
     display: none;
   }
-  .job-section-wrapper{
+  /* .job-section-wrapper{
     height: 95vh;
-  }
+  } */
   
 }
 
@@ -85,6 +103,8 @@
   width: 60px;
   margin-right: 10px;
   border-radius: 50%;
+
+  filter: hue-rotate(61deg);
 }
 
 .right-section {
@@ -112,12 +132,3 @@
   margin-right: 5px;
 }
 
-button.btn.btn-primary {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-
-button.btn.btn-primary:hover {
-  background-color: #0a58ca;
-  border-color: #0a58ca;
-}

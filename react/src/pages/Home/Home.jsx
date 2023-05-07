@@ -12,6 +12,7 @@ import Articles from '../Articles/Articles';
 import JobOffers from '../JobOffers/JobOffers';
 import { useEffect, useRef } from 'react';
 import manifestBrain from '../../assets/manifest_logo.png'
+import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 
 
 const Home = () => {
@@ -53,6 +54,7 @@ const Home = () => {
                 </div>
             </div>
             <Contact/>
+            <ScrollToTopButton/>
         </div>
      );
 }

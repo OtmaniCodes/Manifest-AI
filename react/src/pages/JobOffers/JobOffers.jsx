@@ -4,6 +4,8 @@ import './JobOffers.css';
 import jobs from './data';
 import PopUp from '../../components/PopUpForm/PopUp';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import { FaArrowLeft } from "react-icons/fa";
+
 const JobOffers = () => {
     
   const [selectedJob, setSelectedJob] = useState(jobs[0]);
@@ -22,7 +24,7 @@ const JobOffers = () => {
     <div className="job-section container h-100">
       <SectionTitle title={"Job Offers"} subTitle={"Check out our latest job opportunities."} />
       <div className="row job-section-wrapper border rounded shadow-sm" >
-        <div className={`col-md-4 left-section d-sm-block ${leftSectionActive ? '' : 'd-none'}`} onClick={toggleLeftSection}>
+        <div className={`col-md-4 left-section d-md-block ${leftSectionActive ? '' : 'd-none'}`} onClick={toggleLeftSection}>
            
           <div className="job-list">
           <div className="jobs-header">Jobs We Are Offering</div> {/* Add this line */}
@@ -43,9 +45,14 @@ const JobOffers = () => {
             ))}
           </div>
         </div>
-        <div className={`col-md-8 right-section d-sm-block ${!leftSectionActive ? '' : 'd-none'}`}>
-
-            <button className="btn btn-primary d-md-none" onClick={toggleLeftSection}>Back</button>
+        <div className={`col-md-8 right-section d-md-block ${!leftSectionActive ? '' : 'd-none'}`}>
+            <button
+            onClick={toggleLeftSection}
+            className="back-button d-md-none"
+          >
+            <FaArrowLeft className="back-icon" />
+            Back
+          </button>
 
           <h2>{selectedJob.title}</h2>
           <h5>{selectedJob.location}</h5>
@@ -67,7 +74,7 @@ const JobOffers = () => {
               </li>
             ))}
           </ul>
-          <button className="btn btn-primary" onClick={handleShowForm}>Apply Now</button>
+          <button className="global-btn" onClick={handleShowForm}>Apply Now</button>
         </div>
       </div>
       {showForm && <PopUp close={handleCloseForm}/>}
