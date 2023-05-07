@@ -1,9 +1,15 @@
+import AiJob from '../../assets/jobs/AI-job.png'
+import softwarEngineer from '../../assets/jobs/software-engineer.png'
+import dataScientist from '../../assets/jobs/data-scientist.png'
+import dataEngineer from '../../assets/jobs/data-engineer.png'
+import dataMining from '../../assets/jobs/data-mining.png'
+
 const jobs = [
     {
       id: 1,
       title: 'AI RESEARCHER',
       location:'Tangier, Maroc',
-      icon: 'https://via.placeholder.com/30',
+      icon: AiJob,
       date: 'May 6, 2023',
       description:
         'Manifest AI is seeking an experienced AI Researcher to join our team. As an AI Researcher, you will be responsible for developing and implementing innovative AI solutions for our clients across various industries.If you are passionate about AI and have a track record of developing innovative solutions, we encourage you to apply for this exciting opportunity. Please submit your resume and cover letter.',
@@ -27,7 +33,7 @@ const jobs = [
       id: 2,
       title: 'SOFTWARE ENGINEER',
       location:'Tangier, Maroc',
-      icon: 'https://via.placeholder.com/30',
+      icon: softwarEngineer,
       date: 'May 6, 2023',
       description:
         'Manifest AI is seeking a talented Software Engineer to join our team. As a Software Engineer, you will work on developing and integrating AI solutions into our client applications and systems.At Manifest AI, we believe in fostering a great work environment that encourages creativity, collaboration, and innovation. As a Software Engineer, you will have access to state-of-the-art tools and technologies, as well as a supportive and diverse team of experts. If you are passionate about software development and AI, and have experience in developing and integrating AI solutions into applications and systems, we encourage you to apply for this exciting opportunity. Please submit your resume and cover letter.',
@@ -51,7 +57,7 @@ const jobs = [
       id: 3,
       title: 'DATA SCIENTIST',
       location:'Tangier, Maroc',
-      icon: 'https://via.placeholder.com/30',
+      icon: dataScientist,
       date: 'May 6, 2023',
       description:
         'Manifest AI is seeking a talented Data Scientist to join our team. As a Data Scientist, you will work on analyzing and processing data to develop innovative AI solutions for our clients. At Manifest AI, we believe in fostering a great work environment that encourages creativity, collaboration, and innovation. As a Data Scientist, you will have access to state-of-the-art tools and technologies, as well as a supportive and diverse team of experts. If you are passionate about data science and have experience in analyzing and processing data to develop innovative AI solutions, we encourage you to apply for this exciting opportunity. Please submit your resume and cover letter.',
@@ -76,7 +82,7 @@ const jobs = [
       id: 4,
       title: 'DATA ENGINEER',
       location:'Tangier, Maroc',
-      icon: 'https://via.placeholder.com/30',
+      icon: dataEngineer,
       date: 'May 6, 2023',
       description:
         'Manifest AI is seeking a talented Data Engineer to join our team. As a Data Engineer, you will be responsible for building and maintaining data pipelines and infrastructure to support AI projects. At Manifest AI, we believe in fostering a great work environment that encourages creativity, collaboration, and innovation. As a Data Engineer, you will have access to state-of-the-art tools and technologies, as well as a supportive and diverse team of experts. If you are passionate about data engineering and have experience in building and maintaining data pipelines and infrastructure, we encourage you to apply for this exciting opportunity. Please submit your resume and cover letter.',
@@ -100,7 +106,7 @@ const jobs = [
         id: 6,
         title: 'DOMAIN SPECIALIST',
         location:'Tangier, Maroc',
-        icon: 'https://via.placeholder.com/30',
+        icon: dataMining,
         date: 'May 6, 2023',
         description:
           'Manifest AI is seeking a talented Domain Specialist to join our team. As a Domain Specialist, you will work on developing and implementing AI solutions for clients in specific industries. At Manifest AI, we believe in fostering a great work environment that encourages creativity, collaboration, and innovation. As a Domain Specialist, you will have access to state-of-the-art tools and technologies, as well as a supportive and diverse team of experts. If you are passionate about using AI to solve real-world problems in a specific industry, and have experience in developing and implementing AI solutions for clients, we encourage you to apply for this exciting opportunity. Please submit your resume and cover letter.',
@@ -118,6 +124,6 @@ const jobs = [
           "Collaborate with other teams to integrate AI solutions into client applications and systems",
           "Stay up-to-date with the latest developments in AI and machine learning in your specific industry",
         ],
-      },
+    },
 ]
 export default jobs

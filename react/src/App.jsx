@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/contact" element={<Contact full={true}/>}/>
           <Route exact path="/services" element={<Services full={true}/>}/>
           <Route exact path="/service/:id" element={<ServicePage full={true}/>} />
-          <Route exact path="/job-offers" element={<JobOffers/>} />
+          <Route exact path="/job-offers" element={<JobOffers full={true}/>} />
           <Route exact path="/articles" element={<Articles showSearch={true}/>}/>
           <Route path="/articles/:slug" element={<ArticlePage/>} />
 

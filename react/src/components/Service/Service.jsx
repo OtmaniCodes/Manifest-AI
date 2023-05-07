@@ -8,7 +8,8 @@ const Service = (props) => {
                 <div className='service-shadow'></div>
                 <div className="content">
                     <span className="icon">
-                        <i className="fab fa-battle-net"></i>
+                        {/* <i className="fab fa-battle-net"></i> */}
+                        <img src={props.icon} alt="" />
                     </span>
                     <h3 className="services-title">{props.title}</h3>
                     <p className="services-description">{props.desc}</p>
