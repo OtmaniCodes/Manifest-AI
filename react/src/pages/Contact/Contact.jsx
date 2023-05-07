@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import useScrollToTop from '../../hooks/useScrollToTop';
+import Fade from 'react-reveal/Fade'
 
 const Contact = (full) => {
     useScrollToTop()
@@ -130,89 +131,94 @@ const Contact = (full) => {
         <SectionTitle title={"contact"} alignStart={true}/>
         <div className="container mt-5">
             <div className="row">
-            <div className="col-md-6">
-                <h3>Contact Info</h3>
-                <div className='contact-info'><i class="bi bi-geo-alt contact-icon"></i>Tangier, Tanger-Tetouan-Al Hoceima, Morocco</div>
-                <div className='contact-info'><i className="bi bi-envelope contact-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></div>
-                <div className='contact-info'><i className="bi bi-phone contact-icon"></i> <a href="tel:+1234567890">+1 (234) 567-890</a></div>
-            </div>
-            <div className="col-md-6">
-                <form onSubmit={handleSubmit}>
-                    <div className="row mb-3">
-                        <div className="col-md-4">
-                            <div className="input-box">
-                                <label className="input-label">Name</label>
-                                <input
-                                className="input"
-                                type="text"
-                                name="name"
-                                value={formData.name}
-                                placeholder="Name"
-                                onChange={handleInputChange}
-                                onClick={handleInputClick}
-                                />
-                                <span className="input-helper">Enter your name</span>
-                                {errors.name && <div className="invalid-feedback">{errors.name}</div>}
-                            </div>
-                        </div>
-                        <div className="col-md-8">
+            <Fade left cascade>
+                <div className="col-md-6">
+                    <h3>Contact Info</h3>
+                    <div className='contact-info'><i class="bi bi-geo-alt contact-icon"></i>Tangier, Tanger-Tetouan-Al Hoceima, Morocco</div>
+                    <div className='contact-info'><i className="bi bi-envelope contact-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></div>
+                    <div className='contact-info'><i className="bi bi-phone contact-icon"></i> <a href="tel:+1234567890">+1 (234) 567-890</a></div>
+                </div>
+            </Fade>
+            <Fade right>
 
-                            <div className="input-box">
-                                <label className="input-label ">Phone</label>
-                                <input
-                                className="input"
-                                type="text"
-                                name="phone"
-                                value={formData.phone}
-                                placeholder="+212 000 000 000"
-                                onChange={handleInputChange}
-                                onClick={handleInputClick}
-                                />
-                                <span className="input-helper">Enter a valid phone number</span>
-                                {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
+                <div className="col-md-6">
+                    <form onSubmit={handleSubmit}>
+                        <div className="row mb-3">
+                            <div className="col-md-4">
+                                <div className="input-box">
+                                    <label className="input-label">Name</label>
+                                    <input
+                                    className="input"
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    placeholder="Name"
+                                    onChange={handleInputChange}
+                                    onClick={handleInputClick}
+                                    />
+                                    <span className="input-helper">Enter your name</span>
+                                    {errors.name && <div className="invalid-feedback">{errors.name}</div>}
+                                </div>
+                            </div>
+                            <div className="col-md-8">
+
+                                <div className="input-box">
+                                    <label className="input-label ">Phone</label>
+                                    <input
+                                    className="input"
+                                    type="text"
+                                    name="phone"
+                                    value={formData.phone}
+                                    placeholder="+212 000 000 000"
+                                    onChange={handleInputChange}
+                                    onClick={handleInputClick}
+                                    />
+                                    <span className="input-helper">Enter a valid phone number</span>
+                                    {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="mb-3">
-                    <div className="input-box">
-                        <label className="input-label">Email address</label>
-                    
-                        <input
-                        className="input"
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        placeholder="Email@mail.com"
-                        onChange={handleInputChange}
-                        onClick={handleInputClick}
-                        />
-                        <span className="input-helper">Enter a valid email</span>
-                        {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-                    </div>
-                    </div>
-                    <div className="mb-3">
-                    </div>
-                    <div className="mb-3">
-                    <label htmlFor="message" className="input-label">Message</label>
-                    <textarea
-                        className="message-contact"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        onClick={handleInputClick}
-                        id="message"
-                        name="message"
-                        rows="5"
-                    ></textarea>
-                    {errors.message && <div className="invalid-feedback">{errors.message}</div>}
-                    </div>
-                    <button type="submit" className={`w-50 global-btn ${isSubmitting ? 'loading' : ''}`} disabled={isSubmitting}>
-                        {isSubmitting ? 'Submitting...' : 'Submit'}
-                    </button>
-                    <ToastContainer />
-                </form>
+                        <div className="mb-3">
+                        <div className="input-box">
+                            <label className="input-label">Email address</label>
+                        
+                            <input
+                            className="input"
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            placeholder="Email@mail.com"
+                            onChange={handleInputChange}
+                            onClick={handleInputClick}
+                            />
+                            <span className="input-helper">Enter a valid email</span>
+                            {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+                        </div>
+                        </div>
+                        <div className="mb-3">
+                        </div>
+                        <div className="mb-3">
+                        <label htmlFor="message" className="input-label">Message</label>
+                        <textarea
+                            className="message-contact"
+                            value={formData.message}
+                            onChange={handleInputChange}
+                            onClick={handleInputClick}
+                            id="message"
+                            name="message"
+                            rows="5"
+                        ></textarea>
+                        {errors.message && <div className="invalid-feedback">{errors.message}</div>}
+                        </div>
+                        <button type="submit" className={`w-50 global-btn ${isSubmitting ? 'loading' : ''}`} disabled={isSubmitting}>
+                            {isSubmitting ? 'Submitting...' : 'Submit'}
+                        </button>
+                        <ToastContainer />
+                    </form>
                 </div>
-                </div>
+            </Fade>
             </div>
+        </div>
         </section>
 
 

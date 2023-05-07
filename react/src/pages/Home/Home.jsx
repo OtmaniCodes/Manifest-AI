@@ -3,6 +3,8 @@ import HeroSection from '../../components/HeroSection/HeroSectoin';
 import AboutSection from '../../components/AboutSection/AboutSection';
 import Services from '../../pages/Services/Services'
 import Contact from '../../pages/Contact/Contact'
+import Fade from 'react-reveal/Fade'
+import Zoom from 'react-reveal/Zoom';
 
 
 // assets ----------------------
@@ -27,18 +29,22 @@ const Home = () => {
     return ( 
         <div id="home">
             <HeroSection/>
-            <section className="video-section">
-                <div className="container py-5">
-                    <div className="row">
-                    <div className="col-12">
-                        <video ref={videoRef} className="video" width="100%" height="auto" autoplay={true} preload loop muted playsinline controls>
-                        <source src={videoIntro} type="video/mp4" />
-                        Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    </div>
-                </div>
-            </section>
+            <Fade delay={200}>
+                <Zoom duration={1200}>
+                    <section className="video-section">
+                        <div className="container py-5">
+                            <div className="row">
+                            <div className="col-12">
+                                <video ref={videoRef} className="video" width="100%" height="auto" autoplay={true} preload loop muted playsinline controls>
+                                <source src={videoIntro} type="video/mp4" />
+                                Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            </div>
+                        </div>
+                    </section>
+                </Zoom>
+            </Fade>
             <Services/>
             <AboutSection/>
             <TeamSection/>

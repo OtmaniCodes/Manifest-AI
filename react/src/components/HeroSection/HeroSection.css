@@ -15,7 +15,7 @@
     z-index: -1;
     right: 0;
     height: 100vh;
-    opacity: 0.5;
+    opacity: 0.4;
     animation: slideInFromRight 1s ease-out forwards;
 }
 
@@ -27,7 +27,7 @@
 
     100% {
         transform: translateX(0);
-        opacity: 0.5;
+        opacity: 0.4;
     }
 }
 
