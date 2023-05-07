@@ -11,6 +11,8 @@
     background-attachment: fixed;
     height: 380px;
     width: 100%;
+    border-top: 2px rgba(0, 0, 0, 0.1) solid;
+    border-bottom: 2px rgba(0, 0, 0, 0.1) solid;
 }
 
 #home .take-action .content{

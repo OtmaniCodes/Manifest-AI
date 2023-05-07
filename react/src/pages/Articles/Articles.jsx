@@ -5,7 +5,7 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { useArticles } from '../../state/aricles-provider';
 import { Link } from 'react-router-dom';
 import useScrollToTop from '../../hooks/useScrollToTop';
-
+import Fade from 'react-reveal/Fade'
 
 export default function Articles({limit, showSearch}) {
   useScrollToTop();
@@ -61,19 +61,23 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
                 </div>
                 : !searchQuery.trim() ? (
                   <>
-                    <Article article={filteredArticles[0]} horizontal={true}/>
-                    <div className="row justify-content-center">             
-                        {filteredArticles.slice(1, filteredArticles.length).map((article) => (
-                            <div key={article.id} className={`col-md-5 mb-5`} >
-                                <Article article={article} />
-                            </div>
-                        ))}
-                        {
-                          ((filteredArticles.length - 1) % 2 !== 0) && (
-                            <div key={filteredArticles.length} className={`col-md-5 mb-5`} ></div>
-                          )
-                        }
-                    </div>
+                    <Fade bottom duration={800}>
+                      <Article article={filteredArticles[0]} horizontal={true}/>
+                    </Fade>
+                    <Fade bottom cascade duration={1000}>
+                      <div className="row justify-content-center">             
+                          {filteredArticles.slice(1, filteredArticles.length).map((article) => (
+                              <div key={article.id} className={`col-md-5 mb-5`} >
+                                  <Article article={article} />
+                              </div>
+                          ))}
+                          {
+                            ((filteredArticles.length - 1) % 2 !== 0) && (
+                              <div key={filteredArticles.length} className={`col-md-5 mb-5`} ></div>
+                            )
+                          }
+                      </div>
+                    </Fade>
                     {
                       (theArticles.length < articles.length) && (
                         <div className="d-flex justify-content-center m-0">

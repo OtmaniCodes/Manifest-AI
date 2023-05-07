@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import SectionTitle from '../SectionTitle/SectionTitle'
 import './TeamSection.css'
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
+import Fade from 'react-reveal/Fade'
 
 
 const teamMembers = [
@@ -28,9 +29,11 @@ export default function TeamSection({givenStyle}) {
               {
                 teamMembers.map((member, index) => {
                   return (
-                    <div key={index} className="col-md-4 mb-4 mb-md-0 text-center">
-                      <TeamMemberCard name={member.name} title={member.title} description={member.description} image={member.image} />
-                    </div>
+                    <Fade left={index === 0} right={index === 1}>
+                      <div key={index} className="col-md-4 mb-4 mb-md-0 text-center">
+                        <TeamMemberCard name={member.name} title={member.title} description={member.description} image={member.image} />
+                      </div>
+                    </Fade>
                   );
                 })
               }

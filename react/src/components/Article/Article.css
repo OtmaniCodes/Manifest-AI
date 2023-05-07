@@ -22,6 +22,11 @@
     text-overflow: ellipsis;
 }
 
+p.read-more{
+    color: #22B4D7;
+    margin: 0;
+}
+
 .chip{
     display: inline-block;
     margin: 5px;
