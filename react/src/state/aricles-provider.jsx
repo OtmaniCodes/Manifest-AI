@@ -10,19 +10,19 @@ export function ArticlesProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [articles, setArticles] = useState([]);
 
-  // useEffect(() => {
-  //   async function fetchArticles() {
-  //     await articlesSingleton.initialize();
-  //     setArticles(articlesSingleton.articles);
-  //     setLoading(false);
-  //   }
-  //   fetchArticles();
-  // }, []);
+  useEffect(() => {
+    async function fetchArticles() {
+      await articlesSingleton.initialize();
+      setArticles(articlesSingleton.articles);
+      setLoading(false);
+    }
+    fetchArticles();
+  }, []);
 
-  // if (loading) {
-  // // if (true) {
-  //   return <SplashLoading/>
-  // }
+  if (loading) {
+  // if (true) {
+    return <SplashLoading/>
+  }
 
   return (
     <ArticlesContext.Provider value={{articles, loading}}>
