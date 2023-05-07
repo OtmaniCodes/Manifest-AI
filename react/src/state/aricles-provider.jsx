@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import articlesSingleton from "../services/articles-client";
+import SplashLoading from "../components/Splash/splash";
 
 const ArticlesContext = createContext(
     {loading: false, articles: []}
@@ -19,7 +20,8 @@ export function ArticlesProvider({ children }) {
   }, []);
 
   if (loading) {
-    return <div className="d-flex justify-content-center">Loading...</div>;
+  // if (true) {
+    return <SplashLoading/>
   }
 
   return (

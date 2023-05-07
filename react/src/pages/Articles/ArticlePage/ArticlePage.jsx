@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useArticles } from '../../../state/aricles-provider';
 import Article from '../../../components/Article/Article';
 import { FacebookShareButton, TwitterShareButton } from 'react-share';
+import FuncHelpers from '../../../utils/func-helpers';
 
 
 const ArticlePage = () => {
@@ -24,8 +25,7 @@ const ArticlePage = () => {
   }
 
   useEffect(() => {
-    // FuncHelpers.scrollToTopOfThePage({top: 0});
-      window.scrollTo(0, 0);
+    FuncHelpers.scrollToTopOfThePage();
   });
 
   return (
