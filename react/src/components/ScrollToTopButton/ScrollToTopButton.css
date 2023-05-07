@@ -1,8 +1,8 @@
 .scroll-to-top {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px;
     right: 20px;
-    background-color: #007bff;
+    background-color: #22b4d7;
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -13,10 +13,15 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    z-index: 9999;
+    /* z-index: 9999; */
+    z-index: 21;
   }
   
   .scroll-to-top.visible {
+    opacity: 0.6;
+
+  }
+  .scroll-to-top.visible:hover{
     opacity: 1;
   }
   

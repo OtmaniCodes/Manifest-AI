@@ -1,7 +1,7 @@
 .services-description{
     color: rgb(255, 255, 255);
-    /* text-shadow: 2px 2px 4px black; */
-    background-color: #22B4D7;
+    text-shadow: 2px 2px 4px black;
+    /* background-color: #22B4D7; */
     border-radius: 8px;
 }
 

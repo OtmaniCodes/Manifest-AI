@@ -27,7 +27,7 @@
     width: 100px;
     height: 100px;
     color: #22B4D7;
-    font-size: 30px;
+    font-size: 40px;
    
   }
   .loader-container{
@@ -83,8 +83,8 @@
   }
   
   @keyframes spin {
-    0%,
-    100% {
+    
+    100%,0% {
       box-shadow: .2em 0px 0 0px currentcolor;
     }
   
