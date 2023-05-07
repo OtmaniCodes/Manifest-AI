@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom'
 import './ServicePage.css'
 import service from './data'
+import useScrollToTop from '../../../hooks/useScrollToTop'
 const ServicePage = (full) => {
+    useScrollToTop()
     const {id}=useParams()
     console.log(service)
     const data=service.find((e)=>e.id==id)

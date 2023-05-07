@@ -4,9 +4,10 @@ import jobs from './data';
 import PopUp from '../../components/PopUpForm/PopUp';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { FaArrowLeft } from "react-icons/fa";
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 const JobOffers = (full) => {
-    
+  useScrollToTop()
   const [selectedJob, setSelectedJob] = useState(jobs[0]);
   const [leftSectionActive, setLeftSectionActive] = React.useState(true);
   const toggleLeftSection = () => {

@@ -13,16 +13,17 @@ import JobOffers from '../JobOffers/JobOffers';
 import { useEffect, useRef } from 'react';
 import manifestBrain from '../../assets/manifest_logo.png'
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 
 const Home = () => {
+    useScrollToTop();
     const videoRef = useRef();
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  }, []);
+    useEffect(() => {
+        if (videoRef.current) {
+        videoRef.current.play();
+        }
+    }, []);
     return ( 
         <div id="home">
             <HeroSection/>
