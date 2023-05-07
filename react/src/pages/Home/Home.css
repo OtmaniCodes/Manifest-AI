@@ -23,7 +23,7 @@
     backdrop-filter: blur(5px);
     background-color: rgba(255, 255, 255, 0.4);
     padding: 0 20px;
-    max-width: 80%;;
+    max-width: 80%;
     animation: glowing 2s infinite;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -46,6 +46,9 @@
     #home #hero .white-logo {
         height: 196px;
         width: 196px;
+    }
+    #home .take-action{
+        height: 180px;
     }
     #home .take-action .content p{
         font-size: 20px;
