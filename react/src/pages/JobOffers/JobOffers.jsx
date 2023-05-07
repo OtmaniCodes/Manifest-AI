@@ -37,7 +37,9 @@ const JobOffers = (full) => {
                   }`}
                   onClick={() => setSelectedJob(job)}
                 >
-                  <img src={job.icon} alt={job.title} className="job-icon" />
+                  <div className="job-icon">
+                    <img src={job.icon} alt={job.title}/>
+                  </div>
                   <div className='job-info'>
                     <h5>{job.title}</h5>
                     <small>{job.location}</small>

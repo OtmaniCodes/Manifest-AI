@@ -89,29 +89,42 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease-out;
 }
 
 .job-item:hover {
   background-color: #f8f9fa;
+  border-radius: 0;
 }
 
 .job-item.active,
 .job-item.active:hover {
   background-color: #e3e6f0;
+  border-radius: 0;
+  border-left: 2px #22B4D7 solid;
 }
 
 .job-icon {
   height: 60px;
   width: 60px;
+  background-color: #EBEDF0;
   margin-right: 10px;
   border-radius: 50%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   filter: hue-rotate(61deg);
+}
+
+.job-icon img {
+  height: 40px;
+  width: 40px;
 }
 
 .right-section {
   border-left: 1px solid #e3e6f0;
+  background-color: #ffffee;
 }
 
 .right-section h2 {

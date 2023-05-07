@@ -56,7 +56,7 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
               loading
                 ? <div className="row justify-content-center">
                   <div className="col-md-10 text-center">
-                    <p>Loading...</p>
+                    <p>Loading articles...</p>
                   </div>
                 </div>
                 : !searchQuery.trim() ? (
