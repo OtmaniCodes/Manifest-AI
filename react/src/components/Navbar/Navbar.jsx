@@ -5,6 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import logo from '../../assets/manifest_logo.png'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 const Navbar = () => {
     
@@ -14,6 +15,7 @@ const Navbar = () => {
         document.getElementById('mobile-nav-toggle').classList.toggle('bi-list')
         document.getElementById('mobile-nav-toggle').classList.toggle('bi-x')
     }
+    const [activeItem,setactiveItem]=useState('home')
     return ( 
         <header id="header" className="fixed-top">
         <div className="navbar-container d-flex align-items-center">
@@ -24,13 +26,34 @@ const Navbar = () => {
     
           <nav id="navbar" className="navbar order-last order-lg-0 ">
             <ul>
-              <li><Link to={'/'} className="active">Home</Link></li>
-              <li><Link to={'/services'} >Services</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/team">Team</Link></li>
-              <li><Link to="/articles">Articles</Link></li>
-              <li><Link to="/job-offers">Job Offers</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to={'/'} 
+              className={activeItem === 'home' ? 'active' : ''}
+              onClick={() => setactiveItem('home')}            
+              >Home</Link></li>
+              <li><Link to={'/services'} 
+              className={activeItem === 'services' ? 'active' : ''}
+              onClick={() => setactiveItem('services')}
+              >Services</Link></li>
+              <li><Link to="/about"
+              className={activeItem === 'about' ? 'active' : ''}
+              onClick={() => setactiveItem('about')}
+              >About</Link></li>
+              <li><Link to="/team"
+              className={activeItem === 'team' ? 'active' : ''}
+              onClick={() => setactiveItem('team')}
+              >Team</Link></li>
+              <li><Link to="/articles"
+              className={activeItem === 'articles' ? 'active' : ''}
+              onClick={() => setactiveItem('articles')}
+              >Articles</Link></li>
+              <li><Link to="/job-offers"
+              className={activeItem === 'job-offers' ? 'active' : ''}
+              onClick={() => setactiveItem('job-offers')}
+              >Job Offers</Link></li>
+              <li><Link to="/contact"
+              className={activeItem === 'contact' ? 'active' : ''}
+              onClick={() => setactiveItem('contact')}
+              >Contact</Link></li>
               <li className="dropdown"><Link to="#"><span>Community</span> <i className="bi bi-chevron-down"></i></Link>
                 <ul>
                   <li><a href="team.html">Discord</a></li>

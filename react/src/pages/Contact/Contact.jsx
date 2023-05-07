@@ -6,8 +6,10 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 const Contact = (full) => {
+    useScrollToTop()
     const [errors, setErrors] = useState({});
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [formFailed, setformFailed] = useState(false);

@@ -3,7 +3,9 @@ import Service from '../../components/Service/Service';
 import './Services.css'
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import services from './data';
+import useScrollToTop from '../../hooks/useScrollToTop';
 const Services = (full) => {
+  useScrollToTop()
   
   return (
 	<section className="section-services" style={{marginTop:full.full?'60px':''}}>

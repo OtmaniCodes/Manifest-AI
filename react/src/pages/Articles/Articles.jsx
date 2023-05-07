@@ -4,9 +4,11 @@ import './Articles.css'
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { useArticles } from '../../state/aricles-provider';
 import { Link } from 'react-router-dom';
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 
 export default function Articles({limit, showSearch}) {
+  useScrollToTop();
   return (
     <div id="Articles-page">
         <ArticlesGrid articlesLimit={limit} showSearch={showSearch} />

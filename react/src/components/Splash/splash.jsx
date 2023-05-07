@@ -8,7 +8,7 @@ export default function SplashLoading() {
     <div className="spalsh-loading">
       {/* <PuffLoader color={"#36d7b7"} /> */}
       
-    <PuffLoader
+    {/* <PuffLoader
       color="#28db64"
       cssOverride={{
         	backgroundImage: 'linear-gradient(to right, #22B4D7, #28db64)',
@@ -16,7 +16,7 @@ export default function SplashLoading() {
           WebkitTextFillColor: 'transparent',
       }}
       size={154}
-    />
+    /> */}
     </div>
   )
 }
