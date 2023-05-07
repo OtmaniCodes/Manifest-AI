@@ -19,8 +19,8 @@ export function ArticlesProvider({ children }) {
     fetchArticles();
   }, []);
 
-  // if (loading) {
-  if (true) {
+  if (loading) {
+  // if (true) {
     return <SplashLoading/>
   }
 

@@ -1,4 +1,3 @@
-// JobOffers.js
 import React, { useState } from 'react';
 import './JobOffers.css';
 import jobs from './data';
