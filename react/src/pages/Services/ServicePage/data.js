@@ -28,5 +28,19 @@ const service=[
         image:'https://static1.s123-cdn-static-a.com/ready_uploads/media/53733/2000_5ce3c1231b659.jpg',
         date:'26/04/2023'
     },
+    {
+        id:3,
+        title:'AI TECHNOLOGY',
+        description:'Our sustainability services can help businesses create a more sustainable future by developing strategies and initiatives that align with their values and goals, by:',
+        list:[
+            "Developing a smart building system that optimizes energy usage and reduces operating costs",
+            "Developing a carbon management tool that enables clients to track and reduce their carbon footprint",
+            "Developing a waste management system that uses sensors and data analytics to reduce waste and increase recycling rates",
+            "Developing a sustainable transportation strategy that uses data analytics to optimize transportation routes and reduce emissions",
+            "Developing a virtual energy audit tool that enables clients to identify opportunities for reducing energy consumption.",
+        ],
+        image:'https://static1.s123-cdn-static-a.com/uploads/7883034/2000_64494c20e694e.png',
+    date:'26/04/2023'
+    },
 ]
 export default service;

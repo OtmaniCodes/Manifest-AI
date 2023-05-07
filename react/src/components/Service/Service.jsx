@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Service.css'
 
 const Service = (props) => {
@@ -11,7 +12,7 @@ const Service = (props) => {
                     </span>
                     <h3 className="services-title">{props.title}</h3>
                     <p className="services-description">{props.desc}</p>
-                    <a href="#" className="learn-more">Learn More</a>
+                    <Link to={`/service/${props.id}`} className="learn-more">Learn More</Link>
                 </div>
                 <span className="circle-before"></span>
             </div>

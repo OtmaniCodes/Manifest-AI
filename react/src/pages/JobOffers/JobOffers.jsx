@@ -1,18 +1,27 @@
 // JobOffers.js
-import React from 'react';
+import React, { useState } from 'react';
 import './JobOffers.css';
 import jobs from './data';
+import PopUp from '../../components/PopUpForm/PopUp';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 const JobOffers = () => {
     
-  const [selectedJob, setSelectedJob] = React.useState(jobs[0]);
-
+  const [selectedJob, setSelectedJob] = useState(jobs[0]);
   const [leftSectionActive, setLeftSectionActive] = React.useState(true);
   const toggleLeftSection = () => {
     setLeftSectionActive(!leftSectionActive);
   };
+  const [showForm, setShowForm] = useState(false);
+  const handleShowForm = () => {
+      setShowForm(true);
+  }
+  const handleCloseForm = () => {
+      setShowForm(false);
+  }
   return (
     <div className="job-section container h-100">
-      <div className="row border rounded shadow" >
+      <SectionTitle title={"Job Offers"} subTitle={"Check out our latest job opportunities."} />
+      <div className="row job-section-wrapper border rounded shadow-sm" >
         <div className={`col-md-4 left-section d-sm-block ${leftSectionActive ? '' : 'd-none'}`} onClick={toggleLeftSection}>
            
           <div className="job-list">
@@ -58,9 +67,10 @@ const JobOffers = () => {
               </li>
             ))}
           </ul>
-          <button className="btn btn-primary">Apply Now</button>
+          <button className="btn btn-primary" onClick={handleShowForm}>Apply Now</button>
         </div>
       </div>
+      {showForm && <PopUp close={handleCloseForm}/>}
     </div>
   );
 };

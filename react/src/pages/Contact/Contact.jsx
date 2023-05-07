@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
 const Contact = (full) => {
     const [errors, setErrors] = useState({});
@@ -123,7 +124,8 @@ const Contact = (full) => {
     };
 
     return (
-        <section id="contact" className="py-5" style={{marginTop:full.full?'80px':'',height:full.full?'100vh':''}}>
+        <section id="contact" className="pb-4" style={{marginTop:full.full?'80px':''}}>
+        <SectionTitle title={"contact"} alignStart={true}/>
         <div className="container">
             <div className="row">
             <div className="col-md-6">

@@ -4,20 +4,15 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import logo from '../../assets/manifest_logo.png'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Navbar = () => {
     
-
-    function test(){
-        // document.getElementById('navbar').classList.toggle('navbar-mobile')
-        // e.classNameList.toggle('bi-list')
-        // e.classNameList.toggle('bi-x')
+  const [Isopen,setIsOpen]=useState(false)
+    function navToggle(){
+        setIsOpen(!Isopen)
         document.getElementById('mobile-nav-toggle').classList.toggle('bi-list')
         document.getElementById('mobile-nav-toggle').classList.toggle('bi-x')
-        // document.querySelector('ul').style.display='block'
-    }
-    function dude(){
-        // e.nextElementSibling.classNameList.toggle('dropdown-active')
     }
     return ( 
         <header id="header" className="fixed-top">
@@ -27,14 +22,14 @@ const Navbar = () => {
             <img src={logo} alt="" className="img-fluid"/>
           </Link>
     
-          <nav id="navbar" className="navbar test order-last order-lg-0 ">
+          <nav id="navbar" className="navbar order-last order-lg-0 ">
             <ul>
               <li><Link to={'/'} className="active">Home</Link></li>
               <li><Link to={'/services'} >Services</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/team">Team</Link></li>
               <li><Link to="/articles">Articles</Link></li>
-              <li><Link to="/">Job Offers</Link></li>
+              <li><Link to="/job-offers">Job Offers</Link></li>
               <li><Link to="/contact">Contact</Link></li>
               <li className="dropdown"><Link to="#"><span>Community</span> <i className="bi bi-chevron-down"></i></Link>
                 <ul>
@@ -48,7 +43,7 @@ const Navbar = () => {
                 </ul>
               </li>
             </ul>
-            <i id='mobile-nav-toggle' className="bi bi-list mobile-nav-toggle" onClick={test} ></i>
+            <i id='mobile-nav-toggle' className="bi bi-list mobile-nav-toggle" onClick={navToggle} ></i>
           </nav>
           
     
@@ -60,6 +55,28 @@ const Navbar = () => {
           </div>
     
         </div>
+        <nav className='nav-mobile' style={{display:!Isopen?'none':''}}>
+        <ul>
+              <li><Link to={'/'} className="active" onClick={navToggle}>Home</Link></li>
+              <li><Link to={'/services'}  onClick={navToggle}>Services</Link></li>
+              <li><Link to="/about" onClick={navToggle}>About</Link></li>
+              <li><Link to="/team" onClick={navToggle}>Team</Link></li>
+              <li><Link to="/articles" onClick={navToggle}>Articles</Link></li>
+              <li><Link to="/job-offers" onClick={navToggle}>Job Offers</Link></li>
+              <li><Link to="/contact" onClick={navToggle}>Contact</Link></li>
+              <li className="dropdown"><Link to="#"><span>Community</span> <i className="bi bi-chevron-down"></i></Link>
+                <ul>
+                  <li><a href="team.html" onClick={navToggle}>Discord</a></li>
+                  <li className="dropdown"><a href="#"><span>More</span> <i className="bi bi-chevron-right"></i></a>
+                    <ul>
+                      <li><a href="#" onClick={navToggle}>page 1</a></li>
+                      <li><a href="#" onClick={navToggle}>page 2</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+        </nav>
         </header>
      );
 }

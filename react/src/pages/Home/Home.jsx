@@ -8,9 +8,18 @@ import Contact from '../../pages/Contact/Contact'
 import './Home.css'
 import videoIntro from "../../assets/video-intro.mp4"
 import Articles from '../Articles/Articles';
+import JobOffers from '../JobOffers/JobOffers';
+import { useEffect, useRef } from 'react';
 
 
 const Home = () => {
+    const videoRef = useRef();
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  }, []);
     return ( 
         <div id="home">
             <HeroSection/>
@@ -18,7 +27,7 @@ const Home = () => {
                 <div className="container py-5">
                     <div className="row">
                     <div className="col-12">
-                        <video className="video" width="100%" height="auto" controls>
+                        <video ref={videoRef} className="video" width="100%" height="auto" autoplay={true} preload loop muted playsinline controls>
                         <source src={videoIntro} type="video/mp4" />
                         Your browser does not support the video tag.
                         </video>
@@ -30,6 +39,7 @@ const Home = () => {
             <AboutSection/>
             <TeamSection/>
             <Articles limit={5}/>
+            <JobOffers/>
             <Contact/>
         </div>
      );

@@ -14,6 +14,7 @@ import ServicePage from './pages/Services/ServicePage/ServicePage';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import JobOffers from './pages/JobOffers/JobOffers';
+import FileUpload from "./pages/JobOffers/FileUpload";
 
 function App() {
   return (
@@ -24,18 +25,14 @@ function App() {
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/about" element={<About/>}/>
           <Route exact path="/team" element={<Team/>}/>
-          {/* <Route exact path="/articles" element={<Articles/>}/>
-          <Route path="/articles/:id" element={<ArticlePage/>} /> */}
-
           <Route exact path="/contact" element={<Contact full={true}/>}/>
           <Route exact path="/services" element={<Services full={true}/>}/>
           <Route exact path="/service/:id" element={<ServicePage full={true}/>} />
           <Route exact path="/job-offers" element={<JobOffers/>} />
-
-        {/* </Routes>
-        <Footer/> */}
           <Route exact path="/articles" element={<Articles showSearch={true}/>}/>
           <Route path="/articles/:slug" element={<ArticlePage/>} />
+
+          <Route path="/test" element={<FileUpload/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
