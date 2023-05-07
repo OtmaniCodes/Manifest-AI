@@ -7,7 +7,8 @@ export default function SplashLoading() {
   return (
     <div className="spalsh-loading">
       {/* <PuffLoader color={"#36d7b7"} /> */}
-      
+    <div className="splash-main">
+
     <PuffLoader
       color="#28db64"
       cssOverride={{
@@ -17,6 +18,7 @@ export default function SplashLoading() {
       }}
       size={154}
     />
+    </div>
     </div>
   )
 }
