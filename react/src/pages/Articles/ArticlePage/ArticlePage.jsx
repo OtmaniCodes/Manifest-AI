@@ -32,7 +32,6 @@ const ArticlePage = () => {
     <div id='article-page'>
         {/* <img className='article-thumbnail shadow-lg' src={article.thumbnail} alt="Article Thumbnail" /> */}
         {renderBreadCrumbs()}
-        <ArticleProgressBar/>
         <div className="container-fluid" style={{marginTop: '55px'}}>
             <div className="row justify-content-center mt-5">
                 <div className="col-md-10 text-start">
@@ -82,28 +81,6 @@ const ArticlePage = () => {
 }
 
 
-function ArticleProgressBar() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const updateProgress = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop = window.pageYOffset;
-      const newProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
-      setProgress(newProgress);
-    };
-
-    window.addEventListener('scroll', updateProgress);
-    return () => window.removeEventListener('scroll', updateProgress);
-  }, []);
-
-  return (
-    <div className="ProgressBar">
-      <div className="ProgressBar__progress" style={{ width: `${progress}%` }}></div>
-    </div>
-  );
-}
 
 // const SuggestedArticleCard = ({ suggestedArticle }) => {
 //   const [isHovered, setIsHovered] = useState(false);
