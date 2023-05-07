@@ -4,11 +4,10 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import logo from '../../assets/manifest_logo.png'
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useScrollToTop from '../../hooks/useScrollToTop';
 
-const Navbar = () => {
-    
+const Navbar = () => { 
   const [Isopen,setIsOpen]=useState(false)
     function navToggle(){
         setIsOpen(!Isopen)
@@ -16,11 +15,31 @@ const Navbar = () => {
         document.getElementById('mobile-nav-toggle').classList.toggle('bi-x')
     }
     const [activeItem,setactiveItem]=useState('home')
+
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [visible, setVisible] = useState(true);
+  
+  useEffect(() => {
+    function handleScroll() {
+      const currentPosition = window.pageYOffset;
+      setVisible(scrollPosition > currentPosition);
+      setScrollPosition(currentPosition);
+
+      console.log(currentPosition>scrollPosition)
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollPosition])
     return ( 
-        <header id="header" className="fixed-top">
+        <header id="header" className={visible ? '' : 'hidden-navbar' }>
         <div className="navbar-container d-flex align-items-center">
 
-          <Link to={"/"} className="logo me-auto me-lg-0">
+          <Link to={"/"} className="logo mx-2 me-auto me-lg-0">
             <img src={logo} alt="" className="img-fluid"/>
           </Link>
     
@@ -71,10 +90,10 @@ const Navbar = () => {
           
     
           <div className="header-social-links d-flex">
-            <a href="#" className="twitter"><i className="bu bi-twitter"></i></a>
-            <a href="#" className="facebook"><i className="bu bi-facebook"></i></a>
-            <a href="#" className="instagram"><i className="bu bi-instagram"></i></a>
-            <a href="#" className="linkedin"><i className="bu bi-linkedin"></i></a>
+            {/* <a href="#" className="twitter"><i className="bu bi-twitter"></i></a> */}
+            {/* <a href="#" className="facebook"><i className="bu bi-facebook"></i></a> */}
+            <a href="https://www.instagram.com/manifest_a.i/" className="instagram"><i className="bu bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/manifest-ai/" className="linkedin"><i className="bu bi-linkedin"></i></a>
           </div>
     
         </div>

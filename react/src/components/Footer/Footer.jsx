@@ -46,10 +46,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="social-links text-center text-md-right pt-3 pt-md-0">
-          <a href="#" className="twitter"><i className="bu bi-twitter"></i></a>
-          <a href="#" className="facebook"><i className="bu bi-facebook"></i></a>
-          <a href="#" className="instagram"><i className="bu bi-instagram"></i></a>
-        <a href="#" className="linkedin"><i className="bu bi-linkedin"></i></a>
+          {/* <a href="#" className="twitter"><i className="bu bi-twitter"></i></a> */}
+          {/* <a href="#" className="facebook"><i className="bu bi-facebook"></i></a> */}
+          <a href="https://www.instagram.com/manifest_a.i/" className="instagram"><i className="bu bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/manifest-ai/" className="linkedin"><i className="bu bi-linkedin"></i></a>
     </div>
   </div>
 </footer>
