@@ -128,7 +128,7 @@ const Contact = (full) => {
 
     return (
         <section id="contact" className="pb-4 py-5" style={{marginTop:full.full?'55px':''}}>
-        <SectionTitle title={"contact"} alignStart={true}/>
+        <SectionTitle title={"contact"} subTitle={"Get in Touch with Manifest AI"} alignStart={true}/>
         <div className="container mt-5">
             <div className="row">
             <Fade left cascade>

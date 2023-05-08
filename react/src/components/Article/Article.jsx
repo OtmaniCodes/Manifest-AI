@@ -41,7 +41,7 @@ const Article = ({article, horizontal, givenStyle}) => {
                     )
                   }
                 </div>
-                <Link to={`/articles/${article.slug}`} className="my-3"><p className='read-more btn btn-text'>Read Mor</p></Link>
+                <Link to={`/articles/${article.slug}`} className="my-3"><p className='read-more btn btn-text'>Read More</p></Link>
               </>
             )}
           </div>

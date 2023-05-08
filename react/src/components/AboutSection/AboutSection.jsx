@@ -11,11 +11,11 @@ export default function AboutSection({givenStyle}) {
   return (
     <section id='about' style={givenStyle}>
         <div className="container py-5 h-100">
-            <ResponsiveCompo mobileChild={ <SectionTitle title={"About"} alignStart={true}/>} />
+            <ResponsiveCompo mobileChild={ <SectionTitle title={"About"} subTitle={"Ethical AI Development for a Better Future"} alignStart={true}/>} />
             <div className="row align-items-center justify-content-center h-100">
                 <Fade bottom cascade>
                     <div className="col-md-7 pe-md-4 order-2 order-md-1">
-                        <ResponsiveCompo desktopChild={<SectionTitle title={"About"} />} />
+                        <ResponsiveCompo desktopChild={<SectionTitle title={"About"} subTitle={"Ethical AI Development for a Better Future"} />} />
                         <p className="about-text text-md-start text-center">
                             At Manifest AI, we're a team of enthusiasts who are passionate about using technology to create a more sustainable and equitable future. We believe that AI has the potential to solve some of the world's most pressing challenges, and we're committed to making this vision a reality.<br/>
                         </p>

@@ -24,7 +24,7 @@ export default function TeamSection({givenStyle}) {
   return (
     <section id='team' style={givenStyle}>
         <div className="container py-5 h-100">
-            <SectionTitle title={"Team"}  subTitle={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."}/>
+            <SectionTitle title={"Team"}  subTitle={"Experts in AI Development and Social Impact"}/>
             <div className="row align-items-center justify-content-center">
               {
                 teamMembers.map((member, index) => {
