@@ -138,7 +138,7 @@ const Contact = (full) => {
         <Helmet>
             <title>CONTACT - MANIFEST AI</title>
         </Helmet>
-        <SectionTitle title={"contact"} alignStart={true}/>
+        <SectionTitle title={"contact"} subTitle={"Get in Touch with Manifest AI"} alignStart={true}/>
         <div className="container mt-5">
             <div className="row">
             <Fade left cascade>

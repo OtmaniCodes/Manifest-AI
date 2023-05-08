@@ -17,7 +17,7 @@ const Services = (full) => {
     </Helmet>
 		<div className="container">
 			<div className="row justify-content-center text-center">
-          <SectionTitle title={"Exclusive Services"} subTitle={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."}/>
+          <SectionTitle title={"Exclusive Services"} subTitle={"AI-powered Solutions for a Better Future: Our team at Manifest AI is dedicated to harnessing the power of AI to solve real-world problems and create a more sustainable and equitable future."}/>
 			</div>
 			<Fade top cascade>
         <div className="row justify-content-center">

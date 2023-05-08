@@ -29,3 +29,20 @@
 #articles-grid .search-portion .search-chips .search-chip:hover{
     background-color: #22b3d7;
 }
+
+.medium-link{
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #22b3d7;
+    text-align: center;
+    line-height: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+
+.medium-link{
+    font-size: 30px;
+    line-height: 30px;
+}
+}

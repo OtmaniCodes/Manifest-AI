@@ -57,6 +57,13 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
               </div>
             )}
             {
+              location.href.endsWith('articles') && (
+                <div className="d-flex justify-content-center">
+                  <a href="https://medium.com/@manifestai" className="medium-link">Check out our blogs on Medium</a>
+                </div>
+              )
+            }
+            {
               loading
                 ? <div className="row justify-content-center">
                   <div className="col-md-10 text-center">

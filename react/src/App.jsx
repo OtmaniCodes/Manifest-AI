@@ -15,11 +15,13 @@ import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import JobOffers from './pages/JobOffers/JobOffers';
 import FileUpload from "./pages/JobOffers/FileUpload";
+import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollProgressBar/>
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home/>}/>
