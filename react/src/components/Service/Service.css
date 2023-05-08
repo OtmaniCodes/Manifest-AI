@@ -8,13 +8,12 @@
 .section-services .single-service{
     background-size: cover;
     transition: all 0.5s ease;
+    height: 80%;
 }
 
 .section-services .single-service:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-
 
 .section-services .single-service .services-description {
     margin-bottom: 20px;
@@ -47,6 +46,7 @@
     top: 0px;
     left: 0px;
 }
+
 .section-services .single-service .learn-more {
 	position: relative;
 	font-size: 18px;

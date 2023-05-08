@@ -1,5 +1,37 @@
 #home #hero{
     height: 100vh;
+    background-image: url('../../assets/images/ai-sus.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#home #hero #shadow-bg{
+    background-color: rgba(249, 249, 249, 0.45);
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+}
+
+#home #hero #hero-content{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#home #hero #hero-content .left-part h6{
+    /* color: #28db64; */
+    background-color: white;
+    width: fit-content;
+    padding: 5px 8px;
+    /* text-shadow: 2px 2px 4px black; */
+}
+#home #hero #hero-content .left-part h1{
+    color: white;
+    text-shadow: 2px 2px 4px black;
 }
 
 #home #hero .white-logo {
@@ -7,15 +39,16 @@
     height: 300px;
     width: 300px;
     animation: glowing 2s infinite;
+    z-index: 5;
 }
 
 
 #home #hero .dots-web {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     right: 0;
     height: 100vh;
-    opacity: 0.4;
+    /* opacity: 0.4; */
     animation: slideInFromRight 1s ease-out forwards;
 }
 
@@ -27,7 +60,7 @@
 
     100% {
         transform: translateX(0);
-        opacity: 0.4;
+        opacity: 0.8;
     }
 }
 

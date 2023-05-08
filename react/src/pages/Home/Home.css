@@ -1,6 +1,7 @@
 
 #home .video-section{
-    /* background-color: #22B4D755; */
+    background: rgba(249, 249, 249, 0.7);
+    width: 100%;
 }
 
 #home .take-action{

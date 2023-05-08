@@ -7,9 +7,14 @@ a{
 body{
     margin: 0;
     padding: 0;
-    background: #F9F9F9;
+    /* background: #F9F9F9; */
+    /* background: red; */
     overflow-x: hidden;
     font-family: "Open Sans", sans-serif;
+    /* background-image: url('assets/images/about.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat; */
 
 }
 h1,h2,h3,h4,h5,h6 {
@@ -72,6 +77,77 @@ h1,h2,h3,h4,h5,h6 {
 .global-btn:active {
     filter: brightness(.8);
 }
+
+
+
+
+
+
+
+
+.global-btn-white {
+    --color: #FFFFFF;
+    padding: 0.5em 1.5em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+}
+
+.global-btn-white::before,
+.global-btn-white::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.global-btn-white::before {
+    top: -1em;
+    left: -1em;
+}
+
+.global-btn-white::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.global-btn-white:hover::before,
+.global-btn-white:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.global-btn-white:hover {
+    color: black;
+}
+
+.global-btn-white:active {
+    filter: brightness(.8);
+}
+
+
+
+
+
+
+
+
 .App{
     overflow: hidden;
 }

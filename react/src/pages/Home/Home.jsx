@@ -7,6 +7,7 @@ import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom';
 
 
+
 // assets ----------------------
 import './Home.css'
 import videoIntro from "../../assets/video-intro.mp4"
@@ -17,6 +18,7 @@ import manifestBrain from '../../assets/manifest_logo.png'
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
 
 const Home = () => {
@@ -29,25 +31,32 @@ const Home = () => {
     }, []);
     return ( 
         <div id="home">
-            <HeroSection/>
+            {/* <HeroSection/>
             <Fade delay={200}>
-                <Zoom duration={1200}>
                     <section className="video-section">
                         <div className="container py-5">
+                            <SectionTitle title={"Introducing MANIFEST AI"} />
                             <div className="row">
                             <div className="col-12">
+                            <Zoom duration={1200}>
                                 <video ref={videoRef} className="video" width="100%" height="auto" autoplay={true} preload loop muted playsinline controls>
                                 <source src={videoIntro} type="video/mp4" />
                                 Your browser does not support the video tag.
                                 </video>
+                            </Zoom>
                             </div>
                             </div>
                         </div>
                     </section>
-                </Zoom>
-            </Fade>
+            </Fade> */}
             <Services/>
             <AboutSection/>
+
+
+
+
+
+
             <TeamSection/>
             <Articles limit={5}/>
             <JobOffers/>
