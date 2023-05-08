@@ -5,6 +5,8 @@ import { useArticles } from '../../../state/aricles-provider';
 import Article from '../../../components/Article/Article';
 import { FacebookShareButton, TwitterShareButton } from 'react-share';
 import FuncHelpers from '../../../utils/func-helpers';
+import { Helmet } from 'react-helmet';
+import ScrollToTopButton from '../../../components/ScrollToTopButton/ScrollToTopButton';
 
 
 const ArticlePage = () => {
@@ -15,6 +17,9 @@ const ArticlePage = () => {
   const renderBreadCrumbs = () => {
     return (
       <div className="article-breadcrumbs d-flex ms-4">
+        <Helmet>
+          <title>ARTICLES | {slug} - MANIFEST AI</title>
+        </Helmet>
         <Link className='breadcrumb-btn' to={'/'}>Home</Link>
         <p className="breadcrumb-divider">/</p>
         <Link className='breadcrumb-btn' to={'/articles'}>ARTICLES</Link>

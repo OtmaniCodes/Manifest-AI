@@ -6,6 +6,7 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { FaArrowLeft } from "react-icons/fa";
 import useScrollToTop from '../../hooks/useScrollToTop';
 import Fade from 'react-reveal/Fade'
+import { Helmet } from 'react-helmet';
 
 const JobOffers = (full) => {
   useScrollToTop()
@@ -23,6 +24,9 @@ const JobOffers = (full) => {
   }
   return (
     <div className="job-section pb-4 py-5 h-100" style={{marginTop: full.full?'55px':''}}>
+      <Helmet>
+        <title>JOB-OFFERS - MANIFEST AI</title>
+      </Helmet>
       <SectionTitle title={"Job Offers"} subTitle={"Check out our latest job opportunities."} />
       <Fade bottom>
 

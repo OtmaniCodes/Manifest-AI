@@ -2,14 +2,18 @@ import { useParams } from 'react-router-dom'
 import './ServicePage.css'
 import service from './data'
 import useScrollToTop from '../../../hooks/useScrollToTop'
+import { Helmet } from 'react-helmet'
 const ServicePage = (full) => {
     useScrollToTop()
-    const {id}=useParams()
+    const {slug}=useParams()
     console.log(service)
-    const data=service.find((e)=>e.id==id)
+    const data=service.find((e)=>e.title==slug)
     console.log(data)
     return ( 
     <div className="service-detail" style={{marginTop:full.full?'80px':''}}>
+    <Helmet>
+        <title>SERVICES | {slug} - MANIFEST AI</title>
+    </Helmet>
     <div className="container">
     <div className="row d-flex">
         <div className="col-md-6">

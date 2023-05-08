@@ -6,11 +6,15 @@ import { useArticles } from '../../state/aricles-provider';
 import { Link } from 'react-router-dom';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import Fade from 'react-reveal/Fade'
+import { Helmet } from 'react-helmet';
 
 export default function Articles({limit, showSearch}) {
   useScrollToTop();
   return (
     <div id="Articles-page">
+        <Helmet>
+          <title>ARTICLES - MANIFEST AI</title>
+        </Helmet>
         <ArticlesGrid articlesLimit={limit} showSearch={showSearch} />
     </div>
   )

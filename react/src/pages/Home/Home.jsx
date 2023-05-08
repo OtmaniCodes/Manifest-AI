@@ -16,6 +16,7 @@ import { useEffect, useRef } from 'react';
 import manifestBrain from '../../assets/manifest_logo.png'
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton';
 import useScrollToTop from '../../hooks/useScrollToTop';
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
@@ -62,6 +63,9 @@ const Home = () => {
             </div>
             <Contact/>
             <ScrollToTopButton/>
+            <Helmet>
+                <title>HOME - MANIFEST AI</title>
+            </Helmet>
         </div>
      );
 }

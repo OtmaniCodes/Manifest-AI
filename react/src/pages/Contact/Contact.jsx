@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import Fade from 'react-reveal/Fade'
+import { Helmet } from 'react-helmet';
 
 const Contact = (full) => {
     useScrollToTop()
@@ -125,9 +126,18 @@ const Contact = (full) => {
           }));
         }
     };
+    // const pageTitle = 'CONTACT - MANIFEST AI';
+    // const helmetTitle = Helmet.peek().title;
+    // console.log(helmetTitle)
+    // const pageHome='HOME - MANIFEST AI'
+    // console.log(pageTitle,helmetTitle)
+    // helmetTitle == pageHome ?console.log('i'):console.log('no')
 
     return (
         <section id="contact" className="pb-4 py-5" style={{marginTop:full.full?'55px':''}}>
+        <Helmet>
+            <title>CONTACT - MANIFEST AI</title>
+        </Helmet>
         <SectionTitle title={"contact"} alignStart={true}/>
         <div className="container mt-5">
             <div className="row">

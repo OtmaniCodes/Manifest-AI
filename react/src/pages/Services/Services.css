@@ -108,7 +108,7 @@
 }
 
 .section-services .single-service:hover .icon {
-	background-color: #006dd3;
+	background-color: #00d37b;
 	color: white;
 }
 .section-services .single-service:hover .icon img {
@@ -117,7 +117,7 @@
 .icon img{
 	width: 40px;
     height: 40px;
-	filter: hue-rotate(246deg) saturate(10.5);
+	filter: hue-rotate(113deg) brightness(244.5);
     object-fit: contain;
 }
 

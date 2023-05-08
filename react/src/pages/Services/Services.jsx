@@ -5,13 +5,16 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import services from './data';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import Fade from 'react-reveal/Fade';
-
+import { Helmet } from 'react-helmet';
 
 const Services = (full) => {
   useScrollToTop()
   
   return (
 	<section className="section-services" style={{marginTop:full.full?'60px':''}}>
+    <Helmet>
+        <title>SERVICES - MANIFEST AI</title>
+    </Helmet>
 		<div className="container">
 			<div className="row justify-content-center text-center">
           <SectionTitle title={"Exclusive Services"} subTitle={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."}/>
