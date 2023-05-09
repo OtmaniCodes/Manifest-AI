@@ -20,6 +20,7 @@ import Navbar from './components/Navbar/Navbar';
 import JobOffers from './pages/JobOffers/JobOffers';
 import FileUpload from "./pages/JobOffers/FileUpload";
 import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
+import Commendments from './pages/TenCommendments/Commendments';
 // import { Parallax, Background } from 'react-parallax';
 
 
@@ -48,7 +49,8 @@ function App() {
             <Route exact path="/articles" element={<Articles showSearch={true}/>}/>
             <Route path="/articles/:slug" element={<ArticlePage/>} />
 
-            <Route path="/test" element={<FileUpload/>} />
+            <Route path="/test" element={<FileUpload/>} /> {/*remove it*/}
+            <Route path="/commendment" element={<Commendments/>} />
           </Routes>
           <Footer />
         </BrowserRouter>
