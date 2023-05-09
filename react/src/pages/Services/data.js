@@ -1,11 +1,12 @@
 import consultation from "../../assets/services/consultation.png";
 import SUSTAINABILITY from "../../assets/services/SUSTAINABILITY.png";
 import ai from "../../assets/services/ai.png";
+import auditing from "../../assets/services/auditing.png";
 
 const servicesData = [
     {
         id: 1,
-        title: "Consulting",
+        title: "Business, Strategy & Consulting Services",
         smallDescription: "Small description about consulting!!",
         image: "https://static1.s123-cdn-static-a.com/ready_uploads/media/19472/2000_5cdbb33416b39.jpg",
         icon: consultation,
@@ -22,7 +23,7 @@ const servicesData = [
     },
     {
         id: 2,
-        title: "SUSTAINABILITY",
+        title: "Sustainability & Environmental Solutions",
         smallDescription: "Small description about SUSTAINABILITY!!",
         image: "https://static1.s123-cdn-static-a.com/ready_uploads/media/53733/2000_5ce3c1231b659.jpg",
         icon: SUSTAINABILITY,
@@ -40,7 +41,7 @@ const servicesData = [
     },
     {
         id: 3,
-        title: "AI TECHNOLOGY",
+        title: "AI-Driven Technology Innovations",
         smallDescription: "Small description about AI TECHNOLOGY!!",
         image: "https://static1.s123-cdn-static-a.com/uploads/7883034/2000_64494c20e694e.png",
         icon: ai,
@@ -57,18 +58,20 @@ const servicesData = [
     },
     {
         id: 4,
-        title: "AI TECHNOLOGY 2",
-        smallDescription: "Small description about AI TECHNOLOGY!!",
-        image: "https://static1.s123-cdn-static-a.com/uploads/7883034/2000_64494c20e694",
-        icon: ai,
+        title: "Auditing Services",
+        smallDescription:
+            "Expert auditing services for sustainable business practices.",
+        image: "https://cdn.corporatefinanceinstitute.com/assets/social-impact.jpeg",
+        icon: auditing,
         bigDescription:
-            "Our sustainability services can help businesses create a more sustainable future by developing strategies and initiatives that align with their values and goals, by:",
+            "Our auditing services provide businesses with comprehensive assessments of their current sustainability practices, identify areas for improvement, and ensure compliance with relevant regulations and standards:",
         list: [
-            "Developing a smart building system that optimizes energy usage and reduces operating costs",
-            "Developing a carbon management tool that enables clients to track and reduce their carbon footprint",
-            "Developing a waste management system that uses sensors and data analytics to reduce waste and increase recycling rates",
-            "Developing a sustainable transportation strategy that uses data analytics to optimize transportation routes and reduce emissions",
-            "Developing a virtual energy audit tool that enables clients to identify opportunities for reducing energy consumption.",
+            "Assessing compliance with environmental regulations and industry-specific sustainability standards",
+            "Evaluating the effectiveness of sustainability initiatives and identifying areas for improvement",
+            "Identifying potential risks and opportunities related to environmental and social aspects of business operations",
+            "Providing recommendations for enhancing sustainability performance and reducing environmental impact",
+            "Assisting with the development and implementation of sustainability management systems and processes",
+            "Conducting supply chain audits to ensure ethical sourcing and responsible resource management",
         ],
         date: "26/04/2023",
     },

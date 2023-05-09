@@ -32,8 +32,7 @@ const Home = () => {
     }, []);
     return ( 
         <div id="home">
-            <TenCommendments/>
-            {/* <HeroSection/>
+            <HeroSection/>
             <Fade delay={200}>
                     <section className="video-section">
                         <div className="container py-5">
@@ -50,7 +49,7 @@ const Home = () => {
                             </div>
                         </div>
                     </section>
-            </Fade> */}
+            </Fade>
             <Services/>
             <AboutSection/>
 
@@ -60,14 +59,14 @@ const Home = () => {
 
 
             <TeamSection/>
-            <Articles limit={5}/>
+            <Articles limit={4}/>
             <JobOffers/>
             <div className='take-action'>
                 <div className="content container-fluid h-100">
                 <div className="row justify-content-center align-items-center h-100">
                         <div className="col-md-10 text-center">
                             <img src={manifestBrain} alt={"Manifest AI Logo"}/>
-                            <p className="h2">ALWAYS INNOVATING WITH ETHICS</p>
+                            <p className="h2">&ldquo;ALWAYS INNOVATING WITH ETHICS&rdquo;</p>
                         </div>
                     </div>
                 </div>

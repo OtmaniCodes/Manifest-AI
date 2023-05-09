@@ -9,6 +9,7 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import Fade from 'react-reveal/Fade'
 import { Helmet } from 'react-helmet';
+import ResponsiveCompo from '../../components/responsive-compo';
 
 const Contact = (full) => {
     useScrollToTop()
@@ -138,12 +139,13 @@ const Contact = (full) => {
         <Helmet>
             <title>CONTACT - MANIFEST AI</title>
         </Helmet>
-        <SectionTitle title={"contact"} subTitle={"Get in Touch with Manifest AI"} alignStart={true}/>
         <div className="container mt-5">
             <div className="row">
             <Fade left cascade>
-                <div className="col-md-6">
-                    <h3>Contact Info</h3>
+                <div className="col-md-6 text-center text-md-start">
+                    <ResponsiveCompo desktopChild={<SectionTitle title={"contact"} subTitle={"Get in Touch with Manifest AI"} alignStart={true}/>}/>
+                    <ResponsiveCompo mobileChild={<SectionTitle title={"contact"} subTitle={"Get in Touch with Manifest AI"}/>}/>
+                    {/* <h3>Contact Info</h3> */}
                     <div className='contact-info'><i class="bi bi-geo-alt contact-icon"></i>Tangier, Tanger-Tetouan-Al Hoceima, Morocco</div>
                     <div className='contact-info'><i className="bi bi-envelope contact-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></div>
                     <div className='contact-info'><i className="bi bi-phone contact-icon"></i> <a href="tel:+1234567890">+1 (234) 567-890</a></div>
@@ -151,12 +153,12 @@ const Contact = (full) => {
             </Fade>
             <Fade right>
 
-                <div className="col-md-6">
+                <div className="col-md-6 text-center text-md-start">
                     <form onSubmit={handleSubmit}>
                         <div className="row mb-3">
                             <div className="col-md-4">
                                 <div className="input-box">
-                                    <label className="input-label">Name</label>
+                                    <label className="input-label text-start">Name</label>
                                     <input
                                     className="input"
                                     type="text"
@@ -172,7 +174,7 @@ const Contact = (full) => {
                             </div>
                             <div className="col-md-8">
 
-                                <div className="input-box">
+                                <div className="input-box text-start">
                                     <label className="input-label ">Phone</label>
                                     <input
                                     className="input"
@@ -189,7 +191,7 @@ const Contact = (full) => {
                             </div>
                         </div>
                         <div className="mb-3">
-                        <div className="input-box">
+                        <div className="input-box text-start">
                             <label className="input-label">Email address</label>
                         
                             <input
@@ -207,17 +209,17 @@ const Contact = (full) => {
                         </div>
                         <div className="mb-3">
                         </div>
-                        <div className="mb-3">
-                        <label htmlFor="message" className="input-label">Message</label>
-                        <textarea
-                            className="message-contact"
-                            value={formData.message}
-                            onChange={handleInputChange}
-                            onClick={handleInputClick}
-                            id="message"
-                            name="message"
-                            rows="5"
-                        ></textarea>
+                        <div className="mb-3 text-start">
+                            <label htmlFor="message" className="input-label">Message</label>
+                            <textarea
+                                className="message-contact"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                onClick={handleInputClick}
+                                id="message"
+                                name="message"
+                                rows="5"
+                            ></textarea>
                         {errors.message && <div className="invalid-feedback">{errors.message}</div>}
                         </div>
                         <button type="submit" className={`w-50 global-btn ${isSubmitting ? 'loading' : ''}`} disabled={isSubmitting}>

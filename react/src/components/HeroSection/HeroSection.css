@@ -8,6 +8,8 @@
 
 #home #hero #shadow-bg{
     background-color: rgba(249, 249, 249, 0.45);
+	background-image: linear-gradient(to right, #22B4D7, #28db64);
+    opacity: 0.4;
     height: 100%;
     width: 100%;
     z-index: 0;
@@ -23,15 +25,20 @@
 }
 
 #home #hero #hero-content .left-part h6{
-    /* color: #28db64; */
-    background-color: white;
+    color: #28db64;
+    /* background-color: white; */
     width: fit-content;
     padding: 5px 8px;
-    /* text-shadow: 2px 2px 4px black; */
+    margin: 0;
+    font-family: 'Campton' !important;
+    text-shadow: 2px 2px 4px black;
+    font-size: 20px;
 }
 #home #hero #hero-content .left-part h1{
     color: white;
     text-shadow: 2px 2px 4px black;
+    font-weight: bold;
+    font-size: 50px;
 }
 
 #home #hero .white-logo {
@@ -85,5 +92,13 @@
         height: 196px;
         width: 196px;
         margin-top: 80px;
+    }
+    #home #hero #hero-content .left-part h1{
+        font-size: 35px;
+        line-height: 1.05;
+    }
+    #home #hero #hero-content .left-part h6{
+        margin: 0 auto;
+        margin-bottom: 10px;
     }
 }

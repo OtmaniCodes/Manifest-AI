@@ -4,10 +4,10 @@
   /* height: 100vh !important; */
   padding-bottom: 80px;
   /* border: 1px solid #e3e6f0; */
-  border-radius: 5px;
+  /* border-radius: 5px; */
   /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); */
-  border-radius: 10px !important;
-  background-color: #EBEDF0;
+  /* border-radius: 10px !important; */
+  /* background-color: #EBEDF0; */
 }
 
 .job-section-wrapper{
@@ -33,6 +33,9 @@
   margin-bottom: 10px;
 }
 
+.job-item .job-info h5{
+  font-weight: bold;
+}
 
 .left-section,
 .right-section {
@@ -47,6 +50,7 @@
   margin-bottom: 20px;
   /* font-weight: bold; */
   font-size: 22px;
+  font-weight: bold;
   background-color: rgba(43, 194, 214, 0.582);
   padding: 20px;
   /* border-top-right-radius: 10px !important; */
@@ -128,11 +132,13 @@
 }
 
 .right-section h2 {
-  margin-top: 0;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .right-section h4 {
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .right-section ul {

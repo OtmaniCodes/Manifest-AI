@@ -1,5 +1,6 @@
 #article-page{
     text-align: center;
+    background: #F9F9F9;
 }
 
 #article-page .article-breadcrumbs{
@@ -65,7 +66,11 @@
 
 #article-page .article-content img{
     align-items: center;
-    width: 100%;
+    width: 65%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 #article-page .article-social-links .facebook, #article-page .article-social-links .instagram, #article-page .article-social-links .twitter{

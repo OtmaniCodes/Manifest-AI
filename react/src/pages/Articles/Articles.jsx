@@ -25,14 +25,14 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
   const theArticles = articlesLimit ? articles.slice(0, articlesLimit) : articles;
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredArticles = theArticles.filter(article => {
+  const filteredArticles = theArticles.length > 0 ? theArticles.filter(article => {
     const { title, categories, content } = article;
     const query = searchQuery.toLowerCase();
 
     return query ? (title.toLowerCase().includes(query)
       || categories.some(c => c.toLowerCase().includes(query))
       || content.toLowerCase().includes(query)) : true;
-  });
+  }) : [];
 
   return (
     <section id='articles-grid'>
@@ -71,32 +71,39 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
                   </div>
                 </div>
                 : !searchQuery.trim() ? (
-                  <>
-                    <Fade bottom duration={800}>
-                      <Article article={filteredArticles[0]} horizontal={true}/>
-                    </Fade>
-                    <Fade bottom cascade duration={1000}>
-                      <div className="row justify-content-center">             
-                          {filteredArticles.slice(1, filteredArticles.length).map((article) => (
-                              <div key={article.id} className={`col-md-5 mb-5`} >
-                                  <Article article={article} />
-                              </div>
-                          ))}
-                          {
-                            ((filteredArticles.length - 1) % 2 !== 0) && (
-                              <div key={filteredArticles.length} className={`col-md-5 mb-5`} ></div>
-                            )
-                          }
+                  filteredArticles.length > 0
+                    ? <>
+                        <Fade bottom duration={800}>
+                          <Article article={filteredArticles[0]} horizontal={true}/>
+                        </Fade>
+                        <Fade bottom cascade duration={1000}>
+                          <div className="row justify-content-center mx-md-5 mx-0">             
+                              {filteredArticles.slice(1, filteredArticles.length).map((article) => (
+                                  <div key={article.id} className={`col-md-4 mb-5`} >
+                                      <Article article={article} />
+                                  </div>
+                              ))}
+                              {
+                                ((filteredArticles.length - 1) % 2 !== 0) && (
+                                  <div key={filteredArticles.length} className={`col-md-5 mb-5`} ></div>
+                                )
+                              }
+                          </div>
+                        </Fade>
+                        {
+                          (theArticles.length < articles.length) && (
+                            <div className="d-flex justify-content-center m-0">
+                              <Link to={'/articles'} className="btn btn-text">See more</Link>
+                            </div>
+                          )
+                        }
+                    </>
+                    : 
+                    <div className="row justify-content-center">
+                      <div className="col-md-10 text-center">
+                        <p className='article-not-found h1'>...</p>
                       </div>
-                    </Fade>
-                    {
-                      (theArticles.length < articles.length) && (
-                        <div className="d-flex justify-content-center m-0">
-                          <Link to={'/articles'} className="btn btn-text">See more</Link>
-                        </div>
-                      )
-                    }
-                  </>
+                    </div>
                 ) : (filteredArticles.length > 0) ?
                 (
                   <div className="row justify-content-center">             

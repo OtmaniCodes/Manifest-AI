@@ -54,13 +54,13 @@ const TeamMemberCard = ({ name, title, description, image }) => {
       ref={cardRef}
       flipOnHover={true}
       flipOnClick={false}
-    //  style={{width: '295px'}}
+      style={{maxWidth: '295px', margin: '0 auto'}}
      >
       <FrontSide style={{ padding: 0, }}>
         <div className="card bg-white m-0 py-5 h-100 w-100 d-flex align-items-center justify-content-center text-center">
           <img src={image} className="card-img-top rounded-circle img-fluid" style={{width: '130px', height: '130px'}} alt={name} />
           <div className="card-body align-items-center">
-            <h5 className="card-title">{name}</h5>
+            <h5 className="card-title fw-bold">{name}</h5>
             <h6 className="card-subtitle mb-2 text-muted">{title}</h6>
             {/* <p className="card-text">{description}</p> */}
           </div>
@@ -69,7 +69,7 @@ const TeamMemberCard = ({ name, title, description, image }) => {
       <BackSide style={{ padding: 0 }}>
         <div className="card m-0 py-4 h-100 w-100 d-flex align-items-center justify-content-center text-center">
           <div className="card-body align-items-center">
-            <h5 className="card-title">{name}</h5>
+            <h5 className="card-title fw-bold">{name}</h5>
             <p className="card-text">{description}</p>
             <a href="#" className="card-link">Contact me</a>
           </div>
