@@ -1,67 +1,32 @@
 import React, { useEffect, useState } from "react";
-
 import "./CommendmentsSlider.css";
+import { commendments } from "./Ten-Commendments";
+
 
 function CommendmentsSlider() {
   const [activeSlide, setActiveSlide] = useState(1);
 
   useEffect(() => {
-    // This variable prevents race condition
     let current = 1;
     const cycleReviews = () => {
-      if (current === 5) {
+      if (current === 10) {
         current = 1;
       } else {
         current += 1;
       }
       setActiveSlide(current);
     };
-    // intervalId identified so it can be canceled on unmount
     const intervalId = setInterval(() => {
       cycleReviews();
-    },20900);
-    // Removes interval on unmount
+    },2500);
     return () => clearInterval(intervalId);
   }, []);
 
-  const reviews = [
-    {
-      name: "Jonathan D.",
-      citation: "Sale Closed in 2019",
-      quote:
-        "Door.com has been great. I feel like I got to work with a specialist at each point in the process. Everyone was very professional and very helpful. Plus, I'm amazed at the flat-fee for the sale! Great way to save at closing. Door.com has been great. I feel like I got to work with a specialist at each point in the process. Everyone was very professional and very helpful. Plus, I'm amazed at the flat-fee for the sale! Great way to save at closing."
-    },
-    {
-      name: "Peter C.",
-      citation: "Sale Closed in 2019",
-      quote:
-        "I have bought and sold ten homes. This has been the most rewarding experience of them all. True professionalism and insight as well as great customer service makes me a believer in the Door.com business model."
-    },
-    {
-      name: "Paulette H.",
-      citation: "Sale Closed in 2019",
-      quote:
-        "The entire experience from onboarding to the sale of our home has been professional, expedited quickly, and I saved close to $14,000 in commissions. I will absolutely be using Door.com for the sale of my next property."
-    },
-    {
-      name: "Ryan W.",
-      citation: "Sale Closed in 2019",
-      quote:
-        "Service was excellent EVERY step of the process! No way to tell that Door.com provided a flat rate service by the way that they treated us and handled every step of the transactions."
-    },
-    {
-      name: "Kevin R.",
-      citation: "Sale Closed in 2019",
-      quote:
-        "Everyone we worked with was very responsive, professional and easy to work with. A great experience all around. I work in this industry too so my expectations are high. Great work by all."
-    }
-  ];
-
   return (
     <div >
-      <ul className="carousel__list">
-        {reviews.map((review, index) => {
-          const { citation, name, quote } = review;
+      <ul className="slider-container">
+        {commendments.map((review, index) => {
+          const {title, description } = review;
           const count = index + 1;
           return (
             <li
@@ -74,10 +39,9 @@ function CommendmentsSlider() {
             >
               <blockquote className="carousel__quote">
                 <cite>
-                  <span className="carousel__name">{name}</span>
-                  <span className="carousel__citation">{citation}</span>
+                  <span className="carousel__name">{title}</span>
                 </cite>
-                <p>"{quote}"</p>
+                <p>"{description}"</p>
               </blockquote>
             </li>
           );
@@ -97,6 +61,21 @@ function CommendmentsSlider() {
           />
           <span
             className={`carousel__dot${activeSlide === 5 ? " active" : ""}`}
+          />
+          <span
+            className={`carousel__dot${activeSlide === 6 ? " active" : ""}`}
+          />
+          <span
+            className={`carousel__dot${activeSlide === 7 ? " active" : ""}`}
+          />
+          <span
+            className={`carousel__dot${activeSlide === 8 ? " active" : ""}`}
+          />
+          <span
+            className={`carousel__dot${activeSlide === 9 ? " active" : ""}`}
+          />
+          <span
+            className={`carousel__dot${activeSlide === 10 ? " active" : ""}`}
           />
         </li>
       </ul>

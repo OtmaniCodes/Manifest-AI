@@ -35,8 +35,7 @@ const Home = () => {
 
     return ( 
         <div id="home">
-            {/* <CommendmentsSlider/> */}
-            {/* <HeroSection/>
+            <HeroSection/>
             <Fade delay={200}>
                     <section className="video-section">
                         <div className="container py-5">
@@ -56,6 +55,10 @@ const Home = () => {
             </Fade>
             <Services/>
             <AboutSection/>
+            <div className='py-5'>
+                <SectionTitle title={"Commendments"} subTitle={""}/>
+                <CommendmentsSlider/>
+            </div>
             <TeamSection/>
             <Articles limit={4}/>
             <JobOffers/>
@@ -70,10 +73,9 @@ const Home = () => {
                 </div>
             </div>
             <Contact/>
-            <ScrollToTopButton/>
             <Helmet>
                 <title>HOME - MANIFEST AI</title>
-            </Helmet> */}
+            </Helmet>
         </div>
      );
 }

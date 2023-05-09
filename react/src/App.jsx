@@ -22,6 +22,7 @@ import FileUpload from "./pages/JobOffers/FileUpload";
 import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
 import { useEffect, useRef } from 'react';
 import Manifesto from './pages/Manifesto/Manifesto';
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
 
             <Route path="/manifesto" element={<Manifesto/>} />
           </Routes>
+          <ScrollToTopButton/>
           <Footer />
         </BrowserRouter>
       </div>

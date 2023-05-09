@@ -6,6 +6,7 @@ import Fade from 'react-reveal/Fade'
 // assets -----------------
 import aboutImg from "../../assets/images/about.png";
 import ResponsiveCompo from '../responsive-compo';
+import { Link } from 'react-router-dom';
 
 export default function AboutSection({givenStyle}) {
   return (
@@ -27,10 +28,18 @@ export default function AboutSection({givenStyle}) {
                 <Fade bottom>
                     <div className="col-md-5 order-1 mb-5 mb-md-0 order-md-2">
                         <img className='about-img shadow-lg' src={aboutImg} alt="" />
+                        
                     </div>
                 </Fade>
+                
+            </div>
+            <div className='d-flex justify-content-center'>
+            <Link className='manifesto-button' to='/manifesto'>
+                            Learn more about manifesto
+                        </Link>
             </div>
         </div>
+        
     </section>
   )
 }
