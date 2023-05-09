@@ -5,10 +5,10 @@ import Fade from 'react-reveal/Fade'
 
 const SectionTitle = ({title, subTitle, alignStart}) => {
     return ( 
-        <div className={`row justify-content-center text-center`}>
-            <div className={`col-md-10 col-lg-8 text-center`}>
+        <div className={`row justify-content-${alignStart ? 'start' : 'center'} ${alignStart ? "text-start" : "text-center"}`}>
+            <div className={`col-md-10 col-lg-8 ${alignStart ? "text-start" : "text-center"}`}>
                 <Fade bottom cascade duration={500}>
-                    <div className="header-section">
+                    <div className={`${alignStart ? 'header-section-start' : 'header-section'}`}>
                         <h2 className="section-header-title">{title}</h2>
                         <p className="section-header-description">{subTitle}</p>
                     </div>

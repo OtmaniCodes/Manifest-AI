@@ -5,12 +5,16 @@
 .article-compo-horizontal .article-card-img{
     width: 100%;
     border-radius: 10px;
+    max-height: 350px;
+    object-fit: cover;
 }
 
 .article-compo-horizontal h3.title{
     font-size: 2rem;
     color: black;
     margin-bottom: 20px;
+    font-family: 'Montserrat' !important;
+    font-weight: bold;
 }
 
 .article-compo-horizontal .excerpt{
@@ -68,10 +72,11 @@ p.read-more{
     color: black;
     font-size: 1.5rem;
     flex-grow: 1;
-    line-height: 1;
+    line-height: 1.2;
     font-weight: 400;
     margin-bottom: 20px;
     margin-left: 0px;
+    /* font-family: 'Campton' !important; */
 }
 
 

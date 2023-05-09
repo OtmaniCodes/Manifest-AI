@@ -1,3 +1,11 @@
+/* .section-services{
+    background-image: url('../../assets/images/all-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+} */
+
+
 .services-description{
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 4px black;
@@ -8,7 +16,9 @@
 .section-services .single-service{
     background-size: cover;
     transition: all 0.5s ease;
-    height: 80%;
+    /* height: 80%; */
+    max-width: 350px;
+    aspect-ratio: 1;
 }
 
 .section-services .single-service:hover{
@@ -27,10 +37,11 @@
 .services-title{
     margin-bottom: 18px;
 	font-weight: 700;
-    font-size: 23px;
+    font-size: 16px;
     transition: color .3s;
-    color: rgba(255, 255, 255, 0.87);
+    color: rgba(255, 255, 255);
     text-transform: uppercase;
+	font-family: 'Sans serif' !important;
     
 }
 .section-services .single-service:hover .services-title {
@@ -70,4 +81,40 @@
 }
 .section-services .single-service:hover .learn-more:after {
 	background-color: #fff;
+}
+
+.mobile-content {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .section-services .single-service{
+        width: 100%;
+        height: unset;
+        max-width: unset;
+        max-height: 300px;
+        aspect-ratio: unset;
+    }
+    
+    .mobile-content {
+        display: unset;
+    }
+    .mobile-content .card{
+        border-radius: 0;
+        border: unset !important;
+        box-shadow: unset;
+        border-bottom-left-radius: 20px !important;
+        border-bottom-right-radius: 20px !important; 
+    }
+    .mobile-content .card button{
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .section-services .single-service{
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+
 }

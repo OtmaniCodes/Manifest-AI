@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.App{
+    overflow: hidden;
+    /* max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto; */
+}
 
 a{
     text-decoration: none !important;
@@ -10,15 +20,19 @@ body{
     /* background: #F9F9F9; */
     /* background: red; */
     overflow-x: hidden;
-    font-family: "Open Sans", sans-serif;
-    /* background-image: url('assets/images/about.png');
+    /* font-family: "Open Sans", sans-serif; */
+    /* font-family: "Poppins", sans-serif; */
+    /* font-family: "Campton", sans-serif; */
+    font-family: "Montserrat", sans-serif;
+    background-image: url('assets/images/all-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
 
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Roboto", sans-serif !important;
+  /* font-family: "Roboto", sans-serif !important; */
+    font-family: 'Montserrat', sans serif !important;
 }
 
 
@@ -148,9 +162,6 @@ h1,h2,h3,h4,h5,h6 {
 
 
 
-.App{
-    overflow: hidden;
-}
 
 @keyframes glowing {
     0% {

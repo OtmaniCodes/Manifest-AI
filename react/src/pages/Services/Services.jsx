@@ -16,8 +16,7 @@ const Services = (full) => {
     setClickedServiceIndex(index);
   }
   
-  const selectedService = !isNaN(clickedServiceIndex) ? servicesData.find((serviceData) => serviceData.id === clickedServiceIndex + 1) : null;
-  console.log(selectedService, 'selected');
+  const selectedService = clickedServiceIndex !== null ? servicesData.find((serviceData) => serviceData.id === clickedServiceIndex + 1) : null;
 
   return (
 	<section className="section-services" style={{marginTop:full.full?'60px':''}}>
@@ -28,40 +27,55 @@ const Services = (full) => {
 			<div className="row justify-content-center text-center">
           <SectionTitle title={"Exclusive Services"} subTitle={"AI-powered Solutions for a Better Future: Our team at Manifest AI is dedicated to harnessing the power of AI to solve real-world problems and create a more sustainable and equitable future."}/>
 			</div>
-			{/* <Fade top cascade> */}
+			<Fade top cascade>
         <div className="row justify-content-center">
-          {services.map((e,i)=>(
-            <Service
-              id={e.id}
-              index = {i}
-              onServiceClick={(i) => handleServiceClick(i)}
-              title={e.title} 
-              desc={e.desc} 
-              image={e.image} 
-              icon={e.icon} 
-            />
+          {servicesData.map((e,i)=>(
+            <div className="col-md-3 text-center align-items-center justify-content-center">
+              <Service
+                id={e.id}
+                index = {i}
+                onServiceClick={(i) => handleServiceClick(i)}
+                service = {e}
+              />
+            </div>
           ))}
         </div>
+      </Fade>
         {
-          (clickedServiceIndex >= 0) &&
+          (selectedService) &&
           (
-            <div className="tab-content row mt-5">
-              <div className="col-md-11 text-start">
-                <h4 className='tab-content-title'>{selectedService.title}</h4>
-                <p className='tab-content-desc'>{selectedService.smallDescription}</p>
-                <div className="service-steps">
-                    {/* <h3 className="service-subtitle">How We Do Service 1</h3> */}
-                    <ul className='list-service'>
-                        {selectedService.list.map((e,i)=>(
-                            <li key={i}>{e}</li>
-                        ))}
-                    </ul>
-                </div>
-              </div>
+            <div className="active-bar-container d-flex justify-content-between align-items-center">
+              <div className={`active-bar mx-2 ms-0`} style={{opacity: clickedServiceIndex === 0 ? 1 : 0}}></div>
+              <div className={`active-bar mx-2`} style={{opacity: clickedServiceIndex === 1 ? 1 : 0}}></div>
+              <div className={`active-bar mx-2`} style={{opacity: clickedServiceIndex === 2 ? 1 : 0}}></div>
+              <div className={`active-bar mx-2 me-0`} style={{opacity: clickedServiceIndex === 3 ? 1 : 0}}></div>
             </div>
           )
         }
-      {/* </Fade> */}
+        {
+          (selectedService) &&
+          (
+              <div className="tab-content row justify-content-center align-items-center mt-5">
+              <Fade bottom cascade duration={400} key={clickedServiceIndex}>
+                <div className="col-md-11 text-start">
+                  <h4 className='tab-content-title'>{selectedService.title}</h4>
+                  <p className='tab-content-desc'>{selectedService.bigDescription}</p>
+                  <div className="service-steps">
+                      <div className='list-service'>
+                        <div className="row justify-content-center">
+                          {selectedService.list.map((e,i)=>(
+                            <div className="mb-1">
+                              <p key={i}>{e}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </Fade>
+              </div>
+          )
+        }
 		</div>
 	</section>
 

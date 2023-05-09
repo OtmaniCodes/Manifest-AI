@@ -10,18 +10,19 @@
 #footer .footer-top {
     padding: 60px 0 30px 0;
     background: #1B262C;
+    border-top: 2px white black;
 }
 
 #footer .footer-top .footer-contact {
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 #footer .footer-top .footer-contact h3 {
-    font-size: 22px;
+    font-size: 30px;
     margin: 0 0 10px 0;
     padding: 2px 0 2px 0;
     line-height: 1;
-    font-weight: 500;
+    font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #fff;
@@ -40,7 +41,7 @@
     font-weight: bold;
     color: #fff;
     position: relative;
-    padding-bottom: 12px;
+    padding-bottom: 0px;
 }
 
 #footer .footer-top .footer-links {

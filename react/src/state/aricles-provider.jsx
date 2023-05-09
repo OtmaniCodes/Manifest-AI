@@ -15,7 +15,7 @@ export function ArticlesProvider({ children }) {
       await articlesSingleton.initialize();
       setArticles(articlesSingleton.articles);
       // ------------------------------------------
-      setTimeout(()=>{setLoading(false)},2000) // !!!don't forget to remove the setTimeout
+      setTimeout(()=>{setLoading(false)}, 2000) // !!!don't forget to remove the setTimeout
       // ------------------------------------------
     }
     fetchArticles();
