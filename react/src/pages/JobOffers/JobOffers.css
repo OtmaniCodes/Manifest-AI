@@ -10,6 +10,14 @@
   /* background-color: #EBEDF0; */
 }
 
+.page-view {
+  margin-top: 55px;
+  background-image: url('../../assets/images/all-bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 .job-section-wrapper{
   /* height: 500px; */
   background-color: white;

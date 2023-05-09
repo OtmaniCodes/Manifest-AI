@@ -76,11 +76,12 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
                         <Fade bottom duration={800}>
                           <Article article={filteredArticles[0]} horizontal={true}/>
                         </Fade>
-                        <Fade bottom cascade duration={1000}>
                           <div className="row justify-content-center mx-md-5 mx-0">             
                               {filteredArticles.slice(1, filteredArticles.length).map((article) => (
-                                  <div key={article.id} className={`col-md-4 mb-5`} >
+                                  <div key={article.id} className="col-md-4 mb-5" >
+                                  <Fade bottom duration={600}>
                                       <Article article={article} />
+                                  </Fade>
                                   </div>
                               ))}
                               {
@@ -89,7 +90,6 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
                                 )
                               }
                           </div>
-                        </Fade>
                         {
                           (theArticles.length < articles.length) && (
                             <div className="d-flex justify-content-center m-0">

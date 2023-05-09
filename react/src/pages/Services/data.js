@@ -1,7 +1,7 @@
 import consultation from "../../assets/services/consultation.png";
 import SUSTAINABILITY from "../../assets/services/SUSTAINABILITY.png";
 import ai from "../../assets/services/ai.png";
-import auditing from "../../assets/services/auditing.png";
+import auditing from "../../assets/services/auditor.png";
 
 const servicesData = [
     {

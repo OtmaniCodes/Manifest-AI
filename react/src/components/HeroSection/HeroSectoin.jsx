@@ -4,10 +4,32 @@ import whiteBgLogo from "../../assets/images/white-logo.png";
 import dotsWeb from "../../assets/images/dots-web.png";
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
+import bgVideo from "../../assets/bgVideo.mp4"
 
 export default function HeroSection() {
   return (
     <section id='hero'>
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          left: '50%',
+          top: '50%',
+          height: '100%',
+          objectFit: 'cover',
+          transform: 'translate(-50%, -50%)',
+          // opacity: 0.4,
+          zIndex: '-2',
+          pointerEvents: 'none',
+          filter: 'brightness(50%)',
+        }}
+      >
+        <source src={bgVideo} type="video/mp4" />
+      </video>
         <div id="shadow-bg"></div>
         {/* <img className='dots-web' src={dotsWeb} /> */}
         <div id="hero-content" className="container h-100">
