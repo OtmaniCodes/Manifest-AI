@@ -61,7 +61,7 @@ const servicesData = [
         title: "Auditing Services",
         smallDescription:
             "Expert auditing services for sustainable business practices.",
-        image: "https://static1.s123-cdn-static-a.com/uploads/7883034/2000_64494c20e694",
+        image: "https://cdn.corporatefinanceinstitute.com/assets/social-impact.jpeg",
         icon: auditing,
         bigDescription:
             "Our auditing services provide businesses with comprehensive assessments of their current sustainability practices, identify areas for improvement, and ensure compliance with relevant regulations and standards:",
