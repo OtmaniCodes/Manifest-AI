@@ -23,11 +23,13 @@ import JobOffers from './pages/JobOffers/JobOffers';
 import FileUpload from "./pages/JobOffers/FileUpload";
 import Lottie from "react-lottie";
 import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
-import Commendments from './pages/TenCommendments/Commendments';
 import { useEffect, useRef } from 'react';
+import Manifesto from './pages/Manifesto/Manifesto';
 
 
 function App() {
+
+
   const lottieRef = useRef();
 
  useEffect(() => {
@@ -76,7 +78,7 @@ function App() {
             <Route path="/articles/:slug" element={<ArticlePage/>} />
 
             <Route path="/test" element={<FileUpload/>} /> {/*remove it*/}
-            <Route path="/commendment" element={<Commendments/>} />
+            <Route path="/manifesto" element={<Manifesto/>} />
           </Routes>
           <Footer />
         </BrowserRouter>

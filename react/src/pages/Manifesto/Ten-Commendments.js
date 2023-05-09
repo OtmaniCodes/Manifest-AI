@@ -28,4 +28,35 @@ const commendments=[
         description:"Nous nous engageons à être transparents dans nos intentions, nos méthodes et nos résultats. Nous serons responsables de nos actions et notre détermination infaillible envers l'évaluation et l'amélioration constantes de nos pratiques témoignera de notre volonté à assurer un impact positif sur l'humanité, symbole de notre profond respect pour le bien-être de tous.\nNous appelons tous ceux qui partagent notre vision d'une IA éthique et profitable à l'humanité à nous rejoindre dans cette quête passionnante et essentielle. Ensemble, nous pouvons forger un avenir où la technologie sert l'humanité, protège nos valeurs et nourrit notre esprit d'innovation et de coopération.\nEnsemble, écrivons l'histoire d'un monde meilleur, façonné par une intelligence artificielle éthique et au service de l'humanité. Rejoignez-nous et prenons part à cette aventure collective pour façonner l'avenir que nous souhaitons léguer aux générations futures."
     },
 ]
+export const manifesto=[
+    {
+        title:"AI in service of humanity",
+        description:"We place humans at the center of our concerns. We are dedicated to designing, developing, and deploying AI solutions that improve quality of life, reduce inequality, and strengthen solidarity among peoples. Our goal is to use AI to solve the world's most pressing challenges, such as hunger, poverty, climate change, and diseases."
+    },
+    {
+        title:"Ethics and Responsibility",
+        description:"We solemnly pledge to respect and promote fundamental ethical principles in the development and application of AI. These principles include respect for privacy, transparency, fairness, non-discrimination, and consideration of the long-term consequences of our actions. We will ensure that AI is used for the common good and not used to amplify disparities or inflict harm on others."
+    },
+    {
+        title:"Participation and Collaboration",
+        description:"We believe in the importance of cooperation and knowledge sharing to ensure a prosperous and harmonious future, as knowledge is the only thing that multiplies when shared. We are committed to working closely with other organizations, governments, researchers, and citizens to encourage cross-communication, mutual understanding, and collaboration to address the challenges posed by AI."
+    },
+    {
+        title:"Education and Awareness",
+        description:"We are dedicated to promoting education and awareness on issues related to AI, to encourage responsible, reasoned, and informed adoption of these technologies, highlighting their potential benefits while warning of the risks associated with them. We will ensure that current and future generations understand the opportunities and risks associated with AI, and are able to contribute to its development in an ethical and beneficial way for all."
+    },
+    {
+        title:"Emotion at the heart of our mission",
+        description:"We fully understand the primordial influence of human emotions in our professional practice. Aware that AI cannot be a simple automation, we believe that it should become our intuitive ally, capable of deciphering and expressing accurately our deepest emotional needs. We will integrate empathy, compassion, and humanity into our AI solutions to strengthen the connection between humans and technology, to create a future where we work together to meet challenges and celebrate our successes."
+    },
+    {
+        title:"Inclusive Innovation",
+        description:"We are dedicated to promoting inclusive innovation, ensuring that the benefits of AI are accessible to all, regardless of their origin, gender, age, or economic status. We will fight against biases and discrimination in AI technologies, and work tirelessly to create fair and equitable solutions."
+    },
+    {
+        title:"Transparency and Accountability",
+        description:"We pledge to be transparent in our intentions, methods, and results. We will be accountable for our actions, and our unwavering commitment to constant evaluation and improvement of our practices will demonstrate our desire to ensure a positive impact on humanity, a symbol of our deep respect for the well-being of all."
+    },
+
+]
 export default commendments;

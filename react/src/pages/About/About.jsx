@@ -5,7 +5,6 @@ import useScrollToTop from '../../hooks/useScrollToTop'
 import { Helmet } from 'react-helmet';
 import Fade from 'react-reveal/Fade';
 
-
 const aboutData = [
   {
     title: "Ethical AI Development",
@@ -16,7 +15,7 @@ const aboutData = [
       "Integrate privacy-by-design and security-by-design approaches",
       "Encourage collaboration among stakeholders to address ethical concerns"
     ],
-    graphic: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    graphic: "https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     title: "Sustainable AI Solutions",
