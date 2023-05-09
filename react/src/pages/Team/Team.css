@@ -1,4 +1,9 @@
 #team-page{
     /* background: #EBEDF0; */
+
+    background-image: url('../../assets/images/all-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 

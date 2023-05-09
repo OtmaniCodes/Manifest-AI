@@ -1,19 +1,21 @@
 #home #hero{
     height: 100vh;
-    background-image: url('../../assets/images/ai-sus.jpg');
+    /* background-image: url('../../assets/images/ai-sus.jpg');
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 #home #hero #shadow-bg{
-    background-color: rgba(249, 249, 249, 0.45);
 	background-image: linear-gradient(to right, #22B4D7, #28db64);
-    opacity: 0.4;
+    opacity: 0.5;
     height: 100%;
     width: 100%;
     z-index: 0;
     position: absolute;
+    pointer-events: none;
+    filter: blur(30px);
+    transform: scale(1.2);
 }
 
 #home #hero #hero-content{

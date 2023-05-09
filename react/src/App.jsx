@@ -4,8 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
-// import animationData from "./assets/93405-leaves.json"
-import animationData from "./assets/95467-wind.json"
 
 // other ---------------------------
 import {BrowserRouter,Routes,Route,} from "react-router-dom";
@@ -21,7 +19,6 @@ import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import JobOffers from './pages/JobOffers/JobOffers';
 import FileUpload from "./pages/JobOffers/FileUpload";
-import Lottie from "react-lottie";
 import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
 import { useEffect, useRef } from 'react';
 import Manifesto from './pages/Manifesto/Manifesto';
@@ -30,38 +27,7 @@ import Manifesto from './pages/Manifesto/Manifesto';
 function App() {
 
 
-  const lottieRef = useRef();
-
- useEffect(() => {
-    if (lottieRef.current) {
-      lottieRef.current.setSpeed(0.1);
-    }
-  }, []);
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   return (
-  <>
-      <Lottie
-        options={defaultOptions}
-        // height="auto"
-        width="100%"
-        ref={lottieRef}
-        style={{
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: -1,
-          opacity: 0.6,
-        }}
-      />
       <div className="App" style={{backgroundColor: '#ffffffaa'}}>
         <BrowserRouter>
           <ScrollProgressBar/>
@@ -77,26 +43,17 @@ function App() {
             <Route exact path="/articles" element={<Articles showSearch={true}/>}/>
             <Route path="/articles/:slug" element={<ArticlePage/>} />
 
-            <Route path="/test" element={<FileUpload/>} /> {/*remove it*/}
             <Route path="/manifesto" element={<Manifesto/>} />
           </Routes>
           <Footer />
         </BrowserRouter>
       </div>
-    </>
-    // <Parallax
-    //     blur={{ min: -15, max: 15 }}
-    //     bgImage={parallaxBg}
-    //     bgImageStyle={{height: '100%', width: '100vw'}}
-    //     bgImageAlt="background ima"
-    //     strength={-500}
-    // >
-      // <div />
-    // {/* </Parallax> */}
   )
 }
 
-export default App
+export default App;
+
+
 
 
 

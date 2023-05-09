@@ -9,6 +9,13 @@ import Fade from 'react-reveal/Fade'
 import { Helmet } from 'react-helmet';
 
 const JobOffers = (full) => {
+  // const pageStyling = {
+  //   backgroundImage: "url('../../assets/images/all-bg.jpg')",
+  //   backgroundSize: 'cover',
+  //   backgroundAttachment: 'fixed',
+  //   backgroundRepeat: 'noRepeat',
+  //   marginTop: '55px'
+  // }
   useScrollToTop()
   const [selectedJob, setSelectedJob] = useState(jobs[0]);
   const [leftSectionActive, setLeftSectionActive] = React.useState(true);
@@ -23,7 +30,7 @@ const JobOffers = (full) => {
       setShowForm(false);
   }
   return (
-    <div className="job-section pb-4 py-5 h-100" style={{marginTop: full.full?'55px':''}}>
+    <div className={`job-section ${full.full ? 'page-view' : ''} pb-4 py-5 h-100 `}>
       <Helmet>
         <title>JOB-OFFERS - MANIFEST AI</title>
       </Helmet>

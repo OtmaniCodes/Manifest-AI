@@ -26,11 +26,13 @@ import CommendmentsSlider from '../Manifesto/CommendmentsSlider';
 const Home = () => {
     useScrollToTop();
     const videoRef = useRef();
+
     useEffect(() => {
         if (videoRef.current) {
-        videoRef.current.play();
+            videoRef.current.play();
         }
     }, []);
+
     return ( 
         <div id="home">
             {/* <CommendmentsSlider/> */}
@@ -54,12 +56,6 @@ const Home = () => {
             </Fade>
             <Services/>
             <AboutSection/>
-
-
-
-
-
-
             <TeamSection/>
             <Articles limit={4}/>
             <JobOffers/>
