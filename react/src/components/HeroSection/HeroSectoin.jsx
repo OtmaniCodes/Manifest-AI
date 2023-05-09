@@ -19,7 +19,6 @@ export default function HeroSection() {
           height: '100%',
           left: '50%',
           top: '50%',
-          height: '100%',
           objectFit: 'cover',
           transform: 'translate(-50%, -50%)',
           // opacity: 0.4,

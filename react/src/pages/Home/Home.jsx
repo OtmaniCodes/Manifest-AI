@@ -19,7 +19,7 @@ import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopBut
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
-// import TenCommendments from '../TenCommendments/TenCommendments';
+import Manifesto from '../Manifesto/Manifesto';
 
 
 const Home = () => {

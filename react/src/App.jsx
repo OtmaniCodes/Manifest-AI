@@ -20,32 +20,35 @@ import Navbar from './components/Navbar/Navbar';
 import JobOffers from './pages/JobOffers/JobOffers';
 import FileUpload from "./pages/JobOffers/FileUpload";
 import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
-import Commendments from './pages/TenCommendments/Commendments';
 import { useEffect, useRef } from 'react';
+import Manifesto from './pages/Manifesto/Manifesto';
 
 
 function App() {
+
+
   return (
-    <div className="App">
-      
-      <BrowserRouter>
-        <ScrollProgressBar />
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/team" element={<Team />} />
-          <Route exact path="/contact" element={<Contact full={true} />} />
-          <Route exact path="/services" element={<Services full={true} />} />
-          <Route exact path="/job-offers" element={<JobOffers full={true} />} />
-          <Route exact path="/articles" element={<Articles showSearch={true} />} />
-          <Route path="/articles/:slug" element={<ArticlePage />} />
-          <Route path="/test" element={<FileUpload />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
-  );
+      <div className="App" style={{backgroundColor: '#ffffffaa'}}>
+        <BrowserRouter>
+          <ScrollProgressBar/>
+          <Navbar />
+          <Routes>
+            <Route exact path="/" element={<Home/>}/>
+            <Route exact path="/about" element={<About/>}/>
+            <Route exact path="/team" element={<Team/>}/>
+            <Route exact path="/contact" element={<Contact full={true}/>}/>
+            <Route exact path="/services" element={<Services full={true}/>}/>
+            {/* <Route exact path="/service/:slug" element={<ServicePage full={true}/>} /> */}
+            <Route exact path="/job-offers" element={<JobOffers full={true}/>} />
+            <Route exact path="/articles" element={<Articles showSearch={true}/>}/>
+            <Route path="/articles/:slug" element={<ArticlePage/>} />
+
+            <Route path="/manifesto" element={<Manifesto/>} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </div>
+  )
 }
 
 export default App;
