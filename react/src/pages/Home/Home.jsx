@@ -20,6 +20,7 @@ import useScrollToTop from '../../hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import Manifesto from '../Manifesto/Manifesto';
+import CommendmentsSlider from '../Manifesto/CommendmentsSlider';
 
 
 const Home = () => {
@@ -32,7 +33,8 @@ const Home = () => {
     }, []);
     return ( 
         <div id="home">
-            <HeroSection/>
+            {/* <CommendmentsSlider/> */}
+            {/* <HeroSection/>
             <Fade delay={200}>
                     <section className="video-section">
                         <div className="container py-5">
@@ -75,7 +77,7 @@ const Home = () => {
             <ScrollToTopButton/>
             <Helmet>
                 <title>HOME - MANIFEST AI</title>
-            </Helmet>
+            </Helmet> */}
         </div>
      );
 }
