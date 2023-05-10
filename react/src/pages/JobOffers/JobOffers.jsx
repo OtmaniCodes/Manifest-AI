@@ -31,7 +31,7 @@ const JobOffers = (full) => {
       setShowForm(false);
   }
   return (
-    <div style={{position: 'relative'}} className={`container job-section ${full.full ? 'page-view' : ''} pt-5 h-100`}>
+    <div style={{position: 'relative'}} className={`job-section ${full.full ? 'page-view' : ''} pt-5 h-100`}>
       <Helmet>
         <title>JOB OFFERS - MANIFEST AI</title>
       </Helmet>
@@ -57,7 +57,7 @@ const JobOffers = (full) => {
       <SectionTitle withBg={true} title={"Job Offers"} subTitle={"At Manifest AI, our passion for people, data, and clients is the driving force behind our commitment to excellence. We believe in providing our team members with fulfilling career opportunities, not just temporary jobs, and we know that a shared passion is the key to achieving this."} />
       {/* <Fade bottom> */}
 
-        <div className="container-fluid m-0 px-0 mt-4 h-100">
+        <div className="container mx-auto  px-0 mt-4 h-100">
           <div className="row job-section-wrapper border">
             <div className={`col-md-4 left-section d-md-block ${leftSectionActive ? '' : 'd-none'}`} onClick={toggleLeftSection}>
               
