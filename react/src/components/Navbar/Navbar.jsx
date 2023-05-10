@@ -37,7 +37,7 @@ const Navbar = () => {
   }, [scrollPosition])
     return ( 
         <header id="header" className={visible ? '' : 'hidden-navbar' }>
-        <div className="navbar-container d-flex align-items-center">
+        <div className="navbar-container px-2 d-flex align-items-center">
 
           <Link to={"/"} className="logo mx-2 me-auto me-lg-0">
             <img src={logo} alt="" className="img-fluid"/>
@@ -76,12 +76,12 @@ const Navbar = () => {
               <li className="dropdown"><Link to="#"><span>Community</span> <i className="bi bi-chevron-down"></i></Link>
                 <ul>
                   <li><a href="team.html">Discord</a></li>
-                  <li className="dropdown"><a href="#"><span>More</span> <i className="bi bi-chevron-right"></i></a>
+                  {/* <li className="dropdown"><a href="#"><span>More</span> <i className="bi bi-chevron-right"></i></a>
                     <ul>
                       <li><a href="#">page 1</a></li>
                       <li><a href="#">page 2</a></li>
                     </ul>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
             </ul>

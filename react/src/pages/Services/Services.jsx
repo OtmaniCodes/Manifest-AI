@@ -10,7 +10,7 @@ import servicesData from './data';
 
 const Services = (full) => {
   useScrollToTop()
-  const [clickedServiceIndex, setClickedServiceIndex] = useState(0);
+  const [clickedServiceIndex, setClickedServiceIndex] = useState(null);
 
   const handleServiceClick = (index) => {
     setClickedServiceIndex(index);

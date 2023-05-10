@@ -39,7 +39,7 @@ const Home = () => {
         <div id="home">
             <HeroSection/>
             <section className="video-section">
-                <div className="container py-5">
+                <div className="px-5 py-5">
                     <SectionTitle title={"Introducing MANIFEST AI"} />
                     <div className="row">
                     <div className="col-12">
@@ -56,11 +56,14 @@ const Home = () => {
                 </div>
             </section>
             <Services/>
-            <AboutSection/>
+            <div id='About-section'>
+                <AboutSection/>
+            </div>            
             <div className='py-5' style={{backgroundColor:"#EBEDF0"}}>
                 <SectionTitle title={"The 10 Commendments"} subTitle={""}/>
                 <CommendmentsSlider/>
             </div>
+            
             <TeamSection/>
             <Articles limit={4}/>
             <JobOffers/>
@@ -79,7 +82,7 @@ const Home = () => {
                 </div>
             </div>
             <Contact/>
-            <ScrollToTopButton/>
+            
             <CityLottie/>
             <Helmet>
                 <title>HOME - MANIFEST AI</title>

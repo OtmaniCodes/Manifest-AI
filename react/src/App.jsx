@@ -24,6 +24,8 @@ import FileUpload from "./pages/JobOffers/FileUpload";
 import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
 import Manifesto from './pages/Manifesto/Manifesto';
 import bgVideo from "./assets/bg-video.mp4"
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
+import Abort404 from './pages/abort-404/Abort404';
 
 
 // const Home = lazy(() => import("./pages/Home/Home"));
@@ -68,8 +70,10 @@ function App() {
             <Route exact path="/job-offers" element={<JobOffers full={true}/>} />
             <Route exact path="/articles" element={<Articles showSearch={true}/>}/>
             <Route path="/articles/:slug" element={<ArticlePage/>} />
-            <Route path="/manifesto" element={<Manifesto/>} />
+            <Route path="/manifest" element={<Manifesto/>} />
+            <Route path="*" element={<Abort404/>} />
           </Routes>
+          <ScrollToTopButton/>
           <Footer />
         </BrowserRouter>
       </div>
