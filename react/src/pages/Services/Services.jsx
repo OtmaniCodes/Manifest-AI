@@ -7,6 +7,8 @@ import useScrollToTop from '../../hooks/useScrollToTop';
 import Fade from 'react-reveal/Fade';
 import { Helmet } from 'react-helmet';
 import servicesData from './data';
+import bgVideo from "../../assets/bg-video.mp4"
+
 
 const Services = (full) => {
   useScrollToTop()
@@ -22,10 +24,31 @@ const Services = (full) => {
   const selectedService = clickedServiceIndex !== null ? servicesData.find((serviceData) => serviceData.id === clickedServiceIndex + 1) : null;
 
   return (
-	<section className="section-services" style={{marginTop:full.full?'60px':''}}>
+	<section className="section-services" style={{position: 'relative',marginTop:full.full?'60px':''}}>
     <Helmet>
         <title>SERVICES - MANIFEST AI</title>
     </Helmet>
+
+
+    <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          left: '50%',
+          top: '50%',
+          objectFit: 'cover',
+          transform: 'translate(-50%, -50%)',
+          zIndex: '-2',
+          pointerEvents: 'none',
+          filter: 'blur(1px)',
+        }}
+      >
+        <source src={bgVideo} type="video/mp4" />
+      </video>
 		<div className="container">
 			<div className="row justify-content-center text-center">
           <SectionTitle withBg={true} title={"Our Services"} subTitle={"AI-powered Solutions for a Better Future: Our team at Manifest AI is dedicated to harnessing the power of AI to solve real-world problems and create a more sustainable and equitable future."}/>

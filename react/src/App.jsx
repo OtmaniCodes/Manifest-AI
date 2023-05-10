@@ -35,7 +35,7 @@ function App() {
 
   return (
       <div className="App">
-      <video
+      {/* <video
         autoPlay
         loop
         muted
@@ -47,16 +47,13 @@ function App() {
           top: '50%',
           objectFit: 'cover',
           transform: 'translate(-50%, -50%)',
-          // opacity: 0.4,
           zIndex: '-2',
           pointerEvents: 'none',
-          // filter: 'brightness(50%)',
           filter: 'blur(1px)',
         }}
       >
-        {/* <source src={"https://firebasestorage.googleapis.com/v0/b/manifest-ai-aa018.appspot.com/o/bgVideo.mp4?alt=media&token=e39dfb86-6e84-4fb4-a5fe-cc73202ed8a2"} type="video/mp4" /> */}
         <source src={bgVideo} type="video/mp4" />
-      </video>
+      </video> */}
         <BrowserRouter>
           <ScrollProgressBar/>
           <Navbar />

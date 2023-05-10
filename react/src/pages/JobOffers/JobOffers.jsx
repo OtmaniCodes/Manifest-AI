@@ -7,6 +7,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import useScrollToTop from '../../hooks/useScrollToTop';
 import Fade from 'react-reveal/Fade'
 import { Helmet } from 'react-helmet';
+import bgVideo from "../../assets/bg-video.mp4"
 
 const JobOffers = (full) => {
   // const pageStyling = {
@@ -30,14 +31,33 @@ const JobOffers = (full) => {
       setShowForm(false);
   }
   return (
-    <div className={`job-section ${full.full ? 'page-view' : ''} pt-5 h-100`}>
+    <div style={{position: 'relative'}} className={`container job-section ${full.full ? 'page-view' : ''} pt-5 h-100`}>
       <Helmet>
         <title>JOB OFFERS - MANIFEST AI</title>
       </Helmet>
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          left: '50%',
+          top: '50%',
+          objectFit: 'cover',
+          transform: 'translate(-50%, -50%)',
+          zIndex: '-2',
+          pointerEvents: 'none',
+          filter: 'blur(1px)',
+        }}
+      >
+        <source src={bgVideo} type="video/mp4" />
+      </video>
       <SectionTitle withBg={true} title={"Job Offers"} subTitle={"At Manifest AI, our passion for people, data, and clients is the driving force behind our commitment to excellence. We believe in providing our team members with fulfilling career opportunities, not just temporary jobs, and we know that a shared passion is the key to achieving this."} />
       {/* <Fade bottom> */}
 
-        <div className="container-fluid m-0 mt-4 h-100">
+        <div className="container-fluid m-0 px-0 mt-4 h-100">
           <div className="row job-section-wrapper border">
             <div className={`col-md-4 left-section d-md-block ${leftSectionActive ? '' : 'd-none'}`} onClick={toggleLeftSection}>
               

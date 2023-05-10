@@ -187,17 +187,19 @@
     /* background-color: rgba(128, 128, 128, 0.5); */
     background-color: rgba(0, 0, 0, 0.3);
     width: 100%;
-    height: 1px;
+    height: 3px;
     border-radius: 5px;
     margin-top: 20px;
+    
   }
 
   .active-bar-container .active-bar{
     border-radius: 3px;
     transition: all 0.3s ease-in-out;
-    height: 3px;
+    height: 5px;
+    transition: 0.5s;
     width: 100%;
-    background-color: #22B4D7;
+    background-color: #22d75e;
     opacity: 0;
   }
 

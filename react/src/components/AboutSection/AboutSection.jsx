@@ -10,7 +10,7 @@ import ResponsiveCompo from '../responsive-compo';
 export default function AboutSection({givenStyle}) {
   return (
     <section id='about' style={givenStyle}>
-        <div className="px-5 py-5 h-100">
+        <div className="container px-5 py-5 h-100">
             <ResponsiveCompo mobileChild={ <SectionTitle title={"About"} subTitle={"Ethical AI Development for a Better Future"} />} />
             <div className="row align-items-center justify-content-center h-100">
                 <Fade bottom cascade>

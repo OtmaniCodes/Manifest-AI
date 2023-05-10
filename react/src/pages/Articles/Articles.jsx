@@ -35,7 +35,7 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
   }) : [];
 
   return (
-    <section id='articles-grid' className='' style={{marginTop: showSearch ? '55px' : ""}}>
+    <section id='articles-grid' className='container' style={{marginTop: showSearch ? '55px' : ""}}>
         <div className="container-fluid py-5">
             <SectionTitle title={"Articles"} subTitle={"Check out our last Articles posted on our blog."}/>
             { showSearch && (
@@ -76,7 +76,7 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
                         <Fade bottom duration={800}>
                           <Article article={filteredArticles[0]} horizontal={true}/>
                         </Fade>
-                          <div className="row justify-content-center mx-md-5 mx-0">             
+                          <div className="row justify-content-center  mx-0">             
                               {filteredArticles.slice(1, filteredArticles.length).map((article) => (
                                   <div key={article.id} className="col-md-4 mb-5" >
                                   <Fade bottom duration={600}>
