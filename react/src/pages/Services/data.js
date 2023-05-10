@@ -58,7 +58,7 @@ const servicesData = [
     },
     {
         id: 4,
-        title: "Auditing Services",
+        title: "Professional Auditing Services",
         smallDescription:
             "Expert auditing services for sustainable business practices.",
         image: "https://cdn.corporatefinanceinstitute.com/assets/social-impact.jpeg",

@@ -9,13 +9,13 @@ const teamMembers = [
   {
     name: 'Riad Lahlou',
     title: 'CEO & Cofounder',
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum officia ullam deleniti assumenda quidem facilis neque sapiente eum consequatur repellendus!",
+    description: "Riad Lahlou is the CEO of Manifest AI, a leading artificial intelligence company that provides innovative solutions to a wide range of industries. With over 20 years of experience in the tech industry, Jane has a proven track record of driving growth and delivering results.",
     image: 'https://www.complianceandethics.org/wp-content/uploads/2016/06/BRUCE-WEINSTEIN-THE-ETHICS-GUY-HALF-BODY-SHOT-1-1-e1467294422763.jpg',
   },
   {
     name: 'Aicha Arfate',
     title: 'CEO & Cofounder',
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum officia ullam deleniti assumenda quidem facilis neque sapiente eum consequatur repellendus!",
+    description: "Aicha Arfate is a serial entrepreneur and the CEO of a fast-growing tech startup called Cybrix. With over a decade of experience in the tech industry, Aicha is a visionary leader with a passion for creating innovative products that solve real-world problems.",
     image: 'https://images.saymedia-content.com/.image/t_share/MTc2MjY1NDMzOTM3MjI0ODc3/square-face-women-celebrities.jpg',
   }
 ];
@@ -25,7 +25,7 @@ export default function TeamSection({givenStyle}) {
     <section id='team' style={givenStyle}>
         <div className="container py-5 h-100">
             <SectionTitle title={"Team"}  subTitle={"Experts in AI Development and Social Impact"}/>
-            <div className="row align-items-center justify-content-center">
+            <div className="row align-items-center justify-content-center h-100">
               {
                 teamMembers.map((member, index) => {
                   return (

@@ -30,15 +30,15 @@ const JobOffers = (full) => {
       setShowForm(false);
   }
   return (
-    <div className={`job-section ${full.full ? 'page-view' : ''} pb-4 py-5 h-100 `}>
+    <div className={`job-section ${full.full ? 'page-view' : ''} pt-5 h-100`}>
       <Helmet>
-        <title>JOB-OFFERS - MANIFEST AI</title>
+        <title>JOB OFFERS - MANIFEST AI</title>
       </Helmet>
-      <SectionTitle title={"Job Offers"} subTitle={"At Manifest AI, our passion for people, data, and clients is the driving force behind our commitment to excellence. We believe in providing our team members with fulfilling career opportunities, not just temporary jobs, and we know that a shared passion is the key to achieving this."} />
-      <Fade bottom>
+      <SectionTitle withBg={true} title={"Job Offers"} subTitle={"At Manifest AI, our passion for people, data, and clients is the driving force behind our commitment to excellence. We believe in providing our team members with fulfilling career opportunities, not just temporary jobs, and we know that a shared passion is the key to achieving this."} />
+      {/* <Fade bottom> */}
 
-        <div className="container mt-4 shadow-sm rounded">
-          <div className="row job-section-wrapper border rounded shadow-sm">
+        <div className="container-fluid m-0 mt-4 h-100">
+          <div className="row job-section-wrapper border">
             <div className={`col-md-4 left-section d-md-block ${leftSectionActive ? '' : 'd-none'}`} onClick={toggleLeftSection}>
               
               <div className="job-list">
@@ -62,7 +62,7 @@ const JobOffers = (full) => {
                 ))}
               </div>
             </div>
-            <div className={`col-md-8 right-section d-md-block ${!leftSectionActive ? '' : 'd-none'}`}>
+            <div className={`col-md-8 right-section d-md-block ${!leftSectionActive ? '' : 'd-none'} pb-5`}>
                 <button
                 onClick={toggleLeftSection}
                 className="back-button d-md-none"
@@ -96,7 +96,7 @@ const JobOffers = (full) => {
           </div>
           {showForm && <PopUp close={handleCloseForm}/>}
         </div>
-      </Fade>
+      {/* </Fade> */}
       </div>
   );
 };

@@ -14,6 +14,9 @@ const Services = (full) => {
 
   const handleServiceClick = (index) => {
     setClickedServiceIndex(index);
+    if (clickedServiceIndex == null) {
+      window.scrollTo({top: window.scrollY + 250});
+    }
   }
   
   const selectedService = clickedServiceIndex !== null ? servicesData.find((serviceData) => serviceData.id === clickedServiceIndex + 1) : null;
@@ -25,7 +28,7 @@ const Services = (full) => {
     </Helmet>
 		<div className="container">
 			<div className="row justify-content-center text-center">
-          <SectionTitle title={"Exclusive Services"} subTitle={"AI-powered Solutions for a Better Future: Our team at Manifest AI is dedicated to harnessing the power of AI to solve real-world problems and create a more sustainable and equitable future."}/>
+          <SectionTitle withBg={true} title={"Our Services"} subTitle={"AI-powered Solutions for a Better Future: Our team at Manifest AI is dedicated to harnessing the power of AI to solve real-world problems and create a more sustainable and equitable future."}/>
 			</div>
 			<Fade top cascade>
         <div className="row justify-content-center">

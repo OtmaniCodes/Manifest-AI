@@ -6,6 +6,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
 
 // other ---------------------------
+import React from 'react';
+import { lazy, Suspense } from "react";
 import {BrowserRouter,Routes,Route,} from "react-router-dom";
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
@@ -20,33 +22,53 @@ import Navbar from './components/Navbar/Navbar';
 import JobOffers from './pages/JobOffers/JobOffers';
 import FileUpload from "./pages/JobOffers/FileUpload";
 import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
-import { useEffect, useRef } from 'react';
 import Manifesto from './pages/Manifesto/Manifesto';
-import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
+// import bgVideo from "./assets/bgVideo.mp4"
 
+
+// const Home = lazy(() => import("./pages/Home/Home"));
 
 function App() {
 
 
   return (
-      <div className="App" style={{backgroundColor: '#ffffffaa'}}>
+      <div className="App">
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: 'fixed',
+          width: '100%',
+          height: '100%',
+          left: '50%',
+          top: '50%',
+          objectFit: 'cover',
+          transform: 'translate(-50%, -50%)',
+          // opacity: 0.4,
+          zIndex: '-2',
+          pointerEvents: 'none',
+          // filter: 'brightness(50%)',
+          filter: 'blur(1px)',
+        }}
+      >
+        <source src={"https://firebasestorage.googleapis.com/v0/b/manifest-ai-aa018.appspot.com/o/bgVideo.mp4?alt=media&token=e39dfb86-6e84-4fb4-a5fe-cc73202ed8a2"} type="video/mp4" />
+      </video>
         <BrowserRouter>
           <ScrollProgressBar/>
           <Navbar />
           <Routes>
+            {/* <Route exact path="/" element={<Suspense><Home/></Suspense>}/> */}
             <Route exact path="/" element={<Home/>}/>
             <Route exact path="/about" element={<About/>}/>
             <Route exact path="/team" element={<Team/>}/>
             <Route exact path="/contact" element={<Contact full={true}/>}/>
             <Route exact path="/services" element={<Services full={true}/>}/>
-            {/* <Route exact path="/service/:slug" element={<ServicePage full={true}/>} /> */}
             <Route exact path="/job-offers" element={<JobOffers full={true}/>} />
             <Route exact path="/articles" element={<Articles showSearch={true}/>}/>
             <Route path="/articles/:slug" element={<ArticlePage/>} />
-
             <Route path="/manifesto" element={<Manifesto/>} />
           </Routes>
-          <ScrollToTopButton/>
           <Footer />
         </BrowserRouter>
       </div>
