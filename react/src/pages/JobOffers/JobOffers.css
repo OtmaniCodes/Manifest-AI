@@ -138,7 +138,8 @@
 
 .right-section {
   border-left: 1px solid #e3e6f0;
-  background-color: #ffffee;
+  /* background-color: #ffffee; */
+  background-color: white;
 }
 
 .right-section h2 {
