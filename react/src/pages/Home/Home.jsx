@@ -56,7 +56,7 @@ const Home = () => {
             <Services/>
             <AboutSection/>
             <div className='py-5'>
-                <SectionTitle title={"Commendments"} subTitle={""}/>
+                <SectionTitle title={"The 10 Commendments"} subTitle={""}/>
                 <CommendmentsSlider/>
             </div>
             <TeamSection/>

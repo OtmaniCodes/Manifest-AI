@@ -1,7 +1,8 @@
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import './Manifesto.css'
 import Fade from 'react-reveal/Fade'
-import manifestoPDF from '../../assets/manifesto/manifest AI.pdf'
+import manifestoPDF from '../../assets/manifesto/manifest.pdf'
+import commendmentsPDF from '../../assets/manifesto/commendments.pdf'
 import logo from '../../assets/manifest_logo.png'
 import manifesto from './Ten-Commendments'
 import CommendmentsSlider from './CommendmentsSlider';
@@ -49,9 +50,9 @@ const Manifesto = () => {
                 }
 
                 <div className='lead'>Download -
-                    <a href={manifestoPDF} download> The 10 Commenments</a>
+                    <a href={commendmentsPDF} download> The 10 Commenments</a>
                     <span className='mx-2'>or</span>
-                    <a href={manifestoPDF} download>The Manifesto</a>
+                    <a href={manifestoPDF} download>The Manifest</a>
                 </div>
             </div>
             <hr />
