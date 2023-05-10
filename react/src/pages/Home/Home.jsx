@@ -39,7 +39,7 @@ const Home = () => {
         <div id="home">
             <HeroSection/>
             <section className="video-section">
-                <div className="px-5 py-5">
+                <div className="px-5 py-5 container">
                     <SectionTitle title={"Introducing MANIFEST AI"} />
                     <div className="row">
                     <div className="col-12">
@@ -60,7 +60,7 @@ const Home = () => {
                 <AboutSection/>
             </div>            
             <div className='py-5' style={{backgroundColor:"#EBEDF0"}}>
-                <SectionTitle title={"The 10 Commendments"} subTitle={""}/>
+                <SectionTitle title={"The 10 commandments"} subTitle={""}/>
                 <CommendmentsSlider/>
             </div>
             

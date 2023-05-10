@@ -17,9 +17,9 @@ const Manifesto = () => {
     return ( 
         <div className="commendments-container px-5 pt-5">
             <Helmet>
-                <title>MANIFESTO & The 10 COMMENMENTS - MANIFEST AI</title>
+                <title>MANIFESTO & The 10 COMMANMENTS - MANIFEST AI</title>
             </Helmet>
-            <SectionTitle title={"Manifest & The 10 Commendments"} subTitle={""}/>
+            <SectionTitle title={"Manifest & The 10 commandments"} subTitle={""}/>
             <div className='commendments-header'>
                 <h3>MANIFEST</h3>
                 {/* <AutoTypingText text={text} delay={10} /> */}
@@ -41,7 +41,7 @@ const Manifesto = () => {
                         </div>
                         </Fade>
                         <Fade left={graphicsFirst} right={!graphicsFirst}>
-                            <div className={`col-md-4 mb-3 mb-md-0 text-md-start text-center order-1 order-md-${graphicsFirst ? 1 : 2}`}>
+                            <div style={{height:'200px'}} className={`col-md-4 mb-3 mb-md-0 text-md-start text-center order-1 order-md-${graphicsFirst ? 1 : 2}`}>
                                 <img src={data.graphic} className='commenment-img more-about-img order-1 shadow-lg' />
                             </div>
                         </Fade>
@@ -55,10 +55,10 @@ const Manifesto = () => {
             </div>
             <hr />
             <div className='commendments-content pb-4'>
-              <h3>THE 10 COMMENDMENTS</h3>
+              <h3>THE 10 COMMANDMENTS</h3>
                 <CommendmentsSlider/>
                 <div className='lead download-manifest'>Download -
-                    <a href={manifestoPDF} download> The 10 Commendments</a>
+                    <a href={manifestoPDF} download> The 10 commandments</a>
                 </div>
             </div>
 

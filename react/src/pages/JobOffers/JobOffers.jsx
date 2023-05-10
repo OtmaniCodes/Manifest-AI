@@ -41,7 +41,7 @@ const JobOffers = (full) => {
           <div className="row job-section-wrapper border">
             <div className={`col-md-4 left-section d-md-block ${leftSectionActive ? '' : 'd-none'}`} onClick={toggleLeftSection}>
               
-              <div className="job-list">
+              <div className="job-list border-bottom">
               <div className="jobs-header">We're currently looking for</div> {/* Add this line */}
                 {jobs.map((job, index) => (
                   <div
@@ -67,7 +67,7 @@ const JobOffers = (full) => {
                 onClick={toggleLeftSection}
                 className="back-button d-md-none text-muted px-0"
               >
-                <FaArrowLeft className="back-icon mt-2" />
+                <FaArrowLeft className="back-icon " />
                 Back
               </button>
 

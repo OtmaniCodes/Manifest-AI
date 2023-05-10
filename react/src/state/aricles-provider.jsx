@@ -17,7 +17,7 @@ export function ArticlesProvider({ children }) {
       // setLoading(false)
       // ------------------------------------------
 
-      setTimeout(()=>{setLoading(false)}, 1500) // !!!don't forget to remove the setTimeout
+      setTimeout(()=>{setLoading(false)}, 2000) // !!!don't forget to remove the setTimeout
       // ------------------------------------------
     }
     fetchArticles();

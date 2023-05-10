@@ -97,7 +97,7 @@ const manifesto = [
         "We believe in the importance of cooperation and sharing knowledge to ensure a prosperous and harmonious future, as knowledge is the only thing that multiplies when shared.",
         "We commit to working closely with other organizations, governments, researchers, and citizens to encourage cross-communication, mutual understanding, and collaboration to address the challenges posed by AI."
       ],
-      graphic: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      graphic: "https://images.pexels.com/photos/5641902/pexels-photo-5641902.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       title: "Education and awareness",
@@ -105,7 +105,7 @@ const manifesto = [
         "We dedicate ourselves to promoting education and awareness of AI-related issues, in order to encourage responsible, reasoned, and informed adoption of these technologies, highlighting their beneficial potential while warning of the risks associated with them.",
         "We will ensure that current and future generations understand the opportunities and risks associated with AI and can contribute to its development in an ethical and beneficial way for all."
       ],
-      graphic: "https://images.pexels.com/photos/3755511/pexels-photo-3755511.jpeg?auto=compress&cs=tinysrgb&w=600"
+      graphic: "https://img.freepik.com/premium-photo/green-information-technology-environmentally-sustainable-it-green-plant-growing-white-keyboard_536572-148.jpg"
     },
     {
       title: "Emotion at the heart of our mission",
