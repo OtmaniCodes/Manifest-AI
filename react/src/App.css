@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 .App{
     overflow-x: hidden;
@@ -25,10 +25,10 @@ body{
     /* font-family: "Poppins", sans-serif; */
     /* font-family: "Campton", sans-serif; */
     font-family: "Montserrat", sans-serif;
-    background-image: url('assets/images/all-bg.jpg');
+    /* background-image: url('assets/images/all-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 
 }
 h1,h2,h3,h4,h5,h6 {
@@ -160,8 +160,16 @@ h1,h2,h3,h4,h5,h6 {
 
 
 
+.bg-full-btn{
+    --color: #22B4D7;
+    color: white;
+    background-color: var(--color);
+}
 
 
+.bg-full-btn:hover{
+    background-color: #097792;
+}
 
 
 @keyframes glowing {

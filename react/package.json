@@ -19,6 +19,7 @@
         "react-flippy": "^1.1.0",
         "react-helmet": "^6.1.0",
         "react-icons": "^4.8.0",
+        "react-lottie": "^1.2.3",
         "react-reveal": "^1.2.2",
         "react-router-dom": "^6.11.1",
         "react-share": "^4.4.1",

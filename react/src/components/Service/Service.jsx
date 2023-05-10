@@ -14,11 +14,11 @@ const Service = (props) => {
                     <div className="content">
                         <span className="icon my-4">
                             {/* <i className="fab fa-battle-net"></i> */}
-                            <img src={props.service.icon} alt="" />
+                            <img src={props.service.icon} alt="service icon" />
                         </span>
-                        {/* <p className="services-description">{props.desc}</p> */}
-
                         <h3 className="services-title">{props.service.title}</h3>
+                        <p className="services-description">{props.desc}</p>
+
                     </div>
                     <span className="circle-before"></span>
                 </div>
@@ -41,7 +41,7 @@ const Service = (props) => {
                 <div className="accordion mobile-content" id={`collapsibleList-${index}`}>
                     <div className="card">
                             <button
-                                className="btn btn-link"
+                                className="btn btn-link text-black"
                                 type="button"
                                 data-bs-toggle="collapse"
                                 data-bs-target={`#collapseContent-${index}`}

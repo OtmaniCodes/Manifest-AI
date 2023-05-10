@@ -2,6 +2,11 @@
 #home .video-section{
     background: rgba(249, 249, 249);
     width: 100%;
+    min-height: 100vh;
+}
+
+#home .city-lottie{
+    background: rgba(249, 249, 249);
 }
 
 #home .take-action{
@@ -50,6 +55,9 @@
     #home #hero .white-logo {
         height: 196px;
         width: 196px;
+    }
+    #home .video-section{
+        min-height: unset
     }
     #home .take-action{
         height: 180px;
