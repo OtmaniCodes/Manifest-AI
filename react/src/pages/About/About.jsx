@@ -15,7 +15,7 @@ const aboutData = [
       "Integrate privacy-by-design and security-by-design approaches",
       "Encourage collaboration among stakeholders to address ethical concerns"
     ],
-    graphic: "https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=compress&cs=tinysrgb&w=600"
+    graphic: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
   },
   {
     title: "Sustainable AI Solutions",
