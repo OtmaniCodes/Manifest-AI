@@ -90,8 +90,8 @@ const Navbar = () => {
           
     
           <div className="header-social-links d-flex">
-            <a href="#" className="twitter"><i className="bu bi-twitter"></i></a>
-            <a href="#" className="facebook"><i className="bu bi-facebook"></i></a>
+            {/* <a href="#" className="twitter"><i className="bu bi-twitter"></i></a> */}
+            {/* <a href="#" className="facebook"><i className="bu bi-facebook"></i></a> */}
             <a href="https://www.instagram.com/manifest_a.i/" className="instagram"><i className="bu bi-instagram"></i></a>
             <a href="https://www.linkedin.com/company/manifest-ai/" className="linkedin"><i className="bu bi-linkedin"></i></a>
           </div>

@@ -6,7 +6,12 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.react-typewriter-pointer{
+    background-color: white !important;
+    padding: 3px;
+    margin-left: 10px;
 
+}
 
 /* #home #hero-content .left-side{
     padding: 10px 20px;
@@ -108,7 +113,7 @@
     margin: 0;
     font-size: 20px;
 }
-#home #hero #hero-content .left-part h1{
+#home #hero #hero-content .left-part h1,.intro-innovating{
     color: white;
     font-weight: bold;
     font-size: 40px;

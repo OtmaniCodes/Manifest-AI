@@ -147,8 +147,8 @@ const Contact = (full) => {
                     <ResponsiveCompo mobileChild={<SectionTitle title={"contact"} subTitle={"Get in Touch with Manifest AI"}/>}/>
                     {/* <h3>Contact Info</h3> */}
                     <div className='contact-info'><i class="bi bi-geo-alt contact-icon"></i>Tangier, Tanger-Tetouan-Al Hoceima, Morocco</div>
-                    <div className='contact-info'><i className="bi bi-envelope contact-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></div>
-                    <div className='contact-info'><i className="bi bi-phone contact-icon"></i> <a href="tel:+1234567890">+1 (234) 567-890</a></div>
+                    <div className='contact-info'><i className="bi bi-envelope contact-icon"></i> <a href="mailto:contact@manifest-ai.com">contact@manifest-ai.com</a></div>
+                    <div className='contact-info'><i className="bi bi-phone contact-icon"></i> <a href="tel:+212 689-483874">+212 689-483874</a></div>
                 </div>
             </Fade>
             <Fade right>

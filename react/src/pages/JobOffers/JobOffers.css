@@ -75,8 +75,8 @@
 }
 
 .job-list {
-  max-height: 100%; /* Update the height calculation */
-  /* overflow-y: auto; */
+  max-height: 600px; /* Update the height calculation */
+  overflow-y: auto;
 }
 
 @media (max-width: 767px) {

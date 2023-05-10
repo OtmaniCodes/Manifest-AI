@@ -7,7 +7,9 @@ import techHeart from "../../assets/images/ai-sus.jpg";
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 import { Link } from "react-router-dom";
-import TypeWriterEffect from 'react-typewriter-effect';
+// import TypeWriterEffect from 'react-typewriter-effect';
+import Typed from 'react-typed';
+
 export default function HeroSection() {
   function handleClickAbout() {
     const section = document.getElementById('About-section');
@@ -27,13 +29,24 @@ export default function HeroSection() {
                   <div className="left-part col-md-7 text-center text-md-start order-2 order-md-1">
                       <h6>Consulting, Sustainabiliy, AI TECH.</h6>
                       {/* <h1>INNOVATING SOLUTIONS FOR A BETTER WORLD</h1> */}
-                      <TypeWriterEffect
+                      <Typed
+                      className="intro-innovating"
+                      strings={['INNOVATING SOLUTIONS FOR A BETTER WORLD']}
+                          typeSpeed={40}
+                          backSpeed={50}
+                          loop={false} >
+                      </Typed>
+                {/* <Typed
+                    strings={['Here you can find anything']}
+                    typeSpeed={40}
+                /> */}
+                      {/* <TypeWriterEffect
                         textStyle={{ fontFamily: 'Red Hat Display' }}
                         startDelay={150}
                         cursorColor="black"
                         text="INNOVATING SOLUTIONS FOR A BETTER WORLD"
                         typeSpeed={50}
-                      />
+                      /> */}
                       <h2>Empowering Businesses with Ethical and Sustainable AI Technologies</h2>
                       <div className="d-flex justify-content-center justify-content-md-start mt-5">
                               <button onClick={handleClickAbout} class="global-btn-white">Learn More</button>

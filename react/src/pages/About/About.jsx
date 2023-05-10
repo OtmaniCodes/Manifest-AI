@@ -65,7 +65,7 @@ export default function About() {
       </Helmet>
       <div className='py-5 py-md-0'>
           <AboutSection />
-          <div className="container more-about">
+          <div className="container more-about mt-5">
             
             {
               aboutData.map((data, i) => {
@@ -80,7 +80,7 @@ export default function About() {
                     </div>
                   </Fade>
                   <Fade left={graphicsFirst} right={!graphicsFirst}>
-                    <div className={`col-md-4 mb-3 mb-md-0 text-md-start text-center order-1 order-md-${graphicsFirst ? 1 : 2}`}>
+                    <div style={{height:'200px'}} className={`col-md-4 mb-3 mb-md-0 text-md-start text-center order-1 order-md-${graphicsFirst ? 1 : 2}`}>
                       <img src={data.graphic} className='more-about-img order-1 shadow-lg' />
                     </div>
                   </Fade>
