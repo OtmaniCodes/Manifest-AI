@@ -65,13 +65,16 @@ const JobOffers = (full) => {
             <div className={`col-md-8 right-section d-md-block ${!leftSectionActive ? '' : 'd-none'} pb-5`}>
                 <button
                 onClick={toggleLeftSection}
-                className="back-button d-md-none"
+                className="back-button d-md-none text-muted px-0"
               >
-                <FaArrowLeft className="back-icon" />
+                <FaArrowLeft className="back-icon mt-2" />
                 Back
               </button>
 
-              <h2>{selectedJob.title}</h2>
+              <div className='d-flex justify-content-between align-items-center'>
+                <h2>{selectedJob.title}</h2>
+                <button className="global-btn" onClick={handleShowForm}>Apply Now</button>
+              </div>
               <h5>{selectedJob.location}</h5>
               <p>{selectedJob.date}</p>
               <p>{selectedJob.description}</p>
@@ -91,7 +94,7 @@ const JobOffers = (full) => {
                   </li>
                 ))}
               </ul>
-              <button className="global-btn" onClick={handleShowForm}>Apply Now</button>
+              
             </div>
           </div>
           {showForm && <PopUp close={handleCloseForm}/>}

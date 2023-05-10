@@ -7,10 +7,11 @@
 	padding: 15px 20px;
 	border-top-left-radius: 20px;
 	border-bottom-right-radius: 20px;
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.753);
+	/* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.753); */
 	width: fit-content;
 	margin-left: auto;
 	margin-right: auto;
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.507);
 }
 
 /* .header-section .section-header-title {
@@ -60,7 +61,7 @@
 .header-section .section-header-description {
 	font-size: 18px;
     /* color: #282828; */
-	font-weight: bold;
+	/* font-weight: bold; */
 }
 
 

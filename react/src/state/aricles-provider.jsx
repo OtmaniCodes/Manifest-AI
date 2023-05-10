@@ -14,10 +14,10 @@ export function ArticlesProvider({ children }) {
     async function fetchArticles() {
       await articlesSingleton.initialize();
       setArticles(articlesSingleton.articles);
-      setLoading(false)
+      // setLoading(false)
       // ------------------------------------------
 
-      // setTimeout(()=>{setLoading(false)}, 2000) // !!!don't forget to remove the setTimeout
+      setTimeout(()=>{setLoading(false)}, 1500) // !!!don't forget to remove the setTimeout
       // ------------------------------------------
     }
     fetchArticles();
