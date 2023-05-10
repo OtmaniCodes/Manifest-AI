@@ -17,6 +17,12 @@ const teamMembers = [
     title: 'CEO & Cofounder',
     description: "Aicha Arfate is a serial entrepreneur and the CEO of a fast-growing tech startup called Cybrix. With over a decade of experience in the tech industry, Aicha is a visionary leader with a passion for creating innovative products that solve real-world problems.",
     image: 'https://images.saymedia-content.com/.image/t_share/MTc2MjY1NDMzOTM3MjI0ODc3/square-face-women-celebrities.jpg',
+  },
+  {
+    name: 'Kawtar Hadoud',
+    title: 'CEO & Cofounder',
+    description: "Aicha Arfate is a serial entrepreneur and the CEO of a fast-growing tech startup called Cybrix. With over a decade of experience in the tech industry, Aicha is a visionary leader with a passion for creating innovative products that solve real-world problems.",
+    image: 'https://images.saymedia-content.com/.image/t_share/MTc2MjY1NDMzOTM3MjI0ODc3/square-face-women-celebrities.jpg',
   }
 ];
 
@@ -24,7 +30,7 @@ export default function TeamSection({givenStyle}) {
   return (
     <section id='team' style={givenStyle}>
         <div className="container py-5 h-100">
-            <SectionTitle title={"Team"}  subTitle={"Experts in AI Development and Social Impact"}/>
+          <SectionTitle title={"The Team"}  subTitle={"Meet our team of dedicated professionals, who are experts in AI development and passionate about making a positive social impact through their work."}/>
             <div className="row align-items-center justify-content-center h-100">
               {
                 teamMembers.map((member, index) => {
