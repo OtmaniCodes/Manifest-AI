@@ -67,8 +67,8 @@ const Services = (full) => {
                       <div className='list-service'>
                         <div className="row justify-content-center">
                           {selectedService.list.map((e,i)=>(
-                            <div className="mb-1">
-                              <p key={i}>{e}</p>
+                            <div className="mb-1 d-flex align-items-center">
+                              <i className="bi bi-check2"></i><p key={i}>{e}</p>
                             </div>
                           ))}
                         </div>
