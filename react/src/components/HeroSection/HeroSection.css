@@ -4,6 +4,7 @@
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 
@@ -83,13 +84,12 @@
 
 
 #home #hero #shadow-bg{
-    background-color: #1b39bb;
+    background-color: #1bb0bb;
     /* background-color: #22B4D7; */
     opacity: 0.55;
-    height: 100%;
+    height: calc(100% + 55px);
     width: 100%;
     z-index: 0;
-    position: absolute;
     pointer-events: none;
 }
 
@@ -124,8 +124,8 @@
     height: 300px;
     width: 300px;
     animation: glowing 2s infinite;
-    z-index: 5;
-    /* box-shadow: 5px 5px 0 #22B4D7; */
+    z-index: 200;
+    box-shadow: 2px 2px 4px #22b3d7ad;
 }
 
  

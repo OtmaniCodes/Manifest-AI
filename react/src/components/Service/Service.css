@@ -44,7 +44,7 @@
     transition: color .3s;
     color: rgba(255, 255, 255);
     text-transform: uppercase;
-	font-family: 'Sans serif' !important;
+	/* font-family: 'Sans serif' !important; */
     
 }
 .section-services .single-service:hover .services-title {

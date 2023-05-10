@@ -16,7 +16,7 @@ export default function HeroSection() {
   return (
     <section id='hero'>
     
-        <div id="shadow-bg"></div>
+        {/* <div id="shadow-bg"></div> */}
         {/* <img className='dots-web' src={dotsWeb} /> */}
         <div id="hero-content" className="container h-100">
           
