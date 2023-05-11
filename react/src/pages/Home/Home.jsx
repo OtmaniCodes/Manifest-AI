@@ -60,7 +60,7 @@ const Home = () => {
                 <AboutSection/>
             </div>            
             <div className='py-5' style={{backgroundColor:"white"}}>
-                <SectionTitle title={"The 10 Commandments"} subTitle={""}/>
+                <SectionTitle title={"The 10 Directives"} subTitle={""}/>
                 <CommendmentsSlider/>
             </div>
             

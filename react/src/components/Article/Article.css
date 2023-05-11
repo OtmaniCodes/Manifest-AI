@@ -11,11 +11,12 @@
 }
 
 .article-compo-horizontal h3.title{
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: black;
     margin-bottom: 20px;
-    font-family: 'Montserrat' !important;
-    font-weight: bold;
+    /* font-family: 'Montserrat' !important; */
+    font-weight: normal;
+    text-shadow: none;
 }
 
 .article-compo-horizontal .excerpt{
@@ -71,12 +72,13 @@ p.read-more{
 
 .article-compo h3.title{
     color: black;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     flex-grow: 1;
     line-height: 1.2;
-    font-weight: 400;
+    font-weight: normal;
     margin-bottom: 20px;
     margin-left: 0px;
+    text-shadow: none;
     /* font-family: 'Campton' !important; */
 }
 
