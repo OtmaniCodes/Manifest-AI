@@ -23,7 +23,7 @@ function CommendmentsSlider() {
   }, []);
 
   return (
-    <div >
+    <div>
       <ul className="slider-container">
         {commendments.map((review, index) => {
           const {title, description } = review;

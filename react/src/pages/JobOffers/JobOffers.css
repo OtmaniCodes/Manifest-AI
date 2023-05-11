@@ -23,6 +23,8 @@
 .job-section-wrapper{
   /* height: 500px; */
   background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .back-button {
@@ -74,10 +76,10 @@
   /* overflow-y: auto; Add this line */
 }
 
-.job-list {
-  max-height: 600px; /* Update the height calculation */
-  overflow-y: auto;
-}
+/* .job-list { */
+  /* max-height: 600px; Update the height calculation */
+  /* overflow-y: auto; */
+/* } */
 
 @media (max-width: 767px) {
   .left-section {

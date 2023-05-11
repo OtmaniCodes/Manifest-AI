@@ -59,30 +59,30 @@ const Home = () => {
             <div id='About-section'>
                 <AboutSection/>
             </div>            
-            <div className='py-5' style={{backgroundColor:"#EBEDF0"}}>
-                <SectionTitle title={"The 10 commandments"} subTitle={""}/>
+            <div className='py-5' style={{backgroundColor:"white"}}>
+                <SectionTitle title={"The 10 Commandments"} subTitle={""}/>
                 <CommendmentsSlider/>
             </div>
             
             <TeamSection/>
             <Articles limit={4}/>
             <JobOffers/>
+            <div style={{background: '#F9F9F9', height: '150px', width: '100%'}}></div>
             <div className='take-action'>
                 <div className="content container-fluid h-100">
                 <div className="row justify-content-center align-items-center h-100">
-                        <div className="col-md-10 text-center">
-                            <Zoom>
-                                <img src={manifestBrain} alt={"Manifest AI Logo"}/>
-                            </Zoom>
-                            <Fade bottom>
-                                <p className="h2">&ldquo;ALWAYS INNOVATING WITH ETHICS&rdquo;</p>
-                            </Fade>
-                        </div>
+                    <div className="col-md-10 text-center">
+                        <Zoom>
+                            <img src={manifestBrain} alt={"Manifest AI Logo"}/>
+                        </Zoom>
+                        <Fade bottom>
+                            <p className="h2">&ldquo;ALWAYS INNOVATING WITH ETHICS&rdquo;</p>
+                        </Fade>
+                    </div>
                     </div>
                 </div>
             </div>
             <Contact/>
-            
             <CityLottie/>
             <Helmet>
                 <title>HOME - MANIFEST AI</title>

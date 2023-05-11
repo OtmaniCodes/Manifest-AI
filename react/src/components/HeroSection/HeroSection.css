@@ -1,6 +1,6 @@
 #home #hero{
     height: 100vh !important;
-    background-image: url('../../assets/images/ai-sus.jpg');
+    background-image: url('../../assets/images/ai-sus-desktop.png');
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -106,22 +106,31 @@
     right: 0;
 }
 
-#home #hero #hero-content .left-part h6{
+/* #home #hero #hero-content .left-part h6{
     color: #ffffffee;
     width: fit-content;
     padding: 5px 8px;
     margin: 0;
     font-size: 20px;
-}
-#home #hero #hero-content .left-part h1,.intro-innovating{
+} */
+
+#home #hero #hero-content .left-part h1, .title{
     color: white;
     font-weight: bold;
-    font-size: 40px;
+    /* font-size: 45px; */
+    font-size: 3em;
+    line-height: 1;
+    text-shadow: 1px 1px 2px black;
+    max-lines: 2;
 }
     
 #home #hero #hero-content .left-part h2{
     font-size: 25px;
-    color: #ffffffee;
+    /* color: #ffffffee; */
+    color: #28db64;
+    font-weight: 600;
+    letter-spacing: 1.05px;
+    text-shadow: 1px 1px 2px black;
 }
 
 #home #hero .white-logo {
@@ -166,6 +175,9 @@
 
 
 @media only screen and (max-width: 768px) {
+  #home #hero{
+      background-image: url('../../assets/images/ai-sus-mobile.png');
+  }
     #home #hero .dots-web {
         rotate: -90deg;
         height: auto;
@@ -179,7 +191,7 @@
         margin-top: 80px;
     }
 
-    #home #hero #hero-content .left-part h1{
+    #home #hero #hero-content .left-part h1, .title{
         font-size: 35px;
         line-height: 1.05;
     }

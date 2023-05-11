@@ -73,11 +73,11 @@ const TeamMemberCard = ({ name, title, description, image }) => {
         </div>
       </FrontSide>
       <BackSide style={{ padding: 0 }}>
-        <div className="card m-0 py-4 h-100 w-100 d-flex align-items-center justify-content-center text-center">
-          <div className="card-body align-items-center">
+        <div className="team-card-backside card m-0 py-4 h-100 w-100 d-flex align-items-center justify-content-center text-center">
+          <div className="card-body align-items-center justify-content-center">
             <h5 className="card-title fw-bold">{name}</h5>
             <p className="card-text">{description}</p>
-            <a href="#" className="card-link">Contact me</a>
+            {/* <a href="#" className="card-link">Contact me</a> */}
           </div>
         </div>
       </BackSide>
