@@ -20,10 +20,11 @@ const Footer = () => {
             <div className="footer-links text-center">
               {/* <h4>Our Services</h4> */}
               <ul className='d-flex align-items-center justify-content-center'>
-                <li><i className="mx-2 bx bx-chevron-right"></i> <a href="#">Consulting</a></li>
+                <p>INNOVATING SOLUTIONS FOR A BETTER WORLD</p>
+                {/* <li><i className="mx-2 bx bx-chevron-right"></i> <a href="#">Consulting</a></li>
                 <li><i className="mx-2 bx bx-chevron-right"></i> <a href="#">Sustainability</a></li>
                 <li><i className="mx-2 bx bx-chevron-right"></i> <a href="#">AI Technology</a></li>
-                <li><i className="mx-2 bx bx-chevron-right"></i> <a href="#">Auditing</a></li>
+                <li><i className="mx-2 bx bx-chevron-right"></i> <a href="#">Auditing</a></li> */}
               </ul>
             </div>
             {/* <div className="col-lg-4 col-md-6 text-md-start text-center footer-newsletter">

@@ -35,7 +35,7 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
   }) : [];
 
   return (
-    <section id='articles-grid' className='container' style={{marginTop: showSearch ? '55px' : ""}}>
+    <section id='articles-grid' style={{marginTop: showSearch ? '55px' : ""}}>
         <div className="container-fluid py-5">
             <SectionTitle title={"Articles"} subTitle={"Check out our last Articles posted on our blog."}/>
             { showSearch && (
@@ -63,6 +63,7 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
                 </div>
               )
             }
+            <div className="container">
             {
               loading
                 ? <div className="row justify-content-center">
@@ -127,6 +128,7 @@ const ArticlesGrid = ({articlesLimit, showSearch}) => {
                   </div>
                 )
             }
+            </div>
         </div>
     </section>
   )

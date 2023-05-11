@@ -28,7 +28,7 @@ const Manifesto = () => {
   
     
     return ( 
-        <div className="commendments-container px-5 pt-5">
+        <div className="commendments-container pt-5">
             <Helmet>
                 <title>MANIFESTO & The 10 COMMANMENTS - MANIFEST AI</title>
             </Helmet>
@@ -85,10 +85,10 @@ const Manifesto = () => {
             <hr />
             <div className='commendments-content pb-4'>
               {/* <h3>THE 10 COMMANDMENTS</h3> */}
-                <SectionTitle title={"The 10 Commandments"}/>
+                <SectionTitle title={"The 10 Directives"}/>
                 <CommendmentsSlider/>
                 <div className='lead download-manifest d-flex justify-content-center mt-5'>Download&nbsp;
-                    <a href={manifestoPDF} download>The 10 commandments</a>
+                    <a href={commendmentsPDF} download>The 10 directives</a>
                 </div>
             </div>
 
