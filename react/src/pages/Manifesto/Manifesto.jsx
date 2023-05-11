@@ -10,9 +10,22 @@ import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopBut
 import { Helmet } from 'react-helmet';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { useEffect, useState } from 'react';
+import useTranslator from '../../components/Translator/useTranslator';
 // import AutoTypingText from '../../components/AutoTypingText/AutoTypingText';
 const Manifesto = () => {
   useScrollToTop()
+//   console.log(useTranslator(manifesto,'spainish'))
+    const [targetLanguage, setTargetLanguage] = useState("original");
+    const handleLanguage = (event) => {
+        setTargetLanguage(event.target.value);
+        setIsLoading(true)
+    };
+    const mydata=useTranslator(manifesto,targetLanguage)
+    // console.log(mydata)
+    // useEffect(async()=>{
+    //     setMydata(useTranslator(manifesto,targetLanguage))
+    // } ,[targetLanguage]); // Include argumentValue as a dependency
+  
     
     return ( 
         <div className="commendments-container px-5 pt-5">
@@ -24,13 +37,26 @@ const Manifesto = () => {
             <div className='commendments-header'>
                 {/* <h3>MANIFEST</h3> */}
                 <div className="container">
+                    {/* ===== */}
+                <h1>Language</h1>
+                <div>
+                    <label htmlFor="language">Select Language:</label>
+                    <select id="language" value={targetLanguage} onChange={handleLanguage}>
+                        <option value="original">English</option>
+                        <option value="French">French</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Japanese">Japanese</option>
+                        {/* Add more language options as needed */}
+                    </select>
+                </div>
+                {/* ======= */}
                     <div className="row">
                         <div className="col-mf-10">
                             <p className='fw-bold mb-2'>Dear friends of artificial intelligence,</p>
                             <p className='mb-2'>We live in a time where technology is evolving at a rapid pace, disrupting both our daily lives and our future. Artificial intelligence (AI) is at the heart of this revolution, transforming industries, creating new opportunities while solving problems that humanity has faced for decades. However, these technological advancements also raise ethical questions and important challenges.</p>
                             <p className='mb-5 pb-3'>We, the members of MANIFEST AI, are committed to ethical and beneficial AI to humanity. We are committed to promoting responsible, moral, and human-centered artificial intelligence. We write this manifesto to rally all those who believe in the power of AI to improve our lives, while preserving our humanity and ensuring a sustainable and equitable future for all.</p>
                             {
-                                manifesto.map((data, i) => {
+                                mydata.map((data, i) => {
                                     var graphicsFirst = i % 2 === 0;
                                     return <div key={i} className="commendment-wrapper more-about-row row justify-content-between align-items-center">
                                         <Fade left={!graphicsFirst} right={graphicsFirst} cascade>

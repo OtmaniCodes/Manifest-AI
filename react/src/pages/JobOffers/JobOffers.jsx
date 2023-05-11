@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './JobOffers.css';
 import jobs from './data';
 import PopUp from '../../components/PopUpForm/PopUp';
@@ -8,6 +8,7 @@ import useScrollToTop from '../../hooks/useScrollToTop';
 import Fade from 'react-reveal/Fade'
 import { Helmet } from 'react-helmet';
 import bgVideo from "../../assets/bg-video.mp4"
+import useTranslator from '../../components/Translator/useTranslator';
 
 const JobOffers = (full) => {
   // const pageStyling = {
@@ -18,6 +19,14 @@ const JobOffers = (full) => {
   //   marginTop: '55px'
   // }
   useScrollToTop()
+
+  const [targetLanguage, setTargetLanguage] = useState("original");
+    const handleLanguage = (event) => {
+        setTargetLanguage(event.target.value);
+        setIsLoading(true)
+    };
+  const mydata=useTranslator(jobs,targetLanguage)
+  
   const [selectedJob, setSelectedJob] = useState(jobs[0]);
   const [leftSectionActive, setLeftSectionActive] = React.useState(true);
   const toggleLeftSection = () => {
@@ -30,6 +39,9 @@ const JobOffers = (full) => {
   const handleCloseForm = () => {
       setShowForm(false);
   }
+
+  
+
   return (
     <div style={{position: 'relative'}} className={`job-section ${full.full ? 'page-view' : ''} pt-5 h-100`}>
       <Helmet>
@@ -63,7 +75,7 @@ const JobOffers = (full) => {
               
               <div className="job-list border-bottom">
               <div className="jobs-header">We're currently looking for</div> {/* Add this line */}
-                {jobs.map((job, index) => (
+                {mydata.map((job, index) => (
                   <div
                     key={index}
                     className={`job-item list-group-item ${
@@ -90,6 +102,14 @@ const JobOffers = (full) => {
                 <FaArrowLeft className="back-icon " />
                 Back
               </button>
+              
+{/* 
+              <select id="language" value={targetLanguage} onChange={handleLanguage}>
+                        <option value="original">English</option>
+                        <option value="French">French</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Japanese">Japanese</option>
+              </select> */}
 
               <div className='d-flex justify-content-between align-items-center'>
                 <h2>{selectedJob.title}</h2>

@@ -23,10 +23,24 @@ import Manifesto from '../Manifesto/Manifesto';
 import lottieAsset from '../../assets/55638-sustainability.json';
 import Lottie from "react-lottie";
 import CommendmentsSlider from '../Manifesto/CommendmentsSlider';
+import useTranslator from '../../components/Translator/useTranslator';
 
 
 const Home = () => {
     useScrollToTop();
+    // const contentToTranslate = [
+    //     {
+    //       id: 1,
+    //       title: "Welcome",
+    //       description: "This is the homepage of our website."
+    //     },
+    //     {
+    //       id: 2,
+    //       mixed: "About Us",
+    //       description: "Learn more about our company and mission."
+    //     },
+    //   ];
+    // console.log(useTranslator(contentToTranslate,'spainish'))
     const videoRef = useRef();
 
     useEffect(() => {
