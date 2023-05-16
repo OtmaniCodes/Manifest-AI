@@ -63,6 +63,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import SplashLoading from './components/Splash/splash';
+import useAxios from './hooks/useAxios';
+import Page from './hooks/Page';
 
 const Home = React.lazy(() => import('./pages/Home/Home'));
 const About = React.lazy(() => import('./pages/About/About'));
@@ -80,6 +82,7 @@ const ScrollToTopButton = React.lazy(() => import('./components/ScrollToTopButto
 const Abort404 = React.lazy(() => import('./pages/abort-404/Abort404'));
 
 function App() {
+
   return (
       <div className="App">
         <BrowserRouter>
@@ -97,6 +100,7 @@ function App() {
               <Route path="/articles/:slug" element={<ArticlePage/>} />
               <Route path="/manifest" element={<Manifesto/>} />
               <Route path="*" element={<Abort404/>} />
+              <Route path="/page" element={<Page/>} />
             </Routes>
             <ScrollToTopButton/>
             <Footer />

@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\PostController;
+use App\Http\Middleware\VerifyCsrfToken;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\JobApplicationController;
+use TCG\Voyager\Http\Middleware\VoyagerAdminMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +22,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+    
+
+
+
+Route::group(['prefix' => 'admin'], function () { 
+    Voyager::routes();
+});
+
+

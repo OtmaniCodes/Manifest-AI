@@ -94,7 +94,7 @@ const useTranslator = (contentToTranslate, targetLanguage) => {
           const translatedContent = {};
           
           for (let property in content) {
-            console.log(property)
+            // console.log(property)
             if(property==='graphic' || property==='icon'){
               translatedContent[property] =content[property]
             }
