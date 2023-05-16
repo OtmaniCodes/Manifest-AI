@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+    background: #F4F7FE;
+}
+
+.App {
+    overflow-x: hidden;
+    background: #F5F7FE;
+    /* max-width: 1320px;
+    margin: 0 auto; */
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans serif !important;
+} */
+
+
+.global-btn {
+    --color: #22B4D7;
+    padding: 0.5em 1.5em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+}
+
+.global-btn::before,
+.global-btn::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.global-btn::before {
+    top: -1em;
+    left: -1em;
+}
+
+.global-btn::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.global-btn:hover::before,
+.global-btn:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.global-btn:hover {
+    color: white;
+}
+
+.global-btn:active {
+    filter: brightness(.8);
+}
+
+.global-btn-white {
+    --color: #FFFFFF;
+    padding: 0.5em 1.5em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+}
+
+.global-btn-white::before,
+.global-btn-white::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.global-btn-white::before {
+    top: -1em;
+    left: -1em;
+}
+
+.global-btn-white::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.global-btn-white:hover::before,
+.global-btn-white:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.global-btn-white:hover {
+    color: black;
+}
+
+.global-btn-white:active {
+    filter: brightness(.8);
+}
+
+.bg-full-btn {
+    --color: #22B4D7;
+    color: white;
+    background-color: var(--color);
+}
+
+
+.bg-full-btn:hover {
+    background-color: #097792;
+}
+
+
+@keyframes glowing {
+    0% {
+        box-shadow:
+            0 0 10px rgba(34, 180, 215, 0.2),
+            0 0 20px rgba(34, 180, 215, 0.3),
+            0 0 30px rgba(34, 180, 215, 0.4),
+            0 0 40px rgba(34, 180, 215, 0.5);
+    }
+
+    50% {
+        box-shadow:
+            0 0 15px rgba(34, 180, 215, 0.3),
+            0 0 25px rgba(34, 180, 215, 0.4),
+            0 0 35px rgba(34, 180, 215, 0.5),
+            0 0 45px rgba(34, 180, 215, 0.6);
+    }
+
+    100% {
+        box-shadow:
+            0 0 10px rgba(34, 180, 215, 0.2),
+            0 0 20px rgba(34, 180, 215, 0.3),
+            0 0 30px rgba(34, 180, 215, 0.4),
+            0 0 40px rgba(34, 180, 215, 0.5);
+    }
+}

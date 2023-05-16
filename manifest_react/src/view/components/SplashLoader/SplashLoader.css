@@ -1,0 +1,43 @@
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #F5F7FE;
+    position: relative;
+}
+
+.loading-screen .brain-img {
+    position: absolute;
+    width: 60px;
+    height: auto;
+}
+
+.loading-screen p{
+    color: #111;
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+.loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-top: 2px solid #22B4D7;
+    border-right: 2px solid transparent;
+    animation: spinner8217 0.8s linear infinite;
+}
+
+@keyframes spinner8217 {
+    to {
+        transform: rotate(360deg);
+    }
+}
