@@ -48,7 +48,7 @@ const OfferSubmitPopup = (props) => {
       formData.append('resume', resume);
 
       // Replace 'YOUR_API_ENDPOINT' with the actual endpoint of your Laravel server
-      const response = await axios.post(`http://localhost:8000/api/job-applications`, formData);
+      const response = await axios.post(`https://api.manifest-ai.com/api/job-applications`, formData);
 
       // Handle the response here if needed
       console.log(response.data);
