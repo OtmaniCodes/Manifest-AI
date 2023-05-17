@@ -1,9 +1,0 @@
-#offer-submit-popup.pop-container {
-    background-color: rgba(0, 0, 0, 0.336);
-    display: block;
-    z-index: 22;
-}
-
-#offer-submit-popup .resume {
-    display: none;
-}
