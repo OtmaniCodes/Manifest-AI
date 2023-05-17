@@ -1,0 +1,123 @@
+#article-page{
+    text-align: center;
+    background: #F9F9F9;
+}
+
+#article-page .article-breadcrumbs{
+    padding-top: 80px;
+}
+
+#article-page .article-breadcrumbs .breadcrumb-btn{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #22B4D7;
+}
+
+#article-page .article-breadcrumbs .breadcrumb-btn:hover{
+    text-decoration: underline;
+    color: #036f8a;
+}
+
+#article-page .article-breadcrumbs .breadcrumb-divider{
+    font-size: 12px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    color: #22B4D7;
+}
+
+#article-page .article-breadcrumbs .breadcrumb-slug{
+    color: grey;
+    text-transform: unset;
+    font-size: 12px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;}
+
+#article-page h1{
+    font-size: 35px;
+    margin-top: 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+#article-page .article-thumbnail{
+    margin-top: 55px;
+    width: 100%;
+    height: 50vh;
+    max-width: 100%;
+    object-fit: cover;
+    /* max-height: 415px; */
+}
+
+#article-page .article-content *{
+    margin-bottom: 20px;
+}
+
+#article-page .article-content a{
+    color: #22B4D7;
+}
+#article-page .article-content a:hover{
+    color: #036f8a;
+}
+
+#article-page .article-content img{
+    align-items: center;
+    width: 65%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#article-page .article-social-links .facebook, #article-page .article-social-links .instagram, #article-page .article-social-links .twitter{
+    transition: all 0.3s ease-in;
+    color: rgba(128, 128, 128, 0.6);
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#article-page .article-social-links .facebook:hover{
+    color: #22B4D7;
+}
+
+#article-page .article-social-links .instagram:hover{
+    color: #22B4D7;
+}
+
+#article-page .article-social-links .twitter:hover{
+    color: #22B4D7;
+}
+
+
+#article-page .suggested-articles{
+    background-color: #EBEDF0;
+    border-top: 0.5px rgba(0, 0, 0, 0.2) solid;
+}
+
+/* #article-page .suggested-articles .section-title{
+    font-size: 50px;
+} */
+
+#article-page .suggested-articles .article-compo{
+    background-color: #EBEDF0;
+}
+
+#article-page .suggested-articles .article-compo:hover{
+    background-color: white;
+}
+
+
+@media only screen and (max-width: 768px) {
+    #article-page h1{
+        font-size: 25px;
+    }
+    
+    /* #article-page .suggested-articles .section-title{
+        font-size: 30px;
+        margin-bottom: 50px;
+    } */
+}
