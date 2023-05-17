@@ -15,7 +15,7 @@ class ArticlesSingleton {
     async initialize() {
         try {
             const data = await axiosHttpClient.get('/get-articles');
-            console.log(data,'test')
+            // console.log(data,'test')
             if (data.status === 200 && data.statusText === "OK") {
                 const res = data.data.articles;
                 // const articles = res.filter(

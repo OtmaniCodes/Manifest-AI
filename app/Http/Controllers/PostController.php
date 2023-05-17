@@ -12,7 +12,7 @@ class PostController extends VoyagerBaseController
     public function getArticles(Request $request)
     {
         $articles=Voyager::model('Post')::all();
-        return response()->json(['success' => true, 'articles' => $articles]);
+        return response()->json(['articles' => $articles]);
 
     }
 }

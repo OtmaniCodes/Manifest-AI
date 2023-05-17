@@ -11,7 +11,7 @@ class ServiceController  extends VoyagerBaseController
     public function getServices(Request $request)
     {
         $services=Service::all();
-        return response()->json(['success' => true, 'services' => $services]);
+        return response()->json(['services' => $services]);
 
     }
 
