@@ -19,43 +19,8 @@ import useScrollToTop from '../../../utils/custom-hooks/useScrollToTop'
 import { Helmet } from 'react-helmet'
 import { Zoom } from 'react-reveal'
 
-// import { useEffect, useState } from 'react';
-// import axios from 'axios';
-
 export default function Home() {
   useScrollToTop() 
-
-
-
-
-  // const [data, setData] = useState(null);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState(null);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     setIsLoading(true);
-
-  //     try {
-  //       const response = await axios.get('http://127.0.0.1:8000/api/get-articles');
-  //       setData(response.data);
-  //       console.log(response.data)
-  //     } catch (error) {
-  //       setError(error);
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-
-
-
-
-
-
 
   return (
     <div id='home-page'>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./DirectivesSection.css";
 import bgVideo from '../../../../assets/videos/bg-video-1.mp4';
+import bgGif from '../../../../assets/gifs/windmills-bg.gif';
 
 import { directivesData } from "../../../../constants/data";
 import GradientTitle from "../../GradientTitle/GradientTitle";
@@ -46,7 +47,24 @@ export default function DirectivesSection() {
 
   return (
     <section id="directives-section">
-      <video
+      <img src={bgGif}
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+          // left: '50%',
+          // top: '50%',
+          objectFit: 'cover',
+          // transform: 'translate(-50%, -50%)',
+          zIndex: '0',
+          pointerEvents: 'none',
+        }}
+      />
+      {/* <video
         autoPlay
         loop
         muted
@@ -67,7 +85,7 @@ export default function DirectivesSection() {
         }}
       >
         <source src={bgVideo} type="video/mp4" />
-      </video>
+      </video> */}
       <div className="trans-layer"></div>
       <div className="directives-content d-flex flex-column justify-content-center h-100">
         <GradientTitle title={"The 10 Directives"} subTitle={"The True And Only Directives That We Believe In"}/>

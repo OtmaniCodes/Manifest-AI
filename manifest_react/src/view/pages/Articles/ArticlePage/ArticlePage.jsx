@@ -37,8 +37,8 @@ const ArticlePage = () => {
 
   return (
     <div id='article-page'>
-        {/* <img className='article-thumbnail shadow-lg' src={article.thumbnail} alt="Article Thumbnail" /> */}
         {renderBreadCrumbs()}
+        <img className='article-thumbnail shadow-lg' src={article.thumbnail} alt="Article Thumbnail" />
         <div className="container-fluid" style={{marginTop: '55px'}}>
             <div className="row justify-content-center mt-5">
                 <div className="col-md-10 text-start">

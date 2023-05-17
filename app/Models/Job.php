@@ -18,9 +18,9 @@ class Job extends Model
         'responsibilities',
     ];
 
-    protected $casts = [
-        'requirements' => 'array',
-        'responsibilities' => 'array',
-    ];
-    
+    // protected $casts = [
+    //     'requirements' => 'array',
+    //     'responsibilities' => 'array',
+    // ];
+
 }

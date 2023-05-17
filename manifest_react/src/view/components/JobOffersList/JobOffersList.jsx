@@ -1,12 +1,14 @@
 import './JobOffersList.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import OfferSubmitPopup from './OfferSubmitPopup/OfferSubmitPopup'
 import { jobOffersData } from '../../../constants/data';
 import { Fade } from 'react-reveal';
+import { useJobOffers } from '../../../state/joboffers-provider';
+import jobOffersSingleton from '../../../services/job-offers-client';
 
-export default function JobOffersList() {
-
+export default function JobOffersList({jobOffersData}) {
   const [selectedJob, setSelectedJob] = useState(jobOffersData[0]);
+
   const [leftSectionActive, setLeftSectionActive] = useState(true);
   const [showForm, setShowForm] = useState(false);
 
@@ -17,17 +19,35 @@ export default function JobOffersList() {
   const handleShowForm = () => {
       setShowForm(true);
   }
+
   const handleCloseForm = () => {
       setShowForm(false);
   }
 
+//   useEffect(() => {
+//     // if(!loading){
+//         setSelectedJob(jobOffers[0]);
+//     // }
+//   },)
 
+//   debugger;
+    // if (loading) {
+    //     return (<p>Loading Job Offers...</p>);
+    // }
+
+//   debugger;
+// if(!selectedJob){
+//     setSelectedJob(jobOffers[0])
+// }
+
+    if (!jobOffersData) {
+        return <p>No Job Offers For Now</p>
+    }
   return (
     <>
         <Fade>
             <div className="row job-section-wrapper shadow-lg border">
                 <div className={`col-md-4 left-section d-md-block ${leftSectionActive ? '' : 'd-none'}`} onClick={toggleLeftSection}>
-                    
                     <div className="job-list border-bottom">
                     <div className="jobs-header">Profiles We're Looking For</div> {/* Add this line */}
                     {jobOffersData.map((job, index) => (
@@ -86,3 +106,20 @@ export default function JobOffersList() {
     </>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

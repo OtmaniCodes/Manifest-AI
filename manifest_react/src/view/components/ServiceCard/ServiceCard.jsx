@@ -3,7 +3,6 @@ import './ServiceCard.css'
 import React, { useState } from 'react'
 
 export default function ServiceCard({service, index}) {
-    // console.log(service)
     const {title, icon, smallDescription} = service;
 
 
@@ -14,7 +13,7 @@ export default function ServiceCard({service, index}) {
             </div>
             <div className="content">
                 <h3>{title}</h3>
-                <p>{smallDescription}</p>
+                {/* <p>{smallDescription}</p> */}
             </div>
             <Link to={`/services/${service.slug}`} className='service-btn global-btn-white mt-4'>LEARN MORE</Link>
         </div>

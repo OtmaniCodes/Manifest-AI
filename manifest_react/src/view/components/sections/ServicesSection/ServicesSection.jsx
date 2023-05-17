@@ -5,34 +5,25 @@ import bgVideo from '../../../../assets/videos/bg-video-1.mp4';
 import bgGif from '../../../../assets/gifs/windmills-bg.gif';
 
 import GradientTitle from "../../GradientTitle/GradientTitle";
-import { servicesData } from '../../../../constants/data';
+// import { servicesData } from '../../../../constants/data';
 import ServiceCard from '../../ServiceCard/ServiceCard';
 import { Fade } from 'react-reveal';
-import { useSelector } from 'react-redux';
+import { ServicesProvider, useServices } from '../../../../state/services-provider';
+
 
 export default function ServicesSection() {
+  return (
+    // <ServicesProvider>
+      <ServicesContainer/>
+    // </ServicesProvider>
+  )
+}
+
+
+
+function ServicesContainer() {
+  const {services, loading} = useServices()
   const [serviceIndex, setServiceIndex] = useState(null)
-
-  const services = useSelector((state) => state.services);
-  console.log(services)
-  // const data=services.services.services
-  // console.log(services.services.services)
-
-  // console.log(services.services.services[0])
-  // const hm=data.map((e,i)=>{
-  //   return{
-  //     id: e.id,
-  //     title: e.title,
-  //     slug: e.slug,
-  //     smallDescription: e.smallDescription,
-  //     image: 'http://127.0.0.1:8000/storage/'+e.image,
-  //     icon:'http://127.0.0.1:8000/storage/'+e.icon,
-  //     bigDescription: e.bigDescription,
-  //     // list:e.list.split(','),
-  //     list:['array','test'],
-  //     date:new Date(e.created_at).toLocaleDateString('en-US') 
-  //   }
-  // })
 
 
   const handleServiceClick = (index) => {
@@ -88,16 +79,16 @@ export default function ServicesSection() {
       <div className="services-container">
         <div className='services-content'>
           <GradientTitle title={"OUR SERVICES"} subTitle={"Our Purpose Is To Deliver Results In Service And Excution"}/>
-           <Fade bottom duration={500}>
-            <div className="d-flex flex-md-row flex-column justify-content-center mt-5">
-              {services.map((s,i)=>(
-                <ServiceCard index={i} service={s} isSelected={i === serviceIndex} onServiceClicked={handleServiceClick} onServiceClosed={handleServiceClose}/>
-              ))}
-              {/* {servicesData.map((s,i)=>(
-                <ServiceCard index={i} service={s} isSelected={i === serviceIndex} onServiceClicked={handleServiceClick} onServiceClosed={handleServiceClose}/>
-              ))} */}
-            </div>
-          </Fade>
+          {loading && <p>Loading services...</p>}
+          {!loading && 
+            <Fade bottom duration={500}>
+              <div className="d-flex flex-md-row flex-column justify-content-center mt-5">
+                {services.map((s,i)=>(
+                  <ServiceCard index={i} service={s} isSelected={i === serviceIndex} onServiceClicked={handleServiceClick} onServiceClosed={handleServiceClose}/>
+                ))}
+              </div>
+            </Fade>
+          }
         </div>
       </div>
     </section>

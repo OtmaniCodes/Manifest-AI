@@ -3,8 +3,8 @@ import './ArticleCard.css';
 import React from 'react'
 
 export default function ArticleCard({article}) {
-  const {thumbnail, title, excerpt,categories, slug} = article;
-  // const excerpt = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis natus accusantium possimus...";
+  const {thumbnail, title, categories, slug} = article;
+  const excerpt = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis natus accusantium possimus...";
   return (
     <div id="article-card">
       <Link to={`/articles/${slug}`}>

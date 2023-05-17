@@ -8,6 +8,7 @@ import React from 'react'
 
 export function FirstLoadStateProvider({children}) {
     const [isFirstLoad, setIsFirstLoad] = useState(true);
+    
   return (
     <FirstLoadStateContext.Provider value={{isFirstLoad, setIsFirstLoad}}>
         {children}

@@ -3,14 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense } from 'react';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import SplashLoader from './view/components/SplashLoader/SplashLoader';
 import ScrollProgressBar from './view/components/ScrollProgressBar/ScrollProgressBar'
 import Navbar from './view/components/Navbar/Navbar';
 import Footer from './view/components/Footer/Footer';
 import ScrollToTopButton from './view/components/ScrollToTopButton/ScrollToTopButton'
-import articlesSingleton from './services/articles-client';
 
 const Home = React.lazy(() => import('./view/pages/Home/Home'));
 const About = React.lazy(() => import('./view/pages/About/About'));
@@ -28,36 +27,8 @@ const Manifesto = React.lazy(() => import('./view/pages/Manifesto/Manifesto'));
 // const ScrollToTopButton = React.lazy(() => import('./components/ScrollToTopButton/ScrollToTopButton'));
 // const Abort404 = React.lazy(() => import('./pages/abort-404/Abort404'));
 
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchJobs } from './redux/jobsSlice';
-import { fetchServices } from './redux/servicesSlice';
-import { fetchArticles } from './redux/articlesSlice';
-
-
 function App() {
   // return <SplashLoader/>
-  const dispatch = useDispatch();
-  // const isMountedRef = useRef(false);
-  useEffect(() => {
-    // if (!isMountedRef.current) {
-    dispatch(fetchJobs());
-    dispatch(fetchServices());
-    dispatch(fetchArticles());
-
-    // }
-    
-  }, []);
-
-  const jobs = useSelector((state) => state.jobs);
-  const services = useSelector((state) => state.services);
-  const articles = useSelector((state) => state.articles);
-
-
-  // console.log(jobs)
-
-  // console.log(articles)
-  // console.log(services)
   return (
       <div className="App">
         <BrowserRouter>

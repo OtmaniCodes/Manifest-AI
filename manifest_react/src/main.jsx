@@ -3,18 +3,23 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import { ArticlesProvider } from './state/aricles-provider'
 import { FirstLoadStateProvider } from './state/first-load-state-provider'
+import { JobOffersProvider } from './state/joboffers-provider'
+import { ServicesProvider } from './state/services-provider'
+import { RootLoaderProvider } from './state/root-loader-provider'
 
-import  store  from './redux/store'
-import { Provider } from 'react-redux'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
     <FirstLoadStateProvider>
-      <ArticlesProvider>
-        <App />
-      </ArticlesProvider>
+      {/* <RootLoaderProvider> */}
+        <ArticlesProvider>
+        <ServicesProvider>
+        <JobOffersProvider>
+            <App />
+        </JobOffersProvider>
+        </ServicesProvider>
+        </ArticlesProvider>
+      {/* </RootLoaderProvider> */}
     </FirstLoadStateProvider>
-    </Provider>
   </React.StrictMode>
 )

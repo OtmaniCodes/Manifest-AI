@@ -6,22 +6,18 @@ import useScrollToTop from '../../../../utils/custom-hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
 import { Fade } from 'react-reveal';
 import ResponsiveCompo from '../../../components/responsive-compo';
-import { useSelector } from 'react-redux';
+import { useServices } from '../../../../state/services-provider';
 
 export default function ServicePage() {
+  const {services, loading} = useServices();  
+
+
   useScrollToTop();
-  const { slug } = useParams(); 
-
-  const services = useSelector((state) => state.services);
-  const data=services.services.services
-  console.log(services.services.services)
-
-
-
-  // const service = servicesData.find((service) => service.slug === slug);
-  const service = servicesData.find((service) => service.slug === slug);
+  const { slug } = useParams();
+  const service = services.find((service) => service.slug === slug);
   const { title, image, bigDescription, list } = service;
 
+  // debugger;
   return (
     <div className="service-page">
       <Helmet>

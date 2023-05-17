@@ -18,8 +18,6 @@ import ai from '../assets/icons/ai.png';
 import auditing from '../assets/icons/auditor.png';
 //! SERVICES ICONS ASSETS ===========================================
 
-
-
 export const moreAboutData = [
   {
     title: 'Ethical AI Development',
