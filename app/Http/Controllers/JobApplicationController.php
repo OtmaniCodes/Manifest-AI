@@ -20,6 +20,11 @@ class JobApplicationController  extends VoyagerBaseController
     
     public function store(Request $request)
     {
+        // $request->validate([
+        //     '_token' => 'required|same:' . csrf_token(),
+        //     // Add other validation rules for your request data
+        // ]);
+
         // dd($request->input());
         // This should be the slug for the JobApplications BREAD
         $slug = 'job-applications'; 

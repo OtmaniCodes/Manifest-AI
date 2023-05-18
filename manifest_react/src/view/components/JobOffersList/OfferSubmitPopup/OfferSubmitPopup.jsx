@@ -53,6 +53,7 @@ const OfferSubmitPopup = (props) => {
 
       // Handle the response here if needed
       console.log(response.data);
+      
 
       setLoading(false);
       // Reset form fields
@@ -62,6 +63,7 @@ const OfferSubmitPopup = (props) => {
       setResume(null);
     } catch (error) {
       console.log(error.message)
+      
       setError(error.message);
       setLoading(false);
     }

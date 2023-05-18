@@ -13,7 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         'http://localhost:8000/api/job-applications',
-        'http://localhost:8000/api/job-applications',
-        'https://api.manifest-ai.com/api/job-applications'
+        'https://api.manifest-ai.com/api/job-applications',
     ];
 }

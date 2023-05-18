@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug')->unique();
-            $table->text('smallDescription');
-            $table->string('image');
-            $table->string('icon');
-            $table->text('bigDescription');
-            $table->text('list');
+            $table->string('title')->nullable();
+            $table->string('slug')->unique()->nullable();
+            $table->text('smallDescription')->nullable();
+            $table->string('image')->nullable();
+            $table->string('icon')->nullable();
+            $table->text('bigDescription')->nullable();
+            $table->text('list')->nullable();
             $table->timestamps();
         });
     }

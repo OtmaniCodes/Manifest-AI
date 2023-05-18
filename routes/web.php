@@ -20,7 +20,7 @@ use TCG\Voyager\Http\Middleware\VoyagerAdminMiddleware;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/admin');
 });
     
 

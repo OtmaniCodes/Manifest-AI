@@ -27,4 +27,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/get-articles', [PostController::class, 'getArticles']);
     Route::get('/get-jobs', [JobController::class, 'getJobs']);
     Route::get('/get-services', [ServiceController::class, 'getServices']);
+    Route::get('/csrf-token', function () {
+        return response()->json([
+            'csrfToken' => csrf_token(),
+        ]);
+    });
+    
 });
