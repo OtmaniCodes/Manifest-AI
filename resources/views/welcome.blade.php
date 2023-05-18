@@ -42,7 +42,7 @@
         
             <div class="form-group">
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" value='message' class="form-control">hello word</textarea>
+                <textarea id="message" name="message" value='message' class="form-control"></textarea>
             </div>
         
             <div class="form-group">
