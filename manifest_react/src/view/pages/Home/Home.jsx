@@ -25,9 +25,10 @@ export default function Home() {
   return (
     <div id='home-page'>
         <HeroSection/>
-        <VideoSection/>
+        <div style={{marginTop: '160px'}}></div>
         <ServicesSection/>
         <AboutSection/>
+        <VideoSection/>
         <DirectivesSection/>
         <TeamSection/>
         <TakeAnAction/>
