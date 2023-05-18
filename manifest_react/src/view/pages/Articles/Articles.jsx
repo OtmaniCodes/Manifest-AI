@@ -1,15 +1,16 @@
 import './Articles.css'
 import React, { useState } from 'react'
-import { useArticles } from '../../../state/aricles-provider';
 import MainTitle from '../../components/MainTitle/MainTitle';
 import ArticleCard from '../../components/ArticleCard/ArticleCard';
 import useScrollToTop from '../../../utils/custom-hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
 import { Fade } from 'react-reveal';
+import { useDataSource } from '../../../state/data-provider';
 
 export default function Articles() {
   useScrollToTop() 
-  const {articles, loading} = useArticles();
+  // const {articles, loading} = useArticles();
+  const {articles, loading} = useDataSource();
   const [searchQuery, setSearchQuery] = useState('');
   
   const filteredArticles = articles.length > 0 ? articles.filter(article => {

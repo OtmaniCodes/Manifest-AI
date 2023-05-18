@@ -1,10 +1,7 @@
 import './JobOffersList.css'
 import React, { useEffect, useState } from 'react'
 import OfferSubmitPopup from './OfferSubmitPopup/OfferSubmitPopup'
-import { jobOffersData } from '../../../constants/data';
 import { Fade } from 'react-reveal';
-import { useJobOffers } from '../../../state/joboffers-provider';
-import jobOffersSingleton from '../../../services/job-offers-client';
 
 export default function JobOffersList({jobOffersData}) {
   const [selectedJob, setSelectedJob] = useState(jobOffersData[0]);

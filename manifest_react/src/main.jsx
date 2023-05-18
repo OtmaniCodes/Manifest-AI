@@ -1,17 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import { ArticlesProvider } from './state/aricles-provider'
 import { FirstLoadStateProvider } from './state/first-load-state-provider'
-import { JobOffersProvider } from './state/joboffers-provider'
-import { ServicesProvider } from './state/services-provider'
-import { RootLoaderProvider } from './state/root-loader-provider'
+import { DataProvider } from './state/data-provider'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <FirstLoadStateProvider>
-      {/* <RootLoaderProvider> */}
+      <DataProvider>
+        <App/>  
+      </DataProvider> 
+    </FirstLoadStateProvider>
+    {/* <FirstLoadStateProvider>
         <ArticlesProvider>
         <ServicesProvider>
         <JobOffersProvider>
@@ -19,7 +20,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </JobOffersProvider>
         </ServicesProvider>
         </ArticlesProvider>
-      {/* </RootLoaderProvider> */}
-    </FirstLoadStateProvider>
+    </FirstLoadStateProvider> */}
   </React.StrictMode>
 )

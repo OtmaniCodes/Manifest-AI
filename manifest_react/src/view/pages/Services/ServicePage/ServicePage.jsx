@@ -6,10 +6,10 @@ import useScrollToTop from '../../../../utils/custom-hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
 import { Fade } from 'react-reveal';
 import ResponsiveCompo from '../../../components/responsive-compo';
-import { useServices } from '../../../../state/services-provider';
+import { useDataSource } from '../../../../state/data-provider';
 
 export default function ServicePage() {
-  const {services, loading} = useServices();  
+  const {services, loading} = useDataSource();  
 
 
   useScrollToTop();
