@@ -1,10 +1,5 @@
 import axios from 'axios';
-
-const mediumUserName = 'manifestai';
-// const mediumUserName = "francescahedges";
-const axiosHttpClient = axios.create({
-  baseURL: import.meta.env.VITE_SERVER_URL + '/api',
-});
+import axiosHttpClient from './http-client';
 
 class ServicesSingleton {
   static instance;
@@ -15,7 +10,8 @@ class ServicesSingleton {
     try {
       const data = await axiosHttpClient.get('/get-services');
       console.log('SERVICES DATA: ', data);
-      if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
+      // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
+      if (data.status === 200) {
         const res = data.data.services;
         const services = res;
         this.services = services.map((rawService, i) => {
@@ -48,6 +44,5 @@ class ServicesSingleton {
 }
 
 const servicesSingleton = ServicesSingleton.getInstance();
-// ServicesSingleton.initialize();
 
 export default servicesSingleton;

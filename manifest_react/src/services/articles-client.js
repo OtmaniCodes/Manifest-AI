@@ -1,10 +1,5 @@
 import axios from 'axios';
-
-const mediumUserName = 'manifestai';
-// const mediumUserName = "francescahedges";
-const axiosHttpClient = axios.create({
-  baseURL: import.meta.env.VITE_SERVER_URL + '/api',
-});
+import axiosHttpClient from './http-client';
 
 class ArticlesSingleton {
   static instance;
@@ -13,37 +8,12 @@ class ArticlesSingleton {
 
   async initialize() {
     try {
-      // const data = await axiosHttpClient.get();
-      // if (data.status === 200 && data.data.status === "ok") {
-      //     const res = data.data.items;
-      //     const articles = res.filter(
-      //         (item) => item.categories.length > 0
-      //     );
-      //     this.articles = articles.map((rawArticle, i) => {
-      //         return {
-      //             id: i + 1,
-      //             title: rawArticle.title,
-      //             publishDate: rawArticle.pubDate,
-      //             categories: rawArticle.categories,
-      //             content: rawArticle.content,
-      //             thumbnail: rawArticle.thumbnail,
-      //             suggestedArticlesIds: this.getSuggestedArticlesIds(
-      //                 articles,
-      //                 3
-      //             ),
-      //             slug: rawArticle.title
-      //                 .toLowerCase()
-      //                 .replace(/[^a-zA-Z0-9]+/g, "-"),
-      //         };
-      //     });
-      // }
       const data = await axiosHttpClient.get('/get-articles');
-      console.log('DATA: ', data);
-      if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
+      console.log('ARTICLES DATA: ', data);
+      // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
+      if (data.status === 200) {
+        console.log('HELLO');
         const res = data.data.articles;
-        // const articles = res.filter(
-        //     (item) => item.categories.length > 0
-        // );
         const articles = res;
         this.articles = articles.map((rawArticle, i) => {
           return {

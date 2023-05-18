@@ -15,6 +15,7 @@ export function ArticlesProvider({ children }) {
     async function fetchArticles() {
       await articlesSingleton.initialize();
       setArticles(articlesSingleton.articles);
+      console.log("ARTICLES AFTER INITILIZATION",articlesSingleton.articles);
       timeoutId = setTimeout(()=>setLoading(false), 2000);
     }
     fetchArticles();

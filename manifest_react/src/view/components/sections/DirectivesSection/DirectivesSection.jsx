@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./DirectivesSection.css";
 import bgVideo from '../../../../assets/videos/bg-video-1.mp4';
-import bgGif from '../../../../assets/gifs/windmills-bg.gif';
+import bgGif from '../../../../assets/gifs/lights-bg.gif';
 
 import { directivesData } from "../../../../constants/data";
 import GradientTitle from "../../GradientTitle/GradientTitle";

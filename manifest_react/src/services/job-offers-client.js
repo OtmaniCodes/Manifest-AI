@@ -1,10 +1,4 @@
-import axios from 'axios';
-
-const mediumUserName = 'manifestai';
-// const mediumUserName = "francescahedges";
-const axiosHttpClient = axios.create({
-  baseURL: import.meta.env.VITE_SERVER_URL + '/api',
-});
+import axiosHttpClient from './http-client';
 
 class JobOffersSingleton {
   static instance;
@@ -15,11 +9,9 @@ class JobOffersSingleton {
     try {
       const data = await axiosHttpClient.get('/get-jobs');
       console.log('OFFERS DATA: ', data);
-      if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
+      // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
+      if (data.status === 200) {
         const res = data.data.jobs;
-        // const articles = res.filter(
-        //     (item) => item.categories.length > 0
-        // );
         const jobs = res;
         this.jobsOffers = jobs.map((rawJob, i) => {
           return {
@@ -49,6 +41,5 @@ class JobOffersSingleton {
 }
 
 const jobOffersSingleton = JobOffersSingleton.getInstance();
-// articlesSingleton.initialize();
 
 export default jobOffersSingleton;

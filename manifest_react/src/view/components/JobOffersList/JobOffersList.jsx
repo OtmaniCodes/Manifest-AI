@@ -24,25 +24,10 @@ export default function JobOffersList({jobOffersData}) {
       setShowForm(false);
   }
 
-//   useEffect(() => {
-//     // if(!loading){
-//         setSelectedJob(jobOffers[0]);
-//     // }
-//   },)
-
-//   debugger;
-    // if (loading) {
-    //     return (<p>Loading Job Offers...</p>);
-    // }
-
-//   debugger;
-// if(!selectedJob){
-//     setSelectedJob(jobOffers[0])
-// }
-
-    if (!jobOffersData) {
-        return <p>No Job Offers For Now</p>
-    }
+  if (!jobOffersData || !selectedJob) {
+    return <p>No Job Offers For Available!</p>
+  }
+  
   return (
     <>
         <Fade>

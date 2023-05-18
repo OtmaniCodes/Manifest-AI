@@ -3,7 +3,7 @@ import bgVideo from '../../../../assets/videos/bg-video-1.mp4';
 import React from 'react'
 import GradientTitle from '../../GradientTitle/GradientTitle';
 import JobOffersList from '../../JobOffersList/JobOffersList';
-import bgGif from '../../../../assets/gifs/windmills-bg.gif';
+import bgGif from '../../../../assets/gifs/sunset-bg.gif';
 import { JobOffersProvider, useJobOffers } from '../../../../state/joboffers-provider';
 
 export default function JobOffersSection() {
@@ -64,7 +64,6 @@ export default function JobOffersSection() {
     </section>
   )
 }
-const hello = 'ddd';
 
 function JobOffersContainer() {
   const {jobOffers, loading} = useJobOffers();
