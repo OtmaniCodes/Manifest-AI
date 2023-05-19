@@ -8,14 +8,6 @@ import { useDataSource } from '../../../../state/data-provider';
 
 
 export default function ServicesSection() {
-  return (
-      <ServicesContainer/>
-  )
-}
-
-
-
-function ServicesContainer() {
   const {services, loading} = useDataSource();
   const [serviceIndex, setServiceIndex] = useState(null)
 
@@ -39,36 +31,11 @@ function ServicesContainer() {
           right: 0,
           top: 0,
           bottom: 0,
-          // left: '50%',
-          // top: '50%',
           objectFit: 'cover',
-          // transform: 'translate(-50%, -50%)',
           zIndex: '0',
           pointerEvents: 'none',
         }}
       />
-      {/* <video
-        autoPlay
-        loop
-        muted
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-          // left: '50%',
-          // top: '50%',
-          objectFit: 'cover',
-          // transform: 'translate(-50%, -50%)',
-          zIndex: '0',
-          pointerEvents: 'none',
-        }}
-      >
-        <source src={bgVideo} type="video/mp4" />
-      </video> */}
       <div className="trans-layer"></div>
       <div className="services-container">
         <div className='services-content'>
@@ -76,9 +43,17 @@ function ServicesContainer() {
           {loading && <p>Loading services...</p>}
           {!loading && 
             <Fade bottom duration={500}>
-              <div className="d-flex flex-md-row flex-column justify-content-center mt-5">
-                {services.map((s,i)=>(
-                  <ServiceCard index={i} service={s} isSelected={i === serviceIndex} onServiceClicked={handleServiceClick} onServiceClosed={handleServiceClose}/>
+              <div className="row justify-content-center mt-5">
+                {services.map((s, i) => (
+                  <div className="col-12 col-md-6 col-lg-3 text-center" key={i}>
+                    <ServiceCard
+                      index={i}
+                      service={s}
+                      isSelected={i === serviceIndex}
+                      onServiceClicked={handleServiceClick}
+                      onServiceClosed={handleServiceClose}
+                    />
+                  </div>
                 ))}
               </div>
             </Fade>

@@ -7,7 +7,7 @@ export default function ServiceCard({service, index}) {
 
 
     return (
-        <div className={`service-card d-flex flex-column justify-content-between mx-md-2 mb-md-0 mb-5`}>
+        <div className={`service-card d-flex flex-column justify-content-between mb-md-3 mb-5`}>
             <div className="icon-wrapper">
                 <img src={icon} alt={title} />
             </div>
