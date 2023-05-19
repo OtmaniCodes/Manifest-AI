@@ -32,9 +32,10 @@
     position: absolute;
 }
 
-#video-section .video-container video.video-intro{
+#video-section .video-container .video-intro{
     height: 100%;
     width: auto;
+    background-color: red;
     position: absolute;
 }
 

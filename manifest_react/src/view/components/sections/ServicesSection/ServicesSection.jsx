@@ -1,28 +1,22 @@
 import './ServicesSection.css'
 import React, { useState } from 'react'
-
-import bgVideo from '../../../../assets/videos/bg-video-1.mp4';
 import bgGif from '../../../../assets/gifs/windmills-bg.gif';
-
 import GradientTitle from "../../GradientTitle/GradientTitle";
-// import { servicesData } from '../../../../constants/data';
 import ServiceCard from '../../ServiceCard/ServiceCard';
 import { Fade } from 'react-reveal';
-import { ServicesProvider, useServices } from '../../../../state/services-provider';
+import { useDataSource } from '../../../../state/data-provider';
 
 
 export default function ServicesSection() {
   return (
-    // <ServicesProvider>
       <ServicesContainer/>
-    // </ServicesProvider>
   )
 }
 
 
 
 function ServicesContainer() {
-  const {services, loading} = useServices()
+  const {services, loading} = useDataSource();
   const [serviceIndex, setServiceIndex] = useState(null)
 
 

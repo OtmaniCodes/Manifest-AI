@@ -4,7 +4,7 @@ import React from 'react'
 import GradientTitle from '../../GradientTitle/GradientTitle';
 import JobOffersList from '../../JobOffersList/JobOffersList';
 import bgGif from '../../../../assets/gifs/sunset-bg.gif';
-import { JobOffersProvider, useJobOffers } from '../../../../state/joboffers-provider';
+import { useDataSource } from '../../../../state/data-provider';
 
 export default function JobOffersSection() {
 
@@ -66,7 +66,8 @@ export default function JobOffersSection() {
 }
 
 function JobOffersContainer() {
-  const {jobOffers, loading} = useJobOffers();
+  // const {jobOffers, loading} = useJobOffers();
+  const {jobOffers, loading} = useDataSource();
 
   if(loading){
     return <p>Loading...</p>

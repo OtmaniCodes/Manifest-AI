@@ -22,8 +22,12 @@ class JobOffersSingleton {
             // icon: `${import.meta.env.VITE_SERVER_URL}/storage/${rawJob.icon}`,
             date: rawJob.date,
             description: rawJob.description,
-            requirements: rawJob.requirements.split(','),
-            responsibilities: rawJob.responsibilities.split(','),
+            requirements: rawJob.requirements
+              .split('_')
+              .map((r) => r.toString().trim()),
+            responsibilities: rawJob.responsibilities
+              .split('_')
+              .map((r) => r.toString().trim()),
           };
         });
       }

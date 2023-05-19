@@ -1,13 +1,13 @@
 import "./ArticlesSection.css"
 import React from 'react';
-import { useArticles } from '../../../../state/aricles-provider'
 import ArticleCard from '../../ArticleCard/ArticleCard';
 import { Link } from 'react-router-dom';
 import MainTitle from '../../MainTitle/MainTitle';
 import { Fade } from "react-reveal";
+import { useDataSource } from "../../../../state/data-provider";
 
 export default function ArticlesSection() {
-  const {articles, loading} = useArticles();
+  const {articles, loading} = useDataSource();
   const displayAmount = 6;
 
   return (

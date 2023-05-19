@@ -1,4 +1,3 @@
-import axios from 'axios';
 import axiosHttpClient from './http-client';
 
 class ArticlesSingleton {
@@ -12,7 +11,6 @@ class ArticlesSingleton {
       console.log('ARTICLES DATA: ', data);
       // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
       if (data.status === 200) {
-        console.log('HELLO');
         const res = data.data.articles;
         const articles = res;
         this.articles = articles.map((rawArticle, i) => {

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import axiosHttpClient from './http-client';
 
 class ServicesSingleton {
@@ -26,7 +25,7 @@ class ServicesSingleton {
               rawService.image
             }`,
             bigDescription: rawService.bigDescription,
-            list: rawService.list.split(','),
+            list: rawService.list.split('_').map((s) => s.trim()),
           };
         });
       }
