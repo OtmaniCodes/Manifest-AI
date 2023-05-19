@@ -8,7 +8,8 @@ import { useDataSource } from '../../../../state/data-provider';
 
 export default function JobOffersSection() {
 
-
+  var {loading,sections} = useDataSource();
+  sections=sections[0]
   return (
     <section id="joboffers-section">
       {/* <video
@@ -53,7 +54,7 @@ export default function JobOffersSection() {
       <div className="trans-layer"></div>
 
       <div className="joboffers-content d-flex flex-column justify-content-center h-100">
-        <GradientTitle title={"JOB OFFERS"} subTitle={"Our Mission Is To Deliver Results In Service And Excution"}/>
+        <GradientTitle title={"JOB OFFERS"} subTitle={!loading && sections.jobs_description}/>
         <div className="d-flex justify-content-center w-100">
           {/* <JobOffersProvider> */}
             <JobOffersContainer/>

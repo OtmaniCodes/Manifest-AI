@@ -7,10 +7,13 @@ import { directivesData } from "../../../../constants/data";
 import GradientTitle from "../../GradientTitle/GradientTitle";
 import ResponsiveCompo from '../../../components/responsive-compo'
 import { Fade } from "react-reveal";
+import { useDataSource } from "../../../../state/data-provider";
 
 
 export default function DirectivesSection() {
-
+  var {loading,sections,directives} = useDataSource();
+  sections=sections[0]
+  const directivesData=directives
   const totalDirectives = directivesData.length;
   const [activeSlide, setActiveSlide] = useState(1);
 
@@ -36,6 +39,7 @@ export default function DirectivesSection() {
   }
 
   const renderLines = (reverted) => {
+    
     return (
       <div className="top-lines" style={{transform: reverted ? 'rotate(180deg)' : null}}>
         <div className="top-line1"></div>
@@ -88,7 +92,7 @@ export default function DirectivesSection() {
       </video> */}
       <div className="trans-layer"></div>
       <div className="directives-content d-flex flex-column justify-content-center h-100">
-        <GradientTitle title={"The 10 Directives"} subTitle={"The True And Only Directives That We Believe In"}/>
+        <GradientTitle title={"The 10 Directives"} subTitle={!loading && sections.directives_description}/>
         <div className="my-4"></div>
         <Fade>
 
@@ -133,10 +137,13 @@ export default function DirectivesSection() {
 
 
 function DirectivesSlider({activeSlide}) {
+
+  var {loading,directives} = useDataSource();
+  const directivesData=directives
   return (
     <>
         <ul className="slider-container">
-          {directivesData.map((directive, index) => {
+          {!loading && directivesData.map((directive, index) => {
             const { title, description } = directive;
             const count = index + 1;
             return (

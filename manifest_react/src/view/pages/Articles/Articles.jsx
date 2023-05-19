@@ -11,6 +11,7 @@ export default function Articles() {
   useScrollToTop() 
   // const {articles, loading} = useArticles();
   const {articles, loading} = useDataSource();
+  // const {sections, loading} = useDataSource();
   const [searchQuery, setSearchQuery] = useState('');
   
   const filteredArticles = articles.length > 0 ? articles.filter(article => {
@@ -48,6 +49,8 @@ export default function Articles() {
                     </div>
                 </div>
             </div>
+            {/* {loading ?'hi':'no'} */}
+            {/* {console.log(loading)} */}
             {
               loading
                 ? <div className="row justify-content-center">

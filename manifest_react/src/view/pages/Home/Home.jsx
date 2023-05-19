@@ -18,6 +18,7 @@ import lottieAsset from '../../../assets/55638-sustainability.json';
 import useScrollToTop from '../../../utils/custom-hooks/useScrollToTop'
 import { Helmet } from 'react-helmet'
 import { Zoom } from 'react-reveal'
+import { useDataSource } from '../../../state/data-provider'
 
 export default function Home() {
   useScrollToTop() 
@@ -47,6 +48,8 @@ export default function Home() {
 
 
 function TakeAnAction() {
+  var {loading,sections} = useDataSource();
+  sections=sections[0]
   return (
     <div className='take-action'>
         <div className="content container-fluid h-100">
@@ -56,7 +59,7 @@ function TakeAnAction() {
                     {/* <img src={manifestBrain} alt={"Manifest AI Logo"}/> */}
                 {/* </Zoom> */}
                 {/* <Fade bottom> */}
-                    <p className="h2">&ldquo;ALWAYS INNOVATING WITH ETHICS&rdquo;</p>
+                    <p className="h2">&ldquo;{!loading && sections.slogan3}&rdquo;</p>
                 {/* </Fade> */}
             </div>
             </div>

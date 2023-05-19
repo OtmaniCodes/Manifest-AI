@@ -11,10 +11,10 @@ const OfferSubmitPopup = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
+  // const [status, setStatus] = useState("");
   const [resume, setResume] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
 
   const handleNameChange = (event) => {
@@ -34,12 +34,12 @@ const OfferSubmitPopup = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setStatus("Sending...");
+    // setStatus("Sending...");
     console.log(name,email,message,resume)
 
 
     setLoading(true);
-    setError(null);
+    // setError(null);
 
     try {
       const formData = new FormData();
@@ -60,12 +60,32 @@ const OfferSubmitPopup = (props) => {
       setName('');
       setEmail('');
       setMessage('');
+      toast.success('Your application was submitted successfuly! we will get back to you as soon as we can.', {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       setResume(null);
     } catch (error) {
       console.log(error.message)
       
-      setError(error.message);
+      // setError(error.message);
       setLoading(false);
+      toast.error('Something went wrong! please try again later', {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
 
     // const serviceId = 'service_hj1ugt1';
@@ -152,7 +172,7 @@ const OfferSubmitPopup = (props) => {
                   required
                 />
               </div>
-              <div>{status}</div>
+              {/* <div>{status}</div> */}
               <div className="modal-footer">
                 <button
                   type="button"
@@ -172,6 +192,7 @@ const OfferSubmitPopup = (props) => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

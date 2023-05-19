@@ -7,6 +7,7 @@ import useScrollToTop from '../../../../utils/custom-hooks/useScrollToTop';
 import ResponsiveCompo from '../../responsive-compo';
 import GradientTitle from '../../GradientTitle/GradientTitle';
 import { Fade } from 'react-reveal';
+import { useDataSource } from '../../../../state/data-provider';
 
 const ContactSection = () => {
     useScrollToTop()
@@ -16,6 +17,8 @@ const ContactSection = () => {
     const [formFailed, setformFailed] = useState(false);
 
     const [isSubmitting, setIsSubmitting] = useState(false);
+    var {loading,sections} = useDataSource();
+    sections=sections[0]
 
     const [formData, setFormData] = useState({
         name: "",
@@ -76,7 +79,7 @@ const ContactSection = () => {
             phone: formData.phone,
             message: formData.message,
             };
-            setIsSubmitting(true)
+            setIsSubmitting(true) 
             emailjs.send(serviceId, templateId, emailParams, userId)
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
@@ -138,12 +141,12 @@ const ContactSection = () => {
                 <div className="row">
                 <Fade left cascade>
                     <div className="col-md-6 text-center text-md-start">
-                        <ResponsiveCompo desktopChild={<GradientTitle title={"CONTACT US"} subTitle={"Get in Touch with Manifest AI"} alignStart={true}/>}/>
-                        <ResponsiveCompo mobileChild={<GradientTitle title={"CONTACT US"} subTitle={"Get in Touch with Manifest AI"}/>}/>
+                        <ResponsiveCompo desktopChild={<GradientTitle title={"CONTACT US"} subTitle={!loading && sections.contact_description} alignStart={true}/>}/>
+                        <ResponsiveCompo mobileChild={<GradientTitle title={"CONTACT US"} subTitle={!loading && sections.contact_description}/>}/>
                         {/* <h3>Contact Info</h3> */}
-                        <div className='contact-info'><i class="bi bi-geo-alt contact-icon"></i>Tangier, Tanger-Tetouan-Al Hoceima, Morocco</div>
-                        <div className='contact-info'><i className="bi bi-envelope contact-icon"></i> <a href="mailto:contact@manifest-ai.com">contact@manifest-ai.com</a></div>
-                        <div className='contact-info'><i className="bi bi-phone contact-icon"></i> <a href="tel:+212 689-483874">+212 689-483874</a></div>
+                        <div className='contact-info'><i className="bi bi-geo-alt contact-icon"></i>{!loading && sections.contact_adresse}</div>
+                        <div className='contact-info'><i className="bi bi-envelope contact-icon"></i> <a href={!loading && 'mailto:'+sections.contact_email}>{!loading && sections.contact_email}</a></div>
+                        <div className='contact-info'><i className="bi bi-phone contact-icon"></i> <a href={!loading && 'tel:'+sections.contact_number}>{!loading && sections.contact_number}</a></div>
                     </div>
                 </Fade>
                 <Fade right>

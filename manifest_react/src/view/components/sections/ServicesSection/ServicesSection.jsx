@@ -16,9 +16,9 @@ export default function ServicesSection() {
 
 
 function ServicesContainer() {
-  const {services, loading} = useDataSource();
+  var {services, loading,sections} = useDataSource();
   const [serviceIndex, setServiceIndex] = useState(null)
-
+  sections=sections[0]
 
   const handleServiceClick = (index) => {
       setServiceIndex(index);
@@ -72,7 +72,7 @@ function ServicesContainer() {
       <div className="trans-layer"></div>
       <div className="services-container">
         <div className='services-content'>
-          <GradientTitle title={"OUR SERVICES"} subTitle={"Our Purpose Is To Deliver Results In Service And Excution"}/>
+          <GradientTitle title={"OUR SERVICES"} subTitle={!loading && sections.services_description}/>
           {loading && <p>Loading services...</p>}
           {!loading && 
             <Fade bottom duration={500}>
