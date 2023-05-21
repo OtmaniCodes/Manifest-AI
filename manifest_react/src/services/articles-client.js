@@ -8,7 +8,7 @@ class ArticlesSingleton {
   async initialize() {
     try {
       const data = await axiosHttpClient.get('/get-articles');
-      console.log('ARTICLES DATA: ', data);
+      // console.log('ARTICLES DATA: ', data);
       // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
       if (data.status === 200) {
         const res = data.data.articles;

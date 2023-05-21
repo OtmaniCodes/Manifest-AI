@@ -8,7 +8,7 @@ class DirectivesSingleton {
   async initialize() {
     try {
       const data = await axiosHttpClient.get('/get-directives');
-      console.log('DIRECTIVES DATA: ', data);
+      // console.log('DIRECTIVES DATA: ', data);
       // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
       if (data.status === 200) {
         const res = data.data.directives;

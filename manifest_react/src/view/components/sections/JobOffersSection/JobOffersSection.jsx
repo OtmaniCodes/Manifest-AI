@@ -1,5 +1,4 @@
 import './JobOffersSection.css'
-import bgVideo from '../../../../assets/videos/bg-video-1.mp4';
 import React from 'react'
 import GradientTitle from '../../GradientTitle/GradientTitle';
 import JobOffersList from '../../JobOffersList/JobOffersList';
@@ -7,9 +6,10 @@ import bgGif from '../../../../assets/gifs/sunset-bg.gif';
 import { useDataSource } from '../../../../state/data-provider';
 
 export default function JobOffersSection() {
-
-  var {loading,sections} = useDataSource();
+    var {loading,sections} = useDataSource();
   sections=sections[0]
+
+
   return (
     <section id="joboffers-section">
       {/* <video

@@ -23,6 +23,7 @@ export default function About() {
             aboutContent.map((data, i) => { 
               var graphicsFirst = i % 2 === 0;
               return <div key={i} className="more-about-row row justify-content-between align-items-center">
+                
                 <Fade left={!graphicsFirst} right={graphicsFirst} cascade duration={500}>
                   <div className={`more-about-text col-md-7 text-md-start text-center order-2 order-md-${graphicsFirst ? 2 : 1}`}>
                     <h3 className='mb-md-3'>{data.title}</h3>

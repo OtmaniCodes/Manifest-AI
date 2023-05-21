@@ -9,6 +9,8 @@ import directivesSingleton from '../services/directive-client';
 import teamsSingleton from '../services/teams-client';
 import aboutSingleton from '../services/about-client';
 import aboutContentSingleton from '../services/about-content-client';
+import manifestoSingleton from '../services/manifesto-client';
+import manifestoContentSingleton from '../services/manifesto-content-client';
 const DataContext = createContext(
     {
         loading: false,
@@ -20,6 +22,8 @@ const DataContext = createContext(
         teams: [],
         about: [],
         aboutContent: [],
+        manifesto: [],
+        manifestoContent: [],
 
     }
 );
@@ -34,6 +38,8 @@ export const DataProvider = ({ children }) => {
   const [about, setAbout] = useState([]);
   const [teams, setTeams] = useState([]);
   const [aboutContent, setAboutContent] = useState([]);
+  const [manifesto, setManifesto] = useState([]);
+  const [manifestoContent, setManifestoContent] = useState([]);
 
   useEffect(() => {
     Promise.all([
@@ -45,6 +51,8 @@ export const DataProvider = ({ children }) => {
       teamsSingleton.initialize(),
       aboutSingleton.initialize(),
       aboutContentSingleton.initialize(),
+      manifestoSingleton.initialize(),
+      manifestoContentSingleton.initialize(),
     ])
     .then(() => {
       setArticles(articlesSingleton.articles);
@@ -55,6 +63,8 @@ export const DataProvider = ({ children }) => {
       setTeams(teamsSingleton.teams);
       setAbout(aboutSingleton.about);
       setAboutContent(aboutContentSingleton.aboutContent);
+      setManifesto(manifestoSingleton.manifesto);
+      setManifestoContent(manifestoContentSingleton.manifestoContent);
       setLoading(false);
     })
     .catch(error => {
@@ -68,7 +78,7 @@ export const DataProvider = ({ children }) => {
   }
 
   return (
-    <DataContext.Provider value={{ loading, articles, jobOffers, services,sections,directives ,teams ,about,aboutContent}}>
+    <DataContext.Provider value={{ loading, articles, manifesto,manifestoContent,jobOffers, services,sections,directives ,teams ,about,aboutContent}}>
       {children}
     </DataContext.Provider>
   );

@@ -7,14 +7,14 @@ import { Fade } from "react-reveal";
 import { useDataSource } from "../../../../state/data-provider";
 
 export default function ArticlesSection() {
-  var {articles, loading,sections} = useDataSource();
+  var {articles, loading,sections,manifestoContentifesto} = useDataSource();
   sections=sections[0]
   const displayAmount = 6;
 
   return (
     <section id="articles-section">
         <div className="container">
-            <MainTitle title={"READ OUR ARTICLES"} subTitle={!loading && sections.articles_description} color={"#22B4D7"} splitMargin={20}/>
+            <MainTitle title={"READ OUR ARTICLES"} subTitle={!loading && sections.articles_description} splitMargin={20}/>
             {
              loading
                 ? (<div className="row justify-content-center py-5">

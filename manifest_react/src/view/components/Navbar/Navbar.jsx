@@ -42,10 +42,11 @@ const Navbar = () => {
 
     return ( 
         <header id="header" className={visible ? '' : 'hidden-navbar'} style={keepTransBg ? transBg : null}>
-            <div className="navbar-container px-2 d-flex align-items-center">
+            <div className="navbar-container px-2 d-flex w-100 justify-content-around align-items-center">
 
                 <Link to={"/"} className="logo mx-2 me-auto me-lg-0">
-                    <img src={keepTransBg ? whiteLogo : blueLogo} alt="" className="img-fluid"/>
+                    {/* <img src={keepTransBg ? whiteLogo : blueLogo} alt="" className="img-fluid"/> */}
+                    <img src={whiteLogo} alt="" className="img-fluid"/>
                 </Link>
         
                 <nav id="navbar" className="navbar order-last order-lg-0 ">
@@ -61,28 +62,28 @@ const Navbar = () => {
                         className={`${activeItem === 'services' ? 'active' : ''} ${keepTransBg ? 'trans-bg' : ''}`}
                         onClick={() => setactiveItem('services')}
                         >Services</Link></li>
-                        <li><Link to="/about" style={{color: keepTransBg ? 'white' : '#111'}} 
+                        <li><Link to="/about" style={{color: keepTransBg ? 'white' : 'white'}} 
                         className={activeItem === 'about' ? 'active' : ''}
                         onClick={() => setactiveItem('about')}
                         >About</Link></li>
-                        <li><Link to="/team" style={{color: keepTransBg ? 'white' : '#111'}} 
+                        <li><Link to="/team" style={{color: keepTransBg ? 'white' : 'white'}} 
                         className={activeItem === 'team' ? 'active' : ''}
                         onClick={() => setactiveItem('team')}
                         >Team</Link></li>
-                        <li><Link to="/articles" style={{color: keepTransBg ? 'white' : '#111'}} 
+                        <li><Link to="/articles" style={{color: keepTransBg ? 'white' : 'white'}} 
                         className={activeItem === 'articles' ? 'active' : ''}
                         onClick={() => setactiveItem('articles')}
                         >Articles</Link></li>
-                        <li><Link to="/job-offers" style={{color: keepTransBg ? 'white' : '#111'}} 
+                        <li><Link to="/job-offers" style={{color: keepTransBg ? 'white' : 'white'}} 
                         className={activeItem === 'job-offers' ? 'active' : ''}
                         onClick={() => setactiveItem('job-offers')}
                         >Job Offers</Link></li>
-                        <li><Link to="/contact" style={{color: keepTransBg ? 'white' : '#111'}} 
+                        <li><Link to="/contact" style={{color: keepTransBg ? 'white' : 'white'}} 
                         className={activeItem === 'contact' ? 'active' : ''}
                         onClick={() => setactiveItem('contact')}
                         >Contact</Link></li>
                         <li className="dropdown">
-                            <Link to="#" style={{color: keepTransBg ? 'white' : '#111'}} >
+                            <Link to="#" style={{color: keepTransBg ? 'white' : 'white'}} >
                                 <span>Community</span> <i className="bi bi-chevron-down"></i></Link>
                             <ul>
                             <li><a href="team.html">Discord</a></li>
@@ -95,16 +96,19 @@ const Navbar = () => {
                             </ul>
                         </li>
                     </ul>
-                    <i id='mobile-nav-toggle' style={{color: keepTransBg ? 'white' : '#111'}} className="bi bi-list mobile-nav-toggle" onClick={navToggle} ></i>
+                    <i id='mobile-nav-toggle' style={{color: keepTransBg ? 'white' : 'white'}} className="bi bi-list mobile-nav-toggle" onClick={navToggle} ></i>
                 </nav>
                 
             
         
-                <div className="header-social-links d-flex" style={{borderLeftColor: keepTransBg ? 'white' : '#111'}} >
+                <div className="header-social-links d-flex" style={{borderLeftColor: keepTransBg ? 'white' : 'white'}} >
                     {/* <a href="#" target='_blank' className="twitter"><i className="bu bi-twitter"></i></a> */}
                     {/* <a href="#" target='_blank' className="facebook"><i className="bu bi-facebook"></i></a> */}
-                    <a href="https://www.instagram.com/manifest_a.i/" target='_blank' className="instagram"><i style={{color: keepTransBg ? 'white' : '#111'}}  className="bu bi-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/manifest-ai/" target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : '#111'}}  className="bu bi-linkedin"></i></a>
+                    <a href="https://www.instagram.com/manifest_a.i/" target='_blank' className="instagram"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/manifest-ai/" target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-linkedin"></i></a>
+                    <a href="https://www.tiktok.com/@manifest_ai" target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bi bi-tiktok"></i></a>
+                    <a href="https://twitter.com/Manifest_AI" target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-twitter"></i></a>
+                    <a href="https://web.facebook.com/people/Manifest-AI/100092676223614/" target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-facebook"></i></a>
                 </div>
     
             </div>

@@ -31,7 +31,7 @@ function ScrollToTopButton() {
       aria-label="Scroll to top"
     >
       {/* <BsArrowUp /> */}
-      <i class="bi bi-arrow-up-short"></i>
+      <i className="fa-solid fa-angle-up"></i>
     </button>
   );
 }

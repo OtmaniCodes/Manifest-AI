@@ -11,10 +11,8 @@ const OfferSubmitPopup = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  // const [status, setStatus] = useState("");
   const [resume, setResume] = useState("");
   const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState(null);
 
 
   const handleNameChange = (event) => {
@@ -34,12 +32,7 @@ const OfferSubmitPopup = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // setStatus("Sending...");
-    console.log(name,email,message,resume)
-
-
     setLoading(true);
-    // setError(null);
 
     try {
       const formData = new FormData();
@@ -51,15 +44,12 @@ const OfferSubmitPopup = (props) => {
       // Replace 'YOUR_API_ENDPOINT' with the actual endpoint of your Laravel server
       const response = await axiosHttpClient.post(`/job-applications`, formData);
 
-      // Handle the response here if needed
-      console.log(response.data);
-      
-
       setLoading(false);
       // Reset form fields
       setName('');
       setEmail('');
       setMessage('');
+      setResume(null);
       toast.success('Your application was submitted successfuly! we will get back to you as soon as we can.', {
         position: "bottom-left",
         autoClose: 5000,
@@ -69,12 +59,8 @@ const OfferSubmitPopup = (props) => {
         draggable: true,
         progress: undefined,
         theme: "light",
-      });
-      setResume(null);
+    });
     } catch (error) {
-      console.log(error.message)
-      
-      // setError(error.message);
       setLoading(false);
       toast.error('Something went wrong! please try again later', {
         position: "bottom-left",
@@ -85,38 +71,8 @@ const OfferSubmitPopup = (props) => {
         draggable: true,
         progress: undefined,
         theme: "light",
-      });
+    });
     }
-
-    // const serviceId = 'service_hj1ugt1';
-    // const templateId = 'template_bwekhr8';
-    // const userId = 's8IdgPMEE6RYyV00r';
-
-    // const serviceId = '';
-    // const templateId = '';
-    // const userId = '';
-
-    // const templateParams = {
-    //   name: name,
-    //   email: email,
-    //   message: message,
-    // };
-
-    // emailjs
-    //   .send(serviceId, templateId, templateParams, userId)
-    //   .then((response) => {
-    //     console.log("SUCCESS!", response.status, response.text);
-    //     setStatus("Sent successfully!");
-    //   })
-    //   .catch((error) => {
-    //     console.log("FAILED...", error);
-    //     setStatus("Failed to send.");
-     
-    //   });
-      // setName('')
-      // setEmail('')
-      // setMessage('')
-      // setStatus('')
   };
 
   return (
@@ -172,7 +128,6 @@ const OfferSubmitPopup = (props) => {
                   required
                 />
               </div>
-              {/* <div>{status}</div> */}
               <div className="modal-footer">
                 <button
                   type="button"

@@ -8,7 +8,7 @@ class TeamsSingleton {
   async initialize() {
     try {
       const data = await axiosHttpClient.get('/get-teams');
-      console.log('TEAMS DATA: ', data);
+      // console.log('TEAMS DATA: ', data);
       // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
       if (data.status === 200) {
         const res = data.data.teams;

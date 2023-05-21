@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 60px;
 }
 
 /* #team-section .team-member-card{
@@ -51,7 +52,8 @@
 }
 
 #team-section .team-member-card h3{
-    background-color: #22B4D7;
+    /* background-color: #22B4D7; */
+    background-color: #FFFFFF;
     width: 100%;
     font-style: normal;
     font-weight: 700;
@@ -59,12 +61,12 @@
     line-height: 37px;
     text-align: center;
     letter-spacing: 0.06em;
-    color: white;
+    color: #002C36;
     margin: 0;
     margin-bottom: 0;
     padding: 0 4px;
-    border-left: 1px rgba(0, 0, 0, 0.6) solid;
-    border-right: 1px rgba(0, 0, 0, 0.6) solid;
+    border-left: 1px rgba(255, 255, 255, 0.6) solid;
+    border-right: 1px rgba(255, 255, 255, 0.6) solid;
 }
 
 #team-section .team-member-card p{
@@ -72,15 +74,15 @@
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    color: #000000aa;
+    color: #ffffffaa;
     line-height: 24px;
     text-align: center;
     letter-spacing: 0.06em;
-    border-left: 1px rgba(0, 0, 0, 0.6) solid;
-    border-right: 1px rgba(0, 0, 0, 0.6) solid;
+    border-left: 1px rgba(255, 255, 255, 0.6) solid;
+    border-right: 1px rgba(255, 255, 255, 0.6) solid;
     margin: 0;
-    border-bottom: 1px black solid;
-    padding: 0 3px;
+    border-bottom: 1px rgb(255, 255, 255) solid;
+    padding: 5px;
 }
 
 @media only screen and (max-width: 768px) {

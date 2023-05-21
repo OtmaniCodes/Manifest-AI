@@ -1,17 +1,6 @@
-/* .expanded {
-    transition: all 0.5s ease-in-out;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 80%;
-    max-width: 1320px;
-    margin: 0 auto;
-    height: 80vh;
-    z-index: 100;
-} */
 .service-card{
     background: #002C36;
-    padding: 2rem 1.5rem;
+    padding: 2rem 0.5rem;
     border-radius: 5px;
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
     cursor: pointer;
@@ -47,6 +36,11 @@
     background: #002C36;
 } */
 
+.service-card .service-btn {
+    margin: 0 20px;
+    margin-top: 30px;
+}
+
 .service-card:hover .service-btn {
     background: #002C36;
     /* color: black; */
@@ -70,7 +64,8 @@
 
 .service-card .content h3{
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 1.5;
     font-weight: 600;
     text-transform: uppercase;
     margin: 5px 0;

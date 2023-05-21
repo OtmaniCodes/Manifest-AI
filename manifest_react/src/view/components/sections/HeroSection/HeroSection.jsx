@@ -9,25 +9,23 @@ import { useDataSource } from '../../../../state/data-provider';
 // ma => manifest ai
 
 export default function HeroSection() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [isFlatHero, setIsFlatHero] = useState(false);
+  // const [scrollPosition, setScrollPosition] = useState(0);
+  // const [isFlatHero, setIsFlatHero] = useState(false);
   const {isFirstLoad, setIsFirstLoad} = useFirstLoadState();
   var {loading,sections} = useDataSource();
   sections=sections[0]
+  // console.log(sections)
 
-
-
-
-  useEffect(() => {
-    const handleScroll = () => {
-        const currentPosition = window.pageYOffset;
-        const screenHeight = window.innerHeight;
-        setIsFlatHero((currentPosition + (screenHeight * (2/3))) > screenHeight);
-        setScrollPosition(currentPosition);
-    }
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [scrollPosition])
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //       const currentPosition = window.pageYOffset;
+  //       const screenHeight = window.innerHeight;
+  //       setIsFlatHero((currentPosition + (screenHeight * (2/3))) > screenHeight);
+  //       setScrollPosition(currentPosition);
+  //   }
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, [scrollPosition])
 
 
   useEffect(() => {
@@ -43,11 +41,12 @@ export default function HeroSection() {
 
   return (
     <>
-      <section id='hero-section' className={`${isFlatHero ? 'flat' : ''}`} style={{animation: isFirstLoad ? 'revealSection 1.6s ease-in-out forwards' : null}}>
+      {/* <section id='hero-section' className={`${isFlatHero ? 'flat' : ''}`} style={{animation: isFirstLoad ? 'revealSection 1.6s ease-in-out forwards' : null}}> */}
+      <section id='hero-section'>
         <div className="container h-100 d-flex flex-column justify-content-end align-items-center text-center">
           {
             isFirstLoad ? (
-              <Fade bottom duration={500} delay={800}>
+              <Fade bottom duration={500} delay={200}>
                 <img className='brain-logo' src={maBrain} alt="white brain logo" />
               </Fade>
             ) : (
@@ -56,29 +55,28 @@ export default function HeroSection() {
           }
           {
             isFirstLoad ? (
-              <Fade bottom duration={500} delay={1000}>
+              <Fade bottom duration={500} delay={400}>
                 <h1>MANIFEST AI</h1>
               </Fade>
             ) : (
               <h1>MANIFEST AI</h1>
             )
           }
-          
           {
             isFirstLoad ? (
-            <Fade bottom duration={500} delay={1200}>
+            <Fade bottom duration={500} delay={600}>
               <h2 className="">
-                  <span>{!loading && sections.slogan1}</span>
+                  {/* <span>{!loading && sections.slogan1}</span> */}
                   <span className='d-flex justify-content-center align-items-center m-0'>
                     <i className='spike-triangle to-left'></i>
-                    <span className='mx-md-4 mx-4'>{!loading&&sections.slogan2}</span>
+                    <span className='mx-md-4 mx-4'>{!loading && sections.slogan2}</span>
                     <i className='spike-triangle to-right'></i>
                   </span>
               </h2>
             </Fade>
             ) : (
               <h2 className="">
-                  <span>{!loading && sections.slogan1}</span>
+                  {/* <span>{!loading && sections.slogan1}</span> */}
                   <span className='d-flex justify-content-center align-items-center m-0'>
                     <i className='spike-triangle to-left'></i>
                     <span className='mx-md-4 mx-4'>{!loading&&sections.slogan2}</span>
@@ -125,11 +123,11 @@ export default function HeroSection() {
         </div>
       </section>
       {
-        isFlatHero && (
-          <Zoom duration={500} delay={200}>
-            <img className='blue-logo' src={maBlueBrain} alt="manifest ai logo" />
-          </Zoom>
-        )
+        // isFlatHero && (
+        //   <Zoom duration={500} delay={200}>
+        //     <img className='blue-logo' src={maBlueBrain} alt="manifest ai logo" />
+        //   </Zoom>
+        // )
       }
     </>
   )

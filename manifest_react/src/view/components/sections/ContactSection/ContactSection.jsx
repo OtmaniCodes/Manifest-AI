@@ -106,6 +106,7 @@ const ContactSection = () => {
                     progress: undefined,
                     theme: "light",
                 });
+                
             });
         
             setFormData({

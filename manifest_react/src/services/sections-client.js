@@ -8,7 +8,7 @@ class SectionsSingleton {
   async initialize() {
     try {
       const data = await axiosHttpClient.get('/get-sections');
-      console.log('SECTIONS DATA: ', data);
+      // console.log('SECTIONS DATA: ', data);
       // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
       if (data.status === 200) {
         const res = data.data.sections;

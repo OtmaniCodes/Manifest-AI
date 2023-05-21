@@ -8,7 +8,7 @@ class AboutSingleton {
   async initialize() {
     try {
       const data = await axiosHttpClient.get('/get-about');
-      console.log('ABOUT DATA: ', data);
+      // console.log('ABOUT DATA: ', data);
       // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
       if (data.status === 200) {
         const res = data.data.about;

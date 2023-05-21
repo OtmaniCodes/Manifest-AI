@@ -4,13 +4,12 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import React, { Suspense } from 'react';
-import {BrowserRouter, Routes, Route, NavLink, Navigate, useNavigate} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import SplashLoader from './view/components/SplashLoader/SplashLoader';
 import ScrollProgressBar from './view/components/ScrollProgressBar/ScrollProgressBar'
 import Navbar from './view/components/Navbar/Navbar';
 import Footer from './view/components/Footer/Footer';
 import ScrollToTopButton from './view/components/ScrollToTopButton/ScrollToTopButton'
-// import Abort404 from './view/pages/Abort/Abort404';
 
 const Home = React.lazy(() => import('./view/pages/Home/Home'));
 const About = React.lazy(() => import('./view/pages/About/About'));
@@ -26,7 +25,7 @@ const Services = React.lazy(() => import('./view/pages/Services/Services'));
 // const ScrollProgressBar = React.lazy(() => import("./components/ScrollProgressBar/ScrollProgressBar"));
 const Manifesto = React.lazy(() => import('./view/pages/Manifesto/Manifesto'));
 // const ScrollToTopButton = React.lazy(() => import('./components/ScrollToTopButton/ScrollToTopButton'));
-const Abort404 = React.lazy(() => import('./view/pages/Abort/Abort404'));
+// const Abort404 = React.lazy(() => import('./pages/abort-404/Abort404'));
 
 function App() {
   // return <SplashLoader/>
@@ -47,7 +46,7 @@ function App() {
               <Route exact path="/services" element={<Services/>}/>
               <Route path="/services/:slug" element={<ServicePage/>} />
               <Route path="/manifest" element={<Manifesto/>} />
-              <Route path="*" element={<Abort404/>} />
+              {/* <Route path="*" element={<Abort404/>} /> */}
             </Routes>
             <ScrollToTopButton/>
             <Footer /> 

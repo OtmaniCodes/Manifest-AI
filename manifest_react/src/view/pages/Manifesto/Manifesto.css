@@ -1,6 +1,6 @@
 .manifesto-page{
-    margin-top: 55px !important;
-    background: #EBEDF0;
+    padding-top: 120px !important;
+    /* background: #EBEDF0; */
 }
 .commendments-header{
     text-align: left;
@@ -24,6 +24,7 @@
     font-size: 17px;
     font-weight: 500;
     margin-bottom: 0px;
+    color: white;
 }
 .download-manifest{
     font-weight: bolder;
@@ -31,10 +32,14 @@
     
 }
 
-/* .commendment-wrapper .manifesto-text h3{
-} */
+.commendment-wrapper .manifesto-text h3{
+    color: white;
+}
 
 .commendment-wrapper .manifesto-text p{
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+
     margin: 0;
 }
 

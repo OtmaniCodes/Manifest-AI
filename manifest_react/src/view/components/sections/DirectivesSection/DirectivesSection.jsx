@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./DirectivesSection.css";
-import bgVideo from '../../../../assets/videos/bg-video-1.mp4';
 import bgGif from '../../../../assets/gifs/lights-bg.gif';
 
-import { directivesData } from "../../../../constants/data";
+// import { directivesData } from "../../../../constants/data";
 import GradientTitle from "../../GradientTitle/GradientTitle";
 import ResponsiveCompo from '../../../components/responsive-compo'
 import { Fade } from "react-reveal";
@@ -12,16 +11,25 @@ import { useDataSource } from "../../../../state/data-provider";
 
 export default function DirectivesSection() {
   var {loading,sections,directives} = useDataSource();
+  var directivesData = directives;
   sections=sections[0]
-  const directivesData=directives
   const totalDirectives = directivesData.length;
+  const workingDirectives = [...directivesData]; 
+
   const [activeSlide, setActiveSlide] = useState(1);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setActiveSlide((currentSlide) =>
-      currentSlide === totalDirectives ? 1 : currentSlide + 1
-      );
+      const intervalId = setInterval(() => {
+      setActiveSlide((currentSlide) => {
+        const nextSlide = currentSlide === totalDirectives ? 1 : currentSlide + 1;
+        if (nextSlide === 1) {
+          // Delete all elements from the list and refill it again
+          // Replace 'directivesData' with the logic to refill the list
+          workingDirectives.length = 0; // Clear the array
+          workingDirectives.push(...directivesData); // Refill the array
+        }
+        return nextSlide;
+      });
     }, 5000);
     return () => clearInterval(intervalId);
   }, []);
@@ -39,7 +47,6 @@ export default function DirectivesSection() {
   }
 
   const renderLines = (reverted) => {
-    
     return (
       <div className="top-lines" style={{transform: reverted ? 'rotate(180deg)' : null}}>
         <div className="top-line1"></div>
@@ -137,8 +144,7 @@ export default function DirectivesSection() {
 
 
 function DirectivesSlider({activeSlide}) {
-
-  var {loading,directives} = useDataSource();
+    var {loading,directives} = useDataSource();
   const directivesData=directives
   return (
     <>

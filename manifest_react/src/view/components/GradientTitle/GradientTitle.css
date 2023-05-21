@@ -28,7 +28,7 @@
 	position: relative;
 	padding-bottom: 14px;
 	margin-bottom: 25px;
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 36px;
 	background-image: linear-gradient(to right, #22B4D7, #28db64);
 	-webkit-background-clip: text;
@@ -110,6 +110,10 @@
 	height: 3px;
 	background-color: #28db64;
     border-radius: 3px;
+}
+
+.header-section-start .section-header-title {
+	font-weight: 600;
 }
 
 .header-section-start .section-header-description {

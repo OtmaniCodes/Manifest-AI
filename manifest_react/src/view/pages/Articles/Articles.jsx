@@ -11,7 +11,6 @@ export default function Articles() {
   useScrollToTop() 
   // const {articles, loading} = useArticles();
   const {articles, loading} = useDataSource();
-  // const {sections, loading} = useDataSource();
   const [searchQuery, setSearchQuery] = useState('');
   
   const filteredArticles = articles.length > 0 ? articles.filter(article => {
@@ -29,7 +28,7 @@ export default function Articles() {
           <title>ARTICLES - MANIFEST AI</title>
         </Helmet>
         <div className="container">
-            <MainTitle title={"READ OUR BLOG"} subTitle={"Here you can find our written pieces regarding AI, sustaiable developement & agriculture and much more interesting topics."} color={"#22B4D7"} splitMargin={20}/>
+            <MainTitle title={"READ OUR BLOG"} subTitle={"Here you can find our written pieces regarding AI, sustaiable developement & agriculture and much more interesting topics."} splitMargin={20}/>
             {/* <div className="d-flex justify-content-center">
                 <a href="https://medium.com/@manifestai" className="medium-link">Check out our blogs on Medium</a>
             </div> */}
@@ -49,8 +48,6 @@ export default function Articles() {
                     </div>
                 </div>
             </div>
-            {/* {loading ?'hi':'no'} */}
-            {/* {console.log(loading)} */}
             {
               loading
                 ? <div className="row justify-content-center">
