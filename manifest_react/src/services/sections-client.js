@@ -18,6 +18,15 @@ class SectionsSingleton {
             what_we_do: rawSection.what_we_do,
             our_vision: rawSection.our_vision,
             contact_us: rawSection.contact_us,
+
+            logo_menu:`${import.meta.env.VITE_SERVER_URL}/storage/${ rawSection.logo_menu}` ,
+            logo_home:`${import.meta.env.VITE_SERVER_URL}/storage/${ rawSection.logo_home}`,
+            facebook: rawSection.facebook,
+            linkedin: rawSection.linkedin,
+            tiktok: rawSection.tiktok,
+            instagram: rawSection.instagram,
+            twitter: rawSection.twitter,
+
             slogan1: rawSection.slogan1,
             slogan2: rawSection.slogan2,
             services_description: rawSection.services_description,

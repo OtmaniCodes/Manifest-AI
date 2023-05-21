@@ -4,9 +4,12 @@ import { useEffect, useState } from 'react';
 // import useScrollToTop from '../../hooks/useScrollToTop';
 import blueLogo from '../../../assets/images/manifest_logo_blue.svg'
 import whiteLogo from '../../../assets/images/manifest_logo_white.svg'
+import { useDataSource } from '../../../state/data-provider';
 
 
 const Navbar = () => { 
+    var {loading,sections} = useDataSource();
+    sections=sections[0]
     const [Isopen, setIsOpen] = useState(false)
     const [scrollPosition, setScrollPosition] = useState(0);
     const [visible, setVisible] = useState(true);
@@ -46,7 +49,7 @@ const Navbar = () => {
 
                 <Link to={"/"} className="logo mx-2 me-auto me-lg-0">
                     {/* <img src={keepTransBg ? whiteLogo : blueLogo} alt="" className="img-fluid"/> */}
-                    <img src={whiteLogo} alt="" className="img-fluid"/>
+                    <img src={!loading && sections.logo_menu} alt="" className="img-fluid"/>
                 </Link>
         
                 <nav id="navbar" className="navbar order-last order-lg-0 ">
@@ -104,11 +107,11 @@ const Navbar = () => {
                 <div className="header-social-links d-flex" style={{borderLeftColor: keepTransBg ? 'white' : 'white'}} >
                     {/* <a href="#" target='_blank' className="twitter"><i className="bu bi-twitter"></i></a> */}
                     {/* <a href="#" target='_blank' className="facebook"><i className="bu bi-facebook"></i></a> */}
-                    <a href="https://www.instagram.com/manifest_a.i/" target='_blank' className="instagram"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/manifest-ai/" target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-linkedin"></i></a>
-                    <a href="https://www.tiktok.com/@manifest_ai" target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bi bi-tiktok"></i></a>
-                    <a href="https://twitter.com/Manifest_AI" target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-twitter"></i></a>
-                    <a href="https://web.facebook.com/people/Manifest-AI/100092676223614/" target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-facebook"></i></a>
+                    <a href={!loading && sections.instagram} target='_blank' className="instagram"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-instagram"></i></a>
+                    <a href={!loading && sections.linkedin} target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-linkedin"></i></a>
+                    <a href={!loading && sections.tiktok} target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bi bi-tiktok"></i></a>
+                    <a href={!loading && sections.twitter} target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-twitter"></i></a>
+                    <a href={!loading && sections.facebook} target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-facebook"></i></a>
                 </div>
     
             </div>

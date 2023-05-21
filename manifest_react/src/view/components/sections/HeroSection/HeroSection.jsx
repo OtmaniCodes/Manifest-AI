@@ -47,10 +47,10 @@ export default function HeroSection() {
           {
             isFirstLoad ? (
               <Fade bottom duration={500} delay={200}>
-                <img className='brain-logo' src={maBrain} alt="white brain logo" />
+                <img className='brain-logo' src={!loading && sections.logo_home} alt="white brain logo" />
               </Fade>
             ) : (
-              <img className='brain-logo' src={maBrain} alt="white brain logo" />
+              <img className='brain-logo' src={!loading && sections.logo_home} alt="white brain logo" />
             )
           }
           {

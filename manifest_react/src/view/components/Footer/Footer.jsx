@@ -52,11 +52,11 @@ const Footer = () => {
         <div className="social-links text-center text-md-right pt-3 pt-md-0">
           {/* <a href="#" className="twitter"><i className="bu bi-twitter"></i></a> */}
           {/* <a href="#" className="facebook"><i className="bu bi-facebook"></i></a> */}
-          <a href="https://www.instagram.com/manifest_a.i/" className="instagram"><i className="bu bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/manifest-ai/" className="linkedin"><i className="bu bi-linkedin"></i></a>
-          <a href="https://www.tiktok.com/@manifest_ai" target='_blank' className="linkedin"><i className="bi bi-tiktok"></i></a>
-          <a href="https://twitter.com/Manifest_AI" target='_blank' className="linkedin"><i className="bu bi-twitter"></i></a>
-          <a href="https://web.facebook.com/people/Manifest-AI/100092676223614/" target='_blank' className="linkedin"><i className="bu bi-facebook"></i></a>
+          <a href={!loading && sections.instagram} className="instagram"><i className="bu bi-instagram"></i></a>
+          <a href={!loading && sections.linkedin} className="linkedin"><i className="bu bi-linkedin"></i></a>
+          <a href={!loading && sections.tiktok} target='_blank' className="linkedin"><i className="bi bi-tiktok"></i></a>
+          <a href={!loading && sections.twitter} target='_blank' className="linkedin"><i className="bu bi-twitter"></i></a>
+          <a href={!loading && sections.facebook} target='_blank' className="linkedin"><i className="bu bi-facebook"></i></a>
       </div>
   </div>
 </footer>
