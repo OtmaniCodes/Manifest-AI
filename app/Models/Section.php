@@ -8,10 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Section extends Model
 {
     use HasFactory;
+            
     protected $fillable = [
         'what_we_do',
         'our_vision',
         'contact_us',
+        'logo_home',
+        'facebook',
+        'linkedin',
+        'tiktok',
+        'instagram',
+        'twitter',
         'slogan1',
         'slogan2',
         'services_description',

@@ -18,6 +18,13 @@ return new class extends Migration
             $table->text('what_we_do')->nullable();
             $table->text('our_vision')->nullable();
             $table->text('contact_us')->nullable();
+            $table->string('logo_menu')->nullable();
+            $table->string('logo_home')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('tiktok')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('twitter')->nullable();
             $table->string('slogan1')->nullable();
             $table->string('slogan2')->nullable();
             $table->text('services_description')->nullable();
