@@ -7,7 +7,7 @@ import { Fade } from "react-reveal";
 import { useDataSource } from "../../../../state/data-provider";
 
 export default function ArticlesSection() {
-  var {articles, loading,sections,manifestoContentifesto} = useDataSource();
+  var {articles, loading,sections} = useDataSource();
   sections=sections[0]
   const displayAmount = 6;
 
