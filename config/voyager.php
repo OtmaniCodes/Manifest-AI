@@ -151,6 +151,7 @@ return [
             'App\\Widgets\\Jobs',
             'App\\Widgets\\JobApplications',
             'App\\Widgets\\Posts',
+            'App\\Widgets\\Teams',
         ],
 
     ],
