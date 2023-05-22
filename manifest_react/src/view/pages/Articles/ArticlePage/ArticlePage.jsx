@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { FacebookShareButton, TwitterShareButton } from 'react-share';
 import { Helmet } from 'react-helmet';
 import { useDataSource } from '../../../../state/data-provider';
+import ArticleCard from '../../../components/ArticleCard/ArticleCard';
 
 
 const ArticlePage = () => {
@@ -64,7 +65,7 @@ const ArticlePage = () => {
         {
           //! write if checks for suggested articles ids
         }
-        {/* <div className="suggested-articles pb-5 pt-4">
+        <div className="suggested-articles pb-5 pt-4">
           <h3 className='section-title h1 mb-5'>Articles you might like</h3>
           <div className="container">
 
@@ -81,7 +82,7 @@ const ArticlePage = () => {
             }
           </div>
           </div>
-        </div> */}
+        </div>
     </div>
   )
 }

@@ -1,8 +1,11 @@
 import './Footer.css'
 import React from 'react';
+import { useDataSource } from '../../../state/data-provider';
 // import leafOnStick from '../../../assets/images/ai-sus2.jpg'
 
 const Footer = () => {
+  var {loading,sections} = useDataSource();
+  sections=sections[0]
   return (
     <footer id="footer">
       <div className="footer-top container-fluid px-5">
@@ -20,7 +23,7 @@ const Footer = () => {
             <div className="footer-links text-center">
               {/* <h4>Our Services</h4> */}
               <ul className='d-flex align-items-center justify-content-center'>
-                <p>INNOVATING SOLUTIONS FOR A BETTER WORLD</p>
+                <p>{!loading && sections.slogan4}</p>
                 {/* <li><i className="mx-2 bx bx-chevron-right"></i> <a href="#">Consulting</a></li>
                 <li><i className="mx-2 bx bx-chevron-right"></i> <a href="#">Sustainability</a></li>
                 <li><i className="mx-2 bx bx-chevron-right"></i> <a href="#">AI Technology</a></li>
@@ -51,6 +54,9 @@ const Footer = () => {
           {/* <a href="#" className="facebook"><i className="bu bi-facebook"></i></a> */}
           <a href="https://www.instagram.com/manifest_a.i/" className="instagram"><i className="bu bi-instagram"></i></a>
           <a href="https://www.linkedin.com/company/manifest-ai/" className="linkedin"><i className="bu bi-linkedin"></i></a>
+          <a href="https://www.tiktok.com/@manifest_ai" target='_blank' className="linkedin"><i className="bi bi-tiktok"></i></a>
+          <a href="https://twitter.com/Manifest_AI" target='_blank' className="linkedin"><i className="bu bi-twitter"></i></a>
+          <a href="https://web.facebook.com/people/Manifest-AI/100092676223614/" target='_blank' className="linkedin"><i className="bu bi-facebook"></i></a>
       </div>
   </div>
 </footer>

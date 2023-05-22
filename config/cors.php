@@ -20,7 +20,7 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        // 'http://localhost:3000',
+        'http://localhost:3000',
         'https://www.manifest-ai.com',
     ],
 

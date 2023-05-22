@@ -8,7 +8,7 @@ class ServicesSingleton {
   async initialize() {
     try {
       const data = await axiosHttpClient.get('/get-services');
-      console.log('SERVICES DATA: ', data);
+      // console.log('SERVICES DATA: ', data);
       // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
       if (data.status === 200) {
         const res = data.data.services;

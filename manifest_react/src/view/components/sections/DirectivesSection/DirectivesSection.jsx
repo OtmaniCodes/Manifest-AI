@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from "react";
 import "./DirectivesSection.css";
-import bgVideo from '../../../../assets/videos/bg-video-1.mp4';
 import bgGif from '../../../../assets/gifs/lights-bg.gif';
 
-import { directivesData } from "../../../../constants/data";
+// import { directivesData } from "../../../../constants/data";
 import GradientTitle from "../../GradientTitle/GradientTitle";
 import ResponsiveCompo from '../../../components/responsive-compo'
 import { Fade } from "react-reveal";
+import { useDataSource } from "../../../../state/data-provider";
 
 
 export default function DirectivesSection() {
-
+  var {loading,sections,directives} = useDataSource();
+  var directivesData = directives;
+  sections=sections[0]
   const totalDirectives = directivesData.length;
+  const workingDirectives = [...directivesData]; 
+
   const [activeSlide, setActiveSlide] = useState(1);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setActiveSlide((currentSlide) =>
-      currentSlide === totalDirectives ? 1 : currentSlide + 1
-      );
+      const intervalId = setInterval(() => {
+      setActiveSlide((currentSlide) => {
+        const nextSlide = currentSlide === totalDirectives ? 1 : currentSlide + 1;
+        if (nextSlide === 1) {
+          // Delete all elements from the list and refill it again
+          // Replace 'directivesData' with the logic to refill the list
+          workingDirectives.length = 0; // Clear the array
+          workingDirectives.push(...directivesData); // Refill the array
+        }
+        return nextSlide;
+      });
     }, 5000);
     return () => clearInterval(intervalId);
   }, []);
@@ -88,7 +99,7 @@ export default function DirectivesSection() {
       </video> */}
       <div className="trans-layer"></div>
       <div className="directives-content d-flex flex-column justify-content-center h-100">
-        <GradientTitle title={"The 10 Directives"} subTitle={"The True And Only Directives That We Believe In"}/>
+        <GradientTitle title={"THE 10 DIRECTIVES"} subTitle={!loading && sections.directives_description}/>
         <div className="my-4"></div>
         <Fade>
 
@@ -133,10 +144,12 @@ export default function DirectivesSection() {
 
 
 function DirectivesSlider({activeSlide}) {
+    var {loading,directives} = useDataSource();
+  const directivesData=directives
   return (
     <>
         <ul className="slider-container">
-          {directivesData.map((directive, index) => {
+          {!loading && directivesData.map((directive, index) => {
             const { title, description } = directive;
             const count = index + 1;
             return (

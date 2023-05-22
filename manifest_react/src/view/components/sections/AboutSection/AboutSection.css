@@ -4,13 +4,14 @@
     /* height: 100vh; */
     padding-bottom: 60px;
     padding-top: 30px;
-    border-bottom: 0.5px rgba(156, 156, 156, 0.1) solid;
+    /* border-bottom: 0.5px rgba(156, 156, 156, 0.1) solid; */
 
 
 }
 
 #about-section .side-white-bg{
-    background-color: white;
+    /* background-color: white; */
+    background-color: #002C36;
     position: absolute;
     left: 0;
     top: 0;
@@ -39,16 +40,16 @@
 #about-section .about-content h2.about-text{
     color: white;
     font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 42px;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 40px;
     letter-spacing: 0.06em;
     margin-bottom: 25px;
 }
 
 #about-section .about-content p.about-text{
     color: white;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 

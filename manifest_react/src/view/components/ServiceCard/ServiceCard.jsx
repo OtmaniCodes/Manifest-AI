@@ -15,7 +15,12 @@ export default function ServiceCard({service, index}) {
                 <h3>{title}</h3>
                 {/* <p>{smallDescription}</p> */}
             </div>
-            <Link to={`/services/${service.slug}`} className='service-btn global-btn-white mt-4'>LEARN MORE</Link>
+            <Link to={`/services/${service.slug}`}>
+                <div class="main-btn-wrapper service-btn">
+                    <button class="main-btn"> learn more </button>
+                </div>
+            </Link>
+            {/* <Link to={`/services/${service.slug}`} className='service-btn global-btn-white mt-4'>LEARN MORE</Link> */}
         </div>
     )
 }

@@ -1,3 +1,4 @@
+import './Contact.css'
 import React from 'react'
 import ContactSection from '../../components/sections/ContactSection/ContactSection'
 import useScrollToTop from '../../../utils/custom-hooks/useScrollToTop'

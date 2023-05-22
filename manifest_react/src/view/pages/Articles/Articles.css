@@ -2,10 +2,18 @@
     margin-top: 60px;
 }
 
+.articles-page .article-not-found{
+    color: white;
+    margin-bottom: 200px;
+    margin-top: 50px;
+}
+
 .articles-page .search-portion {
-    border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
-    border-top: 1px rgba(0, 0, 0, 0.1) solid;
-    background-color: white;
+    border-bottom: 1px rgba(255, 255, 255, 0.7) solid;
+    border-top: 1px rgba(255, 255, 255, 0.7) solid;
+    /* background-color: white; */
+    background-color: #22b3d791;
+    
 }
 
 .articles-page .search-portion .search-chips .search-chip {

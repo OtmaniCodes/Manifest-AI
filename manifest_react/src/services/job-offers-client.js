@@ -8,7 +8,7 @@ class JobOffersSingleton {
   async initialize() {
     try {
       const data = await axiosHttpClient.get('/get-jobs');
-      console.log('OFFERS DATA: ', data);
+      // console.log('OFFERS DATA: ', data);
       // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
       if (data.status === 200) {
         const res = data.data.jobs;
