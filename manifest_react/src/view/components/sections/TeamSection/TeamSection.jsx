@@ -14,7 +14,7 @@ export default function TeamSection() {
         <div className="container">
             <MainTitle title={!loading&&sections.team_title} subTitle={!loading && sections.team_description} splitMargin={20}/>
             <Fade cascade bottom duration={500}>
-              <div className="row align-items-center justify-content-center py-5">
+              <div className="row align-items-start justify-content-center py-5">
                 {
                   teamMembersDara.map((member, index) => {
                     return (

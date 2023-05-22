@@ -20,10 +20,12 @@ const Contact = React.lazy(() => import('./view/pages/Contact/Contact'));
 const ArticlePage = React.lazy(() => import('./view/pages/Articles/ArticlePage/ArticlePage'));
 const ServicePage = React.lazy(() => import('./view/pages/Services/ServicePage/ServicePage'));
 const Services = React.lazy(() => import('./view/pages/Services/Services'));
+const Manifesto = React.lazy(() => import('./view/pages/Manifesto/Manifesto'));
+const AIPedia = React.lazy(() => import('./view/pages/AIPedia/AIPedia'));
+const Abort404 = React.lazy(() => import('./view/pages/not-found/Abort404'));
 // const Footer = React.lazy(() => import('./components/Footer/Footer'));
 // const Navbar = React.lazy(() => import('./components/Navbar/Navbar'));
 // const ScrollProgressBar = React.lazy(() => import("./components/ScrollProgressBar/ScrollProgressBar"));
-const Manifesto = React.lazy(() => import('./view/pages/Manifesto/Manifesto'));
 // const ScrollToTopButton = React.lazy(() => import('./components/ScrollToTopButton/ScrollToTopButton'));
 // const Abort404 = React.lazy(() => import('./pages/abort-404/Abort404'));
 
@@ -46,7 +48,8 @@ function App() {
               <Route exact path="/services" element={<Services/>}/>
               <Route path="/services/:slug" element={<ServicePage/>} />
               <Route path="/manifest" element={<Manifesto/>} />
-              {/* <Route path="*" element={<Abort404/>} /> */}
+              // <Route path="/ai-pedia" element={<AIPedia/>} />
+              <Route path="*" element={<Abort404/>} />
             </Routes>
             <ScrollToTopButton/>
             <Footer /> 
@@ -57,4 +60,5 @@ function App() {
 }
 
 export default App;
+
 

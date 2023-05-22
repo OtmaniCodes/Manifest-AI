@@ -70,7 +70,6 @@ export const DataProvider = ({ children }) => {
       setManifesto(manifestoSingleton.manifesto);
       setManifestoContent(manifestoContentSingleton.manifestoContent);
       setAiQuestions(aiQuestionsSingleton.AiQuestions);
-      console.log(aiQuestions)
       setLoading(false);
     })
     .catch(error => {
