@@ -31,6 +31,7 @@ const Navbar = () => {
         setIsOpen(!Isopen)
         document.getElementById('mobile-nav-toggle').classList.toggle('bi-list')
         document.getElementById('mobile-nav-toggle').classList.toggle('bi-x')
+        document.getElementById('mobile-nav-toggle').classList.toggle('text-dark')
     }
   
     useEffect(() => {
