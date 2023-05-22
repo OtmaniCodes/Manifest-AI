@@ -1,12 +1,13 @@
 import { Fade } from 'react-reveal';
 import './AIQuestionSection.css'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AIQuestionGraphic2 from '../../../../assets/images/ai-question-2-graphic.png'
 
 
 
 const aiQuestions = [
   {
+    id: 1,
     question: 'What’s AI? ',
     descriptions: [
       "Artificial Intelligence or AI refers to the development of machine intelligence that can process information and learn from it without being explicitly programmed.",
@@ -16,6 +17,7 @@ const aiQuestions = [
     graphic: null,
   },
   {
+    id: 2,
     question: '',
     graphic: AIQuestionGraphic2 ,
     descriptions: [
@@ -24,6 +26,7 @@ const aiQuestions = [
     ],
   },
   {
+    id: 3,
     question: 'Are you ready to embrace the future?',
     graphic: null,
     descriptions: [
@@ -35,6 +38,30 @@ const aiQuestions = [
 
 
 export default function AIQuestionSection() {
+  const [expandedId, setExpandedId] = useState(null);
+
+  const handleThumbnailClick = (id) => {
+    if (expandedId === id) {
+      // If the clicked thumbnail is already expanded, collapse it
+      setExpandedId(null);
+    } else {
+      // Expand the clicked thumbnail
+      setExpandedId(id);
+    }
+  };
+
+  const handleOutsideClick = () => {
+    setExpandedId(null);
+  };
+
+  // useEffect(() => {
+  //   window.addEventListener('click', handleOutsideClick);
+  //   return () => {
+  //     window.removeEventListener('click', handleOutsideClick);
+  //   };
+  // }, []);
+
+
   return (
     <section id='ai-questions-section'>
         <div className="container">
@@ -53,17 +80,32 @@ export default function AIQuestionSection() {
                         </div>
                     </Fade>
                     <Fade left={thumbnailTextFirst} right={!thumbnailTextFirst} duration={500}>
-                          <div className="thumbnail-container col-md-6 order-1 p-0 order-md-${thumbnailTextFirst ? 1 : 2}">
-                            <div className={`thumbnail `}>
+                        <div className={`thumbnail-container col-md-6 order-1 p-0 order-md-${thumbnailTextFirst ? 1 : 2} ${expandedId === data.id ? 'expanded' : ''}`}>
+                            <div className="thumbnail">
                                 {data.graphic && <img src={data.graphic} alt={data.title??'quetion title'} /> }
                                 {data.question && <p>{data.question}</p>}
                             </div>
+                            {
+                              expandedId === null && (
+                                <div className="expand-thumbnail-layer">
+                                  <i class="fa-solid fa-expand" onClick={() => handleThumbnailClick(data.id)}></i>
+                                </div>
+                              )
+                            }
+                            {
+                              expandedId !== null && (
+                              <div className="shrink-thumbnail-layer">
+                                <i class="fa-solid fa-compress" onClick={() => handleOutsideClick()}></i>
+                              </div>
+                              )
+                            }
                           </div>
                     </Fade>
                 </div>
             })
             }
         </div>
+
     </section>
   )
 }
