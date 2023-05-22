@@ -99,7 +99,7 @@ export default function DirectivesSection() {
       </video> */}
       <div className="trans-layer"></div>
       <div className="directives-content d-flex flex-column justify-content-center h-100">
-        <GradientTitle title={"THE 10 DIRECTIVES"} subTitle={!loading && sections.directives_description}/>
+        <GradientTitle title={!loading&&sections.the_directives_title} subTitle={!loading && sections.directives_description}/>
         <div className="my-4"></div>
         <Fade>
 

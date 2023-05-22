@@ -9,7 +9,8 @@ import { Fade } from 'react-reveal'
 import { useDataSource } from '../../../../state/data-provider'
 
 export default function AboutSection() {
-    var {loading,about} = useDataSource();
+    var {loading,about,sections} = useDataSource();
+    sections=sections[0]
     about=about[0]
 
     
@@ -24,7 +25,7 @@ export default function AboutSection() {
     const renderRightSide = () => {
         return (
             <div className="col-md-7 right-part">
-                <ResponsiveCompo desktopChild={<GradientTitle alignStart={true} title={"ABOUT US"}/>} />
+                <ResponsiveCompo desktopChild={<GradientTitle alignStart={true} title={!loading && sections.aboutus_title}/>} />
                 <h2 className='about-text text-md-start text-center'>{!loading && about.title}</h2>
                 {about.body.map((e,i)=>(
                     <p key={i} className="about-text text-md-start text-center">
@@ -47,7 +48,7 @@ export default function AboutSection() {
     <section id='about-section'>
         <div className="side-white-bg"></div>
         <div className="container about-content">
-            <ResponsiveCompo mobileChild={<GradientTitle title={"ABOUT US"}/>} />
+            <ResponsiveCompo mobileChild={<GradientTitle title={!loading&&sections.aboutus_title}/>} />
             <div className="row align-items-start justify-content-center h-100 text-center">
 
                 <ResponsiveCompo

@@ -10,6 +10,7 @@ use App\Http\Controllers\SectionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DirectiveController;
 use App\Http\Controllers\ManifestoController;
+use App\Http\Controllers\AIQuestionController;
 use App\Http\Controllers\AboutContentController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\ManifestoContentController;
@@ -41,6 +42,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/get-about-contents', [AboutContentController::class, 'getAboutContent']);
     Route::get('/get-manifesto', [ManifestoController::class, 'getManifesto']);
     Route::get('/get-manifesto-contents', [ManifestoContentController::class, 'getManifestoContent']);
+    Route::get('/get-ai-questions', [AIQuestionController::class, 'getQuestions']);
     Route::get('/csrf-token', function () {
         return response()->json([
             'csrfToken' => csrf_token(),

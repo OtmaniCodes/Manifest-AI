@@ -40,7 +40,7 @@ export default function ServicesSection() {
       <div className="trans-layer"></div>
       <div className="services-container">
         <div className='services-content'>
-          <GradientTitle title={"OUR SERVICES"} subTitle={!loading && sections.services_description}/>
+          <GradientTitle title={!loading&&sections.our_services_title} subTitle={!loading && sections.services_description}/>
           {loading && <p>Loading services...</p>}
           {!loading && 
             <Fade bottom duration={500}>

@@ -12,7 +12,7 @@ export default function TeamSection() {
   return (
     <section id="team-section">
         <div className="container">
-            <MainTitle title={"MEET THE TEAM"} subTitle={!loading && sections.team_description} splitMargin={20}/>
+            <MainTitle title={!loading&&sections.team_title} subTitle={!loading && sections.team_description} splitMargin={20}/>
             <Fade cascade bottom duration={500}>
               <div className="row align-items-center justify-content-center py-5">
                 {

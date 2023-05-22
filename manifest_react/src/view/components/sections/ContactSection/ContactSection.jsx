@@ -142,8 +142,8 @@ const ContactSection = () => {
                 <div className="row">
                 <Fade left cascade>
                     <div className="col-md-6 text-center text-md-start">
-                        <ResponsiveCompo desktopChild={<GradientTitle title={"CONTACT US"} subTitle={!loading && sections.contact_description} alignStart={true}/>}/>
-                        <ResponsiveCompo mobileChild={<GradientTitle title={"CONTACT US"} subTitle={!loading && sections.contact_description}/>}/>
+                        <ResponsiveCompo desktopChild={<GradientTitle title={!loading&&sections.contact_us_title} subTitle={!loading && sections.contact_description} alignStart={true}/>}/>
+                        <ResponsiveCompo mobileChild={<GradientTitle title={!loading&&sections.contact_us_title} subTitle={!loading && sections.contact_description}/>}/>
                         {/* <h3>Contact Info</h3> */}
                         <div className='contact-info'><i className="bi bi-geo-alt contact-icon"></i>{!loading && sections.contact_adresse}</div>
                         <div className='contact-info'><i className="bi bi-envelope contact-icon"></i> <a href={!loading && 'mailto:'+sections.contact_email}>{!loading && sections.contact_email}</a></div>

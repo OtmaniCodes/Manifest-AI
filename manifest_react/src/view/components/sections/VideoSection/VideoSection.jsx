@@ -4,9 +4,12 @@ import GradientTitle from '../../GradientTitle/GradientTitle';
 import { Fade } from 'react-reveal';
 // import bgVideo from '../../../../assets/videos/video-intro.mov'
 import bgVideo from '../../../../assets/videos/video-intro.mp4'
+import { useDataSource } from '../../../../state/data-provider';
 
 export default function VideoSection() {
   const videoRef = useRef();
+  var {loading,sections} = useDataSource();
+  sections=sections[0]
 
   useEffect(() => {
     if (videoRef.current) {
@@ -17,7 +20,7 @@ export default function VideoSection() {
 
     <section id='video-section'>
         <div className="container-fluid">
-            <GradientTitle title={"INTRODUCING MANIFEST AI"} alignStart={false}/>
+            <GradientTitle title={!loading&&sections.video_title} alignStart={false}/>
             <div className="row justify-content-center">
                 <div className="col-md-10">
                     <Fade>

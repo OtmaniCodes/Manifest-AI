@@ -11,6 +11,7 @@ import aboutSingleton from '../services/about-client';
 import aboutContentSingleton from '../services/about-content-client';
 import manifestoSingleton from '../services/manifesto-client';
 import manifestoContentSingleton from '../services/manifesto-content-client';
+import aiQuestionsSingleton from '../services/ai-questions-client';
 const DataContext = createContext(
     {
         loading: false,
@@ -24,6 +25,7 @@ const DataContext = createContext(
         aboutContent: [],
         manifesto: [],
         manifestoContent: [],
+        aiQuestions: [],
 
     }
 );
@@ -40,6 +42,7 @@ export const DataProvider = ({ children }) => {
   const [aboutContent, setAboutContent] = useState([]);
   const [manifesto, setManifesto] = useState([]);
   const [manifestoContent, setManifestoContent] = useState([]);
+  const [aiQuestions, setAiQuestions] = useState([]);
 
   useEffect(() => {
     Promise.all([
@@ -53,6 +56,7 @@ export const DataProvider = ({ children }) => {
       aboutContentSingleton.initialize(),
       manifestoSingleton.initialize(),
       manifestoContentSingleton.initialize(),
+      aiQuestionsSingleton.initialize(),
     ])
     .then(() => {
       setArticles(articlesSingleton.articles);
@@ -65,6 +69,8 @@ export const DataProvider = ({ children }) => {
       setAboutContent(aboutContentSingleton.aboutContent);
       setManifesto(manifestoSingleton.manifesto);
       setManifestoContent(manifestoContentSingleton.manifestoContent);
+      setAiQuestions(aiQuestionsSingleton.AiQuestions);
+      console.log(aiQuestions)
       setLoading(false);
     })
     .catch(error => {
@@ -78,7 +84,7 @@ export const DataProvider = ({ children }) => {
   }
 
   return (
-    <DataContext.Provider value={{ loading, articles, manifesto,manifestoContent,jobOffers, services,sections,directives ,teams ,about,aboutContent}}>
+    <DataContext.Provider value={{ loading, articles,aiQuestions, manifesto,manifestoContent,jobOffers, services,sections,directives ,teams ,about,aboutContent}}>
       {children}
     </DataContext.Provider>
   );

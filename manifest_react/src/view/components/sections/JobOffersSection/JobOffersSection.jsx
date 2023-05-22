@@ -54,7 +54,7 @@ export default function JobOffersSection() {
       <div className="trans-layer"></div>
 
       <div className="joboffers-content d-flex flex-column justify-content-center h-100">
-        <GradientTitle title={"JOB OFFERS"} subTitle={!loading && sections.jobs_description}/>
+        <GradientTitle title={!loading&&sections.job_offers_title} subTitle={!loading && sections.jobs_description}/>
         <div className="d-flex justify-content-center w-100">
           {/* <JobOffersProvider> */}
             <JobOffersContainer/>

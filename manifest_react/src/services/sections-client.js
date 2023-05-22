@@ -27,6 +27,15 @@ class SectionsSingleton {
             instagram: rawSection.instagram,
             twitter: rawSection.twitter,
 
+            video_title: rawSection.video_title,
+            aboutus_title: rawSection.aboutus_title,
+            our_services_title: rawSection.our_services_title,
+            the_directives_title: rawSection.the_directives_title,
+            team_title: rawSection.team_title,
+            articles_title: rawSection.articles_title,
+            job_offers_title: rawSection.job_offers_title,
+            contact_us_title: rawSection.contact_us_title,
+
             slogan1: rawSection.slogan1,
             slogan2: rawSection.slogan2,
             services_description: rawSection.services_description,

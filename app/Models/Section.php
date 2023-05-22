@@ -13,6 +13,16 @@ class Section extends Model
         'what_we_do',
         'our_vision',
         'contact_us',
+        
+        'video_title', 
+        'aboutus_title', 
+        'our_services_title', 
+        'the_directives_title', 
+        'team_title', 
+        'articles_title', 
+        'job_offers_title', 
+        'contact_us_title',
+
         'logo_home',
         'logo_menu',
         'facebook',

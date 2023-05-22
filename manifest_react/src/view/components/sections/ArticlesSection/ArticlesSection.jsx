@@ -14,7 +14,7 @@ export default function ArticlesSection() {
   return (
     <section id="articles-section">
         <div className="container">
-            <MainTitle title={"READ OUR ARTICLES"} subTitle={!loading && sections.articles_description} splitMargin={20}/>
+            <MainTitle title={!loading&&sections.articles_title} subTitle={!loading && sections.articles_description} splitMargin={20}/>
             {
              loading
                 ? (<div className="row justify-content-center py-5">
