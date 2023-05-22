@@ -46,23 +46,8 @@ export default function Home() {
             <HeroSection/>
             <VideoSection/>
             <AboutSection/>
-
-
-            {/* <div style={{height: '200px', width: '100%', background: '#002C36'}}>
-              <Zoom delay={500}>
-                <div style={{width: '30%', height: '2px', background: 'white', borderRadius: '5px', margin: '0 auto'}}></div>
-              </Zoom>
-            </div> */}
-
-
-
-
-
-
-
             <AIQuestionSection/>
-
-
+            <div style={{height: '60px', width: '100%', background: '#002C36'}}></div>
             <ServicesSection/>
             <div style={{height: '160px', width: '100%', background: '#002C36'}}></div>
             <DirectivesSection/>

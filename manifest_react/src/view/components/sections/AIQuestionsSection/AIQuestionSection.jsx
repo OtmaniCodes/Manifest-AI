@@ -41,7 +41,7 @@ export default function AIQuestionSection() {
             {
             aiQuestions.map((data, i) => {
                 var thumbnailTextFirst = i % 2 === 0;
-                return <div key={i} className="row justify-content-center align-items-center">
+                return <div key={i} className="row justify-content-center align-items-center mb-3 mb-md-0">
                     <Fade left={!thumbnailTextFirst} right={thumbnailTextFirst} duration={500} cascade>
                         <div className={`texts col-md-6 text-start order-2 order-md-${thumbnailTextFirst ? 2 : 1}`}>
                             {/* <h3 className='mb-md-3 mb-0 fw-bold'>{data.title}</h3> */}

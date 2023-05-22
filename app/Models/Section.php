@@ -14,6 +14,7 @@ class Section extends Model
         'our_vision',
         'contact_us',
         'logo_home',
+        'logo_menu',
         'facebook',
         'linkedin',
         'tiktok',
