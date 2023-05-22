@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\PostController;
 use App\Http\Middleware\VerifyCsrfToken;
+use App\Http\Controllers\VideoController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\VideoStreamController;
 use App\Http\Controllers\JobApplicationController;
 use TCG\Voyager\Http\Middleware\VoyagerAdminMiddleware;
 
