@@ -1,50 +1,160 @@
-#ai-questions-section .thumbnail{
-    background-color: #60AF99;
+#ai-questions-section .thumbnail-container {
+    position: relative;
+}
+
+#ai-questions-section .thumbnail-container.expanded {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ai-questions-section .thumbnail-container.expanded img {
+    /* max-width: 100%;
+    width: 80% !important; */
+    height: 100%;
+    width: auto;
+    /* max-height: auto; */
+    margin: 0 auto;
+    animation: thumbnail-zoomin 0.2s ease-out forwards;
+}
+
+#ai-questions-section .thumbnail-container.expanded .thumbnail {
+    width: 80%;
+    aspect-ratio: 12/6;
+    animation: thumbnail-zoomin 0.2s ease-out forwards;
+}
+
+@keyframes thumbnail-zoomin {
+    0%{
+        transform: scale(0.5);
+        opacity: .8;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#ai-questions-section .thumbnail {
+    /* background-color: #60af99; */
     min-height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.4s ease-in-out;
+    background: linear-gradient(290deg, #60AF99, #3c836f, #95ebd2, #24a781, #15b88a);
+    animation: thumbGradientAnimation 2s ease infinite;
 }
 
-#ai-questions-section .thumbnail:hover{
-    scale: 1.01;
+
+@keyframes thumbGradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#ai-questions-section .thumbnail:hover {
+    transform: scale(1.01);
     z-index: 10;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.589);
 }
 
-#ai-questions-section .thumbnail img{
+#ai-questions-section .thumbnail img {
     object-fit: cover;
     width: 100%;
 }
 
-#ai-questions-section .thumbnail p{
+#ai-questions-section .thumbnail p {
     color: #111;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    margin: 120px;
+    margin: 40px;
 }
 
-#ai-questions-section .texts p{
+#ai-questions-section .texts p {
     color: white;
     font-size: 17px !important;
     line-height: 1.05 !important;
 }
 
+#ai-questions-section .shrink-thumbnail-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* display: none; */
+    justify-content: end;
+    display: flex;
+    align-items: start;
+    padding: 40px;
+    /* transition: opacity 0.3s ease-in-out; */
+}
 
+#ai-questions-section .expand-thumbnail-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* display: none; */
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#ai-questions-section .thumbnail-container .expand-thumbnail-layer:hover {
+    opacity: 1 !important;
+}
+
+#ai-questions-section .expand-thumbnail-layer i {
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+#ai-questions-section .shrink-thumbnail-layer i {
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
 
 @media only screen and (max-width: 768px) {
-
-    #ai-questions-section .thumbnail{
+    #ai-questions-section .thumbnail {
         margin-bottom: 10px;
     }
 
-    #ai-questions-section .thumbnail p{
-        margin: 50px;
+    #ai-questions-section .thumbnail p {
+        margin: 20px;
+        font-size: 24px;
     }
-    
-    #ai-questions-section .texts p{
+
+    #ai-questions-section .texts p {
         text-align: center !important;
+    }
+
+    #ai-questions-section .thumbnail-container.expanded img {
+        width: 100%;
+        height: auto;
     }
 }

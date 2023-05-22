@@ -19,7 +19,7 @@ class AIQuestionsSingleton {
             question: rawAIQuestion.question,
             descriptions: rawAIQuestion.descriptions.split('_')
             .map((r) => r.toString().trim()),
-            image: `${import.meta.env.VITE_SERVER_URL}/storage/${rawAIQuestion.image}` ,
+            image: rawAIQuestion.image==null?null:`${import.meta.env.VITE_SERVER_URL}/storage/${rawAIQuestion.image}` ,
           };
         });
       }
