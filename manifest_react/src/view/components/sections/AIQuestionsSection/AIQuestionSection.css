@@ -1,0 +1,50 @@
+#ai-questions-section .thumbnail{
+    background-color: #60AF99;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+}
+
+#ai-questions-section .thumbnail:hover{
+    scale: 1.01;
+    z-index: 10;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.589);
+}
+
+#ai-questions-section .thumbnail img{
+    object-fit: cover;
+    width: 100%;
+}
+
+#ai-questions-section .thumbnail p{
+    color: #111;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 120px;
+}
+
+#ai-questions-section .texts p{
+    color: white;
+    font-size: 17px !important;
+    line-height: 1.05 !important;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    #ai-questions-section .thumbnail{
+        margin-bottom: 10px;
+    }
+
+    #ai-questions-section .thumbnail p{
+        margin: 50px;
+    }
+    
+    #ai-questions-section .texts p{
+        text-align: center !important;
+    }
+}

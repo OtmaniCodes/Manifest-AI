@@ -53,10 +53,12 @@ export default function AIQuestionSection() {
                         </div>
                     </Fade>
                     <Fade left={thumbnailTextFirst} right={!thumbnailTextFirst} duration={500}>
-                        <div className={`thumbnail col-md-6 order-1 p-0 order-md-${thumbnailTextFirst ? 1 : 2}`}>
-                            {data.graphic && <img src={data.graphic} alt={data.title??'quetion title'} /> }
-                            {data.question && <p>{data.question}</p>}
-                        </div>
+                          <div className="thumbnail-container col-md-6 order-1 p-0 order-md-${thumbnailTextFirst ? 1 : 2}">
+                            <div className={`thumbnail `}>
+                                {data.graphic && <img src={data.graphic} alt={data.title??'quetion title'} /> }
+                                {data.question && <p>{data.question}</p>}
+                            </div>
+                          </div>
                     </Fade>
                 </div>
             })

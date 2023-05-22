@@ -1,5 +1,4 @@
 import './AboutSection.css'
-import aboutImg from '../../../../assets/images/about.webp'
 
 import React from 'react'
 import GradientTitle from '../../GradientTitle/GradientTitle'
@@ -32,7 +31,7 @@ export default function AboutSection() {
                         {e}
                     </p>
                 ))}
-                <div className="d-flex flex-md-row flex-column justify-content-end align-items-center w-100 px-md-3">
+                <div className="d-flex flex-md-row flex-column justify-content-center align-items-center w-100 px-md-3">
                     <MainTitle color={'#41B79B'} title={'READ OUR MANIFEST'} asLink={true} to={'/manifest'}/>
                     {/* <MainTitle color={'#22B4D7'} title={'REACH OUT'} asLink={true} to={'/contact'}/> */}
                     {/* <Link id='manifest-btn' className="global-btn-white" to={'/manifest'} style={{flex: 2}}>READ OUR MANIFEST</Link>
