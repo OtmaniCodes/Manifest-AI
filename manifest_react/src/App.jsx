@@ -48,7 +48,7 @@ function App() {
               <Route exact path="/services" element={<Services/>}/>
               <Route path="/services/:slug" element={<ServicePage/>} />
               <Route path="/manifest" element={<Manifesto/>} />
-              // <Route path="/ai-pedia" element={<AIPedia/>} />
+              <Route path="/ai-pedia" element={<AIPedia/>} />
               <Route path="*" element={<Abort404/>} />
             </Routes>
             <ScrollToTopButton/>

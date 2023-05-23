@@ -4,7 +4,6 @@ import React from 'react'
 import GradientTitle from '../../GradientTitle/GradientTitle'
 import MainTitle from '../../MainTitle/MainTitle'
 import ResponsiveCompo from '../../responsive-compo';
-import { Link } from 'react-router-dom'
 import { Fade } from 'react-reveal'
 import { useDataSource } from '../../../../state/data-provider'
 
