@@ -50,7 +50,7 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     Route::get('/stream/{filename}', function ($filename) {
-        $path = public_path('/videos/' . $filename );
+        $path = public_path('/videos/' . $filename.'m3u8' );
         if (!file_exists($path)) {
             abort(404);
         }

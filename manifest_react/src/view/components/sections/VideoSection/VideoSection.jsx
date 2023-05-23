@@ -5,7 +5,6 @@ import { Fade } from 'react-reveal';
 // import bgVideo from '../../../../assets/videos/video-intro.mov'
 import bgVideo from '../../../../assets/videos/video-intro.mp4'
 import { useDataSource } from '../../../../state/data-provider';
-// import VideoPlayer from './VideoPlayer';
 
 export default function VideoSection() {
   const videoRef = useRef();
@@ -25,7 +24,6 @@ export default function VideoSection() {
             <div className="row justify-content-center">
                 <div className="col-md-10">
                     <Fade>
-                      {/* <VideoPlayer/> */}
                     <video ref={videoRef} className="video-intro" autoPlay preload loop muted playsinline controls>
                         <source src={`${import.meta.env.VITE_SERVER_URL}/videos/manifest.mp4`} type="video/mp4" />
                         Your browser does not support the video tag.
