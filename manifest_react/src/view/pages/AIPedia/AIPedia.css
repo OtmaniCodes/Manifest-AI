@@ -1,14 +1,16 @@
 .ai-pedia-page{
+    padding-top: 80px
 
 }
 
 .ai-pedia-page h1{
     font-style: normal;
     font-weight: 700;
-    font-size: 38px;
-    line-height: 46px;
+    font-size: 28px;
+    line-height: 30px;
     display: flex;
     align-items: center;
     text-align: center;
     color: white;
+    margin: 0 auto;
 }
