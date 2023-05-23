@@ -15,16 +15,12 @@ use App\Http\Controllers\AboutContentController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\ManifestoContentController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+use App\Http\Controllers\AIPediaToolCategoryController;
+use App\Http\Controllers\AIPediaToolController;
+
+
+
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -43,6 +39,13 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/get-manifesto', [ManifestoController::class, 'getManifesto']);
     Route::get('/get-manifesto-contents', [ManifestoContentController::class, 'getManifestoContent']);
     Route::get('/get-ai-questions', [AIQuestionController::class, 'getQuestions']);
+
+    // for AI Pedia Tools
+    Route::get('/get-ai-pedia-tools', [AIPediaToolController::class, 'getAIPediaTools']);
+    Route::get('/ai-pedia-tools/search', [AIPediaToolController::class, 'searchForAIPediaTools']); //! do get request to /ai-pedia-tools/search?keyword=example from the front-end
+    Route::get('/get-ai-pedia-tools-categories', [AIPediaToolCategoryController::class, 'getAIPediaToolsCategories']);
+
+
     Route::get('/csrf-token', function () {
         return response()->json([
             'csrfToken' => csrf_token(),
@@ -54,10 +57,8 @@ Route::group(['middleware' => ['web']], function () {
         if (!file_exists($path)) {
             abort(404);
         }
-    
+
         $file = file_get_contents($path);
         return response($file, 200)->header('Content-Type', 'application/x-mpegURL');
     });
-    
-    
 });

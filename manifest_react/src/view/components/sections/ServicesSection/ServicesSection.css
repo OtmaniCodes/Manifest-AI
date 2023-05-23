@@ -20,7 +20,7 @@
 
     background: linear-gradient(#002C36, rgba(0, 44, 54, 0.2), #002C36);
     /* opacity: 0.55; */
-    backdrop-filter: blur(2px);
+    /* backdrop-filter: blur(2px); */
 }
 
 #services-section .services-content {

@@ -32,7 +32,7 @@ export default function About() {
                   </div>
                 </Fade>
                 <Fade left={graphicsFirst} right={!graphicsFirst} duration={500}>
-                  <div style={{height:'200px'}} className={`col-md-4 mb-3 mb-md-0 text-md-start text-center order-1 order-md-${graphicsFirst ? 1 : 2}`}>
+                  <div className={`col-md-4 mb-3 mb-md-0 text-md-start text-center order-1 order-md-${graphicsFirst ? 1 : 2}`}>
                     <img src={data.image} className='more-about-img order-1 shadow-lg' />
                   </div>
                 </Fade>

@@ -5,7 +5,7 @@ import commendmentsPDF from '../../../assets/commendments.pdf'
 import { Helmet } from 'react-helmet';
 import GradientTitle from '../../components/GradientTitle/GradientTitle';
 import useScrollToTop from '../../../utils/custom-hooks/useScrollToTop'
-import { manifestoData } from '../../../constants/data'
+// import { manifestoData } from '../../../constants/data'
 import DirectivesSection from '../../components/sections/DirectivesSection/DirectivesSection'
 import { useDataSource } from '../../../state/data-provider';
 
@@ -23,7 +23,7 @@ const Manifesto = () => {
                 <title>Manifesto & The 10 Directives - MANIFEST AI</title>
             </Helmet>
             {/* <SectionTitle title={"Manifest & The 10 commandments"} subTitle={""}/> */}
-            <GradientTitle title={"Our Manifest"}/>
+            <GradientTitle title={"OUR MANIFEST"}/>
             <div className='commendments-header'>
                 {/* <h3>MANIFEST</h3> */}
                 <div className="container">
@@ -35,6 +35,7 @@ const Manifesto = () => {
                                     {e}
                                 </p>
                             ))}
+                            <div style={{height: '100px'}} ></div>
                             {
                                 manifestoContent.map((data, i) => {
                                     var graphicsFirst = i % 2 === 0;
@@ -48,7 +49,7 @@ const Manifesto = () => {
                                             </div>
                                         </Fade>
                                         <Fade left={graphicsFirst} right={!graphicsFirst} duration={500}>
-                                            <div style={{height:'200px'}} className={`col-md-4 mb-3 mb-md-0 text-md-start text-center order-1 order-md-${graphicsFirst ? 1 : 2}`}>
+                                            <div className={`col-md-4 mb-3 mb-md-0 text-md-start text-center order-1 order-md-${graphicsFirst ? 1 : 2}`}>
                                                 <img src={data.image} className='commenment-img more-about-img order-1 shadow-lg' />
                                             </div>
                                         </Fade>
