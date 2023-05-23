@@ -1,5 +1,4 @@
 import { Fade } from 'react-reveal'
-import { moreAboutData } from '../../../constants/data'
 import useScrollToTop from '../../../utils/custom-hooks/useScrollToTop'
 import AboutSection from '../../components/sections/AboutSection/AboutSection'
 import './About.css'
@@ -9,7 +8,7 @@ import { useDataSource } from '../../../state/data-provider'
 
 export default function About() {
   useScrollToTop() 
-  var {loading,aboutContent} = useDataSource();
+  var {loading, aboutContent} = useDataSource();
 
 
   return (

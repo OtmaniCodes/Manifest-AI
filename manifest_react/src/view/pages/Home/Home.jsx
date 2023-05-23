@@ -4,7 +4,7 @@ import Lottie from "react-lottie";
 import whiteLogoEthics from '../../../assets/images/ma_logo_ethics.png'
 import useScrollToTop from '../../../utils/custom-hooks/useScrollToTop'
 import { Helmet } from 'react-helmet'
-import { Fade, Zoom } from 'react-reveal'
+import { Zoom } from 'react-reveal'
 import lottieAsset from '../../../assets/55638-sustainability.json';
 import HeroSection from '../../components/sections/HeroSection/HeroSection';
 import VideoSection from '../../components/sections/VideoSection/VideoSection';
@@ -16,6 +16,8 @@ import ServicesSection from '../../components/sections/ServicesSection/ServicesS
 import JobOffersSection from '../../components/sections/JobOffersSection/JobOffersSection';
 import ContactSection from '../../components/sections/ContactSection/ContactSection';
 
+
+// make  sure tt alis walking for us
 
 
 import SplashLoader from '../../components/SplashLoader/SplashLoader';

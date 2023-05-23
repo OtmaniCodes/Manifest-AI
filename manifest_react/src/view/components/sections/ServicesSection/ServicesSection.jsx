@@ -43,7 +43,7 @@ export default function ServicesSection() {
           <GradientTitle title={!loading&&sections.our_services_title} subTitle={!loading && sections.services_description}/>
           {loading && <p>Loading services...</p>}
           {!loading && 
-            <Fade bottom duration={500}>
+            <Fade cascade bottom duration={500}>
               <div className="row justify-content-center mt-5">
                 {services.map((s, i) => (
                   <div className="col-12 col-md-6 col-lg-3 text-center" key={i}>

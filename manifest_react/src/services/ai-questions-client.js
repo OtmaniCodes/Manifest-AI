@@ -8,18 +8,25 @@ class AIQuestionsSingleton {
   async initialize() {
     try {
       const data = await axiosHttpClient.get('/get-ai-questions');
-      console.log('AiQuestions DATA: ', data);
+      // console.log('AiQuestions DATA: ', data);
       // if (data.status === 200 && data.statusText.toLowerCase() === 'ok') {
       if (data.status === 200) {
         const res = data.data.AiQuestions;
-        console.log(res)
+        // console.log(res);
         const AiQuestions = res;
         this.AiQuestions = AiQuestions.map((rawAIQuestion, i) => {
           return {
+            id: i + 1,
             question: rawAIQuestion.question,
-            descriptions: rawAIQuestion.descriptions.split('_')
-            .map((r) => r.toString().trim()),
-            image: rawAIQuestion.image==null?null:`${import.meta.env.VITE_SERVER_URL}/storage/${rawAIQuestion.image}` ,
+            descriptions: rawAIQuestion.descriptions
+              .split('_')
+              .map((r) => r.toString().trim()),
+            image:
+              rawAIQuestion.image == null
+                ? null
+                : `${import.meta.env.VITE_SERVER_URL}/storage/${
+                    rawAIQuestion.image
+                  }`,
           };
         });
       }
@@ -30,7 +37,7 @@ class AIQuestionsSingleton {
 
   static getInstance() {
     if (!AIQuestionsSingleton.instance) {
-        AIQuestionsSingleton.instance = new AIQuestionsSingleton();
+      AIQuestionsSingleton.instance = new AIQuestionsSingleton();
     }
     return AIQuestionsSingleton.instance;
   }

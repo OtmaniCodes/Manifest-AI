@@ -45,7 +45,7 @@ const Navbar = () => {
     }, [scrollPosition])
 
     return ( 
-        <header id="header" className={visible ? '' : 'hidden-navbar'} style={keepTransBg ? transBg : null}>
+        <header id="header" className={visible ? '' : 'hidden-navbar'} style={keepTransBg ? transBg : {background: Isopen ? 'white' : null}}>
             <div className="navbar-container px-2 d-flex w-100 justify-content-around align-items-center">
 
                 <Link to={"/"} className="logo mx-2 me-auto me-lg-0">
@@ -57,7 +57,6 @@ const Navbar = () => {
                     <ul>
                         <li>
                             <Link to={'/'} 
-                            
                             className={`${activeItem === 'home' ? 'active' : ''} ${keepTransBg ? 'trans-bg' : ''}`}
                             onClick={() => setactiveItem('home')}>Home</Link>
                         </li>
@@ -142,12 +141,14 @@ const Navbar = () => {
                     <li className="dropdown"><Link to="#"><span>Community</span> <i className="bi bi-chevron-down"></i></Link>
                         <ul>
                         <li><a href="team.html" onClick={navToggle}>Discord</a></li>
-                        <li className="dropdown"><a href="#"><span>More</span> <i className="bi bi-chevron-right"></i></a>
-                            <ul>
-                            <li><a href="#" onClick={navToggle}>page 1</a></li>
-                            <li><a href="#" onClick={navToggle}>page 2</a></li>
-                            </ul>
-                        </li>
+                        {/*
+                            <li className="dropdown"><a href="#"><span>More</span> <i className="bi bi-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="#" onClick={navToggle}>page 1</a></li>
+                                    <li><a href="#" onClick={navToggle}>page 2</a></li>
+                                </ul>
+                            </li>
+                        */}
                         </ul>
                     </li>
                     </ul>

@@ -52,11 +52,11 @@
 }
 
 #article-card .articles-body .content{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     text-align: start;
-    border-left: 1px rgba(0, 0, 0, 0.3) solid;
-    border-right: 1px rgba(0, 0, 0, 0.3) solid;
-    border-bottom: 1px rgba(0, 0, 0, 0.3) solid;
+    border-left: 1px rgba(255, 255, 255, 0.3) solid;
+    border-right: 1px rgba(255, 255, 255, 0.3) solid;
+    border-bottom: 1px rgba(255, 255, 255, 0.3) solid;
     padding: 0 10px;
     padding-top: 20px;
     padding-bottom: 10px;

@@ -1,0 +1,14 @@
+.ai-pedia-page{
+
+}
+
+.ai-pedia-page h1{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
