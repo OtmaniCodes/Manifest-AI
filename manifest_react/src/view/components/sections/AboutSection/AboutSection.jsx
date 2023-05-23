@@ -6,6 +6,7 @@ import MainTitle from '../../MainTitle/MainTitle'
 import ResponsiveCompo from '../../responsive-compo';
 import { Fade } from 'react-reveal'
 import { useDataSource } from '../../../../state/data-provider'
+import { Link } from 'react-router-dom';
 
 export default function AboutSection() {
     var {loading,about,sections} = useDataSource();
@@ -31,8 +32,14 @@ export default function AboutSection() {
                         {e}
                     </p>
                 ))}
-                <div className="d-flex flex-md-row flex-column justify-content-center align-items-center w-100 px-md-3">
-                    <MainTitle color={'#41B79B'} title={'READ OUR MANIFEST'} asLink={true} to={'/manifest'}/>
+                <div className="d-flex flex-md-row flex-column justify-content-start align-items-center w-100">
+                    {/* <MainTitle color={'#41B79B'} title={'READ OUR MANIFEST'} asLink={true} to={'/manifest'}/> */}
+                    <Link to={'/manifest'}>
+                        <button data-text="READ OUR MANIFEST" className="button-mani">
+                            <span className="actual-text">&nbsp;READ&nbsp;OUR&nbsp;MANIFEST&nbsp;</span>
+                            <span className="hover-text" aria-hidden="true">&nbsp;READ&nbsp;OUR&nbsp;MANIFEST&nbsp;</span>
+                        </button>
+                    </Link>
                     {/* <MainTitle color={'#22B4D7'} title={'REACH OUT'} asLink={true} to={'/contact'}/> */}
                     {/* <Link id='manifest-btn' className="global-btn-white" to={'/manifest'} style={{flex: 2}}>READ OUR MANIFEST</Link>
                     <Link id='manifest-btn' className="global-btn" to={'/contact'} style={{flex: 1}}>REACH OUT</Link> */}

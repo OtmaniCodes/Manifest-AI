@@ -20,7 +20,7 @@ export default function About() {
         <div className="container more-about pt-5">
           {
             aboutContent.map((data, i) => { 
-              var graphicsFirst = i % 2 === 0;
+              var graphicsFirst = i % 2 !== 0;
               return <div key={i} className="more-about-row row justify-content-between align-items-center">
                 
                 <Fade left={!graphicsFirst} right={graphicsFirst} cascade duration={500}>

@@ -4,6 +4,7 @@ import React from 'react'
 import MainTitle from '../../MainTitle/MainTitle'
 import { Fade } from 'react-reveal';
 import { useDataSource } from '../../../../state/data-provider';
+import GradientTitle from '../../GradientTitle/GradientTitle';
 
 export default function TeamSection() {
   var {loading,sections,teams} = useDataSource();
@@ -12,7 +13,8 @@ export default function TeamSection() {
   return (
     <section id="team-section">
         <div className="container">
-            <MainTitle title={!loading&&sections.team_title} subTitle={!loading && sections.team_description} splitMargin={20}/>
+            {/* <MainTitle title={!loading&&sections.team_title} subTitle={!loading && sections.team_description} splitMargin={20}/> */}
+            <GradientTitle title={!loading&&sections.team_title} subTitle={!loading && sections.team_description}/>
             <Fade cascade bottom duration={500}>
               <div className="row align-items-start justify-content-center py-5">
                 {

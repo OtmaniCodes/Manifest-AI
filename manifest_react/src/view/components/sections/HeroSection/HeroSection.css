@@ -47,8 +47,8 @@
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
-    line-height: 8px;
     text-align: center;
+    max-lines: 1;
     letter-spacing: 0.04em;
     color: white;
     margin: 0;
@@ -61,6 +61,14 @@
     width: 10px;
     background-color: white;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+#hero-section .line{
+    width: 70px;
+    height: 2px;
+    background-color: white;
+    border-radius: 20px;
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
 }
 
 #hero-section .to-right{
@@ -164,6 +172,10 @@ img.blue-logo{
     #hero-section .to-right,#hero-section .to-left{
      width: 5px;   
      height: 40px;
+    }
+
+    #hero-section .line{
+        width: 20px;
     }
 
     #hero-section .more-data{

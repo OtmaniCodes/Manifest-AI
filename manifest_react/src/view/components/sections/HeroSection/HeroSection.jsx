@@ -78,9 +78,11 @@ export default function HeroSection() {
               <h2 className="">
                   {/* <span>{!loading && sections.slogan1}</span> */}
                   <span className='d-flex justify-content-center align-items-center m-0'>
-                    <i className='spike-triangle to-left'></i>
-                    <span className='mx-md-4 mx-4'>{!loading&&sections.slogan2}</span>
-                    <i className='spike-triangle to-right'></i>
+                    {/* <i className='spike-triangle to-left'></i> */}
+                    <i className='line'></i>
+                    <span className='mx-2'>{!loading&&sections.slogan2}</span>
+                    <i className='line'></i>
+                    {/* <i className='spike-triangle to-right'></i> */}
                   </span>
               </h2>
             )
