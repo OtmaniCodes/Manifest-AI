@@ -34,10 +34,10 @@ export default function TeamSection() {
 
 
 function TeamMemberCard({teamMember}) {
-  const {name, position, description, image} = teamMember;
+  const {name, position, image} = teamMember;
   return (
     <div className="team-member-card d-flex flex-column justify-content-center align-items-center text-center">
-        <img src={image} width={250} height={250}/>
+        <img src={image} width={250} height={250} alt={name}/>
         <h3>{name}</h3>
         <p>{position}</p>
     </div>

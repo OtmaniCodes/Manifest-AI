@@ -21,7 +21,7 @@ import ContactSection from '../../components/sections/ContactSection/ContactSect
 
 
 import SplashLoader from '../../components/SplashLoader/SplashLoader';
-import { manifestoData } from '../../../constants/data';
+// import { manifestoData } from '../../../constants/data';
 import AIQuestionSection from '../../components/sections/AIQuestionsSection/AIQuestionSection';
 import { useDataSource } from '../../../state/data-provider';
 
@@ -59,7 +59,7 @@ export default function Home() {
             <JobOffersSection/>
             <MakeSthGreater/>
             <ContactSection/>
-            <CityLottie/>
+            {/* <CityLottie/> */}
         {/* </Suspense> */}
         <Helmet>
             <title>HOME - MANIFEST AI</title>
@@ -109,19 +109,19 @@ function MakeSthGreater() {
   )
 }
 
-function CityLottie() {
-  const lottieRef = useRef();
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: lottieAsset,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  return (
-    <div className="city-lottie" style={{background: '#F9F9F9'}}>
-        <Lottie options={defaultOptions} ref={lottieRef} />
-    </div>
-  )
-}
+// function CityLottie() {
+//   const lottieRef = useRef();
+//   const defaultOptions = {
+//     loop: true,
+//     autoplay: true,
+//     animationData: lottieAsset,
+//     rendererSettings: {
+//       preserveAspectRatio: "xMidYMid slice",
+//     },
+//   };
+//   return (
+//     <div className="city-lottie" style={{background: '#F9F9F9'}}>
+//         <Lottie options={defaultOptions} ref={lottieRef} />
+//     </div>
+//   )
+// }

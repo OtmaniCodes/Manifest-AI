@@ -2,10 +2,7 @@ import './VideoSection.css'
 import React, { useEffect, useRef } from 'react'
 import GradientTitle from '../../GradientTitle/GradientTitle';
 import { Fade } from 'react-reveal';
-// import bgVideo from '../../../../assets/videos/video-intro.mov'
-import bgVideo from '../../../../assets/videos/video-intro.mp4'
 import { useDataSource } from '../../../../state/data-provider';
-// import VideoPlayer from './VideoPlayer';
 
 export default function VideoSection() {
   const videoRef = useRef();

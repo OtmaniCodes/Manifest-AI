@@ -9,8 +9,8 @@ import { useDataSource } from '../../../../state/data-provider';
 
 export default function ServicesSection() {
   const [serviceIndex, setServiceIndex] = useState(null)
-  var {services, loading,sections} = useDataSource();
-  sections=sections[0]
+  var {services, loading, sections} = useDataSource();
+  sections = sections[0];
 
 
   const handleServiceClick = (index) => {
@@ -23,20 +23,7 @@ export default function ServicesSection() {
 
   return (
     <section id='services-section'>
-      <img src={bgGif}
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-          objectFit: 'cover',
-          zIndex: '0',
-          pointerEvents: 'none',
-        }}
-      />
+      <img src={bgGif} className='gif-asset-bg'/>
       <div className="trans-layer"></div>
       <div className="services-container">
         <div className='services-content'>
