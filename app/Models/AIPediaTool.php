@@ -16,6 +16,7 @@ class AIPediaTool extends Model
         'version_state',
         'description',
         'is_popular',
+        'ai_collection'
     ];
 
 

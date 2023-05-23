@@ -10,25 +10,22 @@ class AIPediaToolController extends VoyagerBaseController
 {
     public function getAIPediaTools()
     {
-        try {
-            $AIPediaTools = AIPediaTool::select()
-                ->orderBy('id', 'desc')
-                ->paginate(20);
-            return response()->json(['AIPediaTools' => $AIPediaTools]);
-        } catch (\Throwable $th) {
-            return response()->json(['message' => 'Error fetching the AI Pedia Tools from server'], 500);
-        }
+        $AIPediaTools = AIPediaTool::orderBy('id', 'desc')->where('ai_collection','=',0)
+            ->paginate(20);
+        $AIPediaCollections=AIPediaTool::where('ai_collection','=',1)->get();
+        return response()->json([
+            'AIPediaTools' => $AIPediaTools,
+            'AIPediaCollections'=>$AIPediaCollections
+        ]);
     }
 
 
     public function searchForAIPediaTools(Request $request)
     {
         $keyword = $request->input('keyword');
-
         $searchResuls = AIPediaTool::where('name', 'like', '%' . $keyword . '%')
             ->orWhere('description', 'like', '%' . $keyword . '%')
-            ->get();
-
+            ->paginate();
         return response()->json(['search_results' => $searchResuls]);
     }
 }

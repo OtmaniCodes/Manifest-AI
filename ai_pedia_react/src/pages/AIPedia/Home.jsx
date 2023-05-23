@@ -4,13 +4,21 @@ import React, { useState } from 'react';
 import chatfast from '../../assets/pedia/chatfast.webp.png'
 import AIPediaCards from '../../components/AIPediaCards/AIPediaCards';
 import {Link} from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import Loader from '../../components/Loader/Loader';
 function Home(){
+    const data = useSelector(state => state.data.data);
+
     const catigories=[
         'AI Detection','Art','Audio','Avatars','Business','Chat','Coaching','Data Analysis','Design','Development',
         'Education','Email','Prodcasting','Productivity','Prompt Guides','SEO'
     ]
     const [search, setSearch] = useState("");
     const [filter, setFilter] = useState("");
+    // const handleSearch = (e) => {
+    //     e.preventDefault();
+    //     history.push(`/search?query=${search}`);
+    // };
 
     return (
         <div className='pedia-container'>
@@ -33,7 +41,7 @@ function Home(){
                 />
                 <div onClick={()=>setFilter(search)}>
                     {/* <AiOutlineSearch/> */}
-                    <Link to={`/${search}`}>search</Link>
+                    <Link to={`/search/${search}`}>search</Link>
                 </div>
             </div>
             <div className='pedia-catigories'>
@@ -43,46 +51,30 @@ function Home(){
                     </div>
                 ))}
             </div>
-            {
-                filter.length==0&&
-                <>
-                    <div className='pedia-items-title'>
-                        🔥 Just Arrives
-                    </div>
-                    <AIPediaCards search={filter}/>
-                </>
-            }
-            
-
-            <div className='pedia-discord'>  
-                <div>
-                    <h1>Grow your AI talent !</h1>
-                    <div className='pedia-discord-first'>Join our Discord community and win a free subscription of the most popular AI tool!</div>
-                    <div className='pedia-discord-second'>Level up your skills with daily games and competitions</div>
+            {data?
+            <>
+                <div className='pedia-items-title'>
+                    🔥 Just Arrives
                 </div>
-                <div className='pedia-discord-button'>
-                    JOIN DISCORD 👌
+                <AIPediaCards search={filter}/>
+                <div className='pedia-discord'>  
+                    <div>
+                        <h1>Grow your AI talent !</h1>
+                        <div className='pedia-discord-first'>Join our Discord community and win a free subscription of the most popular AI tool!</div>
+                        <div className='pedia-discord-second'>Level up your skills with daily games and competitions</div>
+                    </div>
+                    <div className='pedia-discord-button'>
+                        JOIN DISCORD 👌
+                    </div>
                 </div>
-            </div>
-            {
-            filter.length>0&&
-                <>
-                    <div className='pedia-items-title'>
-                        🙌 Manifest AI selection
-                    </div>
-                    <AIPediaCards search={filter}/>
-                </>
-            }
-            
-            {
-                filter.length==0&&
-                <>
-                    <div className='pedia-items-title'>
-                        🙌 Manifest AI selection
-                    </div>
-                    <AIPediaCards search={filter}/>
-                </>
-            }
+                <div className='pedia-items-title'>
+                    🙌 Manifest AI selection
+                </div>
+                <AIPediaCards search={filter}/>
+            </>
+            :
+            <Loader/>
+        }
         </div>
     );
 }

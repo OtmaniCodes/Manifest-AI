@@ -23,7 +23,9 @@ return new class extends Migration
             $table->enum('version_state', ['Premium', 'Fremium', 'Free Trial'])->default('Fremium');
             $table->integer('is_popular')->default(0);
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
+            $table->integer('ai_collection')->default(0);
             $table->index('a_i_pedia_tool_categorie_id');
+
             $table->timestamps();
         });
     }
