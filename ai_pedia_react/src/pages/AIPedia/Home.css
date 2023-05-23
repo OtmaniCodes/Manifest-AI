@@ -1,0 +1,112 @@
+.pedia-container{
+    margin: auto;
+    margin-top: 80px;
+    color: white;
+    /* background-color: blue; */
+    max-width: 1320px;
+}
+.pedia-title{
+    font-size: 25px;
+    text-align: center;
+    font-weight: bolder;
+
+}
+.pedia-subtitle{
+    text-align: center;
+    color: rgb(224, 224, 224);
+    margin-top: 10px;
+
+}
+.pedia-explore-button{
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+.pedia-explore-button button{
+    background-color: #32CF93;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+.pedia-search{
+    /* background-color: yellow; */
+    margin: auto;
+    width: 70%;
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+
+}
+.pedia-search input{
+    width: 100%;
+    padding: 13px;
+    border-radius: 50px;
+    border: 2px solid black;
+}
+.pedia-search div{
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    border-radius: 50px;
+    color: black;
+    padding: 0px 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#32CF93;
+    height: 83%;
+}
+.pedia-catigories{
+    /* background-color: yellow; */
+    /* margin: auto; */
+    display: flex;
+    padding: 14px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.pedia-catigories div{
+    color:#32CF93;
+    background-color: #F0F8FF;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: bolder;
+    width: auto;
+}
+
+.pedia-discord{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px;
+    background-color: #F0F8FF;
+    color: black;
+    padding: 15px 25px;
+}
+.pedia-discord-first{
+    font-weight: bolder;
+}
+.pedia-discord-second{
+    color: rgb(37, 37, 37);
+}
+.pedia-discord-button{
+    background-color:#32CF93;
+    padding: 15px 30px;
+    word-spacing: 5px;
+    color: white;
+    font-size: 18px;
+    border-radius: 7px;
+}
+
+
+/* media query  */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+}
+@media screen and (max-width: 767px) {
+    .pedia-search{
+        width: 100%;
+    }
+}
+  
+  /* media query  */

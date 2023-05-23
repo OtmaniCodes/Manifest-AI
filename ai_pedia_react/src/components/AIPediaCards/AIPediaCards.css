@@ -1,0 +1,101 @@
+.pedia-items-title{
+    font-size: 24px;
+    padding: 25px 0px;
+}
+.pedia-items-container{
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+}
+.pedia-items-container .pedia-item{
+    background-color: #EEEEEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+}
+.pedia-item img{
+    width: 100%;
+    object-fit: cover;
+}
+.pedia-item-top{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: yellow; */
+    padding: 15px 5px;
+    width: 100%;
+}
+.pedia-item-top .pedia-chatfast{
+    font-size: 25px;
+    color: #32CF93;
+    cursor: pointer;
+}
+.pedia-item-top .pedia-mium{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15px;
+
+    border-radius: 10px;
+}
+.pedia-item-description{
+    color: black;
+    padding: 0px 7px;
+}
+.pedia-item-bottom{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: blue; */
+    align-items: center;
+    padding: 10px 7px;
+    width: 100%;
+    margin-top: 20px;
+}
+.pedia-item-bottom .pedia-item-catigorie{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.pedia-item-bottom .pedia-item-catigorie div{
+    background-color: black;
+    color: #32CF93;
+    padding: 0px 10px;
+    border-radius: 6px;
+}
+.pedia-item-heart{
+    color: rgb(49, 49, 49);
+    font-size: 24px;
+}
+.pedia-item-label{
+    color: #32CF93;
+    background-color: #F0F8FF;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    padding: 10px 20px;
+    font-weight: bolder;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+
+/* media query  */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .pedia-items-container{
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+@media screen and (max-width: 767px) {
+    .pedia-items-container{
+        grid-template-columns: repeat(1, 1fr); 
+        width: 95%;
+        margin: auto;
+    }
+}
+  
+  /* media query  */
