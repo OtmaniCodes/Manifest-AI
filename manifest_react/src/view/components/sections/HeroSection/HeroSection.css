@@ -23,7 +23,7 @@
     /* background: #002C36; */
     /* background: linear-gradient(#002C36, rgba(0, 44, 54, 0.2)); */
 
-    background: linear-gradient(#002C36, rgba(0, 44, 54, 0.2), #002C36);
+    background: linear-gradient(#002C36, hsla(191, 100%, 11%, 0.35), #002C36);
     /* opacity: 0.55; */
     /* backdrop-filter: blur(2px); */
 }

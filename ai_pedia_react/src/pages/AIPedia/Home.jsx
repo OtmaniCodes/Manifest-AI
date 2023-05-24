@@ -30,7 +30,7 @@ function Home(){
 
     return (
         
-        <div className='container'> 
+        <div className='container mb-5'> 
             {data?
             <div className='pedia-container'>
             <div className='pedia-header'>
@@ -52,7 +52,8 @@ function Home(){
                 />
                 <div onClick={()=>setFilter(search)}>
                     {/* <AiOutlineSearch/> */}
-                    <Link to={`/search/${search}`}><i class="bi bi-search"></i></Link>
+                    {/* <Link to={`/search/${search}`}><i class="bi bi-search"></i></Link> */}
+                    <Link to={`#`}><i class="bi bi-search"></i></Link>
                 </div>
             </div>
             <div className='pedia-catigories'>

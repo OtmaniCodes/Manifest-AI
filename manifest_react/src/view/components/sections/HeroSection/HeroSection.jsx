@@ -1,9 +1,9 @@
 import './HeroSection.css';
 import React, { useEffect, useRef, useState } from 'react';
 import { Fade, Slide, Zoom } from 'react-reveal';
-import heroVidBg from '../../../../assets/hero-bg-vid.mp4'
 import { useFirstLoadState } from '../../../../state/first-load-state-provider';
 import { useDataSource } from '../../../../state/data-provider';
+import bgImgVid from '../../../../assets/images/leaf_on_board_bg.png';
 
 // ma => manifest ai
 
@@ -43,8 +43,8 @@ export default function HeroSection() {
     <>
       {/* <section id='hero-section' className={`${isFlatHero ? 'flat' : ''}`} style={{animation: isFirstLoad ? 'revealSection 1.6s ease-in-out forwards' : null}}> */}
       <section id='hero-section'>
-        {/* <img src={bgImgVid} alt="" /> */}
-        <video ref={bgVidRef} autoPlay preload loop muted playsinline
+        <img
+          src={bgImgVid} 
           style={{
             position: 'absolute',
             width: '100%',
@@ -56,10 +56,7 @@ export default function HeroSection() {
             objectFit: 'cover',
             zIndex: '0',
             pointerEvents: 'none',
-          }}>
-            <source src={heroVidBg} type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
+          }}/>
         <div className="trans-layer"></div>
         <div
           // style={{position: 'absolute', zIndex: '10'}}
