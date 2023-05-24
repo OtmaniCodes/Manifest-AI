@@ -9,16 +9,26 @@
 }
 .pedia-items-container .pedia-item{
     background-color: #EEEEEE;
+    /* background-color: #2e3c44; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
-
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(39, 227, 252);
 }
 .pedia-item img{
     width: 100%;
     object-fit: cover;
+    transition: 0.5s;
+    cursor: pointer;
+}.pedia-item img:hover{
+    transform: scale(1.05);
+    overflow: hidden;
+
 }
 .pedia-item-top{
     display: flex;

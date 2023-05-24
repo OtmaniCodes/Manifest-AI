@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\AIPediaTool;
+use App\Models\AIPediaToolCategory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\PostController;
@@ -25,8 +27,14 @@ Route::get('/', function () {
     return redirect('/admin');
 });
     
-
-
+Route::get('/a',function(){
+    $tool = AIPediaTool::find(1);
+    // $cat=AIPediaToolCategory::find(1);
+    // dd($cat->ai_pedia_tools());
+    // dd($tool);
+    dd($tool->catigories());
+})
+;
 
 Route::group(['prefix' => 'admin'], function () { 
     Voyager::routes();

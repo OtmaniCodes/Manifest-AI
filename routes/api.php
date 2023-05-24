@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\AboutController;
@@ -11,12 +12,12 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DirectiveController;
 use App\Http\Controllers\ManifestoController;
 use App\Http\Controllers\AIQuestionController;
+use App\Http\Controllers\AIPediaToolController;
 use App\Http\Controllers\AboutContentController;
+
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\ManifestoContentController;
-
 use App\Http\Controllers\AIPediaToolCategoryController;
-use App\Http\Controllers\AIPediaToolController;
 
 
 
@@ -44,6 +45,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/get-ai-pedia-tools', [AIPediaToolController::class, 'getAIPediaTools']);
     Route::get('/ai-pedia-tools/search', [AIPediaToolController::class, 'searchForAIPediaTools']); //! do get request to /ai-pedia-tools/search?keyword=example from the front-end
     Route::get('/get-ai-pedia-tools-categories', [AIPediaToolCategoryController::class, 'getAIPediaToolsCategories']);
+
+
+
+    Route::get('/get-holy-data', [DataController::class, 'getData']);
 
 
     Route::get('/csrf-token', function () {

@@ -3,6 +3,7 @@ import './App.css'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import Home from './pages/AIPedia/Home';
 import {setData } from './redux/dataSlice';
 import { useSelector, useDispatch } from 'react-redux';

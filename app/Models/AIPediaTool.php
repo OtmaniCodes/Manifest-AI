@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\AIPediaToolCategory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class AIPediaTool extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'name',
         'screenshot',
@@ -16,12 +16,13 @@ class AIPediaTool extends Model
         'version_state',
         'description',
         'is_popular',
-        'ai_collection'
+        'ai_collection',
+        // 'a_i_pedia_tool_category_id'
     ];
 
 
-    public function ai_pedia_tool_category()
+    public function categories()
     {
-        return $this->belongsTo(AIPediaToolCategory::class);
+        return $this->hasOne(AIPediaToolCategory::class,'a_i_pedia_tool_category_id');
     }
 }

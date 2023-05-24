@@ -15,6 +15,6 @@ class AIPediaToolCategory extends Model
 
     public function ai_pedia_tools()
     {
-        return $this->hasMany(AIPediaTool::class);
+        return $this->belongsTo(AIPediaTool::class);
     }
 }
