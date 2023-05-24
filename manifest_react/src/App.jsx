@@ -21,7 +21,6 @@ const ArticlePage = React.lazy(() => import('./view/pages/Articles/ArticlePage/A
 const ServicePage = React.lazy(() => import('./view/pages/Services/ServicePage/ServicePage'));
 const Services = React.lazy(() => import('./view/pages/Services/Services'));
 const Manifesto = React.lazy(() => import('./view/pages/Manifesto/Manifesto'));
-const AIPedia = React.lazy(() => import('./view/pages/AIPedia/AIPedia'));
 const Abort404 = React.lazy(() => import('./view/pages/not-found/Abort404'));
 // const Footer = React.lazy(() => import('./components/Footer/Footer'));
 // const Navbar = React.lazy(() => import('./components/Navbar/Navbar'));
@@ -48,7 +47,6 @@ function App() {
               <Route exact path="/services" element={<Services/>}/>
               <Route path="/services/:slug" element={<ServicePage/>} />
               <Route path="/manifest" element={<Manifesto/>} />
-              <Route path="/ai-pedia" element={<AIPedia/>} />
               <Route path="*" element={<Abort404/>} />
             </Routes>
             <ScrollToTopButton/>
