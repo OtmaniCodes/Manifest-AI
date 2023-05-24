@@ -1,0 +1,17 @@
+header .navbar{
+  background-color: #00323f !important;
+}
+
+nav.navbar .nav-logo{
+  margin: 0;
+}
+
+header .nav-item a{
+  color: #fff;
+  /* font-weight: 600; */
+  transition: all 0.3s;
+}
+
+header .nav-item a:hover{
+  color: #52D094;
+}

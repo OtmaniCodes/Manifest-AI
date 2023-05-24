@@ -6,6 +6,9 @@ import AIPediaCards from '../../components/AIPediaCards/AIPediaCards';
 import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import Loader from '../../components/Loader/Loader';
+
+
+
 function Home(){
     const data = useSelector(state => state.data.data);
 
