@@ -7,6 +7,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import Home from './pages/AIPedia/Home';
 import {setData } from './redux/dataSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
           {/* <ScrollProgressBar/> */}
-          {/* <Navbar /> */}
+          <Navbar />
           {/* <div>{content}</div> */}
           <Routes>
             <Route exact path="/" element={<Home/>}/>
