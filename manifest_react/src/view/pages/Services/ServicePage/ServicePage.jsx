@@ -1,7 +1,6 @@
+import './ServicePage.css';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { servicesData } from '../../../../constants/data';
-import './ServicePage.css';
 import useScrollToTop from '../../../../utils/custom-hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
 import { Fade } from 'react-reveal';

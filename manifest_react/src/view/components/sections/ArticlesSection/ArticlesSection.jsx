@@ -23,7 +23,7 @@ export default function ArticlesSection() {
                         </div>
                     </div>)
                 : (
-                    <Fade bottom cascade duration={500}>
+                    <Fade bottom cascade duration={300}>
                         <div className="row justify-content-center align-items-start pt-5">
                             {
                                 articles.slice(0, displayAmount).map((article, index) => (

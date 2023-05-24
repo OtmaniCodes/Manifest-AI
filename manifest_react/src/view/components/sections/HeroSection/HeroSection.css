@@ -1,8 +1,8 @@
 #hero-section{
-    background-image: url("../../../../assets/images/leaf_on_board_bg.png");
+    /* background-image: url("../../../../assets/images/leaf_on_board_bg.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
 
     padding-top: 120px;
     height: 100vh;
@@ -12,6 +12,21 @@
     /* clip-path: ellipse(100% 100% at 50% 50%); */
 }
 
+#hero-section .trans-layer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* background: #002C36; */
+    /* background: linear-gradient(#002C36, rgba(0, 44, 54, 0.2)); */
+
+    background: linear-gradient(#002C36, rgba(0, 44, 54, 0.2), #002C36);
+    /* opacity: 0.55; */
+    /* backdrop-filter: blur(2px); */
+}
 /* @keyframes revealSection {
     0% {
         clip-path: ellipse(0% 0% at 50% 100%);
@@ -28,11 +43,13 @@
 }
 
 #hero-section img.brain-logo{
+    position: relative;
     height: 25%;
     max-height: 150px;
 }
 
 #hero-section h1{
+    position: relative;
     font-style: normal;
     font-weight: 600;
     font-size: 55px;
@@ -44,6 +61,7 @@
 }
 
 #hero-section h2{
+    position: relative;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -135,19 +153,19 @@ img.blue-logo{
 @media only screen and (max-width: 768px) {
     #hero-section{
         padding-top: 90px;
-        background-image: url("../../../../assets/images/leaf_on_board_bg_mobile.png");
+        /* background-image: url("../../../../assets/images/leaf_on_board_bg_mobile.png"); */
         /* height: unset; */
         /* padding-bottom: 120px; */
         /* height: unset !important; */
     }
 
-    img.blue-logo{
+    /* img.blue-logo{
         height: 100px;
         left: calc(50% - 50px);
         right: calc(50% - 50px);
         bottom: -50px;
         border-width: 8px;
-    }
+    } */
     
     #hero-section.flat{
         clip-path: ellipse(100% 100% at 50% 0) !important;
@@ -183,6 +201,7 @@ img.blue-logo{
         height: fit-content;
         max-height: unset;
         min-height: unset;
+        min-width: 250px;
         padding: 30px 20px;
     }
 

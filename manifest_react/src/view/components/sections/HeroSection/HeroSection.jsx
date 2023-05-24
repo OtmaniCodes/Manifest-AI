@@ -1,8 +1,7 @@
 import './HeroSection.css';
-import maBlueBrain from '../../../../assets/images/ma_blue_bg.png';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Fade, Slide, Zoom } from 'react-reveal';
-import maBrain from '../../../../assets/images/ma_white_brain_logo.svg'
+import heroVidBg from '../../../../assets/hero-bg-vid.mp4'
 import { useFirstLoadState } from '../../../../state/first-load-state-provider';
 import { useDataSource } from '../../../../state/data-provider';
 
@@ -14,6 +13,7 @@ export default function HeroSection() {
   const {isFirstLoad, setIsFirstLoad} = useFirstLoadState();
   var {loading,sections} = useDataSource();
   sections=sections[0]
+  const bgVidRef = useRef();
   // console.log(sections)
 
   // useEffect(() => {
@@ -43,7 +43,27 @@ export default function HeroSection() {
     <>
       {/* <section id='hero-section' className={`${isFlatHero ? 'flat' : ''}`} style={{animation: isFirstLoad ? 'revealSection 1.6s ease-in-out forwards' : null}}> */}
       <section id='hero-section'>
-        <div className="container h-100 d-flex flex-column justify-content-end align-items-center text-center">
+        {/* <img src={bgImgVid} alt="" /> */}
+        <video ref={bgVidRef} autoPlay preload loop muted playsinline
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            objectFit: 'cover',
+            zIndex: '0',
+            pointerEvents: 'none',
+          }}>
+            <source src={heroVidBg} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div className="trans-layer"></div>
+        <div
+          // style={{position: 'absolute', zIndex: '10'}}
+          className="container h-100 d-flex flex-column justify-content-end align-items-center text-center">
           {
             isFirstLoad ? (
               <Fade bottom duration={500} delay={200}>
