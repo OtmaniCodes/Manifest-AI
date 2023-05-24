@@ -28,6 +28,14 @@
     border: none;
     border-radius: 3px;
     color: white;
+    transition: 0.3s;
+}
+.pedia-explore-button button:hover{
+    background-color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 3px;
+    color: #32CF93;
 }
 .pedia-search{
     /* background-color: yellow; */
@@ -43,6 +51,16 @@
     padding: 13px;
     border-radius: 50px;
     border: 2px solid black;
+}
+.pedia-search input:focus{
+    outline: none;
+}
+.pedia-search input:hover{
+    border-color: rgb(98, 219, 193);
+}
+.pedia-search div i{
+    color: rgba(0, 0, 0, 0.712);
+    font-size: 20px;
 }
 .pedia-search div{
     position: absolute;
@@ -72,8 +90,15 @@
     padding: 5px 10px;
     font-weight: bolder;
     width: auto;
+    cursor: pointer;
+    transition: 0.2s;
 }
-
+.pedia-catigories div:hover{
+    color:#F0F8FF;
+    background-color: #32CF93;
+    /* padding: 5px 8px; */
+    scale: 0.95;
+}
 .pedia-discord{
     display: flex;
     justify-content: space-between;
