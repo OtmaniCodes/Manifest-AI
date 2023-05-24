@@ -28,8 +28,42 @@ const Abort404 = React.lazy(() => import('./view/pages/not-found/Abort404'));
 // const ScrollToTopButton = React.lazy(() => import('./components/ScrollToTopButton/ScrollToTopButton'));
 // const Abort404 = React.lazy(() => import('./pages/abort-404/Abort404'));
 
+
+
+// import { useSelector, useDispatch } from 'react-redux';
+// import { setData,setAbout } from './redux/dataSlice';
+// import { useEffect, useState } from 'react'
+
 function App() {
   // return <SplashLoader/>
+
+
+
+  // const dispatch = useDispatch();
+  // const data = useSelector(state => state.data.data);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch('http://localhost:8000/api/get-holy-data');
+  //       const data = await response.json();
+  //       const {about}=data
+  //       console.log(about)
+  //       console.log(about.body)
+  //       dispatch(setData(data));
+  //       dispatch(setAbout(about));
+  //       console.log(data)
+  //     } catch (error) {
+  //       console.log('Error fetching data:', error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [dispatch]);
+
+
+
+
+
   return (
       <div className="App">
         <BrowserRouter>

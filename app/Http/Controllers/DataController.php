@@ -23,7 +23,7 @@ class DataController extends VoyagerBaseController
     public function getData()
     {
         $manifestoContent=ManifestoContent::all();
-        $about=About::all();
+        $about=About::all()->first();
         $aboutContents=AboutContent::all();
         $AIPediaToolsCategories = AIPediaToolCategory::all();
         $AIPediaTools = AIPediaTool::all();
