@@ -13,7 +13,7 @@ class AIPediaToolController extends VoyagerBaseController
     {
         // $AIPediaTools = AIPediaTool::with('catigories')->get();
         $AIPediaTools = AIPediaTool::all();
-        dd($AIPediaTools);
+        // dd($AIPediaTools);
         // $AIPediaCollections=AIPediaTool::all();
         // $AIPediaTools = AIPediaTool::orderBy('id', 'desc')->where('ai_collection','=',0)
         //     ->paginate(20);
