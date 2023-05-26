@@ -39,7 +39,7 @@ export default function ArticlesSection() {
             {
                 (articles.length > displayAmount) && (
                     <div className="d-flex justify-content-center m-0">
-                        <Link to={'/articles'} className="btn btn-text">See more</Link>
+                        <Link to={'/articles'} className="btn btn-text text-muted">see more</Link>
                     </div>
                 )
             }

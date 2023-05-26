@@ -82,7 +82,7 @@ const ContactSection = () => {
             setIsSubmitting(true) 
             emailjs.send(serviceId, templateId, emailParams, userId)
             .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
+                // console.log('SUCCESS!', response.status, response.text);
                 toast.success('Your message was submitted successfuly! we will get back to you as soon as we can.', {
                     position: "bottom-left",
                     autoClose: 5000,
@@ -95,7 +95,7 @@ const ContactSection = () => {
                 });
 
             }, (error) => {
-                console.log('FAILED...', error);
+                // console.log('FAILED...', error);
                 toast.error('Something went wrong! please try again later', {
                     position: "bottom-left",
                     autoClose: 5000,

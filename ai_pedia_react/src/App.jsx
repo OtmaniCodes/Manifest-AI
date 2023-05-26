@@ -8,6 +8,10 @@ import Home from './pages/AIPedia/Home';
 import {setData } from './redux/dataSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import Navbar from './components/Navbar/Navbar';
+import AIToolPage from './pages/AIToolPage/AIToolPage';
+import Footer from './components/Footer/Footer';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -38,10 +42,11 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route exact path="/serach/:name" element={<Home/>}/>
+            <Route exact path="/tool/:name" element={<AIToolPage/>}/>
             {/* <Route path="*" element={<Abort404/>} /> */}
           </Routes>
           {/* <ScrollToTopButton/> */}
-          {/* <Footer />  */}
+          <Footer /> 
       </BrowserRouter>
     </div>
   )

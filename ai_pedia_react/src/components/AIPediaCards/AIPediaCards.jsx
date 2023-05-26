@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import chatfast from '../../assets/pedia/chatfast.webp.png'
 // import Pagination from '../../pages/AIPedia/Pagination/Pagination';
 import './AIPediaCards.css'
+import { Link } from 'react-router-dom';
+import VersionStateChip from '../VersionStateChip/VersionStateChip';
 const AIPediaCards = (props) => {
     
     // const fetchData = async () => {
@@ -60,15 +62,15 @@ const AIPediaCards = (props) => {
     // console.log('AIPediaToolsCategories','AIPediaCollections,AIPediaTools')
     console.log(data)
     const allItems =[
-        {id: 1, name: "item1", version: 1, description: "This is item 1 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", category: ["cat1", "cat2"]},
-        {id: 2, name: "item2", version: 0, description: "This is item 2 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", category: ["cat1", "cat3"]},
-        {id: 3, name: "item3", version: 1, description: "This is item 3 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", category: ["cat2", "cat3"]},
-        {id: 4, name: "item4", version: 0, description: "This is item 4 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", category: ["cat1", "cat2"]},
-        {id: 5, name: "item5", version: 1, description: "This is item 5 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", category: ["cat2", "cat3"]},
-        {id: 6, name: "item6", version: 0, description: "This is item 6 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", category: ["cat1", "cat3"]},
-        {id: 7, name: "item7", version: 1, description: "This is item 7 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", category: ["cat2", "cat3"]},
-        {id: 8, name: "item8", version: 0, description: "This is item 8 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", category: ["cat1", "cat2"]},
-        {id: 9, name: "item9", version: 1, description: "This is item 9 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", category: ["cat2", "cat3"]},
+        {id: 2, name: "item2", version: 0, description: "This is item 2 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat1", "cat3"]},
+        {id: 3, name: "item3", version: 1, description: "This is item 3 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat2", "cat3"]},
+        {id: 4, name: "item4", version: 0, description: "This is item 4 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat1", "cat2"]},
+        {id: 5, name: "item5", version: 1, description: "This is item 5 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat2", "cat3"]},
+        {id: 6, name: "item6", version: 0, description: "This is item 6 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat1", "cat3"]},
+        {id: 7, name: "item7", version: 1, description: "This is item 7 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat2", "cat3"]},
+        {id: 8, name: "item8", version: 0, description: "This is item 8 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat1", "cat2"]},
+        {id: 9, name: "item9", version: 1, description: "This is item 9 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat2", "cat3"]},
+        {id: 1, name: "item1", version: 1, description: "This is item 1 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat1", "cat2"]},
     ];
     const [items, setItems] = useState(allItems);
     const filteredItems = items.filter((item) => {
@@ -81,18 +83,25 @@ const AIPediaCards = (props) => {
         <div className='pedia-items-container'> 
             {data && filteredItems.map((e,i)=>(
                 <div key={i} className='pedia-item'>
-                <img src={chatfast} alt="" />
+                <Link to={`/tool/${e.name}`}>
+                    <img src={chatfast} alt="" />
+                </Link>
                 <div className='pedia-item-top'>
-                    <div className='pedia-chatfast'>{e.name} <i class="bi bi-box-arrow-up-right"></i></div>
-                    <div className='pedia-mium'>{e.version==1?'Freemuim':'Premuim'}</div>
+                    
+                    <Link to={`/tool/${e.name}`}>
+                        <div className='pedia-chatfast'>{e.name} <i class="bi bi-box-arrow-up-right"></i></div>
+                    </Link>
+                    <VersionStateChip state={e.version==1?'Freemuim':'Premuim'}/>
                 </div>
-                <p className='pedia-item-description'>
-                    {e.description}
-                </p>
+                <Link to={`/tool/${e.name}`}>
+                    <p className='pedia-item-description'>
+                        {e.description}
+                    </p>
+                </Link>
                 <div className='pedia-item-bottom'>
                     <div className='pedia-item-catigorie'>
-                        {e.category.map((e,i)=>(
-                            <div>{e}</div>
+                        {e.tags.map((e,i)=>(
+                            <div key={i}>{e}</div>
                         ))}
                     </div>
                     <div className='pedia-item-heart'>

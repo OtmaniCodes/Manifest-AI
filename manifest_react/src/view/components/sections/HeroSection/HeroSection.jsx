@@ -8,25 +8,9 @@ import bgImgVid from '../../../../assets/images/leaf_on_board_bg.png';
 // ma => manifest ai
 
 export default function HeroSection() {
-  // const [scrollPosition, setScrollPosition] = useState(0);
-  // const [isFlatHero, setIsFlatHero] = useState(false);
   const {isFirstLoad, setIsFirstLoad} = useFirstLoadState();
   var {loading,sections} = useDataSource();
   sections=sections[0]
-  const bgVidRef = useRef();
-  // console.log(sections)
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //       const currentPosition = window.pageYOffset;
-  //       const screenHeight = window.innerHeight;
-  //       setIsFlatHero((currentPosition + (screenHeight * (2/3))) > screenHeight);
-  //       setScrollPosition(currentPosition);
-  //   }
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, [scrollPosition])
-
 
   useEffect(() => {
     let timeoutId;
@@ -39,9 +23,27 @@ export default function HeroSection() {
   }, []);
 
 
+  const renderMoreDataCard = () => {
+    return (
+      <div className='more-data px-5'>
+        <div className='data'>
+          <h3>What we Do</h3>
+          <p>{!loading&&sections.what_we_do}</p>
+        </div>
+        <div className='data'>
+          <h3>Our Vision</h3>
+          <p>{!loading&&sections.our_vision}</p>
+        </div>
+        <div className='data'>
+          <h3>Contact Us</h3>
+          <p>{!loading&&sections.contact_us}</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
-      {/* <section id='hero-section' className={`${isFlatHero ? 'flat' : ''}`} style={{animation: isFirstLoad ? 'revealSection 1.6s ease-in-out forwards' : null}}> */}
       <section id='hero-section'>
         <img
           src={bgImgVid} 
@@ -59,7 +61,6 @@ export default function HeroSection() {
           }}/>
         <div className="trans-layer"></div>
         <div
-          // style={{position: 'absolute', zIndex: '10'}}
           className="container h-100 d-flex flex-column justify-content-end align-items-center text-center">
           {
             isFirstLoad ? (
@@ -107,47 +108,12 @@ export default function HeroSection() {
           {
             isFirstLoad ? (
               <Slide bottom duration={500}>
-                <div className='more-data px-5'>
-                  <div className='data'>
-                    <h3>What we Do</h3>
-                    <p>{!loading&&sections.what_we_do}</p>
-                  </div>
-                  <div className='data'>
-                    <h3>Our Vision</h3>
-                    <p>{!loading&&sections.our_vision}</p>
-                  </div>
-                  <div className='data'>
-                    <h3>Contact Us</h3>
-                    <p>{!loading&&sections.contact_us}</p>
-                  </div>
-                </div>
+                {renderMoreDataCard()}
               </Slide>
-            ) : (
-              <div className='more-data px-5'>
-                <div className='data'>
-                  <h3>What we Do</h3>
-                  <p>{!loading&&sections.what_we_do}</p>
-                </div>
-                <div className='data'>
-                  <h3>Our Vision</h3>
-                  <p>{!loading&&sections.our_vision}</p>
-                </div>
-                <div className='data'>
-                  <h3>Contact Us</h3>
-                  <p>{!loading&&sections.contact_us}</p>
-                </div>
-              </div>
-            )
+            ) : renderMoreDataCard()
           }
         </div>
       </section>
-      {
-        // isFlatHero && (
-        //   <Zoom duration={500} delay={200}>
-        //     <img className='blue-logo' src={maBlueBrain} alt="manifest ai logo" />
-        //   </Zoom>
-        // )
-      }
     </>
   )
 }

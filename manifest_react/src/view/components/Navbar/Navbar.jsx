@@ -1,9 +1,6 @@
 import './Navbar.css'
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-// import useScrollToTop from '../../hooks/useScrollToTop';
-import blueLogo from '../../../assets/images/manifest_logo_blue.svg'
-import whiteLogo from '../../../assets/images/manifest_logo_white.svg'
 import { useDataSource } from '../../../state/data-provider';
 
 
