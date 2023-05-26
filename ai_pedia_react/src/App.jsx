@@ -16,7 +16,8 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/get-ai-pedia-tools');
+        // const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-ai-pedia-tools`);
+        const response = await fetch(`http://127.0.0.1:8000/api/get-ai-pedia-tools`);
         const data = await response.json();
         dispatch(setData(data));
         console.log(data)
