@@ -8,3 +8,11 @@ footer h3{
     font-weight: bold;
     color: #fff;
 }
+
+footer h6{
+    color: #fff;
+}
+
+footer h3 span{
+    color: #52D094;
+}

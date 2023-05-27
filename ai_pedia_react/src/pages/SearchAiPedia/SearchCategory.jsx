@@ -6,23 +6,36 @@ import Header from '../../components/Header/Header';
 import AIPediaCards from '../../components/AIPediaCards/AIPediaCards';
 import DataLoader from '../../components/Loader/DataLoader/DataLoader';
 import Pagination from '../../components/Pagination/Pagination';
+import { FuncHelper } from '../../utils/func-helper';
 
 const SearchCategory = () => {
     const [tools,setTools]=useState(null)
     const {category}=useParams()
     const [currentPage, setCurrentPage] = useState(1);
     const [lastPage,setLastPage] = useState(null); 
+
     useEffect(() => {
+      window.scrollTo({'behavior': 'instant', top: 0})
       setTools(null)
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://127.0.0.1:8000/api/get-tools-by-category', {
+          const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/get-tools-by-category`, {
             params: {
               name: category
             }
           });
           const data = response.data;
-          setTools(data)
+          // setTools(data)
+          setTools(
+            {
+              ...data,
+              data: data.data.map(e => ({
+                ...e,
+                image: FuncHelper.getCleanServerImageUrl(e.image),
+              })),
+            }
+          );
+            
           setLastPage(data.last_page)
         } catch (error) {
           console.log('Error fetching data:', error);
@@ -39,19 +52,31 @@ const SearchCategory = () => {
       setTools(null)
       const fetchData = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/api/get-tools-by-category?page=${currentPage}`, {
+          const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/get-tools-by-category?page=${currentPage}`, {
             params: {
               name: category
             }
           });
           const data = response.data;
-          setTools(data)
+          
+          // setTools(data)
+
+          setTools(
+            {
+              ...data,
+              data: data.data.map(e => ({
+                ...e,
+                image: FuncHelper.getCleanServerImageUrl(e.image),
+              })),
+            }
+          );
         } catch (error) {
           console.log('Error fetching data:', error);
         }
       };
       fetchData();
     }, [currentPage]);
+
     return (
       <div className='container mb-5'> 
           <div className='pedia-container'>

@@ -6,8 +6,10 @@ import chatfast from '../../assets/pedia/chatfast.webp.png'
 import './AIPediaCards.css'
 import { Link } from 'react-router-dom';
 import VersionStateChip from '../VersionStateChip/VersionStateChip';
+            
+
 const AIPediaCards = (props) => {
-    const tools=props.tools
+    const tools = props.tools
     // const allItems =[
     //     {id: 2, name: "item2", version: 0, description: "This is item 2 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat1", "cat3"]},
     //     {id: 3, name: "item3", version: 1, description: "This is item 3 Chatfast is a platform that allows users to create GPT chatbots to answer questions on their website...", tags: ["cat2", "cat3"]},
@@ -23,16 +25,16 @@ const AIPediaCards = (props) => {
         <div className='pedia-items-container'> 
             {tools && tools.map((e,i)=>(
                 <div key={i} className='pedia-item'>
-                <Link to={`/tool/${e.name}`}>
-                    <img src={chatfast} alt={e.name+'-image'} />
+                <Link to={`/tool/${e.name}`} state={e}>
+                    <img src={e.image} alt={e.name+'-image'} />
                 </Link>
                 <div className='pedia-item-top'>
-                    <Link to={`/tool/${e.name}`}>
+                    <Link to={`/tool/${e.name}`} state={e}>
                         <div className='pedia-chatfast'>{e.name} <i className="bi bi-box-arrow-up-right"></i></div>
                     </Link>
                     <VersionStateChip state={e.version_state}/>
                 </div>
-                <Link to={`/tool/${e.name}`}>
+                <Link to={`/tool/${e.name}`} state={e}>
                     <p className='pedia-item-description'>
                         {e.description}
                     </p>

@@ -120,15 +120,25 @@ button.visit-btn:hover {
 
 .ai-tool-page .tool-thumbnail{
     width: 100%;
+    height: 250px;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
 }
 
-.ai-tool-page .tool-thumbnail img{
+.ai-tool-page .tool-thumbnail .image{
     border-radius: 15px;
     position: relative;
+    height: 100%;
     width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .ai-tool-page .tool-thumbnail .visit-tool-layer{
@@ -142,7 +152,7 @@ button.visit-btn:hover {
     left: 0;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     background-color: rgba(0, 0, 0, 0.8);
     transition: opacity 0.2s ease-in-out;
 }
@@ -159,7 +169,17 @@ button.visit-btn:hover {
 }
 
 
+.ai-tool-page .price-text{
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
 
+.ai-tool-page .price-text p{
+    margin: 0;
+}
 
 @media screen and (max-width: 767px) {
 

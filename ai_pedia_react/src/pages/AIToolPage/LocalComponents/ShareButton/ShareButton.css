@@ -63,6 +63,7 @@
     padding: 8px;
     background-color: rgb(226, 231, 235);
     transition: all 0.3s;
+    user-select: none;
 }
 
 .share-btn-container .share-btns .copy-link-btn:hover{

@@ -12,6 +12,7 @@ import AIToolPage from './pages/AIToolPage/AIToolPage';
 import Footer from './components/Footer/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 import SearchCategory from './pages/SearchAiPedia/SearchCategory';
+import PediaCategories from './pages/PediaCategories/PediaCategories';
 
 
 function App() {
@@ -21,11 +22,9 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-ai-pedia-tools`);
-        const response = await fetch(`http://127.0.0.1:8000/api/get-ai-pedia-tools`);
+        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-ai-pedia-tools`);
         const data = await response.json();
         dispatch(setData(data));
-        // console.log(data)
       } catch (error) {
         console.log('Error fetching data:', error);
       }
@@ -43,7 +42,9 @@ function App() {
           {/* <div>{content}</div> */}
           <Routes>
             <Route exact path="/" element={<Home/>}/>
-            <Route exact path="/search-category/:category" element={<SearchCategory/>}/>
+            <Route exact path="/tools" element={<Home/>}/>
+            <Route exact path="/categories" element={<PediaCategories/>}/>
+            <Route exact path="/categories/:category" element={<SearchCategory/>}/>
             <Route exact path="/tool/:name" element={<AIToolPage/>}/>
             {/* <Route path="*" element={<Abort404/>} /> */}
           </Routes>

@@ -17,9 +17,11 @@ const Header = (props) => {
                     Find & Save the best AI tools every day for 10X results!
                 </div>
                 <div className='pedia-explore-button'>
-                    <button >
-                        EXPLORE ALL CATEGORIES
-                    </button>
+                    <Link to={'/categories'}>
+                        <button >
+                            EXPLORE ALL CATEGORIES
+                        </button>
+                    </Link>
                 </div>
         </div>
         <div className='pedia-search'>
@@ -39,7 +41,7 @@ const Header = (props) => {
                 className={props.category == e.name ? 'active-category' : ''}
                 // onClick={()=>{setCategory(e.name)}}
                 >
-                    <Link to={`/search-category/${e.name}`}>{e.name}</Link>
+                    <Link to={`/categories/${e.name}`}>{e.name}</Link>
                 </div>
             ))}
         </div>
