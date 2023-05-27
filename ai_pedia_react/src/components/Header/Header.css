@@ -1,11 +1,4 @@
-.pedia-container{
-    margin: auto;
-    margin-top: 80px;
-    color: white;
-    max-width: 1320px;
-    min-height: 100vh;
-}
-/* .pedia-title{
+.pedia-title{
     font-size: 25px;
     text-align: center;
     font-weight: bolder;
@@ -38,6 +31,7 @@
     color: #32CF93;
 }
 .pedia-search{
+    /* background-color: yellow; */
     margin: auto;
     width: 70%;
     text-align: center;
@@ -73,12 +67,17 @@
     justify-content: center;
     background-color:#32CF93;
     height: 83%;
-} */
-/* .pedia-catigories{
+}
+.pedia-catigories{
+    /* background-color: yellow; */
+    /* margin: auto; */
     display: flex;
     padding: 14px;
     gap: 10px;
     flex-wrap: wrap;
+}
+.pedia-catigories div a{
+    color:#32CF93;
 }
 .pedia-catigories div{
     color:#32CF93;
@@ -90,49 +89,20 @@
     cursor: pointer;
     transition: 0.2s;
 }
+.pedia-catigories div:hover a{
+    color:#F0F8FF;
+}
 .pedia-catigories div:hover{
     color:#F0F8FF;
     background-color: #32CF93;
+    /* padding: 5px 8px; */
     scale: 0.95;
+}
+.active-category a{
+    color:#f0ddff !important;
 }
 .active-category{
     color:#f0ddff !important;
-    background-color: #32aacf !important;
+    background-color: #984dd6 !important;
     scale: 0.95 !important;
-} */
-.pedia-discord{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 50px 0px;
-    background-color: #F0F8FF;
-    color: black;
-    padding: 15px 25px;
 }
-.pedia-discord-first{
-    font-weight: bolder;
-}
-.pedia-discord-second{
-    color: rgb(37, 37, 37);
-}
-.pedia-discord-button{
-    background-color:#32CF93;
-    padding: 15px 30px;
-    word-spacing: 5px;
-    color: white;
-    font-size: 18px;
-    border-radius: 7px;
-}
-
-
-/* media query  */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    
-}
-@media screen and (max-width: 767px) {
-    .pedia-search{
-        width: 100%;
-    }
-}
-  
-  /* media query  */

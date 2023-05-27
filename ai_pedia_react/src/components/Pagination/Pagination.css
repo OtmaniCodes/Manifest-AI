@@ -1,0 +1,35 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pagination li {
+    margin: 0 5px;
+  }
+  
+  .pagination li button {
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  
+  .pagination li button:hover {
+    background-color: #eee;
+  }
+  
+  .pagination li.active button {
+    background-color: #ddb5b5;
+    color: #fff;
+  }
+  

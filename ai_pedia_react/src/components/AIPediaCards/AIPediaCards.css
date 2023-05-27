@@ -44,7 +44,7 @@
     color: #32CF93;
     cursor: pointer;
 }
-.pedia-item-top .pedia-mium{
+/* .pedia-item-top .pedia-mium{
     background-color: black;
     display: flex;
     justify-content: center;
@@ -52,7 +52,7 @@
     padding: 0px 15px;
     border-radius: 10px;
     font-size: 14px;
-}
+} */
 .pedia-item-description{
     /* color: rgb(41, 41, 41); */
     color: rgba(255, 255, 255, 0.726);

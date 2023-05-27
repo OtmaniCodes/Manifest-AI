@@ -19,8 +19,11 @@ class PediaTool extends Model
         'status',
         'description',
         'is_popular',
-        'manifest_collection',
+        'is_manifest_collection',
         'category_id',
+        'price',
+        'video',
+        'features',
     ];
 
     public function category()

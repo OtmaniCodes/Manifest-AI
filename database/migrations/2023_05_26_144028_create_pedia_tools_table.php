@@ -15,21 +15,20 @@ return new class extends Migration
     {
         Schema::create('pedia_tools', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('image');
-            $table->string('tool_link');
+            $table->string('name')->nullable();
+            $table->string('image')->nullable();
+            $table->string('tool_link')->nullable();
             $table->enum('version_state', ['Premium', 'Fremium', 'Free Trial'])->default('Fremium');
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->boolean('is_popular')->default(0);
-            $table->boolean('manifest_collection')->default(0);
-            $table->unsignedBigInteger('category_id'); // Foreign key column
+            $table->boolean('is_manifest_collection')->default(0);
+            $table->unsignedBigInteger('category_id')->nullable(); 
+            $table->text('price')->nullable();
+            $table->text('video')->nullable();
+            $table->text('features')->nullable();
             $table->timestamps();
-
-            $table->foreign('category_id')
-                ->references('id')
-                ->on('pedia_categories')
-                ->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('pedia_categories')->onDelete('cascade');
         });
     }
 

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class PediaCategory extends Model
 {
     use HasFactory;
-    // protected $table = 'pedia_categories';
+    protected $table = 'pedia_categories';
 
     protected $fillable = [
         'name',
@@ -17,6 +17,6 @@ class PediaCategory extends Model
 
     public function tools()
     {
-        return $this->hasMany(PediaTool::class);
+        return $this->hasMany(PediaTool::class,'category_id');
     }
 }

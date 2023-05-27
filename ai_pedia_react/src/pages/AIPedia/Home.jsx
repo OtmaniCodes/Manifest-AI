@@ -1,72 +1,51 @@
 import './Home.css'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import chatfast from '../../../assets/pedia/chatfast.webp.png'
 import chatfast from '../../assets/pedia/chatfast.webp.png'
 import AIPediaCards from '../../components/AIPediaCards/AIPediaCards';
 import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import Loader from '../../components/Loader/Loader';
-
+import Header from '../../components/Header/Header'
 
 
 function Home(){
     const data = useSelector(state => state.data.data);
-    // const {AIPediaTools,AIPediaCollections,AIPediaToolsCategories} = useSelector(state => state.data.data);
-    // console.log(AIPediaTools)
-    // console.log(AIPediaCollections)
-    // console.log(AIPediaToolsCategories)
-    // console.log('AIPediaToolsCategories','AIPediaCollections,AIPediaTools')
+    const [name, setName] = useState('tools');
+    const [category, setCategory ] = useState(null);
+    const [newTools,setNewTools]=useState(null)
+    const [collections,setCollections]=useState(null)
+    // const filterTools = () => {
+    //     const currentDate = new Date();
+    //     const filtered = data.tools.filter((tool) => {
+    //       const toolCreatedAt = new Date(tool.created_at);
+    //       return toolCreatedAt < currentDate;
+    //     }).slice(0, 6);
+    //     const filteredTools = data.tools.filter(tool => tool.is_manifest_collection === 1);
+    //     setNewTools(filtered)
+    //     setCollections(filteredTools)
+    //   };
+      useEffect(()=>{
+        if(data){
+            // filterTools()
+            setCollections(data.manifest_collections)
+            setNewTools(data.tools)
+        }
+      },[data])
+    const url = category ? `/search/${name}/${category}` : `/search/${name}`;
+useEffect(()=>{
+    console.log(category)
+},[category])
 
-    const catigories=[
-        'AI Detection','Art','Audio','Avatars','Business','Chat','Coaching','Data Analysis','Design','Development',
-        'Education','Email','Prodcasting','Productivity','Prompt Guides','SEO'
-    ]
-    const [search, setSearch] = useState("");
-    const [filter, setFilter] = useState("");
-    // const handleSearch = (e) => {
-    //     e.preventDefault();
-    //     history.push(`/search?query=${search}`);
-    // };
-
-    return (
-        
+    return (    
         <div className='container mb-5'> 
             {data?
             <div className='pedia-container'>
-            <div className='pedia-header'>
-                <div className='pedia-title'>
-                    AI Pedia -Ready to take your productivity to the next level?
-                </div>
-                <div className='pedia-subtitle'>
-                    Find & Save the best AI tools every day for 10X results!
-                </div>
-                <div className='pedia-explore-button'>
-                    <button >
-                        EXPLORE ALL CATEGORIES
-                    </button>
-                </div>
-            </div>
-            <div className='pedia-search'>
-                <input type="text" placeholder='I Am Looking For ...'
-                onChange={(e) => setSearch(e.target.value)} 
-                />
-                <div onClick={()=>setFilter(search)}>
-                    {/* <AiOutlineSearch/> */}
-                    {/* <Link to={`/search/${search}`}><i class="bi bi-search"></i></Link> */}
-                    <Link to={`#`}><i class="bi bi-search"></i></Link>
-                </div>
-            </div>
-            <div className='pedia-catigories'>
-                {data.AIPediaToolsCategories.map((e,i)=>(
-                    <div key={i}>
-                        {e.name}
-                    </div>
-                ))}
-            </div>
+            <Header/>
             <div className='pedia-items-title'>
                 🔥 Just Arrives
             </div>
-            <AIPediaCards search={filter}/>
+            <AIPediaCards tools={newTools}/>
             <div className='pedia-discord'>  
                 <div>
                     <h1>Grow your AI talent !</h1>
@@ -80,7 +59,7 @@ function Home(){
             <div className='pedia-items-title'>
                 🙌 Manifest AI selection
             </div>
-            <AIPediaCards search={filter}/>
+            <AIPediaCards tools={collections}/>
             </div> 
             :
             <Loader/>

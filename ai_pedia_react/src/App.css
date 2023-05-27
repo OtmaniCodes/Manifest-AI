@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;600;800&display=swap');
 
 body {
+    --theme-green: #52D094;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    background: #032C36;
 }
 
 .App {
     overflow-x: hidden;
     background-color: #002C36;
     font-family: 'Wix Madefor Display', sans-serif !important;
+    background: #032C36;
 
 }
 

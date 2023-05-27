@@ -1,0 +1,87 @@
+.share-btn-container{
+    position: relative;
+}
+
+
+
+.share-btn-container .share-icon{
+    display: flex;
+    color: #FFFFFFaa;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    padding: 8px;
+    height: 40px;
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: all 0.3s;
+    margin: 0;
+}
+
+
+.share-active{
+    display: unset !important;
+    animation: openShareAnimation 0.1s ease-in forwards;
+}
+
+@keyframes openShareAnimation {
+    0%{
+        scale: 0.7;
+        opacity: 0.3;
+        transform: translateY(-20%);
+    }
+    100%{
+        scale: 1;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.share-btn-container .share-btns{
+    display: none;
+    position: absolute;
+    left: -200%;
+    top: 100%;
+    background-color: aliceblue;
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.55);
+    overflow: hidden;
+}
+
+.share-btn-container .share-btns .links{
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.share-btn-container .share-btns .copy-link-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #032C36;
+    padding: 8px;
+    background-color: rgb(226, 231, 235);
+    transition: all 0.3s;
+}
+
+.share-btn-container .share-btns .copy-link-btn:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.share-btn-container .share-btns .copy-link-btn p{
+    margin: 0;
+    margin-left: 5px;
+}
+
+.share-btn-container .share-icon:hover{
+    background-color: rgba(240, 248, 255, 0.2);
+    cursor: pointer;
+}
+
+.share-btn-container .share-btns .facebook, .share-btn-container .share-btns .twitter,  .share-btn-container .share-btns .linkedin{
+    color: #032C36;
+    font-size: 1.4rem;
+    margin: 0 10px;
+}

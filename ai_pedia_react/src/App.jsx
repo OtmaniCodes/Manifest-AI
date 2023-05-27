@@ -8,6 +8,11 @@ import Home from './pages/AIPedia/Home';
 import {setData } from './redux/dataSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import Navbar from './components/Navbar/Navbar';
+import AIToolPage from './pages/AIToolPage/AIToolPage';
+import Footer from './components/Footer/Footer';
+import 'react-toastify/dist/ReactToastify.css';
+import SearchCategory from './pages/SearchAiPedia/SearchCategory';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -20,7 +25,7 @@ function App() {
         const response = await fetch(`http://127.0.0.1:8000/api/get-ai-pedia-tools`);
         const data = await response.json();
         dispatch(setData(data));
-        console.log(data)
+        // console.log(data)
       } catch (error) {
         console.log('Error fetching data:', error);
       }
@@ -38,11 +43,12 @@ function App() {
           {/* <div>{content}</div> */}
           <Routes>
             <Route exact path="/" element={<Home/>}/>
-            <Route exact path="/serach/:name" element={<Home/>}/>
+            <Route exact path="/search-category/:category" element={<SearchCategory/>}/>
+            <Route exact path="/tool/:name" element={<AIToolPage/>}/>
             {/* <Route path="*" element={<Abort404/>} /> */}
           </Routes>
           {/* <ScrollToTopButton/> */}
-          {/* <Footer />  */}
+          <Footer /> 
       </BrowserRouter>
     </div>
   )
