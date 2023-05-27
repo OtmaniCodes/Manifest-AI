@@ -24,8 +24,8 @@ return new class extends Migration
             $table->boolean('is_popular')->default(0);
             $table->boolean('is_manifest_collection')->default(0);
             $table->unsignedBigInteger('category_id')->nullable(); 
-            $table->text('price')->nullable();
-            $table->text('video')->nullable();
+            $table->integer('price')->nullable();
+            $table->string('video')->nullable();
             $table->text('features')->nullable();
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('pedia_categories')->onDelete('cascade');
