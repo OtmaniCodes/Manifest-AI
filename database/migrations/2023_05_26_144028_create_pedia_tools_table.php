@@ -24,7 +24,7 @@ return new class extends Migration
             $table->boolean('is_popular')->default(0);
             $table->boolean('is_manifest_collection')->default(0);
             $table->unsignedBigInteger('category_id')->nullable(); 
-            $table->integer('price')->nullable();
+            $table->float('price')->nullable();
             $table->string('video')->nullable();
             $table->text('features')->nullable();
             $table->timestamps();
