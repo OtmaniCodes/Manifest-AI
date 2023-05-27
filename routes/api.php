@@ -13,16 +13,11 @@ use App\Http\Controllers\DirectiveController;
 use App\Http\Controllers\ManifestoController;
 use App\Http\Controllers\PediaToolController;
 use App\Http\Controllers\AIQuestionController;
-use App\Http\Controllers\AIPediaToolController;
 
 use App\Http\Controllers\AboutContentController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\ManifestoContentController;
-use App\Http\Controllers\AIPediaToolCategoryController;
-
-
-
-
+use App\Http\Controllers\PediaCategoryController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -45,6 +40,7 @@ Route::group(['middleware' => ['web']], function () {
     // for AI Pedia Tools
     Route::get('/get-ai-pedia-tools', [PediaToolController::class, 'getAIPediaTools']);
     Route::get('/get-tools-by-category', [PediaToolController::class, 'getAIPediaToolsCategory']);
+    Route::get('/get-tools-categories', [PediaCategoryController::class, 'getAIPediaToolsCategories']);
     // Route::get('/ai-pedia-tools/search', [PediaToolController::class, 'searchForAIPediaTools']); //! do get request to /ai-pedia-tools/search?keyword=example from the front-end
     // Route::get('/get-ai-pedia-tools-categories', [AIPediaToolCategoryController::class, 'getAIPediaToolsCategories']);
 
@@ -60,7 +56,7 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     Route::get('/stream/{filename}', function ($filename) {
-        $path = public_path('/videos/' . $filename.'m3u8' );
+        $path = public_path('/videos/' . $filename . 'm3u8');
         if (!file_exists($path)) {
             abort(404);
         }

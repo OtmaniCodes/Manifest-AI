@@ -11,7 +11,10 @@ const Footer = () => {
       <div className="footer-top container-fluid px-5">
           <div className="row justify-content-center align-items-center h-100 my-auto">
             <div className="col-md-10 text-center footer-contact h-100">
-              <h3>MANIFEST AI</h3>
+              <div className="d-flex justify-content-center align-items-center mb-2">
+                <img src={!loading && sections.logo_home} className='me-2' height={40} alt="manifest ai logo" />
+                <h3 className='m-0'>MANIFEST AI</h3>
+              </div>
               {/* <strong>Phone:</strong> +1 5589 55488 55<br />
               <strong>Email:</strong> info@example.com<br /> */}
               {/* <p>
@@ -50,8 +53,6 @@ const Footer = () => {
           </div>
         </div>
         <div className="social-links text-center text-md-right pt-3 pt-md-0">
-          {/* <a href="#" className="twitter"><i className="bu bi-twitter"></i></a> */}
-          {/* <a href="#" className="facebook"><i className="bu bi-facebook"></i></a> */}
           <a href={!loading && sections.instagram} className="instagram"><i className="bu bi-instagram"></i></a>
           <a href={!loading && sections.linkedin} className="linkedin"><i className="bu bi-linkedin"></i></a>
           <a href={!loading && sections.tiktok} target='_blank' className="linkedin"><i className="bi bi-tiktok"></i></a>

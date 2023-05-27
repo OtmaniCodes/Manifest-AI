@@ -25,27 +25,29 @@ function Home(){
     //     setNewTools(filtered)
     //     setCollections(filteredTools)
     //   };
-      useEffect(()=>{
+    useEffect(()=>{
+        window.scrollTo({'behavior': 'instant', top: 0})
         if(data){
             // filterTools()
-            setCollections(data.manifest_collections)
-            setNewTools(data.tools)
+            setCollections(data.manifest_collections.map(e => ({
+                ...e,
+                image: e.image ? `${import.meta.env.VITE_SERVER_URL}/storage/${e.image}` : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj1UU-9fy5fPAMrlsO9QmqcuAV5i65SBRDD4dTHS8kG9zD6U6piqsZFm7wyTC399RljYI&usqp=CAU"
+            })));
+            setNewTools(data.tools.map(e => ({
+            ...e,
+            image: e.image ? `${import.meta.env.VITE_SERVER_URL}/storage/${e.image}` : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj1UU-9fy5fPAMrlsO9QmqcuAV5i65SBRDD4dTHS8kG9zD6U6piqsZFm7wyTC399RljYI&usqp=CAU"
+            })));
         }
-      },[data])
-    const url = category ? `/search/${name}/${category}` : `/search/${name}`;
-useEffect(()=>{
-    console.log(category)
-},[category])
+    },[data])
 
-    return (    
-        <div className='container mb-5'> 
-            {data?
-            <div className='pedia-container'>
-            <Header/>
-            <div className='pedia-items-title'>
-                🔥 Just Arrives
-            </div>
-            <AIPediaCards tools={newTools}/>
+    const url = category ? `/search/${name}/${category}` : `/search/${name}`;
+    
+    // useEffect(()=>{
+    //     // console.log(category)
+    // },[category])
+
+    const renderDiscordAdCard = () => {
+        return (
             <div className='pedia-discord'>  
                 <div>
                     <h1>Grow your AI talent !</h1>
@@ -56,13 +58,26 @@ useEffect(()=>{
                     JOIN DISCORD 👌
                 </div>
             </div>
-            <div className='pedia-items-title'>
-                🙌 Manifest AI selection
-            </div>
-            <AIPediaCards tools={collections}/>
-            </div> 
-            :
-            <Loader/>
+        )
+    }
+
+    return (    
+        <div className='container mb-5'> 
+            {   
+            data
+                ? <div className='pedia-container'>
+                    {/* contains search bar/category chips */}
+                    <Header/>
+                    
+                    <div className='pedia-items-title'>🔥 Just Arrives</div>
+                    <AIPediaCards tools={newTools}/>
+                    
+                    {renderDiscordAdCard()}
+                    
+                    <div className='pedia-items-title'>🙌 Manifest AI selection</div>
+                    <AIPediaCards tools={collections}/>
+                </div> 
+                : <Loader/>
             }
         </div>
     );
