@@ -15,12 +15,20 @@ use App\Http\Controllers\PediaToolController;
 use App\Http\Controllers\AIQuestionController;
 
 use App\Http\Controllers\AboutContentController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\ManifestoContentController;
 use App\Http\Controllers\PediaCategoryController;
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::post("/register", [AuthController::class, 'register']);
+Route::post("/login", [AuthController::class, 'login']);
+
+Route::group(["middleware" => "auth:sanctum"], function () {
+    Route::get("/user", function (Request $request) {
+        return $request->user();
+    });
+    Route::post("/logout", [AuthController::class, 'logout']);
 });
 
 Route::group(['middleware' => ['web']], function () {

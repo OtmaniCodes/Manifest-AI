@@ -23,7 +23,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->boolean('is_popular')->default(0);
             $table->boolean('is_manifest_collection')->default(0);
-            $table->unsignedBigInteger('category_id')->nullable(); 
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->float('price')->nullable();
             $table->string('video')->nullable();
             $table->text('features')->nullable();

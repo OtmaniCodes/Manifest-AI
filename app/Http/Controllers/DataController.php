@@ -22,26 +22,26 @@ class DataController extends VoyagerBaseController
 {
     public function getData()
     {
-        $manifestoContent=ManifestoContent::all();
-        $about=About::all()->first();
-        $aboutContents=AboutContent::all();
-        $AIPediaToolsCategories = AIPediaToolCategory::all();
-        $AIPediaTools = AIPediaTool::all();
-        $AiQuestions=AIQuestion::all();
-        $directives=Directive::all();
-        $jobs=Job::all();
-        $manifesto=Manifesto::all();
-        $manifestoContent=ManifestoContent::all();
-        $articles=Voyager::model('Post')::all();
-        $sections=Section::all();
-        $services=Service::all();
-        $teams=Team::all();
+        $manifestoContent = ManifestoContent::all();
+        $about = About::all()->first();
+        $aboutContents = AboutContent::all();
+        // $AIPediaToolsCategories = AIPediaToolCategory::all();
+        // $AIPediaTools = AIPediaTool::all();
+        $AiQuestions = AIQuestion::all();
+        $directives = Directive::all();
+        $jobs = Job::all();
+        $manifesto = Manifesto::all();
+        $manifestoContent = ManifestoContent::all();
+        $articles = Voyager::model('Post')::all();
+        $sections = Section::all();
+        $services = Service::all();
+        $teams = Team::all();
         return response()->json([
             'manifestoContent' => $manifestoContent,
             'aboutContents' => $aboutContents,
             'about' => $about,
-            'AIPediaToolsCategories' => $AIPediaToolsCategories,
-            'AIPediaTools' => $AIPediaTools,
+            // 'AIPediaToolsCategories' => $AIPediaToolsCategories,
+            // 'AIPediaTools' => $AIPediaTools,
             'AiQuestions' => $AiQuestions,
             'directives' => $directives,
             'jobs' => $jobs,
@@ -55,7 +55,7 @@ class DataController extends VoyagerBaseController
 
 
 
-            
+
 
 
 
@@ -64,6 +64,5 @@ class DataController extends VoyagerBaseController
 
 
         ]);
-
     }
 }

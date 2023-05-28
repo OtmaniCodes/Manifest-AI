@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Loader from '../../components/Loader/Loader';
 import { Link } from 'react-router-dom';
 import { FuncHelper } from '../../utils/func-helper';
+import CategoryCard from './LocalComponents/CategoryCard/CategoryCard';
 
 export default function PediaCategories() {
   const [categories, setCategories] = useState(null);
@@ -48,22 +49,12 @@ export default function PediaCategories() {
             <h1 className='mt-5'>All Categories</h1>
             <h5>Browse and explore all available categories</h5>
 
-            <div className="row justify-content-center mt-5 w-100 m-0">
+            <div className="row justify-content-start mt-5 w-100 m-0">
                     {
                         categories.filter(category => category.tools_count > 0).map((category, i) => {
                             return (
                                 <div className="col-lg-3 col-md-4 col-6 text-center mb-5" key={i}>
-                                    <Link to={`${category.name}`}>
-                                        <div className="category-item">
-                                            <div className="category-item-image">
-                                                <img src={FuncHelper.getCleanServerImageUrl(category.image)} alt={`${category.name} image`}/>
-                                            </div>
-                                            <div className="category-item-name">
-                                                <p>{category.name}</p>
-                                                <p className='tools-count'>{category.tools_count} tools</p>
-                                            </div>
-                                        </div>
-                                    </Link>
+                                  <CategoryCard category={category}/>
                                 </div>
                             )
                         })

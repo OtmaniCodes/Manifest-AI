@@ -13,11 +13,16 @@ import Footer from './components/Footer/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 import SearchCategory from './pages/SearchAiPedia/SearchCategory';
 import PediaCategories from './pages/PediaCategories/PediaCategories';
+import Login from './pages/Auth/Login/Login';
+import Register from './pages/Auth/Signp/Signup';
 
 
 function App() {
   const dispatch = useDispatch();
   const data = useSelector(state => state.data.data);
+
+  //TODO: fetch user from server here
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,9 +48,13 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route exact path="/tools" element={<Home/>}/>
+            <Route exact path="/login" element={<Login/>}/>
+            <Route exact path="/register" element={<Register/>}/>
             <Route exact path="/categories" element={<PediaCategories/>}/>
             <Route exact path="/categories/:category" element={<SearchCategory/>}/>
             <Route exact path="/tool/:name" element={<AIToolPage/>}/>
+            {/* <Route path="/favourites" element={<ProtectedRoute><FavouriteToolsPage /></ProtectedRoute>} /> */}
+
             {/* <Route path="*" element={<Abort404/>} /> */}
           </Routes>
           {/* <ScrollToTopButton/> */}
@@ -54,5 +63,18 @@ function App() {
     </div>
   )
 }
+
+const ProtectedRoute = ({ children }) => {
+  const authState = useSelector((state) => state.auth);
+
+  if (!authState.loggedIn) {
+    return <Navigate to="/login" />;
+  }
+
+  return children;
+};
+
+
+
 
 export default App

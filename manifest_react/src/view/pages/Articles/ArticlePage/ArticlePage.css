@@ -32,7 +32,8 @@
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;}
+    white-space: nowrap;
+}
 
 #article-page h1{
     font-size: 35px;

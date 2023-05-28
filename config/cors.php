@@ -22,7 +22,7 @@ return [
     'allowed_origins' => [
         'http://localhost:3000',
         'https://www.manifest-ai.com',
-        
+
     ],
 
     'allowed_origins_patterns' => [],
@@ -33,6 +33,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 
 ];

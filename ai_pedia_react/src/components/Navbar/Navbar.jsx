@@ -1,8 +1,13 @@
 import Swal from 'sweetalert2';
 import './Navbar.css'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutSuccess } from '../../redux/authSlice';
 
 function Navbar(){
+    const dispatch = useDispatch()
+    const authState = useSelector((state) => state.auth);
 
     const handleSubmitTool = () => {
         Swal.fire({
@@ -25,6 +30,10 @@ function Navbar(){
         });
     }
 
+    const handleLogout = () => {
+      dispatch(logoutSuccess());
+    }
+
 return (
   <header>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
@@ -44,18 +53,28 @@ return (
                 SUBMIT A TOOL
               </a>
             </li>
-            {/* <li className="nav-item dropdown">
-              <div className="nav-link">
-                <a className="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                  JOIN THE MOVEMENT
-                </a>
-                <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                  <li><a className="dropdown-item" href="#">AI FOR GOOD</a></li>
-                  <li><a className="dropdown-item" href="#">AI FOR IMPACT</a></li>
-                  <li><a className="dropdown-item" href="#">AI UNITED</a></li>
-                </ul>
-              </div>
-            </li> */}
+              {
+                authState.loggedIn
+                  ? (
+                  <li className="nav-item dropdown">
+                    <div className="nav-link">
+                      <a className="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        {authState.user.name ? authState.user.name.toUpperCase() : '...'}
+                      </a>
+                      <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                        <li><a className="dropdown-item" href="#" onClick={handleLogout}>LOG OUT</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  )
+                  : (
+                    <li className="nav-item">
+                      <Link to={'/register'} className="nav-link active-nav">
+                        CREATE AN ACCOUNT
+                      </Link>
+                    </li>
+                  )
+              }
           </ul>
 
             <div className="header-social-links" >
