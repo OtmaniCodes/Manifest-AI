@@ -13,7 +13,7 @@ import Footer from './components/Footer/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 import PediaCategories from './pages/PediaCategories/PediaCategories';
 import Login from './pages/Auth/Login/Login';
-import Register from './pages/Auth/Signp/Signup';
+import Register from './pages/Auth/Signup/Signup';
 import SearchCategory from './pages/SearchAiPedia/SearchCategory/SearchCategory';
 import SearchQuery from './pages/SearchAiPedia/SearchQuery/SearchQuery';
 

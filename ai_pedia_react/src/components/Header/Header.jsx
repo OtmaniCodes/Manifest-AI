@@ -10,6 +10,7 @@ const Header = (props) => {
     return ( 
         <>
         <div className='pedia-header'>
+                <h3>AI <span>PEDIA</span></h3>
                 <div className='pedia-title'>
                     AI Pedia -Ready to take your productivity to the next level?
                 </div>

@@ -37,6 +37,7 @@ a {
     overflow: hidden;
     border-radius: 16px;
     color: #010101;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.452);
 }
 
  .auth-form .form {
