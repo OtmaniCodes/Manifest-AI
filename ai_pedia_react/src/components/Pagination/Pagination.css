@@ -1,7 +1,7 @@
 .pagination-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 60px;
   }
   
   .pagination {
@@ -25,11 +25,11 @@
   }
   
   .pagination li button:hover {
-    background-color: #eee;
+    background-color:#32cf9381;
   }
   
   .pagination li.active button {
-    background-color: #ddb5b5;
+    background-color:#32CF93;
     color: #fff;
   }
   

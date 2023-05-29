@@ -4,7 +4,6 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import Home from './pages/AIPedia/Home';
 import {setData } from './redux/dataSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import Navbar from './components/Navbar/Navbar';
@@ -16,6 +15,7 @@ import Login from './pages/Auth/Login/Login';
 import Register from './pages/Auth/Signup/Signup';
 import SearchCategory from './pages/SearchAiPedia/SearchCategory/SearchCategory';
 import SearchQuery from './pages/SearchAiPedia/SearchQuery/SearchQuery';
+import Home from './pages/Home/Home';
 
 
 function App() {

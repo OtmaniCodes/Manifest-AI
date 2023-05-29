@@ -109,7 +109,7 @@ const Navbar = () => {
                     <a href={!loading && sections.tiktok} target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bi bi-tiktok"></i></a>
                     <a href={!loading && sections.twitter} target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-twitter"></i></a>
                     <a href={!loading && sections.facebook} target='_blank' className="linkedin"><i style={{color: keepTransBg ? 'white' : 'white'}}  className="bu bi-facebook"></i></a>
-                </dive
+                </div>
     
             </div>
             <nav className='nav-mobile' style={{display:!Isopen?'none':''}}>

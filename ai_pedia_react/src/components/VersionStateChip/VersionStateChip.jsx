@@ -8,8 +8,10 @@ export default function VersionStateChip({state}) {
 
   return (
     <div className='version-state-chip'>
-      {isFreeTool && <i class="fa-regular fa-circle-check"></i>}
-      {isPaidTool && <i class="fa-regular fa-circle-dollar"></i>}
+      
+        {isFreeTool && <div className="icon"><i class="fa-solid fa-check"></i></div>}
+        {isPaidTool && <div className="icon"><i class="fa-solid fa-dollar-sign"></i></div>}
+      
       <p>{stateLabel}</p>
     </div>
   )

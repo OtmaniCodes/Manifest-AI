@@ -9,6 +9,10 @@ body {
     background: #032C36;
 }
 
+#root{
+    background: #032C36;
+}
+
 .App {
     overflow-x: hidden;
     background-color: #002C36;
