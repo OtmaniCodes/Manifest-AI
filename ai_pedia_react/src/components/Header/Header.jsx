@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import './Header.css'
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Header = (props) => {
+    const navigate=useNavigate()
     const data = useSelector(state => state.data.data);
     const [query,setQuery]=useState(null)
     const url = 'hello'
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            navigate(`/search/${query?query:'empty-search'}`)
+        }
+      };
 
     return ( 
         <>
@@ -29,6 +35,7 @@ const Header = (props) => {
             <input type="text" placeholder='I Am Looking For ...'
             value={query}
             onChange={(e) => setQuery(e.target.value)} 
+            onKeyDown={handleKeyDown}
             />
             <div>
                 {/* <AiOutlineSearch/> */}
