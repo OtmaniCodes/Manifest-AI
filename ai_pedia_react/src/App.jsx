@@ -11,10 +11,11 @@ import Navbar from './components/Navbar/Navbar';
 import AIToolPage from './pages/AIToolPage/AIToolPage';
 import Footer from './components/Footer/Footer';
 import 'react-toastify/dist/ReactToastify.css';
-import SearchCategory from './pages/SearchAiPedia/SearchCategory';
 import PediaCategories from './pages/PediaCategories/PediaCategories';
 import Login from './pages/Auth/Login/Login';
 import Register from './pages/Auth/Signp/Signup';
+import SearchCategory from './pages/SearchAiPedia/SearchCategory/SearchCategory';
+import SearchQuery from './pages/SearchAiPedia/SearchQuery/SearchQuery';
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
             <Route exact path="/register" element={<Register/>}/>
             <Route exact path="/categories" element={<PediaCategories/>}/>
             <Route exact path="/categories/:category" element={<SearchCategory/>}/>
+            <Route exact path="/search/:query" element={<SearchQuery/>}/>
             <Route exact path="/tool/:name" element={<AIToolPage/>}/>
             {/* <Route path="/favourites" element={<ProtectedRoute><FavouriteToolsPage /></ProtectedRoute>} /> */}
 
