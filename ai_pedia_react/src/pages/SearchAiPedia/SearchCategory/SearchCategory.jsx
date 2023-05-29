@@ -2,18 +2,17 @@ import { useParams } from 'react-router-dom';
 import './SearchCategory.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Header from '../../components/Header/Header';
-import AIPediaCards from '../../components/AIPediaCards/AIPediaCards';
-import DataLoader from '../../components/Loader/DataLoader/DataLoader';
-import Pagination from '../../components/Pagination/Pagination';
-import { FuncHelper } from '../../utils/func-helper';
+import Header from '../../../components/Header/Header';
+import AIPediaCards from '../../../components/AIPediaCards/AIPediaCards';
+import DataLoader from '../../../components/Loader/DataLoader/DataLoader';
+import Pagination from '../../../components/Pagination/Pagination';
+import { FuncHelper } from '../../../utils/func-helper';
 
 const SearchCategory = () => {
     const [tools,setTools]=useState(null)
     const {category}=useParams()
     const [currentPage, setCurrentPage] = useState(1);
     const [lastPage,setLastPage] = useState(null); 
-
     useEffect(() => {
       window.scrollTo({'behavior': 'instant', top: 0})
       setTools(null)
@@ -25,7 +24,6 @@ const SearchCategory = () => {
             }
           });
           const data = response.data;
-          // setTools(data)
           setTools(
             {
               ...data,
@@ -58,9 +56,6 @@ const SearchCategory = () => {
             }
           });
           const data = response.data;
-          
-          // setTools(data)
-
           setTools(
             {
               ...data,
@@ -97,7 +92,7 @@ const SearchCategory = () => {
             </>
             :
             <div className='tools-results-area'>
-              No Tool was Found
+              No Tool was Found for 
             </div>
             :
             <div className='tools-results-area'>

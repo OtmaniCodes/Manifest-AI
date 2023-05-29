@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 const Header = (props) => {
     const data = useSelector(state => state.data.data);
-    // const url = category ? `/search/${name}/${category}` : `/search/${name}`;
+    const [query,setQuery]=useState(null)
     const url = 'hello'
 
     return ( 
@@ -26,13 +26,13 @@ const Header = (props) => {
         </div>
         <div className='pedia-search'>
             <input type="text" placeholder='I Am Looking For ...'
-            // value={name}
-            // onChange={(e) => setName(e.target.value)} 
+            value={query}
+            onChange={(e) => setQuery(e.target.value)} 
             />
             <div>
                 {/* <AiOutlineSearch/> */}
                 {/* <Link to={`/search/${search}`}><i class="bi bi-search"></i></Link> */}
-                <Link to={url}><i className="bi bi-search"></i></Link>
+                <Link to={`/search/${query?query:'empty-search'}`}><i className="bi bi-search"></i></Link>
             </div>
         </div>
         <div className='pedia-catigories'>
