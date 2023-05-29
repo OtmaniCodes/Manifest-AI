@@ -36,7 +36,7 @@ class PediaToolController extends VoyagerBaseController
         ->firstOrFail()
         ->tools()
         ->with('category')
-        ->paginate(3);
+        ->paginate(6);
         
         if ($tools) {
             return response()->json($tools);
@@ -53,7 +53,7 @@ class PediaToolController extends VoyagerBaseController
         // Perform the search operation using a relevant model or query
         $tools = PediaTool::where('name', 'like', '%' . $query . '%')
         ->with('category')
-        ->paginate(3);
+        ->paginate(6);
 
         if ($tools) {
             return response()->json($tools);
