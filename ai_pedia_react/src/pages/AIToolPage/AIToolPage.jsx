@@ -15,7 +15,7 @@ export default function AIToolPage() {
   useEffect(() => {
     window.scrollTo({'behavior': 'instant', top: 0})
     console.log("TOOL DATA", toolData);
-    const fakeTool = {
+    const theTool = {
         id: toolData.id,
         category: toolData.category.name,
         category_id: toolData.category.id,
@@ -41,7 +41,7 @@ export default function AIToolPage() {
         `,
         tool_features: toolData.features,
     };
-    setTool(fakeTool);
+    setTool(theTool);
     
   }, []);
 

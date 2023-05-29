@@ -29,7 +29,6 @@ axiosHttpClient.interceptors.response.use(
     },
     (error) => {
         const { response } = error;
-        // console.error("RESPONSE ERROR: ", error, response);
         switch (response.status) {
             //? users are unauthenticated
             case 401:
@@ -50,7 +49,11 @@ axiosHttpClient.interceptors.response.use(
                     errors: response.data.errors,
                 };
             default:
-                throw error;
+                return {
+                    isError: true,
+                    status: response.status,
+                    message: response.data.message ?? "error",
+                };
         }
     }
 );

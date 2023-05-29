@@ -3,14 +3,17 @@ import React, { useEffect, useState } from 'react';
 // import chatfast from '../../../assets/pedia/chatfast.webp.png'
 import chatfast from '../../assets/pedia/chatfast.webp.png'
 import AIPediaCards from '../../components/AIPediaCards/AIPediaCards';
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import Loader from '../../components/Loader/Loader';
 import Header from '../../components/Header/Header'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function Home(){
     const data = useSelector(state => state.data.data);
+    const authState = useSelector((state) => state.auth);
+    const location = useLocation();
     const [name, setName] = useState('tools');
     const [category, setCategory ] = useState(null);
     const [newTools,setNewTools]=useState(null)
@@ -25,6 +28,22 @@ function Home(){
     //     setNewTools(filtered)
     //     setCollections(filteredTools)
     //   };
+  useEffect(() => {
+    if (location.state ? location.state.afterLogin : false) {
+      toast.success(`Hey ${authState.user['name'] ?? 'there'}! Welcome to AI Pedia.`, {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+      });
+      location.state.afterLogin = false;
+    }
+  }, []);
+
     useEffect(()=>{
         window.scrollTo({'behavior': 'instant', top: 0})
         if(data){
@@ -79,6 +98,7 @@ function Home(){
                 </div> 
                 : <Loader/>
             }
+            <ToastContainer/>
         </div>
     );
 }

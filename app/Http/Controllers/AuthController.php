@@ -21,7 +21,7 @@ class AuthController extends Controller
 
 
         if (!$user || !Hash::check($loginFormFields['password'], $user->password)) {
-            return response()->json(['errors' => ['Uncorrect credentials']], 401);
+            return response()->json(['errors' => ['Incorrect credentials']], 401);
         }
 
         $token = $user->createToken('authToken')->plainTextToken;

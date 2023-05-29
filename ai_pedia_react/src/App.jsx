@@ -14,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SearchCategory from './pages/SearchAiPedia/SearchCategory';
 import PediaCategories from './pages/PediaCategories/PediaCategories';
 import Login from './pages/Auth/Login/Login';
-import Register from './pages/Auth/Signp/Signup';
+import Register from './pages/Auth/Signup/Signup';
 
 
 function App() {

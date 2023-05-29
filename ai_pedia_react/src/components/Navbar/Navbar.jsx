@@ -1,12 +1,13 @@
 import Swal from 'sweetalert2';
 import './Navbar.css'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutSuccess } from '../../redux/authSlice';
 
 function Navbar(){
     const dispatch = useDispatch()
+    const location = useLocation();
     const authState = useSelector((state) => state.auth);
 
     const handleSubmitTool = () => {
@@ -34,6 +35,10 @@ function Navbar(){
       dispatch(logoutSuccess());
     }
 
+  if (location.pathname.endsWith('login') || location.pathname.endsWith('register')) {
+    return <></>;
+  }
+
 return (
   <header>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
@@ -59,10 +64,12 @@ return (
                   <li className="nav-item dropdown">
                     <div className="nav-link">
                       <a className="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                        {authState.user.name ? authState.user.name.toUpperCase() : '...'}
+                        ACCOUNT
                       </a>
                       <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                        <li><a className="dropdown-item" href="#" onClick={handleLogout}>LOG OUT</a></li>
+                        <li><a className="dropdown-item" href="#">{authState.user.name ? authState.user.name.toUpperCase() : '...'}</a></li>
+                        {/* <li><a className="dropdown-item" href="#">My Favourites</a></li> */}
+                        <li><a className="dropdown-item" href="#" onClick={handleLogout}>Logout</a></li>
                       </ul>
                     </div>
                   </li>
