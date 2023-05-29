@@ -25,7 +25,7 @@ class PediaToolController extends VoyagerBaseController
             'manifest_collections'=>$manifest_collections
         ]);
     }
-    public function getAIPediaToolsCategory(Request $request)
+    public function getAIPediaToolsByCategory(Request $request)
     {
         $name = $request->query('name');
 
@@ -38,6 +38,23 @@ class PediaToolController extends VoyagerBaseController
         ->with('category')
         ->paginate(3);
         
+        if ($tools) {
+            return response()->json($tools);
+        } else {
+            return response()->json(['error' => 'tools not found'], 404);
+        }
+    }
+
+    public function getAIPediaToolsByQuery(Request $request)
+    {
+        $query = $request->input('name');
+        // dd($query);
+
+        // Perform the search operation using a relevant model or query
+        $tools = PediaTool::where('name', 'like', '%' . $query . '%')
+        ->with('category')
+        ->paginate(3);
+
         if ($tools) {
             return response()->json($tools);
         } else {

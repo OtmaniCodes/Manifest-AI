@@ -47,7 +47,8 @@ Route::group(['middleware' => ['web']], function () {
 
     // for AI Pedia Tools
     Route::get('/get-ai-pedia-tools', [PediaToolController::class, 'getAIPediaTools']);
-    Route::get('/get-tools-by-category', [PediaToolController::class, 'getAIPediaToolsCategory']);
+    Route::get('/get-tools-by-category', [PediaToolController::class, 'getAIPediaToolsByCategory']);
+    Route::get('/get-tools-by-query', [PediaToolController::class, 'getAIPediaToolsByQuery']);
     Route::get('/get-tools-categories', [PediaCategoryController::class, 'getAIPediaToolsCategories']);
     // Route::get('/ai-pedia-tools/search', [PediaToolController::class, 'searchForAIPediaTools']); //! do get request to /ai-pedia-tools/search?keyword=example from the front-end
     // Route::get('/get-ai-pedia-tools-categories', [AIPediaToolCategoryController::class, 'getAIPediaToolsCategories']);
